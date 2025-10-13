@@ -91,6 +91,64 @@ const Index = () => {
             h1 { font-size: 3rem !important; }
             h2, .bab-title { font-size: 2.25rem !important; }
             h3 { font-size: 1.75rem !important; }
+            
+            /* Company logos grid 2x2 */
+            .company-logos-grid {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr;
+                gap: 1.5rem;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+            .company-logos-grid img {
+                margin: 0 auto;
+            }
+            
+            /* Retro-futurista image 30% smaller */
+            .retro-futurista-img {
+                max-width: 350px !important;
+            }
+            
+            /* Mission cards padding 15px */
+            .mission-card {
+                padding: 15px !important;
+            }
+            
+            /* Lab and rocket images centered */
+            .lab-img, .rocket-img {
+                margin-left: auto !important;
+                margin-right: auto !important;
+                display: block;
+            }
+            
+            /* Mentor photo 35% smaller and centered */
+            .mentor-photo img {
+                width: 255px !important;
+                max-width: 255px !important;
+                margin: 0 auto !important;
+                display: block;
+            }
+            
+            /* Pillar cards margin-bottom 50px between them */
+            .pillar-cards .card:not(:last-child) {
+                margin-bottom: 50px;
+            }
+            
+            /* Bonus header line-height */
+            .bonus-included-text {
+                line-height: 30px !important;
+            }
+            
+            /* Bonus items centered layout for mobile */
+            .bonus-guides, .bonus-community {
+                flex-direction: column !important;
+                align-items: center !important;
+                text-align: center !important;
+            }
+            .bonus-guides img, .bonus-community img {
+                margin: 0 auto 1rem auto !important;
+            }
         }
 
         .cta-primary{
@@ -263,7 +321,7 @@ const Index = () => {
           {/* Logos de Empresas */}
           <div className="mt-12">
             <p className="font-oswald text-lg text-[#3D3D3D] mb-4" style={{fontFamily: "'Oswald', sans-serif"}}>Empresas cujos colaboradores já foram nossos alunos:</p>
-            <div className="flex justify-center items-center space-x-8 md:space-x-12 grayscale opacity-60">
+            <div className="company-logos-grid flex justify-center items-center space-x-8 md:space-x-12 grayscale opacity-60">
               <img src="/lovable-uploads/c41a9516-d15e-4713-bd6e-3fbae0530b2c.png" alt="Logo Empresa 1" className="h-12" style={{height: '50px'}} />
               <img src="/lovable-uploads/38467e40-d55a-464e-a1a5-6583161e9211.png" alt="Logo Empresa 2" className="h-12" style={{height: '50px'}} />
               <img src="/lovable-uploads/9284f42b-9f7b-4b8a-8c55-a867f975594c.png" alt="Logo Empresa 3" className="h-12" style={{height: '50px'}} />
@@ -289,7 +347,7 @@ const Index = () => {
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center mt-12">
           {/* Coluna da Esquerda: Imagem */}
           <div>
-            <img src="/lovable-uploads/04c82f71-7985-4a26-b53d-a81bb9857d83.png" alt="Ilustração retro-futurista de um marketer a comandar IAs" className="rounded-xl w-full max-w-[500px] mx-auto"/>
+            <img src="/lovable-uploads/04c82f71-7985-4a26-b53d-a81bb9857d83.png" alt="Ilustração retro-futurista de um marketer a comandar IAs" className="retro-futurista-img rounded-xl w-full max-w-[500px] mx-auto"/>
           </div>
           {/* Coluna da Direita: Grelha de Dores */}
           <div className="flex flex-col gap-6">
@@ -317,7 +375,7 @@ const Index = () => {
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
             {/* Card Marketer */}
-            <div className="mission-card bg-[#FCF9F2] p-8 rounded-xl border-2 border-[#1B1B1B] text-center shadow-[8px_8px_0px_#1B1B1B] transition-all duration-300">
+            <div className="mission-card bg-[#FCF9F2] rounded-xl border-2 border-[#1B1B1B] text-center shadow-[8px_8px_0px_#1B1B1B] transition-all duration-300" style={{padding: '2rem'}}>
               <img src="/lovable-uploads/b5ad3c58-2619-4326-99a9-cf14c06792d5.png" alt="Ícone para Marketer" className="mx-auto mb-6 rounded-full border-2 border-[#1B1B1B]" style={{width: '170px', height: '170px'}} />
               <h3 className="font-caprasimo text-2xl text-[#1B1B1B] mb-1" style={{fontFamily: "'Caprasimo', serif"}}>PARA O(A) MARKETER</h3>
               <h4 className="font-oswald text-xl font-medium text-[#67BBC0] mb-4" style={{fontFamily: "'Oswald', sans-serif"}}>Que se recusa a ser obsoleto</h4>
@@ -326,7 +384,7 @@ const Index = () => {
               </p>
             </div>
             {/* Card Diretor(a) */}
-            <div className="mission-card bg-[#FCF9F2] p-8 rounded-xl border-2 border-[#1B1B1B] text-center shadow-[8px_8px_0px_#1B1B1B] transition-all duration-300">
+            <div className="mission-card bg-[#FCF9F2] rounded-xl border-2 border-[#1B1B1B] text-center shadow-[8px_8px_0px_#1B1B1B] transition-all duration-300" style={{padding: '2rem'}}>
               <img src="/lovable-uploads/311299fb-2f65-4df0-a9ff-054964a5906e.png" alt="Ícone para Diretor" className="mx-auto mb-6 rounded-full border-2 border-[#1B1B1B]" style={{width: '170px', height: '170px'}} />
               <h3 className="font-caprasimo text-2xl text-[#1B1B1B] mb-1" style={{fontFamily: "'Caprasimo', serif"}}>PARA O(A) DIRETOR(A)</h3>
               <h4 className="font-oswald text-xl font-medium text-[#67BBC0] mb-4" style={{fontFamily: "'Oswald', sans-serif"}}>Que lidera a vanguarda</h4>
@@ -335,7 +393,7 @@ const Index = () => {
               </p>
             </div>
             {/* Card Criativo(a) */}
-            <div className="mission-card bg-[#FCF9F2] p-8 rounded-xl border-2 border-[#1B1B1B] text-center shadow-[8px_8px_0px_#1B1B1B] transition-all duration-300">
+            <div className="mission-card bg-[#FCF9F2] rounded-xl border-2 border-[#1B1B1B] text-center shadow-[8px_8px_0px_#1B1B1B] transition-all duration-300" style={{padding: '2rem'}}>
               <img src="/lovable-uploads/b63df122-307e-4ffc-b627-ac381dfa8f27.png" alt="Ícone para Criativo" className="mx-auto mb-6 rounded-full border-2 border-[#1B1B1B]" style={{width: '170px', height: '170px'}} />
               <h3 className="font-caprasimo text-2xl text-[#1B1B1B] mb-1" style={{fontFamily: "'Caprasimo', serif"}}>PARA O(A) CRIATIVO(A)</h3>
               <h4 className="font-oswald text-xl font-medium text-[#67BBC0] mb-4" style={{fontFamily: "'Oswald', sans-serif"}}>Cujos limites são a imaginação</h4>
@@ -344,7 +402,7 @@ const Index = () => {
               </p>
             </div>
             {/* Card Empreendedor(a) */}
-            <div className="mission-card bg-[#FCF9F2] p-8 rounded-xl border-2 border-[#1B1B1B] text-center shadow-[8px_8px_0px_#1B1B1B] transition-all duration-300">
+            <div className="mission-card bg-[#FCF9F2] rounded-xl border-2 border-[#1B1B1B] text-center shadow-[8px_8px_0px_#1B1B1B] transition-all duration-300" style={{padding: '2rem'}}>
               <img src="/lovable-uploads/24e5342e-71fb-462e-9f42-f6147aa6c256.png" alt="Ícone para Empreendedor" className="mx-auto mb-6 rounded-full border-2 border-[#1B1B1B]" style={{width: '170px', height: '170px'}} />
               <h3 className="font-caprasimo text-2xl text-[#1B1B1B] mb-1" style={{fontFamily: "'Caprasimo', serif"}}>PARA O(A) EMPREENDEDOR(A)</h3>
               <h4 className="font-oswald text-xl font-medium text-[#67BBC0] mb-4" style={{fontFamily: "'Oswald', sans-serif"}}>Que ganha vantagem de forma ágil</h4>
@@ -398,14 +456,14 @@ const Index = () => {
               </ul>
             </div>
             <div className="order-1 md:order-2">
-              <img src="/lovable-uploads/302bbba5-22d5-49e5-80f3-4c74f0b9b86c.png" alt="Laboratório de IA" className="rounded-xl w-full border-2 border-[#1B1B1B] shadow-[10px_10px_0px_#67BBC0]"/>
+              <img src="/lovable-uploads/302bbba5-22d5-49e5-80f3-4c74f0b9b86c.png" alt="Laboratório de IA" className="lab-img rounded-xl w-full border-2 border-[#1B1B1B] shadow-[10px_10px_0px_#67BBC0]"/>
             </div>
           </div>
 
           {/* Parte 2: A Oportunidade */}
           <div className="grid md:grid-cols-2 gap-12 items-center text-left">
             <div>
-              <img src="/lovable-uploads/ab081d3f-7d29-414a-b25b-342af50a2422.png" alt="Foguete da Oportunidade" className="rounded-xl w-full border-2 border-[#1B1B1B] shadow-[10px_10px_0px_#FCCA29]"/>
+              <img src="/lovable-uploads/ab081d3f-7d29-414a-b25b-342af50a2422.png" alt="Foguete da Oportunidade" className="rocket-img rounded-xl w-full border-2 border-[#1B1B1B] shadow-[10px_10px_0px_#FCCA29]"/>
             </div>
             <div>
               <h3 className="font-oswald text-3xl text-[#1B1B1B] mb-6" style={{fontFamily: "'Oswald', sans-serif"}}>A Oportunidade: Porquê Agora</h3>
@@ -482,7 +540,7 @@ const Index = () => {
               <span style={{color:'#008C94', fontWeight:700}}>✱</span> Turmas de 8 a 12 participantes
             </p>
           </div>
-          <div className="cards-container" style={{gap: '0.5rem'}}>
+          <div className="cards-container pillar-cards" style={{gap: '0.5rem'}}>
             <div className="card card-raised" style={{padding: '2rem', flex: '1', maxWidth: '400px'}}>
             <img src="/lovable-uploads/3a5df82f-f4cb-44ab-bbf5-61e9e715c22f.png" alt="Conteúdo IA" />
             <h3>Criação de Conteúdo com IA</h3>
@@ -536,11 +594,11 @@ const Index = () => {
         <div className="bonus-container max-w-6xl mx-auto">
           <div className="bonus-header">
             <h2><span style={{textShadow: '3px 3px 0px #FDE68A'}}>Para Garantir a Sua Decolagem, Incluímos o Combustível Extra</span><br />
-            <span style={{fontSize:'1rem', fontWeight:400}}>(incluído em todas as mentorias, sem custo adicional)</span></h2>
+            <span className="bonus-included-text" style={{fontSize:'1rem', fontWeight:400}}>(incluído em todas as mentorias, sem custo adicional)</span></h2>
             <p>Ao garantir a sua vaga na mentoria, recebe automaticamente e sem qualquer custo adicional acesso a este ecossistema de valor. Cada bónus foi desenhado para acelerar os seus resultados e mantê-lo na vanguarda, muito depois de a mentoria terminar.</p>
           </div>
           <div className="bonus-list">
-            <div className="bonus-item card-raised">
+            <div className="bonus-item card-raised bonus-guides">
               <img src="/lovable-uploads/36c32b95-f826-4be1-a77a-6d166afa9ec9.png" alt="Guias Vivos" />
               <div className="bonus-item-content">
                 <h3>1 Ano de Guias Vivos</h3>
@@ -549,7 +607,7 @@ const Index = () => {
                 <p>O seu investimento na mentoria não pode ficar obsoleto. Por isso, criámos os nossos 3 Guias Vivos: uma base de conhecimento que está sempre 100% atualizada com as novidades de IA. Tenha acesso 24/7 a prompts, ferramentas testadas e estratégias que só partilhamos dentro do nosso ecossistema.</p>
               </div>
             </div>
-            <div className="bonus-item card-raised">
+            <div className="bonus-item card-raised bonus-community">
               <img src="/lovable-uploads/7dd9bd91-9bcd-4fd6-80b4-8c8dc8ee647e.png" alt="Comunidade Discord" />
               <div className="bonus-item-content">
                 <h3>Comunidade Visionários do Marketing</h3>
