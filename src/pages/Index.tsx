@@ -61,6 +61,11 @@ const Index = () => {
             background: #A8DEE0;
         }
 
+        /* Add hover shadow effect for "Esta missão é para si?" cards */
+        .mission-card:hover {
+            box-shadow: 12px 12px 0px #1B1B1B;
+        }
+
         /* Mobile trust logos scroll */
         @media(max-width: 767px) {
             .trust-logos {
@@ -312,7 +317,7 @@ const Index = () => {
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
             {/* Card Marketer */}
-            <div className="bg-[#FCF9F2] p-8 rounded-xl border-2 border-[#1B1B1B] text-center shadow-[8px_8px_0px_#1B1B1B]">
+            <div className="mission-card bg-[#FCF9F2] p-8 rounded-xl border-2 border-[#1B1B1B] text-center shadow-[8px_8px_0px_#1B1B1B] transition-all duration-300">
               <img src="/lovable-uploads/b5ad3c58-2619-4326-99a9-cf14c06792d5.png" alt="Ícone para Marketer" className="mx-auto mb-6 rounded-full border-2 border-[#1B1B1B]" style={{width: '170px', height: '170px'}} />
               <h3 className="font-caprasimo text-2xl text-[#1B1B1B] mb-1" style={{fontFamily: "'Caprasimo', serif"}}>PARA O(A) MARKETER</h3>
               <h4 className="font-oswald text-xl font-medium text-[#67BBC0] mb-4" style={{fontFamily: "'Oswald', sans-serif"}}>Que se recusa a ser obsoleto</h4>
@@ -321,7 +326,7 @@ const Index = () => {
               </p>
             </div>
             {/* Card Diretor(a) */}
-            <div className="bg-[#FCF9F2] p-8 rounded-xl border-2 border-[#1B1B1B] text-center shadow-[8px_8px_0px_#1B1B1B]">
+            <div className="mission-card bg-[#FCF9F2] p-8 rounded-xl border-2 border-[#1B1B1B] text-center shadow-[8px_8px_0px_#1B1B1B] transition-all duration-300">
               <img src="/lovable-uploads/311299fb-2f65-4df0-a9ff-054964a5906e.png" alt="Ícone para Diretor" className="mx-auto mb-6 rounded-full border-2 border-[#1B1B1B]" style={{width: '170px', height: '170px'}} />
               <h3 className="font-caprasimo text-2xl text-[#1B1B1B] mb-1" style={{fontFamily: "'Caprasimo', serif"}}>PARA O(A) DIRETOR(A)</h3>
               <h4 className="font-oswald text-xl font-medium text-[#67BBC0] mb-4" style={{fontFamily: "'Oswald', sans-serif"}}>Que lidera a vanguarda</h4>
@@ -330,7 +335,7 @@ const Index = () => {
               </p>
             </div>
             {/* Card Criativo(a) */}
-            <div className="bg-[#FCF9F2] p-8 rounded-xl border-2 border-[#1B1B1B] text-center shadow-[8px_8px_0px_#1B1B1B]">
+            <div className="mission-card bg-[#FCF9F2] p-8 rounded-xl border-2 border-[#1B1B1B] text-center shadow-[8px_8px_0px_#1B1B1B] transition-all duration-300">
               <img src="/lovable-uploads/b63df122-307e-4ffc-b627-ac381dfa8f27.png" alt="Ícone para Criativo" className="mx-auto mb-6 rounded-full border-2 border-[#1B1B1B]" style={{width: '170px', height: '170px'}} />
               <h3 className="font-caprasimo text-2xl text-[#1B1B1B] mb-1" style={{fontFamily: "'Caprasimo', serif"}}>PARA O(A) CRIATIVO(A)</h3>
               <h4 className="font-oswald text-xl font-medium text-[#67BBC0] mb-4" style={{fontFamily: "'Oswald', sans-serif"}}>Cujos limites são a imaginação</h4>
@@ -339,7 +344,7 @@ const Index = () => {
               </p>
             </div>
             {/* Card Empreendedor(a) */}
-            <div className="bg-[#FCF9F2] p-8 rounded-xl border-2 border-[#1B1B1B] text-center shadow-[8px_8px_0px_#1B1B1B]">
+            <div className="mission-card bg-[#FCF9F2] p-8 rounded-xl border-2 border-[#1B1B1B] text-center shadow-[8px_8px_0px_#1B1B1B] transition-all duration-300">
               <img src="/lovable-uploads/24e5342e-71fb-462e-9f42-f6147aa6c256.png" alt="Ícone para Empreendedor" className="mx-auto mb-6 rounded-full border-2 border-[#1B1B1B]" style={{width: '170px', height: '170px'}} />
               <h3 className="font-caprasimo text-2xl text-[#1B1B1B] mb-1" style={{fontFamily: "'Caprasimo', serif"}}>PARA O(A) EMPREENDEDOR(A)</h3>
               <h4 className="font-oswald text-xl font-medium text-[#67BBC0] mb-4" style={{fontFamily: "'Oswald', sans-serif"}}>Que ganha vantagem de forma ágil</h4>
@@ -358,19 +363,19 @@ const Index = () => {
             <img src="/lovable-uploads/d8bcdf7a-4eee-4f99-b2e1-8fb14e15a981.png" alt="Ícone de sobrecarga de informação" className="h-30 ml-0 mb-0" style={{width: '120px', height: '120px', marginLeft: '0px', marginBottom: '0px'}}/>
             <span className="font-oswald text-lg font-bold text-[#FF304C] block mb-2" style={{fontFamily: "'Oswald', sans-serif"}}>ANTES</span>
             <h3 className="font-caprasimo text-3xl text-[#1B1B1B] mb-2" style={{fontFamily: "'Caprasimo', serif"}}>Profissional Reativo</h3>
-            <p className="text-lg text-[#3D3D3D]">Afogado em ruído, a testar 'a ferramenta do dia' sem conseguir resultados que impressionem. Sente que os concorrentes estão a decolar enquanto você continua na pista, com medo de se tornar obsoleto.</p>
+            <p className="text-lg text-[#3D3D3D]">Passa mais tempo a testar ferramentas do que a criar resultados. Sente que os concorrentes estão a decolar enquanto você continua na pista, com medo de se tornar obsoleto.</p>
           </div>
           <div className="bab-step">
             <img src="/lovable-uploads/c20bd8ef-123a-4a7c-a077-ee2fdf3e7917.png" alt="Ícone de lançamento de jornada" className="h-30 ml-0 mb-0" style={{width: '120px', height: '120px', marginLeft: '0px', marginBottom: '0px'}}/>
             <span className="font-oswald text-lg font-bold text-[#67BBC0] block mb-2" style={{fontFamily: "'Oswald', sans-serif"}}>A PONTE</span>
             <h3 className="font-caprasimo text-3xl text-[#1B1B1B] mb-2" style={{fontFamily: "'Caprasimo', serif"}}>A Mentoria Atomica</h3>
-            <p className="text-lg text-[#3D3D3D]">Condensei quase 2 anos de experiência diária e mais de uma década em marketing neste plano de voo intensivo. Filtrei o ruído por si. Esta mentoria é a sua propulsão para saltar da frustração à vanguarda em 1 mês, sem passar por um longo processo de tentativa e erro.</p>
+            <p className="text-lg text-[#3D3D3D]">Condensei quase 2 anos de experiência diária e mais de uma década em marketing neste plano de voo intensivo. Filtrei o ruído por si. Em apenas 30 dias, irá dominar fluxos práticos e frameworks prontos para implementar IA real no seu marketing.</p>
           </div>
           <div className="bab-step">
             <img src="/lovable-uploads/4566798f-cf76-47c1-a33b-3c7411f83489.png" alt="Ícone de sucesso e clareza" className="h-30 ml-0 mb-0" style={{width: '120px', height: '120px', marginLeft: '0px', marginBottom: '0px'}}/>
             <span className="font-oswald text-lg font-bold text-[#FCCA29] block mb-2" style={{fontFamily: "'Oswald', sans-serif"}}>DEPOIS</span>
             <h3 className="font-caprasimo text-3xl text-[#1B1B1B] mb-2" style={{fontFamily: "'Caprasimo', serif"}}>Estratega no Comando</h3>
-            <p className="text-lg text-[#3D3D3D]">Automatiza o trabalho repetitivo para se focar onde a sua criatividade e pensamento crítico brilham, transformando ideias complexas em realidade e sendo reconhecido como a referência de inovação na sua equipa.</p>
+            <p className="text-lg text-[#3D3D3D]">Automatiza o trabalho repetitivo para se focar onde a sua criatividade e pensamento crítico brilham, transformando ideias complexas em realidade e ser a referência que a sua equipa procura quando o tema é inovação.</p>
           </div>
         </div>
       </section>
@@ -655,6 +660,9 @@ const Index = () => {
             <details><summary>Esta mentoria é só teórica ou vamos mesmo "pôr a mão na massa"?</summary><div>A nossa filosofia é 'aprender fazendo'. Cada sessão tem uma componente teórica curta e direta, seguida de exercícios práticos onde você irá aplicar imediatamente o que aprendeu. O objetivo é que termine cada aula com algo novo que pode usar no seu trabalho no dia seguinte.</div></details>
             <details><summary>Que tipo de suporte terei se ficar com dúvidas ou bloqueado?</summary><div>Você nunca estará sozinho. Terá suporte contínuo através de três canais: durante as aulas ao vivo para interação direta, na nossa comunidade exclusiva no Discord para perguntas rápidas e feedback dos colegas e do mentor, e nas sessões mensais de Q&A da comunidade, mesmo após o fim da sua mentoria.</div></details>
             <details><summary>O acesso à comunidade e aos guias é vitalício?</summary><div>O seu acesso à comunidade 'Visionários do Marketing' no Discord é vitalício. O acesso aos 'Guias Vivos' está incluído por um período de 12 meses após a sua inscrição, garantindo que se mantém atualizado durante um ano inteiro.</div></details>
+            <details><summary>Qual é a diferença entre esta mentoria e um curso online sobre IA?</summary><div>Cursos ensinam ferramentas. A mentoria Atómica ensina-o a pensar e agir estrategicamente com IA — com acompanhamento direto, frameworks testados em projetos reais e resultados que pode aplicar já na sua rotina de marketing.</div></details>
+            <details><summary>Quanto tempo preciso dedicar por semana?</summary><div>Cada sessão tem em média 90 minutos, e todas ficam gravadas. Além disso, propomos desafios práticos rápidos (30–60 minutos) para aplicar o que aprendeu no seu próprio contexto. Em resumo: 2 a 3 horas por semana são suficientes para tirar o máximo proveito.</div></details>
+            <details><summary>As turmas têm vagas limitadas?</summary><div>Sim — cada edição tem no máximo 12 participantes, para garantir acompanhamento direto e espaço para prática.</div></details>
           </div>
           <div className="value-stack card-raised">
             <p><strong>Resumo de Valor:</strong></p>
