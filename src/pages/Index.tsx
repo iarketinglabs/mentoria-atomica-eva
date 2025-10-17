@@ -1,7 +1,9 @@
-
-import React from 'react';
+import React, { useState } from 'react';
+import { Globe } from 'lucide-react';
 
 const Index = () => {
+  const [language, setLanguage] = useState<'pt-PT' | 'pt-BR'>('pt-PT');
+  const [showLanguageMenu, setShowLanguageMenu] = useState(false);
   return (
     <div style={{ fontFamily: "'Jost', sans-serif", backgroundColor: '#FCF9F2', color: '#1B1B1B', margin: 0, padding: 0 }}>
       <style>{`
@@ -305,6 +307,113 @@ const Index = () => {
         .signup-form .checkbox-custom input:checked::before { content:'✱'; position:absolute; top: -3px; left: 2px; color:#67BBC0; font-size:1.25rem; }
       `}</style>
 
+      {/* Language Switcher */}
+      <div style={{position: 'fixed', top: '20px', right: '20px', zIndex: 1000}}>
+        <div style={{position: 'relative'}}>
+          <button
+            onClick={() => setShowLanguageMenu(!showLanguageMenu)}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              padding: '0.5rem 1rem',
+              background: '#FCF9F2',
+              border: '2px solid #1B1B1B',
+              borderRadius: '8px',
+              cursor: 'pointer',
+              fontFamily: "'Jost', sans-serif",
+              fontSize: '0.875rem',
+              fontWeight: 600,
+              color: '#1B1B1B',
+              boxShadow: '4px 4px 0px #67BBC0',
+              transition: 'all 0.2s ease'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'translate(-2px, -2px)';
+              e.currentTarget.style.boxShadow = '6px 6px 0px #67BBC0';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'translate(0, 0)';
+              e.currentTarget.style.boxShadow = '4px 4px 0px #67BBC0';
+            }}
+          >
+            <Globe size={18} />
+            <span>LNG</span>
+          </button>
+          
+          {showLanguageMenu && (
+            <div style={{
+              position: 'absolute',
+              top: 'calc(100% + 8px)',
+              right: 0,
+              background: '#FCF9F2',
+              border: '2px solid #1B1B1B',
+              borderRadius: '8px',
+              boxShadow: '4px 4px 0px #67BBC0',
+              minWidth: '200px',
+              overflow: 'hidden',
+              zIndex: 1001
+            }}>
+              <button
+                onClick={() => {
+                  setLanguage('pt-PT');
+                  setShowLanguageMenu(false);
+                }}
+                style={{
+                  width: '100%',
+                  padding: '0.75rem 1rem',
+                  background: language === 'pt-PT' ? '#E5DBC7' : 'transparent',
+                  border: 'none',
+                  borderBottom: '1px solid #E5DBC7',
+                  cursor: 'pointer',
+                  fontFamily: "'Jost', sans-serif",
+                  fontSize: '0.875rem',
+                  fontWeight: language === 'pt-PT' ? 700 : 400,
+                  color: '#1B1B1B',
+                  textAlign: 'left',
+                  transition: 'background 0.2s ease'
+                }}
+                onMouseEnter={(e) => {
+                  if (language !== 'pt-PT') e.currentTarget.style.background = '#F5F5F0';
+                }}
+                onMouseLeave={(e) => {
+                  if (language !== 'pt-PT') e.currentTarget.style.background = 'transparent';
+                }}
+              >
+                Português de Portugal
+              </button>
+              <button
+                onClick={() => {
+                  setLanguage('pt-BR');
+                  setShowLanguageMenu(false);
+                }}
+                style={{
+                  width: '100%',
+                  padding: '0.75rem 1rem',
+                  background: language === 'pt-BR' ? '#E5DBC7' : 'transparent',
+                  border: 'none',
+                  cursor: 'pointer',
+                  fontFamily: "'Jost', sans-serif",
+                  fontSize: '0.875rem',
+                  fontWeight: language === 'pt-BR' ? 700 : 400,
+                  color: '#1B1B1B',
+                  textAlign: 'left',
+                  transition: 'background 0.2s ease'
+                }}
+                onMouseEnter={(e) => {
+                  if (language !== 'pt-BR') e.currentTarget.style.background = '#F5F5F0';
+                }}
+                onMouseLeave={(e) => {
+                  if (language !== 'pt-BR') e.currentTarget.style.background = 'transparent';
+                }}
+              >
+                Português do Brasil
+              </button>
+            </div>
+          )}
+        </div>
+      </div>
+
       {/* Hero Section */}
       <section className="bg-grain-pulp relative py-16 px-4 text-center overflow-hidden">
         <div className="relative z-10">
@@ -504,7 +613,9 @@ const Index = () => {
             <img src="/lovable-uploads/847498a7-1f70-467a-8fe7-ce3a3442ab78.png" alt="Foto de Pedro Armbrust, mentor" />
           </div>
           <div className="mentor-bio">
-            <h2 className="mentor-title" style={{textShadow: '3px 3px 0px #A8DEE0'}}>Sobre o Mentor: Pedro Armbrust</h2>
+            <h2 className="mentor-title" style={{textShadow: '3px 3px 0px #A8DEE0'}}>
+              <span style={{fontSize: '50%'}}>Sobre o Mentor:</span> Pedro Armbrust
+            </h2>
             <p className="mentor-text">
               A sua missão é desmistificar a complexidade da Inteligência Artificial, traduzindo-a em estratégias práticas que lhe permitem ganhar eficiência e comprovar o ROI do uso de IA no Marketing.
             </p>
