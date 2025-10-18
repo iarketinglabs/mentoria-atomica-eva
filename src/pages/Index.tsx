@@ -4,6 +4,7 @@ import { Globe } from 'lucide-react';
 const Index = () => {
   const [language, setLanguage] = useState<'pt-PT' | 'pt-BR'>('pt-PT');
   const [showLanguageMenu, setShowLanguageMenu] = useState(false);
+  const [selectedMission, setSelectedMission] = useState<string>('');
   return (
     <div style={{ fontFamily: "'Jost', sans-serif", backgroundColor: '#FCF9F2', color: '#1B1B1B', margin: 0, padding: 0 }}>
       <style>{`
@@ -574,7 +575,7 @@ const Index = () => {
               <h3 className="font-oswald text-3xl text-[#1B1B1B] mb-6" style={{fontFamily: "'Oswald', sans-serif"}}>{language === 'pt-BR' ? 'A Solução: O Que Vai Construir' : 'A Solução: O Que Vais Construir'}</h3>
               <ul className="space-y-6 text-lg text-[#3D3D3D]">
                 <li className="flex items-start"><span className="text-[#67BBC0] font-bold text-2xl mr-4 mt-1">✓</span><span><strong>Uma equipa de marketing completa à {language === 'pt-BR' ? 'sua' : 'tua'} disposição:</strong> {language === 'pt-BR' ? 'Tenha um copywriter, um estratega, um designer e um analista de dados a trabalhar para si 24/7, libertando o seu tempo para o que realmente importa.' : 'Terás um copywriter, um estratega, um designer e um analista de dados a trabalhar para ti 24/7, libertando o teu tempo para o que realmente importa.'}</span></li>
-                <li className="flex items-start"><span className="text-[#67BBC0] font-bold text-2xl mr-4 mt-1">✓</span><span><strong>A capacidade de prototipar o impossível:</strong> com o Vibe Coding, Ideias que antes ficavam na gaveta por serem muito caras ou complexas, agora podem ser testadas e lançadas em dias, não em meses.</span></li>
+                <li className="flex items-start"><span className="text-[#67BBC0] font-bold text-2xl mr-4 mt-1">✓</span><span><strong>A capacidade de prototipar o impossível:</strong> com o Vibe Coding, {language === 'pt-BR' ? 'Ideias' : 'ideias'} que antes ficavam na gaveta por serem muito caras ou complexas, agora podem ser testadas e lançadas em dias, não em meses.</span></li>
                 <li className="flex items-start"><span className="text-[#67BBC0] font-bold text-2xl mr-4 mt-1">✓</span><span><strong>O fim das tarefas repetitivas:</strong> {language === 'pt-BR' ? 'Aprenda a automatizar tudo o que é aborrecido, demorado e de baixo valor, para que possa focar a sua energia onde ela cria mais impacto e diversão.' : 'Aprende a automatizar tudo o que é aborrecido, demorado e de baixo valor, para que possas focar a tua energia onde ela tem mais impacto e diversão.'}</span></li>
               </ul>
             </div>
@@ -625,7 +626,7 @@ const Index = () => {
               A sua carreira foi construída na linha da frente do marketing digital, onde liderou projetos de grande impacto:
             </p>
             <ul style={{marginTop: '1rem', marginBottom: '1rem', paddingLeft: '0', listStyle: 'none'}}>
-              <li style={{marginBottom: '0.75rem', color: '#3D3D3D', lineHeight: '1.6'}}>✱ <strong>Resultados Comprovados:</strong> Gerou um crescimento superior a 187% na receita digital de uma empresa através da reestruturação de funis de marketing e da automação de processos de CRM.</li>
+              <li style={{marginBottom: '0.75rem', color: '#3D3D3D', lineHeight: '1.6'}}>✱ <strong>Resultados Comprovados:</strong> Gerou um crescimento superior a 187% na receita digital de uma empresa {language === 'pt-PT' ? 'multinacional ' : ''}através da reestruturação de funis de marketing e da automação de processos de CRM.</li>
               <li style={{marginBottom: '0.75rem', color: '#3D3D3D', lineHeight: '1.6'}}>✱ <strong>Domínio de Conteúdo:</strong> Idealizou e construiu um blog de raiz que se tornou o principal canal de tráfego orgânico da empresa, ultrapassando as 66.000 visitas mensais.</li>
               <li style={{marginBottom: '0.75rem', color: '#3D3D3D', lineHeight: '1.6'}}>✱ <strong>Visão Estratégica:</strong> Liderou um projeto complexo de rebranding, implementando a nova identidade de marca no mercado.</li>
             </ul>
@@ -672,12 +673,12 @@ const Index = () => {
             <div style={{display: 'inline-block', background: '#67BBC0', color: '#f7f1e1', fontFamily: "'Caprasimo', serif", fontSize: '0.875rem', fontWeight: '700', padding: '0.25rem 0.75rem', borderRadius: '4px', marginTop: '0.5rem', marginBottom: '1rem'}}>
               Mentoria 1
             </div>
-            <p>{language === 'pt-BR' ? 'Vá muito além de vencer a "síndrome da página em branco". Nesta mentoria, irá transformar a IA de uma simples ferramenta para gerar rascunhos num verdadeiro copiloto estratégico.' : 'Vai muito além de vencer a "síndrome da página em branco". Nesta mentoria, vais transformar a IA de uma simples ferramenta para gerar rascunhos num verdadeiro copiloto estratégico.'}</p>
+            <p>{language === 'pt-BR' ? 'Vá muito além de vencer a "síndrome da página em branco". Nesta mentoria, irá transformar a IA de uma simples ferramenta para gerar rascunhos num verdadeiro copiloto estratégico.' : 'Vai muito além de vencer o "síndrome da página em branco". Nesta mentoria, vais transformar a IA de uma simples ferramenta para gerar rascunhos num verdadeiro copiloto estratégico.'}</p>
             <ul style={{marginTop: '1rem', marginBottom: '1rem', paddingLeft: '0', listStyle: 'none'}}>
               <li style={{marginBottom: '0.5rem', color: '#3D3D3D', lineHeight: '1.4'}}>✱ {language === 'pt-BR' ? 'Aprenda a planear, criar e otimizar conteúdo de alta performance que converte e encanta, aplicando hiper personalização em escala e com uma velocidade que antes parecia impossível.' : 'Aprende a planear, criar e otimizar conteúdo de alta performance que converte e encanta, aplicando hiper personalização em escala e com uma velocidade que antes parecia impossível.'}</li>
-              <li style={{marginBottom: '0.5rem', color: '#3D3D3D', lineHeight: '1.4'}}>✱ {language === 'pt-BR' ? 'Dominar a Engenharia de Prompt e de Contexto para construir um copiloto de confiança, que evita alucinações e lhe entrega análises críticas para as suas decisões estratégicas.' : 'Dominar a Engenharia de Prompt e de Contexto para construir um copiloto de confiança, que evita alucinações e te entrega análises críticas para as tuas decisões estratégicas.'}</li>
-              <li style={{marginBottom: '0.5rem', color: '#3D3D3D', lineHeight: '1.4'}}>✱ {language === 'pt-BR' ? 'Treinar a LLM para internalizar e replicar o tom de voz autêntico da sua marca em todo o ciclo de conteúdo, garantindo originalidade para se destacar do "AI Slop" genérico.' : 'Treinar a LLM para internalizar e replicar o tom de voz autêntico da tua marca em todo o ciclo de conteúdo, garantindo originalidade para te destacares do "AI Slop" genérico.'}</li>
-              <li style={{marginBottom: '0.5rem', color: '#3D3D3D', lineHeight: '1.4'}}>✱ {language === 'pt-BR' ? 'Construir, num laboratório prático, Agentes e ativos de marketing reais (e-mails, LPs, posts), enquanto faz um raio-x completo às ferramentas de vanguarda como ChatGPT, Gemini, Claude, Manus e Lovable.' : 'Construir, num laboratório prático, Agentes e ativos de marketing reais (e-mails, LPs, posts), enquanto fazes um raio-x completo às ferramentas de vanguarda como ChatGPT, Gemini, Claude, Manus e Lovable.'}</li>
+              <li style={{marginBottom: '0.5rem', color: '#3D3D3D', lineHeight: '1.4'}}>✱ {language === 'pt-BR' ? 'Dominar a Engenharia de Prompt e de Contexto para construir um copiloto de confiança, que evita alucinações e lhe entrega análises críticas para as suas decisões estratégicas.' : 'Domina a Engenharia de Prompt e de Contexto para construir um copiloto de confiança, que evita alucinações e te entrega análises críticas para as tuas decisões estratégicas.'}</li>
+              <li style={{marginBottom: '0.5rem', color: '#3D3D3D', lineHeight: '1.4'}}>✱ {language === 'pt-BR' ? 'Treinar a LLM para internalizar e replicar o tom de voz autêntico da sua marca em todo o ciclo de conteúdo, garantindo originalidade para se destacar do "AI Slop" genérico.' : 'Treina a LLM para internalizar e replicar o tom de voz autêntico da tua marca em todo o ciclo de conteúdo, garantindo originalidade para te destacares do "AI Slop" genérico.'}</li>
+              <li style={{marginBottom: '0.5rem', color: '#3D3D3D', lineHeight: '1.4'}}>✱ {language === 'pt-BR' ? 'Construir, num laboratório prático, Agentes e ativos de marketing reais (e-mails, LPs, posts), enquanto faz um raio-x completo às ferramentas de vanguarda como ChatGPT, Gemini, Claude, Manus e Lovable.' : 'Constrói, num laboratório prático, Agentes e ativos de marketing reais (e-mails, LPs, posts), enquanto fazes um raio-x completo às ferramentas de vanguarda como ChatGPT, Gemini, Claude, Manus e Lovable.'}</li>
             </ul>
           </div>
           <div className="card card-raised" style={{padding: '2rem', flex: '1', maxWidth: '400px'}}>
@@ -688,7 +689,7 @@ const Index = () => {
             </div>
             <p>{language === 'pt-BR' ? 'Abandone os orçamentos milionários e as barreiras técnicas que limitam a sua visão. Esta mentoria é o seu acesso a um estúdio de Hollywood no seu computador, transformando ideias em produções de qualidade profissional com uma fração do custo.' : 'Abandona os orçamentos milionários e as barreiras técnicas que limitam a tua visão. Esta mentoria é o teu acesso a um estúdio de Hollywood no teu computador, transformando ideias em produções de qualidade profissional com uma fração do custo.'}</p>
             <ul style={{marginTop: '1rem', marginBottom: '1rem', paddingLeft: '0', listStyle: 'none'}}>
-              <li style={{marginBottom: '0.5rem', color: '#3D3D3D', lineHeight: '1.4'}}>✱ Aplicar técnicas avançadas como engenharia de prompt de imagem e vídeo, consistência, upscale, VFX, lipsync e deepfake para um acabamento profissional.</li>
+              <li style={{marginBottom: '0.5rem', color: '#3D3D3D', lineHeight: '1.4'}}>✱ {language === 'pt-BR' ? 'Aplicar técnicas avançadas como engenharia de prompt de imagem e vídeo, consistência, upscale, VFX, lipsync e deepfake para um acabamento profissional.' : 'Aplica técnicas avançadas como engenharia de prompt de imagem e vídeo, consistência, upscale, VFX, lipsync e deepfake para um acabamento profissional.'}</li>
               <li style={{marginBottom: '0.5rem', color: '#3D3D3D', lineHeight: '1.4'}}>✱ {language === 'pt-BR' ? 'Construir o seu arsenal de produção completo, ao explorar workflows envolvendo Midjourney, Google Veo3, Eleven Labs, Descript, ChatGPT, Flux, Suno, HeyGen, Kling, Runway, Hailuo, Capcut e muitas outras.' : 'Constrói o teu arsenal de produção completo, ao explorar workflows envolvendo Midjourney, Google Veo3, Eleven Labs, Descript, ChatGPT, Flux, Suno, HeyGen, Kling, Runway, Hailuo, Capcut e muitas outras.'}</li>
               <li style={{marginBottom: '0.5rem', color: '#3D3D3D', lineHeight: '1.4'}}>✱ {language === 'pt-BR' ? 'Executar, num laboratório 100% prático, uma campanha do zero, desde a criação de moodboard, logo, produto, mockup, avatar, UGC até culminar na produção de um anúncio de 30 segundos feito inteiramente com IA.' : 'Executa, num laboratório 100% prático, uma campanha do zero, desde a criação de moodboard, logo, produto, mockup, avatar, UGC até culminar na produção de um anúncio de 30 segundos feito inteiramente com IA.'}</li>
             </ul>
@@ -699,12 +700,12 @@ const Index = () => {
             <div style={{display: 'inline-block', background: '#67BBC0', color: '#f7f1e1', fontFamily: "'Caprasimo', serif", fontSize: '0.875rem', fontWeight: '700', padding: '0.25rem 0.75rem', borderRadius: '4px', marginTop: '0.5rem', marginBottom: '1rem'}}>
               Mentoria 3
             </div>
-            <p>{language === 'pt-BR' ? 'Aprenda a habilidade mais importante do futuro e ganhe uma vantagem quase desleal sobre a concorrência. Domine automação, mesmo sem qualquer experiência técnica, elevando a sua produtividade a outro patamar.' : 'Aprende a habilidade mais importante do futuro e ganha uma vantagem quase desleal sobre a concorrência. Domina a automação, mesmo sem qualquer experiência técnica, elevando a tua produtividade a um novo patamar.'}</p>
+            <p>{language === 'pt-BR' ? 'Aprenda a habilidade mais importante do futuro e ganhe uma vantagem quase desleal sobre a concorrência. Domine automação, mesmo sem qualquer experiência técnica, elevando a sua produtividade a outro patamar.' : 'Aprende a habilidade mais importante do futuro e ganha uma vantagem quase desleal sobre a tua concorrência. Domina a automação, mesmo sem qualquer experiência técnica, elevando a tua produtividade a um novo patamar.'}</p>
             <ul style={{marginTop: '1rem', marginBottom: '1rem', paddingLeft: '0', listStyle: 'none'}}>
               <li style={{marginBottom: '0.5rem', color: '#3D3D3D', lineHeight: '1.4'}}>✱ {language === 'pt-BR' ? 'Ir além das automações lineares clássicas, aprendendo a construir e orquestrar sistemas com múltiplos Agentes de IA, capazes de lidar com ambiguidades e tomar decisões dinâmicas.' : 'Vai além das automações lineares clássicas, aprendendo a construir e orquestrar sistemas com múltiplos Agentes de IA, capazes de lidar com ambiguidades e tomar decisões dinâmicas.'}</li>
               <li style={{marginBottom: '0.5rem', color: '#3D3D3D', lineHeight: '1.4'}}>✱ {language === 'pt-BR' ? 'Dominar do zero um arsenal de ferramentas low/no-code (Make, n8n, Apify, Airtable) e explorar técnicas avançadas como RAG, APIs e MCPs para construir sistemas robustos.' : 'Domina do zero um arsenal de ferramentas low/no-code (Make, n8n, Apify, Airtable) e explora técnicas avançadas como RAG, APIs e MCPs para construir sistemas robustos.'}</li>
               <li style={{marginBottom: '0.5rem', color: '#3D3D3D', lineHeight: '1.4'}}>✱ {language === 'pt-BR' ? 'Executar projetos que automatizam problemas reais: desde a geração de leads por scraping, lançamento de campanhas e qualificação, até o agendamento de reuniões e atendimento.' : 'Executa projetos que automatizam problemas reais: desde a geração de leads por scraping, lançamento de campanhas e qualificação, até o agendamento de reuniões e atendimento.'}</li>
-              <li style={{marginBottom: '0.5rem', color: '#3D3D3D', lineHeight: '1.4'}}>✱ {language === 'pt-BR' ? 'Desbloquear o poder do Vibe Coding para desenvolver apps, ferramentas e lead magnets complexos sem saber programar. Foque na ideia e resultado, em um fluxo contínuo e agradável de criação, enquanto a IA faz o trabalho duro.' : 'Desbloquea o poder do Vibe Coding para desenvolver apps, ferramentas e lead magnets complexos sem saber programar. Foca-te na ideia e resultado, num fluxo contínuo e agradável de criação, enquanto a IA faz o trabalho duro.'}</li>
+              <li style={{marginBottom: '0.5rem', color: '#3D3D3D', lineHeight: '1.4'}}>✱ {language === 'pt-BR' ? 'Desbloquear o poder do Vibe Coding para desenvolver apps, ferramentas e lead magnets complexos sem saber programar. Foque na ideia e resultado, em um fluxo contínuo e agradável de criação, enquanto a IA faz o trabalho duro.' : 'Desbloqueia o poder do Vibe Coding para desenvolver apps, ferramentas e lead magnets complexos sem saber programar. Foca-te na ideia e resultado, num fluxo contínuo e agradável de criação, enquanto a IA faz o trabalho duro.'}</li>
             </ul>
           </div>
         </div>
@@ -727,7 +728,7 @@ const Index = () => {
               <img src="/lovable-uploads/36c32b95-f826-4be1-a77a-6d166afa9ec9.png" alt="Guias Vivos" />
               <div className="bonus-item-content">
                 <h3>1 Ano de Guias Vivos</h3>
-                <div className="value-tag"><s>Valor: 324€/ano</s></div>
+                <div className="value-tag"><s>Valor: {language === 'pt-BR' ? '2.000R$' : '324€/ano'}</s></div>
                 <span className="tag-included">incluído</span>
                 <p>{language === 'pt-BR' ? 'O seu investimento na mentoria não pode ficar obsoleto. Por isso, criámos os nossos 3 Guias Vivos: uma base de conhecimento que está sempre 100% atualizada com as novidades de IA. Tenha acesso 24/7 a prompts, ferramentas testadas e estratégias que só partilhamos dentro do nosso ecossistema.' : 'O teu investimento na mentoria não pode ficar obsoleto. Por isso, criámos os nossos 3 Guias Vivos: uma base de conhecimento que está sempre 100% atualizada com as novidades de IA. Terás acesso 24/7 a prompts, ferramentas testadas e estratégias que só partilhamos dentro do nosso ecossistema.'}</p>
               </div>
@@ -736,7 +737,7 @@ const Index = () => {
               <img src="/lovable-uploads/7dd9bd91-9bcd-4fd6-80b4-8c8dc8ee647e.png" alt="Comunidade Discord" />
               <div className="bonus-item-content">
                 <h3>Comunidade Visionários do Marketing</h3>
-                <div className="value-tag"><s>Valor: 108€/ano</s></div>
+                <div className="value-tag"><s>Valor: {language === 'pt-BR' ? '630R$' : '108€/ano'}</s></div>
                 <span className="tag-included">incluído</span>
                 <p>{language === 'pt-BR' ? 'A inovação é um desporto de equipa. Entre para o círculo fechado dos profissionais que, como você, estão na linha da frente a testar as novas fronteiras da IA. Um ambiente para partilhar o que funciona, receber ajuda para o que não funciona, e encontrar parceiros para as suas próximas missões profissionais.' : 'A inovação é um desporto de equipa. Entra para o círculo fechado dos profissionais que, como tu, estão na linha da frente a testar as novas fronteiras da IA. Um ambiente para partilhar o que funciona, receber ajuda para o que não funciona, e encontrar parceiros para as tuas próximas missões profissionais.'}</p>
               </div>
@@ -781,36 +782,85 @@ const Index = () => {
           <div className="cards-container">
           <div className="price-card">
             <h3>Mentoria Avulsa</h3>
-            <div className="price-original">230€</div>
-            <div className="price-value">184€</div>
+            <div className="price-original">{language === 'pt-BR' ? '1.450R$' : '230€'}</div>
+            <div className="price-value">{language === 'pt-BR' ? '1.200R$' : '184€'}</div>
             <div className="price-note">(20% desconto pré-lançamento)</div>
             <ul className="inclusions">
               <li><span>✱</span>{language === 'pt-BR' ? '20h de mentoria ao longo de 1 mês' : '20h de mentoria durante 1 mês'}</li>
               <li><span>✱</span>Grupos de 8 a 12 profissionais de marketing</li>
-              <li><span>✱</span>Guias Vivos <s>(324€/ano)</s> <span className="tag-included-container"><span className="tag-included-bg"><span className="tag-included-text">incluído</span></span></span></li>
-              <li><span>✱</span>Comunidade Visionários <s>(108€/ano)</s> <span className="tag-included-container"><span className="tag-included-bg"><span className="tag-included-text">incluído</span></span></span></li>
+              <li><span>✱</span>Guias Vivos <s>({language === 'pt-BR' ? '2.000R$' : '324€/ano'})</s> <span className="tag-included-container"><span className="tag-included-bg"><span className="tag-included-text">incluído</span></span></span></li>
+              <li><span>✱</span>Comunidade Visionários <s>({language === 'pt-BR' ? '680R$' : '108€/ano'})</s> <span className="tag-included-container"><span className="tag-included-bg"><span className="tag-included-text">incluído</span></span></span></li>
             </ul>
             <label htmlFor="mission-select" style={{fontFamily:"'Caprasimo',serif", fontSize:'1rem', color:'#1B1B1B', marginBottom:'0.5rem'}}>{language === 'pt-BR' ? 'Escolha a sua missão:' : 'Escolhe a tua missão:'}</label>
-            <select id="mission-select" className="select-mission">
-              <option value="" selected hidden>Selecionar missão</option>
+            <select 
+              id="mission-select" 
+              className="select-mission"
+              value={selectedMission}
+              onChange={(e) => setSelectedMission(e.target.value)}
+            >
+              <option value="" hidden>Selecionar missão</option>
               <option value="conteudo">IA para Criação de Conteúdo</option>
               <option value="audiovisual">IA para Produção Audiovisual</option>
               <option value="automacao">IA para Automação de Marketing</option>
             </select>
-            <div className="progress-container" id="vacancy-progress">
-              <div className="progress-label">Vagas disponíveis: <span id="vacancy-text">12</span></div>
-              <div className="progress-bar">
-                <div className="progress-fill" id="progress-bar-fill"></div>
-                <div className="progress-count" id="progress-count">0</div>
+            
+            {selectedMission && (
+              <div style={{marginTop: '1rem', marginBottom: '1rem'}}>
+                <div style={{
+                  display: 'flex',
+                  gap: '4px',
+                  marginBottom: '0.5rem',
+                  height: '24px'
+                }}>
+                  {Array.from({ length: 12 }).map((_, index) => {
+                    const enrollmentCounts = { conteudo: 3, audiovisual: 6, automacao: 9 };
+                    const enrolled = enrollmentCounts[selectedMission as keyof typeof enrollmentCounts] || 0;
+                    return (
+                      <div
+                        key={index}
+                        style={{
+                          flex: 1,
+                          backgroundColor: index < enrolled ? '#67BBC0' : '#E5DBC7',
+                          borderRadius: '2px',
+                          transition: 'background-color 0.3s ease'
+                        }}
+                      />
+                    );
+                  })}
+                </div>
+                <div style={{
+                  fontSize: '0.875rem',
+                  color: '#3D3D3D',
+                  marginBottom: '0.75rem',
+                  textAlign: 'center'
+                }}>
+                  {(() => {
+                    const enrollmentCounts = { conteudo: 3, audiovisual: 6, automacao: 9 };
+                    const enrolled = enrollmentCounts[selectedMission as keyof typeof enrollmentCounts] || 0;
+                    return `${12 - enrolled} vagas disponíveis`;
+                  })()}
+                </div>
+                <div style={{
+                  fontSize: '0.95rem',
+                  color: '#1B1B1B',
+                  fontWeight: 600,
+                  textAlign: 'center',
+                  fontFamily: "'Oswald', sans-serif"
+                }}>
+                  {selectedMission === 'conteudo' && (language === 'pt-BR' ? 'Horário: 2ª e 4ª às 17h' : 'Horário: 2ª e 4ª às 21h')}
+                  {selectedMission === 'audiovisual' && (language === 'pt-BR' ? 'Horário: 3ª e 5ª às 17h' : 'Horário: 3ª e 5ª às 21h')}
+                  {selectedMission === 'automacao' && (language === 'pt-BR' ? 'Horário: 2ª e 4ª às 17h' : 'Horário: 2ª e 4ª às 21h')}
+                </div>
               </div>
-            </div>
+            )}
+            
             <a href="#formulario" className="cta-card">Reservar Mentoria Avulsa</a>
           </div>
           <div className="price-card highlight">
             <div className="badge">MELHOR VALOR</div>
             <h3>Pacote 3 Mentorias</h3>
-            <div className="price-original">690€</div>
-            <div className="price-value">497€</div>
+            <div className="price-original">{language === 'pt-BR' ? '4.350R$' : '690€'}</div>
+            <div className="price-value">{language === 'pt-BR' ? '3.140R$' : '497€'}</div>
             <div className="price-note">(+10% desconto no pacote)</div>
             <ul className="inclusions">
               <li><span>✱</span>60h de mentoria (3 x 20h)</li>
@@ -841,25 +891,25 @@ const Index = () => {
             <details><summary>E se eu faltar a uma aula ao vivo?</summary><div>{language === 'pt-BR' ? 'Não há problema. Todas as sessões são gravadas e disponibilizadas na nossa plataforma em até 24 horas. Poderá assistir quando quiser e quantas vezes precisar. Além disso, pode sempre colocar as suas dúvidas sobre a aula na comunidade do Discord.' : 'Não há problema. Todas as sessões são gravadas e disponibilizadas na nossa plataforma até 24 horas. Poderás assistir quando quiseres e quantas vezes precisares. Além disso, podes sempre colocar as tuas dúvidas sobre a aula na comunidade do Discord.'}</div></details>
             <details><summary>As ferramentas de IA que vamos usar são pagas? Terei custos extra?</summary><div>{language === 'pt-BR' ? 'A grande maioria das mais de 30 ferramentas que exploramos possui versões gratuitas robustas, que são suficientes para realizar todos os exercícios da mentoria. Para algumas ferramentas mais avançadas, mostraremos como aproveitar os períodos de teste gratuito (free trials) para que não tenha qualquer custo adicional durante o curso.' : 'A grande maioria das mais de 30 ferramentas que exploramos possui versões gratuitas robustas, que são suficientes para realizar todos os exercícios da mentoria. Para algumas ferramentas mais avançadas, mostraremos como aproveitar os períodos de teste gratuito (free trials) para que não tenhas qualquer custo adicional durante o curso.'}</div></details>
             <details><summary>Esta mentoria é só teórica ou vamos mesmo "pôr a mão na massa"?</summary><div>{language === 'pt-BR' ? 'A nossa filosofia é \'aprender fazendo\'. Cada sessão tem uma componente teórica curta e direta, seguida de exercícios práticos onde você irá aplicar imediatamente o que aprendeu. O objetivo é que termine cada aula com algo novo que pode usar no seu trabalho no dia seguinte.' : 'A nossa filosofia é \'aprender fazendo\'. Cada sessão tem uma componente teórica curta e direta, seguida de exercícios práticos onde vais aplicar imediatamente o que aprendeste. O objetivo é que termines cada aula com algo novo que podes usar no teu trabalho no dia seguinte.'}</div></details>
-            <details><summary>Que tipo de suporte terei se ficar com dúvidas ou bloqueado?</summary><div>{language === 'pt-BR' ? 'Você nunca estará sozinho. Terá suporte contínuo através de três canais: durante as aulas ao vivo para interação direta, na nossa comunidade exclusiva no Discord para perguntas rápidas e feedback dos colegas e do mentor, e nas sessões mensais de Q&A da comunidade, mesmo após o fim da sua mentoria.' : 'Nunca estarás sozinho. Terás suporte contínuo através de três canais: durante as aulas ao vivo para interação direta; na nossa comunidade exclusiva no Discord para perguntas rápidas e feedback dos colegas e do mentor, e; nas sessões mensais de Q&A da comunidade, mesmo após o fim da tua mentoria.'}</div></details>
-            <details><summary>O acesso à comunidade e aos guias é vitalício?</summary><div>{language === 'pt-BR' ? 'O seu acesso à comunidade \'Visionários do Marketing\' no Discord é vitalício. O acesso aos \'Guias Vivos\' está incluído por um período de 12 meses após a sua inscrição, garantindo que se mantém atualizado durante um ano inteiro.' : 'O seu acesso à comunidade \'Visionários do Marketing\' no Discord é vitalício. O acesso aos \'Guias Vivos\' está incluído por um período de 12 meses após a tua inscrição, garantindo que te manténs atualizado durante um ano inteiro.'}</div></details>
-            <details><summary>Qual é a diferença entre esta mentoria e um curso online sobre IA?</summary><div>{language === 'pt-BR' ? 'Cursos ensinam ferramentas. A mentoria Atómica ensina-o a pensar e agir estrategicamente com IA — com acompanhamento direto, frameworks testados em projetos reais e resultados que pode aplicar já na sua rotina de marketing.' : 'Cursos ensinam ferramentas. A mentoria Atómica ensina-te a pensar e agir estrategicamente com IA — com acompanhamento direto, frameworks testados em projetos reais e resultados que podes aplicar já na tua rotina de marketing.'}</div></details>
-            <details><summary>Quanto tempo preciso dedicar por semana?</summary><div>{language === 'pt-BR' ? 'Cada sessão tem em média 90 minutos, e todas ficam gravadas. Além disso, propomos desafios práticos rápidos (30–60 minutos) para aplicar o que aprendeu no seu próprio contexto. Em resumo: 2 a 3 horas por semana são suficientes para tirar o máximo proveito.' : 'Cada sessão tem em média 90 minutos, e todas ficam gravadas. Além disso, propomos desafios práticos rápidos (30–60 minutos) para aplicares o que aprendeste no teu próprio contexto. Em resumo: 2 a 3 horas por semana são suficientes para tirares o máximo proveito.'}</div></details>
-            <details><summary>As turmas têm vagas limitadas?</summary><div>{language === 'pt-BR' ? 'Sim — cada edição tem no máximo 12 participantes, para garantir acompanhamento direto e espaço para prática.' : 'Sim — cada edição tem no máximo 12 participantes, para garantir acompanhamento direto e espaço para a prática.'}</div></details>
+            <details><summary>Que tipo de suporte terei se ficar com dúvidas ou bloqueado?</summary><div>{language === 'pt-BR' ? 'Você nunca estará sozinho. Terá suporte contínuo através de três canais: durante as aulas ao vivo para interação direta, na nossa comunidade exclusiva no Discord para perguntas rápidas e feedback dos colegas e do mentor, e nas sessões mensais de Q&A da comunidade, mesmo após o fim da sua mentoria.' : 'Nunca estarás sozinho. Terás suporte contínuo através de três canais: durante as aulas ao vivo para interação direta; na nossa comunidade exclusiva no Discord para perguntas rápidas e feedback dos colegas e do mentor; e, nas sessões mensais de Q&A da comunidade, mesmo após o fim da tua mentoria.'}</div></details>
+            <details><summary>O acesso à comunidade e aos guias é vitalício?</summary><div>{language === 'pt-BR' ? 'O seu acesso à comunidade \'Visionários do Marketing\' no Discord é vitalício. O acesso aos \'Guias Vivos\' está incluído por um período de 12 meses após a sua inscrição, garantindo que se mantém atualizado durante um ano inteiro.' : 'O teu acesso à comunidade \'Visionários do Marketing\' no Discord é vitalício. O acesso aos \'Guias Vivos\' está incluído por um período de 12 meses após a tua inscrição, garantindo que te manténs atualizado durante um ano inteiro.'}</div></details>
+            <details><summary>Qual é a diferença entre esta mentoria e um curso online sobre IA?</summary><div>{language === 'pt-BR' ? 'Cursos ensinam ferramentas. A mentoria Atomica leva-o a outro nível: ensina-o a pensar e agir estrategicamente com IA, com acompanhamento direto, frameworks comprovadas e resultados imediatos. Enquanto os cursos convencionais ficam desatualizados rapidamente, a Atómica está sempre na linha da frente dos últimos lançamentos de IA — para que aplique hoje o que o mercado só vai descobrir amanhã.' : 'Cursos ensinam ferramentas. A mentoria Atomica leva-te a outro nível: ensina-te a pensar e agir estrategicamente com IA, com acompanhamento direto, frameworks comprovadas e resultados imediatos.'}</div></details>
+            <details><summary>Quanto tempo preciso dedicar por semana?</summary><div>{language === 'pt-BR' ? 'Cada sessão tem em média 2h30 e todas ficam gravadas para que você possa rever quando quiser. Além disso, propomos desafios práticos rápidos (30 a 60 minutos) para aplicar o que aprendeu no seu próprio contexto.\nAo todo, o curso conta com 20 horas de formação, e 2 a 3 horas por semana são suficientes para aproveitar ao máximo a mentoria.' : 'Cada sessão tem em média 2h30 e todas ficam gravadas para que possas rever quando quiseres. Além disso, propomos desafios práticos rápidos (30–60 minutos) para aplicares o que aprendeste no teu próprio contexto.\nNo total, o curso inclui 20 horas de formação, e bastam 2 a 3 horas por semana para tirares o máximo proveito da mentoria.'}</div></details>
+            <details><summary>As turmas têm vagas limitadas?</summary><div>{language === 'pt-BR' ? 'Sim! Cada turma é formada por, no máximo, 12 participantes, para que você tenha atenção individual, tempo para praticar e ainda troque experiências com outros profissionais, ampliando seu networking de forma estratégica.' : 'Sim! Cada turma é formada por, no máximo, 12 participantes, para que tenhas a atenção individual necessária, tempo para praticar e ainda troques experiências com outros profissionais, ampliando teu networking de forma estratégica.'}</div></details>
           </div>
           <div className="value-stack card-raised">
             <p><strong>Resumo de Valor:</strong></p>
             <ul>
-              <li>Mentoria de 20h (Valor Original: 230€)</li>
-              <li>Guias Vivos (Assinatura Anual: 324€)</li>
-              <li>Comunidade Visionários do Marketing (Assinatura Anual: 108€)</li>
+              <li>Mentoria de 20h (Valor Original: {language === 'pt-BR' ? '1.450R$' : '230€'})</li>
+              <li>Guias Vivos (Assinatura Anual: {language === 'pt-BR' ? '2.000R$' : '324€'})</li>
+              <li>Comunidade Visionários do Marketing (Assinatura Anual: {language === 'pt-BR' ? '680R$' : '108€'})</li>
             </ul>
-            <p><strong>Valor Original Total:</strong> <span style={{color:'#FF304C', fontWeight:700}}>662€</span></p>
-            <div className="investment-highlight">{language === 'pt-BR' ? 'O seu investimento hoje:' : 'O teu investimento hoje:'} Apenas <span style={{color: '#1B1B1B', textShadow: '2px 2px 0px #FCCA29'}}>184€</span></div>
+            <p><strong>Valor Original Total:</strong> <span style={{color:'#FF304C', fontWeight:700}}>{language === 'pt-BR' ? '4.180R$' : '662€'}</span></p>
+            <div className="investment-highlight">{language === 'pt-BR' ? 'O seu investimento hoje:' : 'O teu investimento hoje:'} Apenas <span style={{color: '#1B1B1B', textShadow: '2px 2px 0px #FCCA29'}}>{language === 'pt-BR' ? '1.200R$' : '184€'}</span></div>
           </div>
           <div className="cta-final" style={{textAlign:'center'}}>
             <h2 style={{fontFamily:"'Caprasimo',serif", fontSize:'2.5rem', color:'#1B1B1B', marginBottom:'1rem', textShadow: '3px 3px 0px #A8DEE0'}}>
-              {language === 'pt-BR' ? 'Pronto para assumir o comando da sua carreira?' : 'Pronto para assumires o comando da tua carreira?'}
+              {language === 'pt-BR' ? 'Pronto para assumir o comando da sua carreira?' : 'Pronto para assumires o comando da tua carreira profissional?'}
             </h2>
             <a href="#formulario" className="cta-primary">ASSUMIR O MEU LUGAR NO COMANDO</a>
             <p style={{fontSize:'0.875rem', marginTop:'0.75rem', color:'#3D3D3D'}}>
@@ -966,19 +1016,6 @@ const Index = () => {
         </div>
       </footer>
 
-      <script dangerouslySetInnerHTML={{
-        __html: `
-          const mapping = {conteudo:25, audiovisual:50, automacao:75};
-          document.getElementById('mission-select').addEventListener('change', function() {
-            const percent = mapping[this.value] || 0;
-            document.getElementById('vacancy-progress').style.display = 'flex';
-            document.getElementById('progress-bar-fill').style.width = percent + '%';
-            const reserved = Math.round(percent * 12 / 100);
-            document.getElementById('progress-count').textContent = reserved;
-            document.getElementById('vacancy-text').textContent = (12 - reserved);
-          });
-        `
-      }} />
     </div>
   );
 };
