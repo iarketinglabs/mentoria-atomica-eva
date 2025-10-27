@@ -698,7 +698,7 @@ const Index = () => {
             }
             
             try {
-              const response = await fetch('https://n8n.srv873297.hstgr.cloud/webhook/09ed2506-0db1-41f5-9e24-770ebae9c1b3', {
+              const response = await fetch('https://n8n-n8n.1wswqf.easypanel.host/webhook/09ed2506-0db1-41f5-9e24-770ebae9c1b3', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: params.toString()
