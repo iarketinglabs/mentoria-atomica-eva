@@ -1,7 +1,10 @@
-
-import React from 'react';
+import React, { useState } from 'react';
+import { Globe } from 'lucide-react';
 
 const Index = () => {
+  const [language, setLanguage] = useState<'pt-PT' | 'pt-BR'>('pt-PT');
+  const [showLanguageMenu, setShowLanguageMenu] = useState(false);
+  const [selectedMission, setSelectedMission] = useState<string>('');
   return (
     <div style={{ fontFamily: "'Jost', sans-serif", backgroundColor: '#FCF9F2', color: '#1B1B1B', margin: 0, padding: 0 }}>
       <style>{`
@@ -61,6 +64,11 @@ const Index = () => {
             background: #A8DEE0;
         }
 
+        /* Add hover shadow effect for "Esta missão é para si?" cards */
+        .mission-card:hover {
+            box-shadow: 12px 12px 0px #1B1B1B;
+        }
+
         /* Mobile trust logos scroll */
         @media(max-width: 767px) {
             .trust-logos {
@@ -86,6 +94,78 @@ const Index = () => {
             h1 { font-size: 3rem !important; }
             h2, .bab-title { font-size: 2.25rem !important; }
             h3 { font-size: 1.75rem !important; }
+            
+            /* Company logos grid 2x2 - remove all margins */
+            .company-logos-grid {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr;
+                gap: 1.5rem;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+            .company-logos-grid img {
+                margin: 0 !important;
+            }
+            
+            /* Retro-futurista image 20% smaller, max 550px */
+            .retro-futurista-img {
+                max-width: 280px !important;
+            }
+            
+            /* Mission cards padding 15px */
+            .mission-card {
+                padding: 15px !important;
+            }
+            
+            /* Lab and rocket images centered */
+            .lab-img, .rocket-img {
+                margin-left: auto !important;
+                margin-right: auto !important;
+                display: block;
+            }
+            
+            /* Mentor photo 35% smaller and centered */
+            .mentor-photo img {
+                width: 255px !important;
+                max-width: 255px !important;
+                margin: 0 auto !important;
+                display: block;
+            }
+            
+            /* Pillar cards margin-bottom 50px between them */
+            .pillar-cards .card:not(:last-child) {
+                margin-bottom: 50px;
+            }
+            
+            /* Bonus header title keeps desktop line-height */
+            /* Bonus included text line-height 15px max */
+            .bonus-included-text {
+                line-height: 15px !important;
+            }
+            
+            /* Bonus items centered layout for mobile */
+            .bonus-guides, .bonus-community {
+                flex-direction: column !important;
+                align-items: center !important;
+                text-align: center !important;
+            }
+            .bonus-guides img, .bonus-community img {
+                margin: 0 auto 1rem auto !important;
+            }
+            
+            /* 1 Ano de Guias Vivos margin-bottom 50px */
+            .bonus-guides {
+                margin-bottom: 50px !important;
+            }
+            
+            /* FAQ padding 15px */
+            .faq-cta details > summary {
+                padding: 1rem 15px !important;
+            }
+            .faq-cta details > div {
+                padding: 1rem 15px !important;
+            }
         }
 
         .cta-primary{
@@ -228,14 +308,121 @@ const Index = () => {
         .signup-form .checkbox-custom input:checked::before { content:'✱'; position:absolute; top: -3px; left: 2px; color:#67BBC0; font-size:1.25rem; }
       `}</style>
 
+      {/* Language Switcher */}
+      <div style={{position: 'fixed', top: '20px', right: '20px', zIndex: 1000}}>
+        <div style={{position: 'relative'}}>
+          <button
+            onClick={() => setShowLanguageMenu(!showLanguageMenu)}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              padding: '0.5rem 1rem',
+              background: '#FCF9F2',
+              border: '2px solid #1B1B1B',
+              borderRadius: '8px',
+              cursor: 'pointer',
+              fontFamily: "'Jost', sans-serif",
+              fontSize: '0.875rem',
+              fontWeight: 600,
+              color: '#1B1B1B',
+              boxShadow: '4px 4px 0px #67BBC0',
+              transition: 'all 0.2s ease'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'translate(-2px, -2px)';
+              e.currentTarget.style.boxShadow = '6px 6px 0px #67BBC0';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'translate(0, 0)';
+              e.currentTarget.style.boxShadow = '4px 4px 0px #67BBC0';
+            }}
+          >
+            <Globe size={18} />
+            <span>{language === 'pt-BR' ? 'PT-BR' : 'PT-PT'}</span>
+          </button>
+          
+          {showLanguageMenu && (
+            <div style={{
+              position: 'absolute',
+              top: 'calc(100% + 8px)',
+              right: 0,
+              background: '#FCF9F2',
+              border: '2px solid #1B1B1B',
+              borderRadius: '8px',
+              boxShadow: '4px 4px 0px #67BBC0',
+              minWidth: '200px',
+              overflow: 'hidden',
+              zIndex: 1001
+            }}>
+              <button
+                onClick={() => {
+                  setLanguage('pt-PT');
+                  setShowLanguageMenu(false);
+                }}
+                style={{
+                  width: '100%',
+                  padding: '0.75rem 1rem',
+                  background: language === 'pt-PT' ? '#E5DBC7' : 'transparent',
+                  border: 'none',
+                  borderBottom: '1px solid #E5DBC7',
+                  cursor: 'pointer',
+                  fontFamily: "'Jost', sans-serif",
+                  fontSize: '0.875rem',
+                  fontWeight: language === 'pt-PT' ? 700 : 400,
+                  color: '#1B1B1B',
+                  textAlign: 'left',
+                  transition: 'background 0.2s ease'
+                }}
+                onMouseEnter={(e) => {
+                  if (language !== 'pt-PT') e.currentTarget.style.background = '#F5F5F0';
+                }}
+                onMouseLeave={(e) => {
+                  if (language !== 'pt-PT') e.currentTarget.style.background = 'transparent';
+                }}
+              >
+                Português de Portugal
+              </button>
+              <button
+                onClick={() => {
+                  setLanguage('pt-BR');
+                  setShowLanguageMenu(false);
+                }}
+                style={{
+                  width: '100%',
+                  padding: '0.75rem 1rem',
+                  background: language === 'pt-BR' ? '#E5DBC7' : 'transparent',
+                  border: 'none',
+                  cursor: 'pointer',
+                  fontFamily: "'Jost', sans-serif",
+                  fontSize: '0.875rem',
+                  fontWeight: language === 'pt-BR' ? 700 : 400,
+                  color: '#1B1B1B',
+                  textAlign: 'left',
+                  transition: 'background 0.2s ease'
+                }}
+                onMouseEnter={(e) => {
+                  if (language !== 'pt-BR') e.currentTarget.style.background = '#F5F5F0';
+                }}
+                onMouseLeave={(e) => {
+                  if (language !== 'pt-BR') e.currentTarget.style.background = 'transparent';
+                }}
+              >
+                Português do Brasil
+              </button>
+            </div>
+          )}
+        </div>
+      </div>
+
       {/* Hero Section */}
       <section className="bg-grain-pulp relative py-16 px-4 text-center overflow-hidden">
         <div className="relative z-10">
           <h1 className="font-swanky text-5xl md:text-7xl font-normal leading-tight text-[#67BBC0]" style={{textShadow: '3px 3px 0px #1B1B1B', fontFamily: "'Fontdiner Swanky', cursive"}}>
-            Entre na Vanguarda do Marketing
+            {language === 'pt-BR' ? 'Entre na Vanguarda do Marketing' : 'Entra na Vanguarda do Marketing'}
           </h1>
           <h2 className="font-oswald text-3xl md:text-5xl font-medium leading-snug my-6 max-w-4xl mx-auto uppercase" style={{fontFamily: "'Oswald', sans-serif"}}>
-            Use IA para entregar em 5 dias o que hoje leva 30
+            {language === 'pt-BR' ? 'Use IA para entregar em 5 dias o que hoje leva 30' : 'Usa a IA para conquistares em 5 dias o que hoje farias em 30'}
           </h2>
           
           {/* Placeholder para Vídeo */}
@@ -246,7 +433,7 @@ const Index = () => {
           </div>
 
           <h3 className="font-oswald text-xl md:text-2xl font-medium leading-normal text-[#3D3D3D] max-w-4xl mx-auto mb-8" style={{fontFamily: "'Oswald', sans-serif"}}>
-            Enquanto os seus concorrentes apenas arranham a superfície do ChatGPT, este é o seu plano de voo para dominar a IA a sério e garantir a sua vantagem competitiva.
+            {language === 'pt-BR' ? 'Enquanto os seus concorrentes apenas arranham a superfície do ChatGPT, este é o seu plano de voo para dominar a IA a sério e garantir a sua vantagem competitiva.' : 'Enquanto a tua concorrência apenas arranha a superfície do ChatGPT, este é o teu plano de voo para dominar a IA a sério e garantir uma vantagem competitiva.'}
           </h3>
           <a href="#how-it-works" className="cta-primary mb-4">
             Reservar o meu lugar na Mentoria
@@ -258,7 +445,7 @@ const Index = () => {
           {/* Logos de Empresas */}
           <div className="mt-12">
             <p className="font-oswald text-lg text-[#3D3D3D] mb-4" style={{fontFamily: "'Oswald', sans-serif"}}>Empresas cujos colaboradores já foram nossos alunos:</p>
-            <div className="flex justify-center items-center space-x-8 md:space-x-12 grayscale opacity-60">
+            <div className="company-logos-grid flex justify-center items-center space-x-8 md:space-x-12 grayscale opacity-60">
               <img src="/lovable-uploads/c41a9516-d15e-4713-bd6e-3fbae0530b2c.png" alt="Logo Empresa 1" className="h-12" style={{height: '50px'}} />
               <img src="/lovable-uploads/38467e40-d55a-464e-a1a5-6583161e9211.png" alt="Logo Empresa 2" className="h-12" style={{height: '50px'}} />
               <img src="/lovable-uploads/9284f42b-9f7b-4b8a-8c55-a867f975594c.png" alt="Logo Empresa 3" className="h-12" style={{height: '50px'}} />
@@ -275,7 +462,7 @@ const Index = () => {
             A IA já não é o futuro, é o presente.
           </h2>
           <h3 className="font-oswald text-2xl md:text-3xl font-medium text-[#3D3D3D] mt-4 mb-8" style={{fontFamily: "'Oswald', sans-serif"}}>
-            Está no comando ou a ficar para trás?
+            {language === 'pt-BR' ? 'Está no comando ou a ficar para trás?' : 'Sentes-te no comando ou a ficar para trás?'}
           </h3>
           <p className="text-lg md:text-xl text-[#3D3D3D] mb-12 max-w-3xl mx-auto">
             O marketing que funcionava até Janeiro de 2025 está a tornar-se obsoleto. A cada dia que passa, a distância entre quem domina IA e quem apenas "usa o ChatGPT" aumenta exponencialmente.
@@ -284,7 +471,7 @@ const Index = () => {
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center mt-12">
           {/* Coluna da Esquerda: Imagem */}
           <div>
-            <img src="/lovable-uploads/04c82f71-7985-4a26-b53d-a81bb9857d83.png" alt="Ilustração retro-futurista de um marketer a comandar IAs" className="rounded-xl w-full max-w-[500px] mx-auto"/>
+            <img src="/lovable-uploads/04c82f71-7985-4a26-b53d-a81bb9857d83.png" alt="Ilustração retro-futurista de um marketer a comandar IAs" className="retro-futurista-img rounded-xl w-full max-w-[500px] mx-auto"/>
           </div>
           {/* Coluna da Direita: Grelha de Dores */}
           <div className="flex flex-col gap-6">
@@ -292,13 +479,13 @@ const Index = () => {
               <p className="text-lg"><span className="text-[#67BBC0] font-bold text-2xl mr-2">→</span><strong>A queda do tráfego orgânico:</strong> O Google AI Overview está a transformar o SEO, e as estratégias que antes garantiam visibilidade e resultados estão a perder relevância vertiginosamente.</p>
             </div>
             <div className="bg-[#FCF9F2] p-6 rounded-lg border border-[#E5DBC7]">
-              <p className="text-lg"><span className="text-[#67BBC0] font-bold text-2xl mr-2">→</span><strong>A nova expectativa do cliente:</strong> O seu cliente agora espera respostas instantâneas e mensagens hiper-personalizadas, um padrão estabelecido pela automação que os seus concorrentes já usam.</p>
+              <p className="text-lg"><span className="text-[#67BBC0] font-bold text-2xl mr-2">→</span><strong>A nova expectativa do cliente:</strong> {language === 'pt-BR' ? 'O seu cliente agora espera respostas instantâneas e mensagens hiper-personalizadas, um padrão estabelecido pela automação que os seus concorrentes já usam.' : 'O teu cliente espera respostas instantâneas e mensagens hiper-personalizadas, um padrão estabelecido pela automação que a tua concorrência já usa.'}</p>
             </div>
             <div className="bg-[#FCF9F2] p-6 rounded-lg border border-[#E5DBC7]">
               <p className="text-lg"><span className="text-[#67BBC0] font-bold text-2xl mr-2">→</span><strong>A democratização da concorrência:</strong> Qualquer um agora pode construir lead magnets, ferramentas e até SaaS sem código, o que torna o mercado mais competitivo e inovador do que nunca.</p>
             </div>
             <div className="bg-[#FCF9F2] p-6 rounded-lg border border-[#E5DBC7]">
-              <p className="text-lg"><span className="text-[#67BBC0] font-bold text-2xl mr-2">→</span><strong>A pressão por "super produtividade":</strong> O trabalho que antes exigia uma equipa está a ser centralizado numa só pessoa que orquestra IAs, o que eleva drasticamente a barra do que é esperado de um profissional de marketing.</p>
+              <p className="text-lg"><span className="text-[#67BBC0] font-bold text-2xl mr-2">→</span><strong>A pressão por "super produtividade":</strong> {language === 'pt-BR' ? 'O trabalho que antes exigia uma equipa está a ser centralizado numa só pessoa que orquestra IAs, o que eleva drasticamente a barra do que é esperado de um profissional de marketing.' : 'O trabalho que antes exigia uma equipa está a ser centralizado numa só pessoa que domina as IAs, o que eleva drasticamente a fasquia do que é esperado de um profissional de marketing.'}</p>
             </div>
           </div>
         </div>
@@ -308,43 +495,43 @@ const Index = () => {
       <section className="bg-grain-pulp relative py-16 px-4 overflow-hidden">
         <div className="max-w-6xl mx-auto text-center relative z-10">
           <h2 className="font-caprasimo text-4xl md:text-6xl font-bold leading-tight mb-12" style={{textShadow: '3px 3px 0px #FF8C9B', fontFamily: "'Caprasimo', serif"}}>
-            Esta missão é para si?
+            {language === 'pt-BR' ? 'Esta missão é para si?' : 'Esta missão é para ti?'}
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
             {/* Card Marketer */}
-            <div className="bg-[#FCF9F2] p-8 rounded-xl border-2 border-[#1B1B1B] text-center shadow-[8px_8px_0px_#1B1B1B]">
+            <div className="mission-card bg-[#FCF9F2] rounded-xl border-2 border-[#1B1B1B] text-center shadow-[8px_8px_0px_#1B1B1B] transition-all duration-300" style={{padding: '2rem'}}>
               <img src="/lovable-uploads/b5ad3c58-2619-4326-99a9-cf14c06792d5.png" alt="Ícone para Marketer" className="mx-auto mb-6 rounded-full border-2 border-[#1B1B1B]" style={{width: '170px', height: '170px'}} />
               <h3 className="font-caprasimo text-2xl text-[#1B1B1B] mb-1" style={{fontFamily: "'Caprasimo', serif"}}>PARA O(A) MARKETER</h3>
               <h4 className="font-oswald text-xl font-medium text-[#67BBC0] mb-4" style={{fontFamily: "'Oswald', sans-serif"}}>Que se recusa a ser obsoleto</h4>
               <p className="text-lg text-[#3D3D3D] leading-relaxed">
-                Sente a pressão para entregar mais, enquanto as táticas que levou anos para dominar perdem eficácia a cada dia. Esta mentoria é o seu rearmamento estratégico para transformar a ansiedade da substituição em autoridade, tornando-se o profissional que o mercado disputa.
+                {language === 'pt-BR' ? 'Sente a pressão para entregar mais, enquanto as táticas que levou anos para dominar perdem eficácia a cada dia. Esta mentoria é o seu rearmamento estratégico para transformar a ansiedade da substituição em autoridade, tornando-se o profissional que o mercado disputa.' : 'Sentes a pressão para entregar mais, enquanto as táticas que levaram anos para dominar perdem eficácia a cada dia que passa. Esta mentoria é o teu re-armamento estratégico para transformar a "ansiedade da substituição" em autoridade. Torna-te o profissional que o mercado disputa.'}
               </p>
             </div>
             {/* Card Diretor(a) */}
-            <div className="bg-[#FCF9F2] p-8 rounded-xl border-2 border-[#1B1B1B] text-center shadow-[8px_8px_0px_#1B1B1B]">
+            <div className="mission-card bg-[#FCF9F2] rounded-xl border-2 border-[#1B1B1B] text-center shadow-[8px_8px_0px_#1B1B1B] transition-all duration-300" style={{padding: '2rem'}}>
               <img src="/lovable-uploads/311299fb-2f65-4df0-a9ff-054964a5906e.png" alt="Ícone para Diretor" className="mx-auto mb-6 rounded-full border-2 border-[#1B1B1B]" style={{width: '170px', height: '170px'}} />
               <h3 className="font-caprasimo text-2xl text-[#1B1B1B] mb-1" style={{fontFamily: "'Caprasimo', serif"}}>PARA O(A) DIRETOR(A)</h3>
               <h4 className="font-oswald text-xl font-medium text-[#67BBC0] mb-4" style={{fontFamily: "'Oswald', sans-serif"}}>Que lidera a vanguarda</h4>
               <p className="text-lg text-[#3D3D3D] leading-relaxed">
-                Vê a concorrência a mover-se mais rápido e precisa de capacitar a sua equipa para não apenas competir, mas dominar. Transforme o seu departamento num centro de excelência em IA, entregando mais, com maior qualidade e menos recursos, e posicione a sua equipa — e a sua liderança — como a verdadeira vantagem competitiva da empresa.
+                {language === 'pt-BR' ? 'Vê a concorrência a mover-se mais rápido e precisa de capacitar a sua equipa para não apenas competir, mas dominar. Transforme o seu departamento num centro de excelência em IA, entregando mais, com maior qualidade e menos recursos, e posicione a sua equipa — e a sua liderança — como a verdadeira vantagem competitiva da empresa.' : 'Vês a concorrência a mover-se mais rápido e precisas de capacitar a tua equipa para não apenas competir, mas dominar. Transforma o teu departamento num centro de excelência em IA, entregando mais, com maior qualidade e menos recursos. Posiciona a tua equipa — e a tua liderança — como a verdadeira vantagem competitiva da empresa.'}
               </p>
             </div>
             {/* Card Criativo(a) */}
-            <div className="bg-[#FCF9F2] p-8 rounded-xl border-2 border-[#1B1B1B] text-center shadow-[8px_8px_0px_#1B1B1B]">
+            <div className="mission-card bg-[#FCF9F2] rounded-xl border-2 border-[#1B1B1B] text-center shadow-[8px_8px_0px_#1B1B1B] transition-all duration-300" style={{padding: '2rem'}}>
               <img src="/lovable-uploads/b63df122-307e-4ffc-b627-ac381dfa8f27.png" alt="Ícone para Criativo" className="mx-auto mb-6 rounded-full border-2 border-[#1B1B1B]" style={{width: '170px', height: '170px'}} />
               <h3 className="font-caprasimo text-2xl text-[#1B1B1B] mb-1" style={{fontFamily: "'Caprasimo', serif"}}>PARA O(A) CRIATIVO(A)</h3>
               <h4 className="font-oswald text-xl font-medium text-[#67BBC0] mb-4" style={{fontFamily: "'Oswald', sans-serif"}}>Cujos limites são a imaginação</h4>
               <p className="text-lg text-[#3D3D3D] leading-relaxed">
-                Percebe que os orçamentos para produções tradicionais estão a diminuir, enquanto a procura por volume e velocidade explode. Combine a sua visão única com o poder de um estúdio de Hollywood no seu computador, execute ideias antes impossíveis e torne-se um "time de uma pessoa só".
+                {language === 'pt-BR' ? 'Percebe que os orçamentos para produções tradicionais estão a diminuir, enquanto a procura por volume e velocidade explode. Combine a sua visão única com o poder de um estúdio de Hollywood no seu computador, execute ideias antes impossíveis e torne-se um "time de uma pessoa só".' : 'Percebes que os orçamentos para produções tradicionais estão a diminuir, enquanto a procura por volume e velocidade explode. Combina a tua visão única com o poder de um estúdio de Hollywood no teu computador. Executa ideias que antes eram impossíveis e torna-te uma pessoa "dos sete ofícios".'}
               </p>
             </div>
             {/* Card Empreendedor(a) */}
-            <div className="bg-[#FCF9F2] p-8 rounded-xl border-2 border-[#1B1B1B] text-center shadow-[8px_8px_0px_#1B1B1B]">
+            <div className="mission-card bg-[#FCF9F2] rounded-xl border-2 border-[#1B1B1B] text-center shadow-[8px_8px_0px_#1B1B1B] transition-all duration-300" style={{padding: '2rem'}}>
               <img src="/lovable-uploads/24e5342e-71fb-462e-9f42-f6147aa6c256.png" alt="Ícone para Empreendedor" className="mx-auto mb-6 rounded-full border-2 border-[#1B1B1B]" style={{width: '170px', height: '170px'}} />
               <h3 className="font-caprasimo text-2xl text-[#1B1B1B] mb-1" style={{fontFamily: "'Caprasimo', serif"}}>PARA O(A) EMPREENDEDOR(A)</h3>
               <h4 className="font-oswald text-xl font-medium text-[#67BBC0] mb-4" style={{fontFamily: "'Oswald', sans-serif"}}>Que ganha vantagem de forma ágil</h4>
               <p className="text-lg text-[#3D3D3D] leading-relaxed">
-                Sabe que neste novo mercado, a agilidade supera o tamanho e que os "mamutes" estão vulneráveis. Use a IA para impulsionar vendas, a partir de um marketing mais inteligente e eficiente com menos investimento. Ganhe vantagem competitiva sobre os concorrentes mais lentos e aproveite a maior reconfiguração do mercado do século.
+                {language === 'pt-BR' ? 'Sabe que neste novo mercado, a agilidade supera o tamanho e que os "mamutes" estão vulneráveis. Use a IA para impulsionar vendas, a partir de um marketing mais inteligente e eficiente com menos investimento. Ganhe vantagem competitiva sobre os concorrentes mais lentos e aproveite a maior reconfiguração do mercado do século.' : 'Já percebeste que neste novo mercado, a agilidade supera o tamanho e que os "mamutes" estão vulneráveis. Usa a IA para impulsionar vendas, a partir de um marketing mais inteligente e eficiente com menos investimento. Ganha vantagem competitiva sobre a concorrência mais lenta e aproveita a maior reconfiguração do mercado do século.'}
               </p>
             </div>
           </div>
@@ -358,19 +545,19 @@ const Index = () => {
             <img src="/lovable-uploads/d8bcdf7a-4eee-4f99-b2e1-8fb14e15a981.png" alt="Ícone de sobrecarga de informação" className="h-30 ml-0 mb-0" style={{width: '120px', height: '120px', marginLeft: '0px', marginBottom: '0px'}}/>
             <span className="font-oswald text-lg font-bold text-[#FF304C] block mb-2" style={{fontFamily: "'Oswald', sans-serif"}}>ANTES</span>
             <h3 className="font-caprasimo text-3xl text-[#1B1B1B] mb-2" style={{fontFamily: "'Caprasimo', serif"}}>Profissional Reativo</h3>
-            <p className="text-lg text-[#3D3D3D]">Afogado em ruído, a testar 'a ferramenta do dia' sem conseguir resultados que impressionem. Sente que os concorrentes estão a decolar enquanto você continua na pista, com medo de se tornar obsoleto.</p>
+            <p className="text-lg text-[#3D3D3D]">{language === 'pt-BR' ? 'Passa mais tempo a testar ferramentas do que a criar resultados. Sente que os concorrentes estão a decolar enquanto você continua na pista, com medo de se tornar obsoleto.' : 'Passas mais tempo a testar ferramentas do que a criar resultados. Sentes que a concorrência está a levantar voo enquanto tu continuas na pista, com medo de te tornares obsoleto. Dá medo, né?'}</p>
           </div>
           <div className="bab-step">
             <img src="/lovable-uploads/c20bd8ef-123a-4a7c-a077-ee2fdf3e7917.png" alt="Ícone de lançamento de jornada" className="h-30 ml-0 mb-0" style={{width: '120px', height: '120px', marginLeft: '0px', marginBottom: '0px'}}/>
             <span className="font-oswald text-lg font-bold text-[#67BBC0] block mb-2" style={{fontFamily: "'Oswald', sans-serif"}}>A PONTE</span>
             <h3 className="font-caprasimo text-3xl text-[#1B1B1B] mb-2" style={{fontFamily: "'Caprasimo', serif"}}>A Mentoria Atomica</h3>
-            <p className="text-lg text-[#3D3D3D]">Condensei quase 2 anos de experiência diária e mais de uma década em marketing neste plano de voo intensivo. Filtrei o ruído por si. Esta mentoria é a sua propulsão para saltar da frustração à vanguarda em 1 mês, sem passar por um longo processo de tentativa e erro.</p>
+            <p className="text-lg text-[#3D3D3D]">{language === 'pt-BR' ? 'Condensei quase 2 anos de experiência diária e mais de uma década em marketing neste plano de voo intensivo. Filtrei o ruído por si. Em apenas 30 dias, irá dominar fluxos práticos e frameworks prontos para implementar IA real no seu marketing.' : 'Condensei quase 2 anos de experiência diária e mais de uma década em marketing neste plano de voo intensivo. Filtrei o ruído por ti. Em apenas 30 dias, irás dominar fluxos práticos e frameworks prontos para implementar IA real no teu marketing.'}</p>
           </div>
           <div className="bab-step">
             <img src="/lovable-uploads/4566798f-cf76-47c1-a33b-3c7411f83489.png" alt="Ícone de sucesso e clareza" className="h-30 ml-0 mb-0" style={{width: '120px', height: '120px', marginLeft: '0px', marginBottom: '0px'}}/>
             <span className="font-oswald text-lg font-bold text-[#FCCA29] block mb-2" style={{fontFamily: "'Oswald', sans-serif"}}>DEPOIS</span>
             <h3 className="font-caprasimo text-3xl text-[#1B1B1B] mb-2" style={{fontFamily: "'Caprasimo', serif"}}>Estratega no Comando</h3>
-            <p className="text-lg text-[#3D3D3D]">Automatiza o trabalho repetitivo para se focar onde a sua criatividade e pensamento crítico brilham, transformando ideias complexas em realidade e sendo reconhecido como a referência de inovação na sua equipa.</p>
+            <p className="text-lg text-[#3D3D3D]">{language === 'pt-BR' ? 'Automatiza o trabalho repetitivo para se focar onde a sua criatividade e pensamento crítico brilham, transformando ideias complexas em realidade e ser a referência que a sua equipa procura quando o tema é inovação.' : 'Automatizas o trabalho repetitivo para te focares onde a tua criatividade e pensamento crítico brilham, transformando ideias complexas em realidade e ser a referência que a tua equipa procura quando o tema é inovação.'}</p>
           </div>
         </div>
       </section>
@@ -379,35 +566,35 @@ const Index = () => {
       <section className="bg-[#FEF8E4] py-16 px-4">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="font-caprasimo text-4xl md:text-6xl font-bold leading-tight mb-12" style={{textShadow: '3px 3px 0px #a8dee0', fontFamily: "'Caprasimo', serif"}}>
-            Saia da Teoria para Aplicações Práticas de IA no Marketing
+            {language === 'pt-BR' ? 'Saia da Teoria para Aplicações Práticas de IA no Marketing' : 'Sai da Teoria para Aplicações Práticas de IA no Marketing'}
           </h2>
           
           {/* Parte 1: A Solução */}
           <div className="grid md:grid-cols-2 gap-12 items-center mb-16 text-left">
             <div className="order-2 md:order-1">
-              <h3 className="font-oswald text-3xl text-[#1B1B1B] mb-6" style={{fontFamily: "'Oswald', sans-serif"}}>A Solução: O Que Vai Construir</h3>
+              <h3 className="font-oswald text-3xl text-[#1B1B1B] mb-6" style={{fontFamily: "'Oswald', sans-serif"}}>{language === 'pt-BR' ? 'A Solução: O Que Vai Construir' : 'A Solução: O Que Vais Construir'}</h3>
               <ul className="space-y-6 text-lg text-[#3D3D3D]">
-                <li className="flex items-start"><span className="text-[#67BBC0] font-bold text-2xl mr-4 mt-1">✓</span><span><strong>Uma equipa de marketing completa à sua disposição:</strong> Tenha um copywriter, um estratega, um designer e um analista de dados a trabalhar para si 24/7, libertando o seu tempo para o que realmente importa.</span></li>
-                <li className="flex items-start"><span className="text-[#67BBC0] font-bold text-2xl mr-4 mt-1">✓</span><span><strong>A capacidade de prototipar o impossível:</strong> com o Vibe Coding, Ideias que antes ficavam na gaveta por serem muito caras ou complexas, agora podem ser testadas e lançadas em dias, não em meses.</span></li>
-                <li className="flex items-start"><span className="text-[#67BBC0] font-bold text-2xl mr-4 mt-1">✓</span><span><strong>O fim das tarefas repetitivas:</strong> Aprenda a automatizar tudo o que é aborrecido, demorado e de baixo valor, para que possa focar a sua energia onde ela cria mais impacto e diversão.</span></li>
+                <li className="flex items-start"><span className="text-[#67BBC0] font-bold text-2xl mr-4 mt-1">✓</span><span><strong>Uma equipa de marketing completa à {language === 'pt-BR' ? 'sua' : 'tua'} disposição:</strong> {language === 'pt-BR' ? 'Tenha um copywriter, um estratega, um designer e um analista de dados a trabalhar para si 24/7, libertando o seu tempo para o que realmente importa.' : 'Terás um copywriter, um estratega, um designer e um analista de dados a trabalhar para ti 24/7, libertando o teu tempo para o que realmente importa.'}</span></li>
+                <li className="flex items-start"><span className="text-[#67BBC0] font-bold text-2xl mr-4 mt-1">✓</span><span><strong>A capacidade de prototipar o impossível:</strong> com o Vibe Coding, {language === 'pt-BR' ? 'Ideias' : 'ideias'} que antes ficavam na gaveta por serem muito caras ou complexas, agora podem ser testadas e lançadas em dias, não em meses.</span></li>
+                <li className="flex items-start"><span className="text-[#67BBC0] font-bold text-2xl mr-4 mt-1">✓</span><span><strong>O fim das tarefas repetitivas:</strong> {language === 'pt-BR' ? 'Aprenda a automatizar tudo o que é aborrecido, demorado e de baixo valor, para que possa focar a sua energia onde ela cria mais impacto e diversão.' : 'Aprende a automatizar tudo o que é aborrecido, demorado e de baixo valor, para que possas focar a tua energia onde ela tem mais impacto e diversão.'}</span></li>
               </ul>
             </div>
             <div className="order-1 md:order-2">
-              <img src="/lovable-uploads/302bbba5-22d5-49e5-80f3-4c74f0b9b86c.png" alt="Laboratório de IA" className="rounded-xl w-full border-2 border-[#1B1B1B] shadow-[10px_10px_0px_#67BBC0]"/>
+              <img src="/lovable-uploads/302bbba5-22d5-49e5-80f3-4c74f0b9b86c.png" alt="Laboratório de IA" className="lab-img rounded-xl w-full border-2 border-[#1B1B1B] shadow-[10px_10px_0px_#67BBC0]"/>
             </div>
           </div>
 
           {/* Parte 2: A Oportunidade */}
           <div className="grid md:grid-cols-2 gap-12 items-center text-left">
             <div>
-              <img src="/lovable-uploads/ab081d3f-7d29-414a-b25b-342af50a2422.png" alt="Foguete da Oportunidade" className="rounded-xl w-full border-2 border-[#1B1B1B] shadow-[10px_10px_0px_#FCCA29]"/>
+              <img src="/lovable-uploads/ab081d3f-7d29-414a-b25b-342af50a2422.png" alt="Foguete da Oportunidade" className="rocket-img rounded-xl w-full border-2 border-[#1B1B1B] shadow-[10px_10px_0px_#FCCA29]"/>
             </div>
             <div>
               <h3 className="font-oswald text-3xl text-[#1B1B1B] mb-6" style={{fontFamily: "'Oswald', sans-serif"}}>A Oportunidade: Porquê Agora</h3>
               <ul className="space-y-6 text-lg text-[#3D3D3D]">
-                <li className="flex items-start"><span className="text-[#FF304C] font-bold text-2xl mr-4 mt-1">!</span><span><strong>Ainda estamos no "modo fácil".</strong> A maioria dos profissionais e empresas ainda está no processo de adaptação. Quem sair na frente agora ganha uma vantagem competitiva imensa e define as regras do jogo.</span></li>
-                <li className="flex items-start"><span className="text-[#FF304C] font-bold text-2xl mr-4 mt-1">!</span><span><strong>Pense nisto como 1993.</strong> Quem entendeu a internet naquela altura, preparou-se para a revolução de 2007. Hoje, estamos a preparar-nos para uma mudança ainda maior, mas que chegará em 2 anos, não em 14.</span></li>
-                <li className="flex items-start"><span className="text-[#FF304C] font-bold text-2xl mr-4 mt-1">!</span><span><strong>Revoluções como esta só acontecem a cada 20 anos.</strong> Esta é a sua oportunidade de conquistar as "unfair advantages" que o vão destacar na próxima década. Não espere pela próxima grande onda — a janela de oportunidade não ficará aberta para sempre.</span></li>
+                <li className="flex items-start"><span className="text-[#FF304C] font-bold text-2xl mr-4 mt-1">!</span><span><strong>Ainda estamos no "modo fácil".</strong> {language === 'pt-BR' ? 'A maioria dos profissionais e empresas ainda está no processo de adaptação. Quem sair na frente agora ganha uma vantagem competitiva imensa e define as regras do jogo.' : 'A maioria dos profissionais e empresas ainda está no processo de adaptação. Quem aproveitar o lançamento do agora, ganha uma vantagem competitiva imensa e define as regras do jogo.'}</span></li>
+                <li className="flex items-start"><span className="text-[#FF304C] font-bold text-2xl mr-4 mt-1">!</span><span><strong>{language === 'pt-BR' ? 'Pense nisto como 1993.' : 'Pensa nisto como 1993.'}</strong> Quem entendeu a internet naquela altura, preparou-se para a revolução de 2007. Hoje, estamos a preparar-nos para uma mudança ainda maior, mas que chegará em 2 anos, não em 14.</span></li>
+                <li className="flex items-start"><span className="text-[#FF304C] font-bold text-2xl mr-4 mt-1">!</span><span><strong>Revoluções como esta só acontecem a cada 20 anos.</strong> {language === 'pt-BR' ? 'Esta é a sua oportunidade de conquistar as "unfair advantages" que o vão destacar na próxima década. Não espere pela próxima grande onda — a janela de oportunidade não ficará aberta para sempre.' : 'Esta é a tua oportunidade de conquistar as "unfair advantages" que te vão destacar na próxima década. Não esperes pela próxima grande onda - a janela de oportunidade não vai ficar aberta para sempre.'}</span></li>
               </ul>
             </div>
           </div>
@@ -427,9 +614,11 @@ const Index = () => {
             <img src="/lovable-uploads/847498a7-1f70-467a-8fe7-ce3a3442ab78.png" alt="Foto de Pedro Armbrust, mentor" />
           </div>
           <div className="mentor-bio">
-            <h2 className="mentor-title" style={{textShadow: '3px 3px 0px #A8DEE0'}}>Sobre o Mentor: Pedro Armbrust</h2>
+            <h2 className="mentor-title" style={{textShadow: '3px 3px 0px #A8DEE0'}}>
+              Sobre o Mentor: Pedro Armbrust
+            </h2>
             <p className="mentor-text">
-              A sua missão é desmistificar a complexidade da Inteligência Artificial, traduzindo-a em estratégias práticas que lhe permitem ganhar eficiência e comprovar o ROI do uso de IA no Marketing.
+              {language === 'pt-BR' ? 'A sua missão é desmistificar a complexidade da Inteligência Artificial, traduzindo-a em estratégias práticas que lhe permitem ganhar eficiência e comprovar o ROI do uso de IA no Marketing.' : 'A sua missão é desmistificar a complexidade da Inteligência Artificial, traduzindo-a em estratégias práticas que te vão permitir ganhar eficiência e comprovar o ROI do uso de IA no Marketing.'}
             </p>
             
             <h3 className="font-oswald text-xl font-medium uppercase tracking-wider text-[#008C94] mt-6 mb-3" style={{fontFamily: "'Oswald', sans-serif"}}>Mais de 10 anos de experiência em marketing</h3>
@@ -437,7 +626,7 @@ const Index = () => {
               A sua carreira foi construída na linha da frente do marketing digital, onde liderou projetos de grande impacto:
             </p>
             <ul style={{marginTop: '1rem', marginBottom: '1rem', paddingLeft: '0', listStyle: 'none'}}>
-              <li style={{marginBottom: '0.75rem', color: '#3D3D3D', lineHeight: '1.6'}}>✱ <strong>Resultados Comprovados:</strong> Gerou um crescimento superior a 187% na receita digital de uma empresa através da reestruturação de funis de marketing e da automação de processos de CRM.</li>
+              <li style={{marginBottom: '0.75rem', color: '#3D3D3D', lineHeight: '1.6'}}>✱ <strong>Resultados Comprovados:</strong> Gerou um crescimento superior a 187% na receita digital de uma empresa {language === 'pt-PT' ? 'multinacional ' : ''}através da reestruturação de funis de marketing e da automação de processos de CRM.</li>
               <li style={{marginBottom: '0.75rem', color: '#3D3D3D', lineHeight: '1.6'}}>✱ <strong>Domínio de Conteúdo:</strong> Idealizou e construiu um blog de raiz que se tornou o principal canal de tráfego orgânico da empresa, ultrapassando as 66.000 visitas mensais.</li>
               <li style={{marginBottom: '0.75rem', color: '#3D3D3D', lineHeight: '1.6'}}>✱ <strong>Visão Estratégica:</strong> Liderou um projeto complexo de rebranding, implementando a nova identidade de marca no mercado.</li>
             </ul>
@@ -468,28 +657,28 @@ const Index = () => {
       <section id="how-it-works" className="how-it-works-cards" style={{background:'#FEF8E4', padding:'4rem 1rem'}}>
         <div className="max-w-6xl mx-auto">
           <h2 style={{fontFamily:"'Caprasimo',serif", fontSize:'2.5rem', fontWeight:700, color:'#1B1B1B', textAlign:'center', marginBottom:'1.5rem', textShadow: '3px 3px 0px #A8DEE0'}}>
-            Os 3 Pilares da Sua Transformação em IA
+            {language === 'pt-BR' ? 'Os 3 Pilares da Sua Transformação em IA' : 'Os 3 Pilares da Tua Transformação em IA'}
           </h2>
           <div className="general-info" style={{maxWidth:'800px', margin:'0 auto 2rem', textAlign:'center'}}>
             <p style={{fontSize:'1rem', lineHeight:1.5}}>
-              <span style={{color:'#008C94', fontWeight:700}}>✱</span> Cada mentoria tem 20 horas ao longo de 1 mês &nbsp;|&nbsp; 
+              <span style={{color:'#008C94', fontWeight:700}}>✱</span> {language === 'pt-BR' ? 'Cada mentoria tem 20 horas ao longo de 1 mês' : 'Cada mentoria tem 20 horas durante 1 mês'} &nbsp;|&nbsp; 
               <span style={{color:'#008C94', fontWeight:700}}>✱</span> Aulas de 2h30 às 2ª e 4ª ou 3ª e 5ª feiras &nbsp;|&nbsp; 
               <span style={{color:'#008C94', fontWeight:700}}>✱</span> Turmas de 8 a 12 participantes
             </p>
           </div>
-          <div className="cards-container" style={{gap: '0.5rem'}}>
+          <div className="cards-container pillar-cards" style={{gap: '0.5rem'}}>
             <div className="card card-raised" style={{padding: '2rem', flex: '1', maxWidth: '400px'}}>
             <img src="/lovable-uploads/3a5df82f-f4cb-44ab-bbf5-61e9e715c22f.png" alt="Conteúdo IA" />
             <h3>Criação de Conteúdo com IA</h3>
             <div style={{display: 'inline-block', background: '#67BBC0', color: '#f7f1e1', fontFamily: "'Caprasimo', serif", fontSize: '0.875rem', fontWeight: '700', padding: '0.25rem 0.75rem', borderRadius: '4px', marginTop: '0.5rem', marginBottom: '1rem'}}>
               Mentoria 1
             </div>
-            <p>Vá muito além de vencer a "síndrome da página em branco". Nesta mentoria, irá transformar a IA de uma simples ferramenta para gerar rascunhos num verdadeiro copiloto estratégico.</p>
+            <p>{language === 'pt-BR' ? 'Vá muito além de vencer a "síndrome da página em branco". Nesta mentoria, irá transformar a IA de uma simples ferramenta para gerar rascunhos num verdadeiro copiloto estratégico.' : 'Vai muito além de vencer o "síndrome da página em branco". Nesta mentoria, vais transformar a IA de uma simples ferramenta para gerar rascunhos num verdadeiro copiloto estratégico.'}</p>
             <ul style={{marginTop: '1rem', marginBottom: '1rem', paddingLeft: '0', listStyle: 'none'}}>
-              <li style={{marginBottom: '0.5rem', color: '#3D3D3D', lineHeight: '1.4'}}>✱ Aprenda a planear, criar e otimizar conteúdo de alta performance que converte e encanta, aplicando hiper personalização em escala e com uma velocidade que antes parecia impossível.</li>
-              <li style={{marginBottom: '0.5rem', color: '#3D3D3D', lineHeight: '1.4'}}>✱ Dominar a Engenharia de Prompt e de Contexto para construir um copiloto de confiança, que evita alucinações e lhe entrega análises críticas para as suas decisões estratégicas.</li>
-              <li style={{marginBottom: '0.5rem', color: '#3D3D3D', lineHeight: '1.4'}}>✱ Treinar a LLM para internalizar e replicar o tom de voz autêntico da sua marca em todo o ciclo de conteúdo, garantindo originalidade para se destacar do "AI Slop" genérico.</li>
-              <li style={{marginBottom: '0.5rem', color: '#3D3D3D', lineHeight: '1.4'}}>✱ Construir, num laboratório prático, Agentes e ativos de marketing reais (e-mails, LPs, posts), enquanto faz um raio-x completo às ferramentas de vanguarda como ChatGPT, Gemini, Claude, Manus e Lovable.</li>
+              <li style={{marginBottom: '0.5rem', color: '#3D3D3D', lineHeight: '1.4'}}>✱ {language === 'pt-BR' ? 'Aprenda a planear, criar e otimizar conteúdo de alta performance que converte e encanta, aplicando hiper personalização em escala e com uma velocidade que antes parecia impossível.' : 'Aprende a planear, criar e otimizar conteúdo de alta performance que converte e encanta, aplicando hiper personalização em escala e com uma velocidade que antes parecia impossível.'}</li>
+              <li style={{marginBottom: '0.5rem', color: '#3D3D3D', lineHeight: '1.4'}}>✱ {language === 'pt-BR' ? 'Dominar a Engenharia de Prompt e de Contexto para construir um copiloto de confiança, que evita alucinações e lhe entrega análises críticas para as suas decisões estratégicas.' : 'Domina a Engenharia de Prompt e de Contexto para construir um copiloto de confiança, que evita alucinações e te entrega análises críticas para as tuas decisões estratégicas.'}</li>
+              <li style={{marginBottom: '0.5rem', color: '#3D3D3D', lineHeight: '1.4'}}>✱ {language === 'pt-BR' ? 'Treinar a LLM para internalizar e replicar o tom de voz autêntico da sua marca em todo o ciclo de conteúdo, garantindo originalidade para se destacar do "AI Slop" genérico.' : 'Treina a LLM para internalizar e replicar o tom de voz autêntico da tua marca em todo o ciclo de conteúdo, garantindo originalidade para te destacares do "AI Slop" genérico.'}</li>
+              <li style={{marginBottom: '0.5rem', color: '#3D3D3D', lineHeight: '1.4'}}>✱ {language === 'pt-BR' ? 'Construir, num laboratório prático, Agentes e ativos de marketing reais (e-mails, LPs, posts), enquanto faz um raio-x completo às ferramentas de vanguarda como ChatGPT, Gemini, Claude, Manus e Lovable.' : 'Constrói, num laboratório prático, Agentes e ativos de marketing reais (e-mails, LPs, posts), enquanto fazes um raio-x completo às ferramentas de vanguarda como ChatGPT, Gemini, Claude, Manus e Lovable.'}</li>
             </ul>
           </div>
           <div className="card card-raised" style={{padding: '2rem', flex: '1', maxWidth: '400px'}}>
@@ -498,11 +687,11 @@ const Index = () => {
             <div style={{display: 'inline-block', background: '#67BBC0', color: '#f7f1e1', fontFamily: "'Caprasimo', serif", fontSize: '0.875rem', fontWeight: '700', padding: '0.25rem 0.75rem', borderRadius: '4px', marginTop: '0.5rem', marginBottom: '1rem'}}>
               Mentoria 2
             </div>
-            <p>Abandone os orçamentos milionários e as barreiras técnicas que limitam a sua visão. Esta mentoria é o seu acesso a um estúdio de Hollywood no seu computador, transformando ideias em produções de qualidade profissional com uma fração do custo.</p>
+            <p>{language === 'pt-BR' ? 'Abandone os orçamentos milionários e as barreiras técnicas que limitam a sua visão. Esta mentoria é o seu acesso a um estúdio de Hollywood no seu computador, transformando ideias em produções de qualidade profissional com uma fração do custo.' : 'Abandona os orçamentos milionários e as barreiras técnicas que limitam a tua visão. Esta mentoria é o teu acesso a um estúdio de Hollywood no teu computador, transformando ideias em produções de qualidade profissional com uma fração do custo.'}</p>
             <ul style={{marginTop: '1rem', marginBottom: '1rem', paddingLeft: '0', listStyle: 'none'}}>
-              <li style={{marginBottom: '0.5rem', color: '#3D3D3D', lineHeight: '1.4'}}>✱ Aplicar técnicas avançadas como engenharia de prompt de imagem e vídeo, consistência, upscale, VFX, lipsync e deepfake para um acabamento profissional.</li>
-              <li style={{marginBottom: '0.5rem', color: '#3D3D3D', lineHeight: '1.4'}}>✱ Construir o seu arsenal de produção completo, ao explorar workflows envolvendo Midjourney, Google Veo3, Eleven Labs, Descript, ChatGPT, Flux, Suno, HeyGen, Kling, Runway, Hailuo, Capcut e muitas outras.</li>
-              <li style={{marginBottom: '0.5rem', color: '#3D3D3D', lineHeight: '1.4'}}>✱ Executar, num laboratório 100% prático, uma campanha do zero, desde a criação de moodboard, logo, produto, mockup, avatar, UGC até culminar na produção de um anúncio de 30 segundos feito inteiramente com IA.</li>
+              <li style={{marginBottom: '0.5rem', color: '#3D3D3D', lineHeight: '1.4'}}>✱ {language === 'pt-BR' ? 'Aplicar técnicas avançadas como engenharia de prompt de imagem e vídeo, consistência, upscale, VFX, lipsync e deepfake para um acabamento profissional.' : 'Aplica técnicas avançadas como engenharia de prompt de imagem e vídeo, consistência, upscale, VFX, lipsync e deepfake para um acabamento profissional.'}</li>
+              <li style={{marginBottom: '0.5rem', color: '#3D3D3D', lineHeight: '1.4'}}>✱ {language === 'pt-BR' ? 'Construir o seu arsenal de produção completo, ao explorar workflows envolvendo Midjourney, Google Veo3, Eleven Labs, Descript, ChatGPT, Flux, Suno, HeyGen, Kling, Runway, Hailuo, Capcut e muitas outras.' : 'Constrói o teu arsenal de produção completo, ao explorar workflows envolvendo Midjourney, Google Veo3, Eleven Labs, Descript, ChatGPT, Flux, Suno, HeyGen, Kling, Runway, Hailuo, Capcut e muitas outras.'}</li>
+              <li style={{marginBottom: '0.5rem', color: '#3D3D3D', lineHeight: '1.4'}}>✱ {language === 'pt-BR' ? 'Executar, num laboratório 100% prático, uma campanha do zero, desde a criação de moodboard, logo, produto, mockup, avatar, UGC até culminar na produção de um anúncio de 30 segundos feito inteiramente com IA.' : 'Executa, num laboratório 100% prático, uma campanha do zero, desde a criação de moodboard, logo, produto, mockup, avatar, UGC até culminar na produção de um anúncio de 30 segundos feito inteiramente com IA.'}</li>
             </ul>
           </div>
           <div className="card card-raised" style={{padding: '2rem', flex: '1', maxWidth: '400px'}}>
@@ -511,12 +700,12 @@ const Index = () => {
             <div style={{display: 'inline-block', background: '#67BBC0', color: '#f7f1e1', fontFamily: "'Caprasimo', serif", fontSize: '0.875rem', fontWeight: '700', padding: '0.25rem 0.75rem', borderRadius: '4px', marginTop: '0.5rem', marginBottom: '1rem'}}>
               Mentoria 3
             </div>
-            <p>Aprenda a habilidade mais importante do futuro e ganhe uma vantagem quase desleal sobre a concorrência. Domine automação, mesmo sem qualquer experiência técnica, elevando a sua produtividade a outro patamar.</p>
+            <p>{language === 'pt-BR' ? 'Aprenda a habilidade mais importante do futuro e ganhe uma vantagem quase desleal sobre a concorrência. Domine automação, mesmo sem qualquer experiência técnica, elevando a sua produtividade a outro patamar.' : 'Aprende a habilidade mais importante do futuro e ganha uma vantagem quase desleal sobre a tua concorrência. Domina a automação, mesmo sem qualquer experiência técnica, elevando a tua produtividade a um novo patamar.'}</p>
             <ul style={{marginTop: '1rem', marginBottom: '1rem', paddingLeft: '0', listStyle: 'none'}}>
-              <li style={{marginBottom: '0.5rem', color: '#3D3D3D', lineHeight: '1.4'}}>✱ Ir além das automações lineares clássicas, aprendendo a construir e orquestrar sistemas com múltiplos Agentes de IA, capazes de lidar com ambiguidades e tomar decisões dinâmicas.</li>
-              <li style={{marginBottom: '0.5rem', color: '#3D3D3D', lineHeight: '1.4'}}>✱ Dominar do zero um arsenal de ferramentas low/no-code (Make, n8n, Apify, Airtable) e explorar técnicas avançadas como RAG, APIs e MCPs para construir sistemas robustos.</li>
-              <li style={{marginBottom: '0.5rem', color: '#3D3D3D', lineHeight: '1.4'}}>✱ Executar projetos que automatizam problemas reais: desde a geração de leads por scraping, lançamento de campanhas e qualificação, até o agendamento de reuniões e atendimento.</li>
-              <li style={{marginBottom: '0.5rem', color: '#3D3D3D', lineHeight: '1.4'}}>✱ Desbloquear o poder do Vibe Coding para desenvolver apps, ferramentas e lead magnets complexos sem saber programar. Foque na ideia e resultado, em um fluxo contínuo e agradável de criação, enquanto a IA faz o trabalho duro.</li>
+              <li style={{marginBottom: '0.5rem', color: '#3D3D3D', lineHeight: '1.4'}}>✱ {language === 'pt-BR' ? 'Ir além das automações lineares clássicas, aprendendo a construir e orquestrar sistemas com múltiplos Agentes de IA, capazes de lidar com ambiguidades e tomar decisões dinâmicas.' : 'Vai além das automações lineares clássicas, aprendendo a construir e orquestrar sistemas com múltiplos Agentes de IA, capazes de lidar com ambiguidades e tomar decisões dinâmicas.'}</li>
+              <li style={{marginBottom: '0.5rem', color: '#3D3D3D', lineHeight: '1.4'}}>✱ {language === 'pt-BR' ? 'Dominar do zero um arsenal de ferramentas low/no-code (Make, n8n, Apify, Airtable) e explorar técnicas avançadas como RAG, APIs e MCPs para construir sistemas robustos.' : 'Domina do zero um arsenal de ferramentas low/no-code (Make, n8n, Apify, Airtable) e explora técnicas avançadas como RAG, APIs e MCPs para construir sistemas robustos.'}</li>
+              <li style={{marginBottom: '0.5rem', color: '#3D3D3D', lineHeight: '1.4'}}>✱ {language === 'pt-BR' ? 'Executar projetos que automatizam problemas reais: desde a geração de leads por scraping, lançamento de campanhas e qualificação, até o agendamento de reuniões e atendimento.' : 'Executa projetos que automatizam problemas reais: desde a geração de leads por scraping, lançamento de campanhas e qualificação, até o agendamento de reuniões e atendimento.'}</li>
+              <li style={{marginBottom: '0.5rem', color: '#3D3D3D', lineHeight: '1.4'}}>✱ {language === 'pt-BR' ? 'Desbloquear o poder do Vibe Coding para desenvolver apps, ferramentas e lead magnets complexos sem saber programar. Foque na ideia e resultado, em um fluxo contínuo e agradável de criação, enquanto a IA faz o trabalho duro.' : 'Desbloqueia o poder do Vibe Coding para desenvolver apps, ferramentas e lead magnets complexos sem saber programar. Foca-te na ideia e resultado, num fluxo contínuo e agradável de criação, enquanto a IA faz o trabalho duro.'}</li>
             </ul>
           </div>
         </div>
@@ -530,27 +719,27 @@ const Index = () => {
       <section className="bonuses-community" style={{background:'#E0F2F3', padding:'4rem 1rem'}}>
         <div className="bonus-container max-w-6xl mx-auto">
           <div className="bonus-header">
-            <h2><span style={{textShadow: '3px 3px 0px #FDE68A'}}>Para Garantir a Sua Decolagem, Incluímos o Combustível Extra</span><br />
-            <span style={{fontSize:'1rem', fontWeight:400}}>(incluído em todas as mentorias, sem custo adicional)</span></h2>
-            <p>Ao garantir a sua vaga na mentoria, recebe automaticamente e sem qualquer custo adicional acesso a este ecossistema de valor. Cada bónus foi desenhado para acelerar os seus resultados e mantê-lo na vanguarda, muito depois de a mentoria terminar.</p>
+            <h2><span style={{textShadow: '3px 3px 0px #FDE68A'}}>{language === 'pt-BR' ? 'Para Garantir a Sua Decolagem, Incluímos o Combustível Extra' : 'Para Garantir a Tua Descolagem, Incluímos o Combustível Extra'}</span><br />
+            <span className="bonus-included-text" style={{fontSize:'1rem', fontWeight:400}}>(incluído em todas as mentorias, sem custo adicional)</span></h2>
+            <p>{language === 'pt-BR' ? 'Ao garantir a sua vaga na mentoria, recebe automaticamente e sem qualquer custo adicional acesso a este ecossistema de valor. Cada bónus foi desenhado para acelerar os seus resultados e mantê-lo na vanguarda, muito depois de a mentoria terminar.' : 'Ao garantires a tua vaga na mentoria, recebes automaticamente e sem qualquer custo adicional acesso a um ecossistema de valor. Cada bónus foi desenhado para acelerar os teus resultados e manter-te na vanguarda, muito depois de a mentoria terminar.'}</p>
           </div>
           <div className="bonus-list">
-            <div className="bonus-item card-raised">
+            <div className="bonus-item card-raised bonus-guides">
               <img src="/lovable-uploads/36c32b95-f826-4be1-a77a-6d166afa9ec9.png" alt="Guias Vivos" />
               <div className="bonus-item-content">
                 <h3>1 Ano de Guias Vivos</h3>
-                <div className="value-tag"><s>Valor: 324€/ano</s></div>
+                <div className="value-tag"><s>Valor: {language === 'pt-BR' ? '2.000R$' : '324€/ano'}</s></div>
                 <span className="tag-included">incluído</span>
-                <p>O seu investimento na mentoria não pode ficar obsoleto. Por isso, criámos os nossos 3 Guias Vivos: uma base de conhecimento que está sempre 100% atualizada com as novidades de IA. Tenha acesso 24/7 a prompts, ferramentas testadas e estratégias que só partilhamos dentro do nosso ecossistema.</p>
+                <p>{language === 'pt-BR' ? 'O seu investimento na mentoria não pode ficar obsoleto. Por isso, criámos os nossos 3 Guias Vivos: uma base de conhecimento que está sempre 100% atualizada com as novidades de IA. Tenha acesso 24/7 a prompts, ferramentas testadas e estratégias que só partilhamos dentro do nosso ecossistema.' : 'O teu investimento na mentoria não pode ficar obsoleto. Por isso, criámos os nossos 3 Guias Vivos: uma base de conhecimento que está sempre 100% atualizada com as novidades de IA. Terás acesso 24/7 a prompts, ferramentas testadas e estratégias que só partilhamos dentro do nosso ecossistema.'}</p>
               </div>
             </div>
-            <div className="bonus-item card-raised">
+            <div className="bonus-item card-raised bonus-community">
               <img src="/lovable-uploads/7dd9bd91-9bcd-4fd6-80b4-8c8dc8ee647e.png" alt="Comunidade Discord" />
               <div className="bonus-item-content">
                 <h3>Comunidade Visionários do Marketing</h3>
-                <div className="value-tag"><s>Valor: 108€/ano</s></div>
+                <div className="value-tag"><s>Valor: {language === 'pt-BR' ? '630R$' : '108€/ano'}</s></div>
                 <span className="tag-included">incluído</span>
-                <p>A inovação é um desporto de equipa. Entre para o círculo fechado dos profissionais que, como você, estão na linha da frente a testar as novas fronteiras da IA. Um ambiente para partilhar o que funciona, receber ajuda para o que não funciona, e encontrar parceiros para as suas próximas missões profissionais.</p>
+                <p>{language === 'pt-BR' ? 'A inovação é um desporto de equipa. Entre para o círculo fechado dos profissionais que, como você, estão na linha da frente a testar as novas fronteiras da IA. Um ambiente para partilhar o que funciona, receber ajuda para o que não funciona, e encontrar parceiros para as suas próximas missões profissionais.' : 'A inovação é um desporto de equipa. Entra para o círculo fechado dos profissionais que, como tu, estão na linha da frente a testar as novas fronteiras da IA. Um ambiente para partilhar o que funciona, receber ajuda para o que não funciona, e encontrar parceiros para as tuas próximas missões profissionais.'}</p>
               </div>
             </div>
           </div>
@@ -588,41 +777,90 @@ const Index = () => {
       <section className="pricing-offer-cards" style={{background:'#E5DBC7', padding:'4rem 1rem'}}>
         <div className="max-w-6xl mx-auto">
           <h2 style={{fontFamily:"'Caprasimo',serif", fontSize:'2.5rem', fontWeight:700, color:'#1B1B1B', textAlign:'center', marginBottom:'2rem', textShadow: '3px 3px 0px #A8DEE0'}}>
-            Escolha o Seu Plano de Voo
+            {language === 'pt-BR' ? 'Escolha o Seu Plano de Voo' : 'Escolhe o Teu Plano de Voo'}
           </h2>
           <div className="cards-container">
           <div className="price-card">
             <h3>Mentoria Avulsa</h3>
-            <div className="price-original">230€</div>
-            <div className="price-value">184€</div>
+            <div className="price-original">{language === 'pt-BR' ? '1.450R$' : '230€'}</div>
+            <div className="price-value">{language === 'pt-BR' ? '1.200R$' : '184€'}</div>
             <div className="price-note">(20% desconto pré-lançamento)</div>
             <ul className="inclusions">
-              <li><span>✱</span>20h de mentoria ao longo de 1 mês</li>
+              <li><span>✱</span>{language === 'pt-BR' ? '20h de mentoria ao longo de 1 mês' : '20h de mentoria durante 1 mês'}</li>
               <li><span>✱</span>Grupos de 8 a 12 profissionais de marketing</li>
-              <li><span>✱</span>Guias Vivos <s>(324€/ano)</s> <span className="tag-included-container"><span className="tag-included-bg"><span className="tag-included-text">incluído</span></span></span></li>
-              <li><span>✱</span>Comunidade Visionários <s>(108€/ano)</s> <span className="tag-included-container"><span className="tag-included-bg"><span className="tag-included-text">incluído</span></span></span></li>
+              <li><span>✱</span>Guias Vivos <s>({language === 'pt-BR' ? '2.000R$' : '324€/ano'})</s> <span className="tag-included-container"><span className="tag-included-bg"><span className="tag-included-text">incluído</span></span></span></li>
+              <li><span>✱</span>Comunidade Visionários <s>({language === 'pt-BR' ? '680R$' : '108€/ano'})</s> <span className="tag-included-container"><span className="tag-included-bg"><span className="tag-included-text">incluído</span></span></span></li>
             </ul>
-            <label htmlFor="mission-select" style={{fontFamily:"'Caprasimo',serif", fontSize:'1rem', color:'#1B1B1B', marginBottom:'0.5rem'}}>Escolha a sua missão:</label>
-            <select id="mission-select" className="select-mission">
-              <option value="" selected hidden>Selecionar missão</option>
+            <label htmlFor="mission-select" style={{fontFamily:"'Caprasimo',serif", fontSize:'1rem', color:'#1B1B1B', marginBottom:'0.5rem'}}>{language === 'pt-BR' ? 'Escolha a sua missão:' : 'Escolhe a tua missão:'}</label>
+            <select 
+              id="mission-select" 
+              className="select-mission"
+              value={selectedMission}
+              onChange={(e) => setSelectedMission(e.target.value)}
+            >
+              <option value="" hidden>Selecionar missão</option>
               <option value="conteudo">IA para Criação de Conteúdo</option>
               <option value="audiovisual">IA para Produção Audiovisual</option>
               <option value="automacao">IA para Automação de Marketing</option>
             </select>
-            <div className="progress-container" id="vacancy-progress">
-              <div className="progress-label">Vagas disponíveis: <span id="vacancy-text">12</span></div>
-              <div className="progress-bar">
-                <div className="progress-fill" id="progress-bar-fill"></div>
-                <div className="progress-count" id="progress-count">0</div>
+            
+            {selectedMission && (
+              <div style={{marginTop: '1rem', marginBottom: '1rem'}}>
+                <div style={{
+                  display: 'flex',
+                  gap: '4px',
+                  marginBottom: '0.5rem',
+                  height: '24px'
+                }}>
+                  {Array.from({ length: 12 }).map((_, index) => {
+                    const enrollmentCounts = { conteudo: 3, audiovisual: 6, automacao: 9 };
+                    const enrolled = enrollmentCounts[selectedMission as keyof typeof enrollmentCounts] || 0;
+                    return (
+                      <div
+                        key={index}
+                        style={{
+                          flex: 1,
+                          backgroundColor: index < enrolled ? '#67BBC0' : '#E5DBC7',
+                          borderRadius: '2px',
+                          transition: 'background-color 0.3s ease'
+                        }}
+                      />
+                    );
+                  })}
+                </div>
+                <div style={{
+                  fontSize: '0.875rem',
+                  color: '#3D3D3D',
+                  marginBottom: '0.75rem',
+                  textAlign: 'center'
+                }}>
+                  {(() => {
+                    const enrollmentCounts = { conteudo: 3, audiovisual: 6, automacao: 9 };
+                    const enrolled = enrollmentCounts[selectedMission as keyof typeof enrollmentCounts] || 0;
+                    return `${12 - enrolled} vagas disponíveis`;
+                  })()}
+                </div>
+                <div style={{
+                  fontSize: '0.95rem',
+                  color: '#1B1B1B',
+                  fontWeight: 600,
+                  textAlign: 'center',
+                  fontFamily: "'Oswald', sans-serif"
+                }}>
+                  {selectedMission === 'conteudo' && (language === 'pt-BR' ? 'Horário: 2ª e 4ª às 17h' : 'Horário: 2ª e 4ª às 21h')}
+                  {selectedMission === 'audiovisual' && (language === 'pt-BR' ? 'Horário: 3ª e 5ª às 17h' : 'Horário: 3ª e 5ª às 21h')}
+                  {selectedMission === 'automacao' && (language === 'pt-BR' ? 'Horário: 2ª e 4ª às 17h' : 'Horário: 2ª e 4ª às 21h')}
+                </div>
               </div>
-            </div>
+            )}
+            
             <a href="#formulario" className="cta-card">Reservar Mentoria Avulsa</a>
           </div>
           <div className="price-card highlight">
             <div className="badge">MELHOR VALOR</div>
             <h3>Pacote 3 Mentorias</h3>
-            <div className="price-original">690€</div>
-            <div className="price-value">497€</div>
+            <div className="price-original">{language === 'pt-BR' ? '4.350R$' : '690€'}</div>
+            <div className="price-value">{language === 'pt-BR' ? '3.140R$' : '497€'}</div>
             <div className="price-note">(+10% desconto no pacote)</div>
             <ul className="inclusions">
               <li><span>✱</span>60h de mentoria (3 x 20h)</li>
@@ -646,29 +884,32 @@ const Index = () => {
       <section className="faq-cta" style={{backgroundColor:'#FCF9F2', padding:'4rem 1rem'}}>
         <div className="container max-w-6xl mx-auto" style={{display:'flex', flexDirection:'column', gap:'2.5rem'}}>
           <div className="faq" style={{display:'flex', flexDirection:'column', gap:'1rem'}}>
-            <details><summary>Preciso de tempo extra para acompanhar as aulas?</summary><div>Sabemos que a sua agenda está sempre ao rubro. Por isso, cada sessão de 2h30m é gravada em alta qualidade e disponibilizada nos Guias Vivos, permitindo rever as lições a qualquer momento. Em vez de roubar o seu tempo, esta mentoria é desenhada para devolvê‑lhe tempo livre: aprenda a otimizar fluxos com IA e ganhe horas semanais para o que realmente importa.</div></details>
-            <details><summary>Não estou seguro do meu nível de domínio de IA.</summary><div>Esta mentoria foi concebida exatamente para si, independentemente do seu ponto de partida. Começamos com o essencial — conhecer o "Olá, Mundo!" da IA — e evoluímos progressivamente para casos avançados. Além das aulas, poderá trocar ideias com a comunidade Visionários do Marketing, garantindo suporte contínuo. Ao final das 20h, terá confiança para criar, automatizar e liderar projetos com IA.</div></details>
-            <details><summary>Qual será o retorno sobre o investimento?</summary><div>O ROI traduz-se em três níveis:<ol style={{margin:'0.5rem 0 0', paddingLeft:'1.5rem'}}><li><strong>Eficiência</strong>: Automatize até 50% dos seus fluxos de marketing e recupere dezenas de horas por mês.</li><li><strong>Performance</strong>: Crie conteúdos e anúncios que convertem melhor, aumentando leads e engagement.</li><li><strong>Carreira</strong>: Posicione-se como especialista em IA, atraindo melhores oportunidades e salários. Muitos dos nossos alunos confirmam que o tempo poupado e os ganhos em performance superam facilmente o investimento inicial.</li></ol></div></details>
-            <details><summary>A que terei acesso exatamente após a inscrição?</summary><div>Imediatamente após a confirmação do pagamento, receberá um e-mail de boas-vindas com o seu acesso à nossa comunidade exclusiva no Discord e aos Guias Vivos. Os detalhes e o calendário para as sessões ao vivo da sua turma serão enviados na semana anterior ao início da mentoria.</div></details>
-            <details><summary>E se eu faltar a uma aula ao vivo?</summary><div>Não há problema. Todas as sessões são gravadas e disponibilizadas na nossa plataforma em até 24 horas. Poderá assistir quando quiser e quantas vezes precisar. Além disso, pode sempre colocar as suas dúvidas sobre a aula na comunidade do Discord.</div></details>
-            <details><summary>As ferramentas de IA que vamos usar são pagas? Terei custos extra?</summary><div>A grande maioria das mais de 30 ferramentas que exploramos possui versões gratuitas robustas, que são suficientes para realizar todos os exercícios da mentoria. Para algumas ferramentas mais avançadas, mostraremos como aproveitar os períodos de teste gratuito (free trials) para que não tenha qualquer custo adicional durante o curso.</div></details>
-            <details><summary>Esta mentoria é só teórica ou vamos mesmo "pôr a mão na massa"?</summary><div>A nossa filosofia é 'aprender fazendo'. Cada sessão tem uma componente teórica curta e direta, seguida de exercícios práticos onde você irá aplicar imediatamente o que aprendeu. O objetivo é que termine cada aula com algo novo que pode usar no seu trabalho no dia seguinte.</div></details>
-            <details><summary>Que tipo de suporte terei se ficar com dúvidas ou bloqueado?</summary><div>Você nunca estará sozinho. Terá suporte contínuo através de três canais: durante as aulas ao vivo para interação direta, na nossa comunidade exclusiva no Discord para perguntas rápidas e feedback dos colegas e do mentor, e nas sessões mensais de Q&A da comunidade, mesmo após o fim da sua mentoria.</div></details>
-            <details><summary>O acesso à comunidade e aos guias é vitalício?</summary><div>O seu acesso à comunidade 'Visionários do Marketing' no Discord é vitalício. O acesso aos 'Guias Vivos' está incluído por um período de 12 meses após a sua inscrição, garantindo que se mantém atualizado durante um ano inteiro.</div></details>
+            <details><summary>Preciso de tempo extra para acompanhar as aulas?</summary><div>{language === 'pt-BR' ? 'Sabemos que a sua agenda está sempre ao rubro. Por isso, cada sessão de 2h30m é gravada em alta qualidade e disponibilizada nos Guias Vivos, permitindo rever as lições a qualquer momento. Em vez de roubar o seu tempo, esta mentoria é desenhada para devolvê‑lhe tempo livre: aprenda a otimizar fluxos com IA e ganhe horas semanais para o que realmente importa.' : 'Sabemos que a tua agenda está sempre ao rubro. Por isso, cada sessão de 2h30m é gravada em alta qualidade e disponibilizada nos Guias Vivos, permitindo rever as lições a qualquer momento. Em vez de roubar o teu tempo, esta mentoria é desenhada para te devolver tempo livre: aprende a otimizar fluxos com IA e ganha horas semanais para o que realmente importa.'}</div></details>
+            <details><summary>Não estou seguro do meu nível de domínio de IA.</summary><div>{language === 'pt-BR' ? 'Esta mentoria foi concebida exatamente para si, independentemente do seu ponto de partida. Começamos com o essencial — conhecer o "Olá, Mundo!" da IA — e evoluímos progressivamente para casos avançados. Além das aulas, poderá trocar ideias com a comunidade Visionários do Marketing, garantindo suporte contínuo. Ao final das 20h, terá confiança para criar, automatizar e liderar projetos com IA.' : 'Esta mentoria foi concebida exatamente para ti, independentemente do teu ponto de partida. Começamos com o essencial — conhecer o "Olá, Mundo!" da IA — e evoluímos progressivamente para casos avançados. Além das aulas, poderás trocar ideias com a comunidade Visionários do Marketing, garantindo suporte contínuo. Ao final das 20h, terás a confiança para criar, automatizar e liderar projetos com IA.'}</div></details>
+            <details><summary>Qual será o retorno sobre o investimento?</summary><div>{language === 'pt-BR' ? 'O ROI traduz-se em três níveis:' : 'O ROI traduz-se em três níveis:'}<ol style={{margin:'0.5rem 0 0', paddingLeft:'1.5rem'}}><li><strong>Eficiência</strong>: {language === 'pt-BR' ? 'Automatize até 50% dos seus fluxos de marketing e recupere dezenas de horas por mês.' : 'Automatiza até 50% dos teus fluxos de marketing e recupera dezenas de horas por mês.'}</li><li><strong>Performance</strong>: {language === 'pt-BR' ? 'Crie conteúdos e anúncios que convertem melhor, aumentando leads e engagement.' : 'Cria conteúdos e anúncios que convertem melhor, aumentando leads e engagement.'}</li><li><strong>Carreira</strong>: {language === 'pt-BR' ? 'Posicione-se como especialista em IA, atraindo melhores oportunidades e salários.' : 'Posiciona-te como especialista em IA, atraindo melhores oportunidades e salários.'} Muitos dos nossos alunos confirmam que o tempo poupado e os ganhos em performance superam facilmente o investimento inicial.</li></ol></div></details>
+            <details><summary>A que terei acesso exatamente após a inscrição?</summary><div>{language === 'pt-BR' ? 'Imediatamente após a confirmação do pagamento, receberá um e-mail de boas-vindas com o seu acesso à nossa comunidade exclusiva no Discord e aos Guias Vivos. Os detalhes e o calendário para as sessões ao vivo da sua turma serão enviados na semana anterior ao início da mentoria.' : 'Imediatamente após a confirmação do pagamento, receberás um e-mail de boas-vindas com o seu acesso à nossa comunidade exclusiva no Discord e aos Guias Vivos. Os detalhes e o calendário para as sessões ao vivo da tua turma serão enviados na semana anterior ao início da mentoria.'}</div></details>
+            <details><summary>E se eu faltar a uma aula ao vivo?</summary><div>{language === 'pt-BR' ? 'Não há problema. Todas as sessões são gravadas e disponibilizadas na nossa plataforma em até 24 horas. Poderá assistir quando quiser e quantas vezes precisar. Além disso, pode sempre colocar as suas dúvidas sobre a aula na comunidade do Discord.' : 'Não há problema. Todas as sessões são gravadas e disponibilizadas na nossa plataforma até 24 horas. Poderás assistir quando quiseres e quantas vezes precisares. Além disso, podes sempre colocar as tuas dúvidas sobre a aula na comunidade do Discord.'}</div></details>
+            <details><summary>As ferramentas de IA que vamos usar são pagas? Terei custos extra?</summary><div>{language === 'pt-BR' ? 'A grande maioria das mais de 30 ferramentas que exploramos possui versões gratuitas robustas, que são suficientes para realizar todos os exercícios da mentoria. Para algumas ferramentas mais avançadas, mostraremos como aproveitar os períodos de teste gratuito (free trials) para que não tenha qualquer custo adicional durante o curso.' : 'A grande maioria das mais de 30 ferramentas que exploramos possui versões gratuitas robustas, que são suficientes para realizar todos os exercícios da mentoria. Para algumas ferramentas mais avançadas, mostraremos como aproveitar os períodos de teste gratuito (free trials) para que não tenhas qualquer custo adicional durante o curso.'}</div></details>
+            <details><summary>Esta mentoria é só teórica ou vamos mesmo "pôr a mão na massa"?</summary><div>{language === 'pt-BR' ? 'A nossa filosofia é \'aprender fazendo\'. Cada sessão tem uma componente teórica curta e direta, seguida de exercícios práticos onde você irá aplicar imediatamente o que aprendeu. O objetivo é que termine cada aula com algo novo que pode usar no seu trabalho no dia seguinte.' : 'A nossa filosofia é \'aprender fazendo\'. Cada sessão tem uma componente teórica curta e direta, seguida de exercícios práticos onde vais aplicar imediatamente o que aprendeste. O objetivo é que termines cada aula com algo novo que podes usar no teu trabalho no dia seguinte.'}</div></details>
+            <details><summary>Que tipo de suporte terei se ficar com dúvidas ou bloqueado?</summary><div>{language === 'pt-BR' ? 'Você nunca estará sozinho. Terá suporte contínuo através de três canais: durante as aulas ao vivo para interação direta, na nossa comunidade exclusiva no Discord para perguntas rápidas e feedback dos colegas e do mentor, e nas sessões mensais de Q&A da comunidade, mesmo após o fim da sua mentoria.' : 'Nunca estarás sozinho. Terás suporte contínuo através de três canais: durante as aulas ao vivo para interação direta; na nossa comunidade exclusiva no Discord para perguntas rápidas e feedback dos colegas e do mentor; e, nas sessões mensais de Q&A da comunidade, mesmo após o fim da tua mentoria.'}</div></details>
+            <details><summary>O acesso à comunidade e aos guias é vitalício?</summary><div>{language === 'pt-BR' ? 'O seu acesso à comunidade \'Visionários do Marketing\' no Discord é vitalício. O acesso aos \'Guias Vivos\' está incluído por um período de 12 meses após a sua inscrição, garantindo que se mantém atualizado durante um ano inteiro.' : 'O teu acesso à comunidade \'Visionários do Marketing\' no Discord é vitalício. O acesso aos \'Guias Vivos\' está incluído por um período de 12 meses após a tua inscrição, garantindo que te manténs atualizado durante um ano inteiro.'}</div></details>
+            <details><summary>Qual é a diferença entre esta mentoria e um curso online sobre IA?</summary><div>{language === 'pt-BR' ? 'Cursos ensinam ferramentas. A mentoria Atomica leva-o a outro nível: ensina-o a pensar e agir estrategicamente com IA, com acompanhamento direto, frameworks comprovadas e resultados imediatos. Enquanto os cursos convencionais ficam desatualizados rapidamente, a Atómica está sempre na linha da frente dos últimos lançamentos de IA — para que aplique hoje o que o mercado só vai descobrir amanhã.' : 'Cursos ensinam ferramentas. A mentoria Atomica leva-te a outro nível: ensina-te a pensar e agir estrategicamente com IA, com acompanhamento direto, frameworks comprovadas e resultados imediatos.'}</div></details>
+            <details><summary>Quanto tempo preciso dedicar por semana?</summary><div>{language === 'pt-BR' ? 'Cada sessão tem em média 2h30 e todas ficam gravadas para que você possa rever quando quiser. Além disso, propomos desafios práticos rápidos (30 a 60 minutos) para aplicar o que aprendeu no seu próprio contexto.\nAo todo, o curso conta com 20 horas de formação, e 2 a 3 horas por semana são suficientes para aproveitar ao máximo a mentoria.' : 'Cada sessão tem em média 2h30 e todas ficam gravadas para que possas rever quando quiseres. Além disso, propomos desafios práticos rápidos (30–60 minutos) para aplicares o que aprendeste no teu próprio contexto.\nNo total, o curso inclui 20 horas de formação, e bastam 2 a 3 horas por semana para tirares o máximo proveito da mentoria.'}</div></details>
+            <details><summary>As turmas têm vagas limitadas?</summary><div>{language === 'pt-BR' ? 'Sim! Cada turma é formada por, no máximo, 12 participantes, para que você tenha atenção individual, tempo para praticar e ainda troque experiências com outros profissionais, ampliando seu networking de forma estratégica.' : 'Sim! Cada turma é formada por, no máximo, 12 participantes, para que tenhas a atenção individual necessária, tempo para praticar e ainda troques experiências com outros profissionais, ampliando teu networking de forma estratégica.'}</div></details>
           </div>
           <div className="value-stack card-raised">
             <p><strong>Resumo de Valor:</strong></p>
             <ul>
-              <li>Mentoria de 20h (Valor Original: 230€)</li>
-              <li>Guias Vivos (Assinatura Anual: 324€)</li>
-              <li>Comunidade Visionários do Marketing (Assinatura Anual: 108€)</li>
+              <li>Mentoria de 20h (Valor Original: {language === 'pt-BR' ? '1.450R$' : '230€'})</li>
+              <li>Guias Vivos (Assinatura Anual: {language === 'pt-BR' ? '2.000R$' : '324€'})</li>
+              <li>Comunidade Visionários do Marketing (Assinatura Anual: {language === 'pt-BR' ? '680R$' : '108€'})</li>
             </ul>
-            <p><strong>Valor Original Total:</strong> <span style={{color:'#FF304C', fontWeight:700}}>662€</span></p>
-            <div className="investment-highlight">O seu investimento hoje: Apenas <span style={{color: '#1B1B1B', textShadow: '2px 2px 0px #FCCA29'}}>184€</span></div>
+            <p><strong>Valor Original Total:</strong> <span style={{color:'#FF304C', fontWeight:700}}>{language === 'pt-BR' ? '4.180R$' : '662€'}</span></p>
+            <div className="investment-highlight">{language === 'pt-BR' ? 'O seu investimento hoje:' : 'O teu investimento hoje:'} Apenas <span style={{color: '#1B1B1B', textShadow: '2px 2px 0px #FCCA29'}}>{language === 'pt-BR' ? '1.200R$' : '184€'}</span></div>
           </div>
           <div className="cta-final" style={{textAlign:'center'}}>
             <h2 style={{fontFamily:"'Caprasimo',serif", fontSize:'2.5rem', color:'#1B1B1B', marginBottom:'1rem', textShadow: '3px 3px 0px #A8DEE0'}}>
-              Pronto para assumir o comando da sua carreira?
+              {language === 'pt-BR' ? 'Pronto para assumir o comando da sua carreira?' : 'Pronto para assumires o comando da tua carreira profissional?'}
             </h2>
             <a href="#formulario" className="cta-primary">ASSUMIR O MEU LUGAR NO COMANDO</a>
             <p style={{fontSize:'0.875rem', marginTop:'0.75rem', color:'#3D3D3D'}}>
@@ -698,7 +939,7 @@ const Index = () => {
             }
             
             try {
-              const response = await fetch('https://n8n-n8n.1wswqf.easypanel.host/webhook/09ed2506-0db1-41f5-9e24-770ebae9c1b3', {
+              const response = await fetch('https://n8n.srv873297.hstgr.cloud/webhook/09ed2506-0db1-41f5-9e24-770ebae9c1b3', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: params.toString()
@@ -730,7 +971,7 @@ const Index = () => {
               }, 3000);
             }
           }} className="card-raised" style={{maxWidth:'600px', margin:'0 auto', display:'flex', flexDirection:'column', gap:'1.5rem', padding: '2rem'}}>
-          <h2 style={{fontFamily:"'Caprasimo',serif", fontSize:'2.5rem', textAlign:'center', marginBottom:'1rem', color: '#1B1B1B', textShadow: '3px 3px 0px #A8DEE0'}}>Reserve a sua Vaga</h2>
+          <h2 style={{fontFamily:"'Caprasimo',serif", fontSize:'2.5rem', textAlign:'center', marginBottom:'1rem', color: '#1B1B1B', textShadow: '3px 3px 0px #A8DEE0'}}>{language === 'pt-BR' ? 'Reserve a sua Vaga' : 'Reserva a tua Vaga'}</h2>
           <div>
               <label htmlFor="nome-completo" style={{fontWeight:600, display: 'block', marginBottom: '0.5rem'}}>Nome Completo</label>
               <input type="text" id="nome-completo" name="Nome Completo" placeholder="Maria Silva" required />
@@ -753,7 +994,7 @@ const Index = () => {
           </fieldset>
           <button type="submit" className="cta-primary" style={{width: '100%'}}>RESERVAR A MINHA VAGA</button>
           <p style={{fontSize:'0.875rem', color:'#555555', textAlign:'center', marginTop:'0.5rem'}}>
-            Junte-se aos profissionais de marketing de vanguarda. Risco Zero com a nossa Garantia Incondicional.
+            {language === 'pt-BR' ? 'Junte-se aos profissionais de marketing de vanguarda. Risco Zero com a nossa Garantia Incondicional.' : 'Junta-te aos profissionais de marketing de vanguarda. Risco Zero com a nossa Garantia Incondicional.'}
           </p>
         </form>
         </div>
@@ -775,19 +1016,6 @@ const Index = () => {
         </div>
       </footer>
 
-      <script dangerouslySetInnerHTML={{
-        __html: `
-          const mapping = {conteudo:25, audiovisual:50, automacao:75};
-          document.getElementById('mission-select').addEventListener('change', function() {
-            const percent = mapping[this.value] || 0;
-            document.getElementById('vacancy-progress').style.display = 'flex';
-            document.getElementById('progress-bar-fill').style.width = percent + '%';
-            const reserved = Math.round(percent * 12 / 100);
-            document.getElementById('progress-count').textContent = reserved;
-            document.getElementById('vacancy-text').textContent = (12 - reserved);
-          });
-        `
-      }} />
     </div>
   );
 };
