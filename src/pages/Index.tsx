@@ -926,37 +926,59 @@ const Index = () => {
             e.preventDefault();
             const button = e.currentTarget.querySelector('button[type="submit"]') as HTMLButtonElement;
             const originalText = button.textContent;
+            const form = e.target as HTMLFormElement;
+            
+            // Get form values
+            const nome = (form.querySelector('#nome-completo') as HTMLInputElement).value.trim();
+            const email = (form.querySelector('#email') as HTMLInputElement).value.trim();
+            const telefone = (form.querySelector('#phone') as HTMLInputElement).value.trim();
+            
+            // Client-side validation
+            if (nome.length < 2 || nome.length > 100) {
+              alert('Nome deve ter entre 2 e 100 caracteres.');
+              return;
+            }
+            
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+              alert('Por favor, insira um email válido.');
+              return;
+            }
+            
+            const phoneRegex = /^[0-9\s\-\+\(\)]+$/;
+            if (!phoneRegex.test(telefone) || telefone.length < 6) {
+              alert('Por favor, insira um telefone válido.');
+              return;
+            }
+            
+            // Get selected mentorships
+            const mentoriasInputs = form.querySelectorAll('input[name="Mentoria(s) de Interesse"]:checked') as NodeListOf<HTMLInputElement>;
+            const mentorias = Array.from(mentoriasInputs).map(input => input.value);
             
             button.textContent = 'ENVIANDO...';
             button.disabled = true;
             
-            const formData = new FormData(e.target as HTMLFormElement);
-            
-            // Convert FormData to URLSearchParams for x-www-form-urlencoded
-            const params = new URLSearchParams();
-            for (const [key, value] of formData.entries()) {
-              params.append(key, value as string);
-            }
-            
             try {
-              const response = await fetch('https://n8n-n8n.1wswqf.easypanel.host/webhook/09ed2506-0db1-41f5-9e24-770ebae9c1b3', {
+              const response = await fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/submit-form`, {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: params.toString()
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ nome, email, telefone, mentorias })
               });
               
-              if (response.ok || response.status === 0) {
+              const data = await response.json();
+              
+              if (response.ok && data.success) {
                 button.textContent = 'Recebemos a sua inscrição!';
                 button.style.backgroundColor = '#22c55e';
                 
                 setTimeout(() => {
-                  (e.target as HTMLFormElement).reset();
+                  form.reset();
                   button.textContent = originalText;
                   button.disabled = false;
                   button.style.backgroundColor = '';
                 }, 3000);
               } else {
-                throw new Error('Network response was not ok');
+                throw new Error(data.error || 'Erro ao enviar');
               }
               
             } catch (error) {
