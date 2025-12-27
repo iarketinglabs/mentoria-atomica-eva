@@ -4,6 +4,10 @@ import LegalLayout from '@/components/layout/LegalLayout';
 const PoliticaCookies = () => {
   return (
     <LegalLayout title="Política de Cookies e Conformidade (RGPD/LGPD)">
+      <p style={{ fontSize: '0.875rem', color: '#555555', marginBottom: '1.5rem', fontStyle: 'italic' }}>
+        Última atualização: 27 de dezembro de 2025
+      </p>
+
       <h2>1. O que são Cookies?</h2>
       <p>
         Cookies são pequenos arquivos de texto salvos no seu navegador quando você visita o site da Atomica Marketing. Eles funcionam como a "memória" do site, permitindo que reconheçamos você e melhoremos sua experiência de navegação. Não são vírus e não capturam informações que você não nos forneceu voluntariamente.

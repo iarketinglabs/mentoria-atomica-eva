@@ -4,6 +4,10 @@ import LegalLayout from '@/components/layout/LegalLayout';
 const TermosUso = () => {
   return (
     <LegalLayout title="Termos e Condições de Uso">
+      <p style={{ fontSize: '0.875rem', color: '#555555', marginBottom: '1.5rem', fontStyle: 'italic' }}>
+        Última atualização: 27 de dezembro de 2025
+      </p>
+
       <h2>1. Aceitação</h2>
       <p>
         Bem-vindo à Atomica Marketing. Ao acessar nosso site e utilizar nossos serviços, você concorda integralmente com os termos abaixo descritos.

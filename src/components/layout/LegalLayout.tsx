@@ -96,7 +96,7 @@ const LegalLayout: React.FC<LegalLayoutProps> = ({ children, title }) => {
             <Link to="/politica-privacidade" style={{ color: '#1B1B1B', textDecoration: 'none' }}>Política de Privacidade</Link>
             <Link to="/termos-de-uso" style={{ color: '#1B1B1B', textDecoration: 'none' }}>Termos & Condições</Link>
           </div>
-          <p style={{ margin: '0.25rem 0', color: '#1B1B1B' }}>Contato: <a href="mailto:geral@criacomia.com" style={{ color: '#1B1B1B', textDecoration: 'none' }}>geral@criacomia.com</a></p>
+          <p style={{ margin: '0.25rem 0', color: '#1B1B1B' }}>Contato: <a href="mailto:pedroarmbrust@atomica.group" style={{ color: '#1B1B1B', textDecoration: 'none' }}>pedroarmbrust@atomica.group</a></p>
           <p style={{ margin: '0.25rem 0', color: '#555555' }}>© 2025 Atomica | Todos os direitos reservados.</p>
           <p style={{ maxWidth: '800px', margin: '1rem auto 0', color: '#555555', lineHeight: 1.4, textAlign: 'center' }}>
             Disclaimer: Esta mentoria é uma ferramenta de capacitação educacional. Os resultados individuais podem variar e dependem do empenho e da aplicação de cada aluno. Este conteúdo não substitui consultoria jurídica, contabilística ou fiscal.
