@@ -1025,14 +1025,14 @@ const Index = () => {
 
       <footer className="footer-legal" style={{backgroundColor:'#E5DBC7', padding:'2rem 1rem', fontSize:'0.875rem'}}>
         <div style={{maxWidth:'800px', margin:'0 auto', textAlign:'center'}}>
-          <p style={{margin:'0.25rem 0', color:'#1B1B1B', fontWeight:600}}>Cria com I.A. Unipessoal Lda. | NIF: 510000000 | Sede: Lisboa, Portugal</p>
+          <p style={{margin:'0.25rem 0', color:'#1B1B1B', fontWeight:600}}>Atomica Unipessoal Lda. | NIF: 510000000 | Sede: Lisboa, Portugal</p>
           <div style={{margin: '0.5rem 0', display:'flex', flexWrap:'wrap', justifyContent:'center', gap:'1rem'}}>
             <Link to="/politica-cookies" style={{color:'#1B1B1B', textDecoration:'none'}}>RGPD e Cookies</Link>
             <Link to="/politica-privacidade" style={{color:'#1B1B1B', textDecoration:'none'}}>Política de Privacidade</Link>
             <Link to="/termos-de-uso" style={{color:'#1B1B1B', textDecoration:'none'}}>Termos & Condições</Link>
           </div>
           <p style={{margin:'0.25rem 0', color:'#1B1B1B'}}>Contato: <a href="mailto:geral@criacomia.com" style={{color:'#1B1B1B', textDecoration:'none'}}>geral@criacomia.com</a></p>
-          <p style={{margin:'0.25rem 0', color:'#555555'}}>© 2025 Cria com I.A. | Todos os direitos reservados.</p>
+          <p style={{margin:'0.25rem 0', color:'#555555'}}>© 2025 Atomica | Todos os direitos reservados.</p>
           <p style={{maxWidth:'800px', margin:'1rem auto 0', color:'#555555', lineHeight:1.4, textAlign:'center'}}>
             Disclaimer: Esta mentoria é uma ferramenta de capacitação educacional. Os resultados individuais podem variar e dependem do empenho e da aplicação de cada aluno. Este conteúdo não substitui consultoria jurídica, contabilística ou fiscal.
           </p>
