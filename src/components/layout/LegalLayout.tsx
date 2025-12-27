@@ -94,7 +94,7 @@ const LegalLayout: React.FC<LegalLayoutProps> = ({ children, title }) => {
           <div style={{ margin: '0.5rem 0', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1rem' }}>
             <Link to="/politica-cookies" style={{ color: '#1B1B1B', textDecoration: 'none' }}>RGPD e Cookies</Link>
             <Link to="/politica-privacidade" style={{ color: '#1B1B1B', textDecoration: 'none' }}>Política de Privacidade</Link>
-            <Link to="/termos-uso" style={{ color: '#1B1B1B', textDecoration: 'none' }}>Termos & Condições</Link>
+            <Link to="/termos-de-uso" style={{ color: '#1B1B1B', textDecoration: 'none' }}>Termos & Condições</Link>
           </div>
           <p style={{ margin: '0.25rem 0', color: '#1B1B1B' }}>Contato: <a href="mailto:geral@criacomia.com" style={{ color: '#1B1B1B', textDecoration: 'none' }}>geral@criacomia.com</a></p>
           <p style={{ margin: '0.25rem 0', color: '#555555' }}>© 2025 Cria com I.A. | Todos os direitos reservados.</p>
