@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Globe } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Index = () => {
   const [language, setLanguage] = useState<'pt-PT' | 'pt-BR'>('pt-PT');
@@ -1026,9 +1027,9 @@ const Index = () => {
         <div style={{maxWidth:'800px', margin:'0 auto', textAlign:'center'}}>
           <p style={{margin:'0.25rem 0', color:'#1B1B1B', fontWeight:600}}>Cria com I.A. Unipessoal Lda. | NIF: 510000000 | Sede: Lisboa, Portugal</p>
           <div style={{margin: '0.5rem 0', display:'flex', flexWrap:'wrap', justifyContent:'center', gap:'1rem'}}>
-            <a href="/rgpd" style={{color:'#1B1B1B', textDecoration:'none'}}>RGPD e Cookies</a>
-            <a href="/politica-privacidade" style={{color:'#1B1B1B', textDecoration:'none'}}>Política de Privacidade</a>
-            <a href="/termos" style={{color:'#1B1B1B', textDecoration:'none'}}>Termos & Condições</a>
+            <Link to="/politica-cookies" style={{color:'#1B1B1B', textDecoration:'none'}}>RGPD e Cookies</Link>
+            <Link to="/politica-privacidade" style={{color:'#1B1B1B', textDecoration:'none'}}>Política de Privacidade</Link>
+            <Link to="/termos-uso" style={{color:'#1B1B1B', textDecoration:'none'}}>Termos & Condições</Link>
           </div>
           <p style={{margin:'0.25rem 0', color:'#1B1B1B'}}>Contato: <a href="mailto:geral@criacomia.com" style={{color:'#1B1B1B', textDecoration:'none'}}>geral@criacomia.com</a></p>
           <p style={{margin:'0.25rem 0', color:'#555555'}}>© 2025 Cria com I.A. | Todos os direitos reservados.</p>
