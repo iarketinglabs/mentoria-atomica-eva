@@ -1015,7 +1015,7 @@ const Index = () => {
               <label className="checkbox-custom"><input type="checkbox" name="Mentoria(s) de Interesse" value="IA generativa para automação de marketing" /> IA generativa para automação de marketing</label>
             </div>
           </fieldset>
-          <button type="submit" className="cta-primary" style={{width: '100%'}}>RESERVAR A MINHA VAGA</button>
+          <a href="https://buy.stripe.com/4gM00j0ryaGX82q9az4Rq00" className="cta-primary" style={{width: '100%', textAlign: 'center'}}>RESERVAR A MINHA VAGA</a>
           <p style={{fontSize:'0.875rem', color:'#555555', textAlign:'center', marginTop:'0.5rem'}}>
             {language === 'pt-BR' ? 'Junte-se aos profissionais de marketing de vanguarda. Risco Zero com a nossa Garantia Incondicional.' : 'Junta-te aos profissionais de marketing de vanguarda. Risco Zero com a nossa Garantia Incondicional.'}
           </p>
