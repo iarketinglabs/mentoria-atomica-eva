@@ -992,8 +992,15 @@ const Index = () => {
                 button.style.backgroundColor = '#67BBC0';
                 
                 // Redireciona para o Stripe após salvar o lead
+                // Usa window.open para evitar bloqueios em iframes
+                const stripeUrl = 'https://buy.stripe.com/4gM00j0ryaGX82q9az4Rq00';
                 setTimeout(() => {
-                  window.location.href = 'https://buy.stripe.com/4gM00j0ryaGX82q9az4Rq00';
+                  // Tenta abrir em nova aba primeiro (mais confiável)
+                  const newWindow = window.open(stripeUrl, '_blank');
+                  // Se bloqueado por popup blocker, faz redirect normal
+                  if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
+                    window.location.href = stripeUrl;
+                  }
                 }, 500);
               } else {
                 throw new Error(data.error || 'Erro ao enviar');
