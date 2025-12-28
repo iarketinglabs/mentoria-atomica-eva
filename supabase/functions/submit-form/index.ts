@@ -14,7 +14,9 @@ const RATE_LIMIT_WINDOW_MS = 60 * 1000; // 1 minute window
 
 function getCorsHeaders(origin: string | null) {
   const isAllowed = origin && allowedOrigins.some(allowed => 
-    origin === allowed || origin.endsWith('.lovable.app')
+    origin === allowed || 
+    origin.endsWith('.lovable.app') || 
+    origin.endsWith('.lovableproject.com')
   );
   
   return {
