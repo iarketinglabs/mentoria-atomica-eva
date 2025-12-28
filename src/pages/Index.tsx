@@ -6,6 +6,25 @@ const Index = () => {
   const [language, setLanguage] = useState<'pt-PT' | 'pt-BR'>('pt-PT');
   const [showLanguageMenu, setShowLanguageMenu] = useState(false);
   const [selectedMission, setSelectedMission] = useState<string>('');
+  
+  // Form validation state
+  const [formName, setFormName] = useState('');
+  const [formEmail, setFormEmail] = useState('');
+  const [formPhone, setFormPhone] = useState('');
+  const [formMentorias, setFormMentorias] = useState<string[]>([]);
+  
+  const isFormValid = formName.trim().length >= 2 && 
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formEmail) && 
+    formPhone.trim().length >= 6 && 
+    formMentorias.length > 0;
+  
+  const handleMentoriaChange = (value: string, checked: boolean) => {
+    if (checked) {
+      setFormMentorias(prev => [...prev, value]);
+    } else {
+      setFormMentorias(prev => prev.filter(m => m !== value));
+    }
+  };
   return (
     <div style={{ fontFamily: "'Jost', sans-serif", backgroundColor: '#FCF9F2', color: '#1B1B1B', margin: 0, padding: 0 }}>
       <style>{`
@@ -997,25 +1016,89 @@ const Index = () => {
           <h2 style={{fontFamily:"'Caprasimo',serif", fontSize:'2.5rem', textAlign:'center', marginBottom:'1rem', color: '#1B1B1B', textShadow: '3px 3px 0px #A8DEE0'}}>{language === 'pt-BR' ? 'Reserve a sua Vaga' : 'Reserva a tua Vaga'}</h2>
           <div>
               <label htmlFor="nome-completo" style={{fontWeight:600, display: 'block', marginBottom: '0.5rem'}}>Nome Completo</label>
-              <input type="text" id="nome-completo" name="Nome Completo" placeholder="Maria Silva" required />
+              <input 
+                type="text" 
+                id="nome-completo" 
+                name="Nome Completo" 
+                placeholder="Maria Silva" 
+                required 
+                value={formName}
+                onChange={(e) => setFormName(e.target.value)}
+              />
           </div>
           <div>
               <label htmlFor="email" style={{fontWeight:600, display: 'block', marginBottom: '0.5rem'}}>Email</label>
-              <input type="email" id="email" name="E-mail" placeholder="email@exemplo.com" required />
+              <input 
+                type="email" 
+                id="email" 
+                name="E-mail" 
+                placeholder="email@exemplo.com" 
+                required 
+                value={formEmail}
+                onChange={(e) => setFormEmail(e.target.value)}
+              />
           </div>
           <div>
               <label htmlFor="phone" style={{fontWeight:600, display: 'block', marginBottom: '0.5rem'}}>Telefone</label>
-              <input type="tel" id="phone" name="Telefone" placeholder="912 345 678" required style={{width: '100%'}} />
+              <input 
+                type="tel" 
+                id="phone" 
+                name="Telefone" 
+                placeholder="912 345 678" 
+                required 
+                style={{width: '100%'}} 
+                value={formPhone}
+                onChange={(e) => setFormPhone(e.target.value)}
+              />
           </div>
           <fieldset style={{border:'none', padding:0}}>
             <legend style={{fontWeight:600, marginBottom:'0.5rem'}}>Mentoria(s) de Interesse</legend>
             <div style={{display:'flex', flexDirection:'column', gap:'0.5rem'}}>
-              <label className="checkbox-custom"><input type="checkbox" name="Mentoria(s) de Interesse" value="IA generativa para criação de conteúdo" /> IA generativa para criação de conteúdo</label>
-              <label className="checkbox-custom"><input type="checkbox" name="Mentoria(s) de Interesse" value="IA generativa para audiovisual" /> IA generativa para audiovisual</label>
-              <label className="checkbox-custom"><input type="checkbox" name="Mentoria(s) de Interesse" value="IA generativa para automação de marketing" /> IA generativa para automação de marketing</label>
+              <label className="checkbox-custom">
+                <input 
+                  type="checkbox" 
+                  name="Mentoria(s) de Interesse" 
+                  value="IA generativa para criação de conteúdo"
+                  checked={formMentorias.includes("IA generativa para criação de conteúdo")}
+                  onChange={(e) => handleMentoriaChange(e.target.value, e.target.checked)}
+                /> IA generativa para criação de conteúdo
+              </label>
+              <label className="checkbox-custom">
+                <input 
+                  type="checkbox" 
+                  name="Mentoria(s) de Interesse" 
+                  value="IA generativa para audiovisual"
+                  checked={formMentorias.includes("IA generativa para audiovisual")}
+                  onChange={(e) => handleMentoriaChange(e.target.value, e.target.checked)}
+                /> IA generativa para audiovisual
+              </label>
+              <label className="checkbox-custom">
+                <input 
+                  type="checkbox" 
+                  name="Mentoria(s) de Interesse" 
+                  value="IA generativa para automação de marketing"
+                  checked={formMentorias.includes("IA generativa para automação de marketing")}
+                  onChange={(e) => handleMentoriaChange(e.target.value, e.target.checked)}
+                /> IA generativa para automação de marketing
+              </label>
             </div>
           </fieldset>
-          <a href="https://buy.stripe.com/4gM00j0ryaGX82q9az4Rq00" className="cta-primary" style={{width: '100%', textAlign: 'center'}}>RESERVAR A MINHA VAGA</a>
+          <a 
+            href={isFormValid ? "https://buy.stripe.com/4gM00j0ryaGX82q9az4Rq00" : undefined}
+            className="cta-primary" 
+            style={{
+              width: '100%', 
+              textAlign: 'center',
+              opacity: isFormValid ? 1 : 0.5,
+              pointerEvents: isFormValid ? 'auto' : 'none',
+              cursor: isFormValid ? 'pointer' : 'not-allowed'
+            }}
+            onClick={(e) => {
+              if (!isFormValid) {
+                e.preventDefault();
+              }
+            }}
+          >RESERVAR A MINHA VAGA</a>
           <p style={{fontSize:'0.875rem', color:'#555555', textAlign:'center', marginTop:'0.5rem'}}>
             {language === 'pt-BR' ? 'Junte-se aos profissionais de marketing de vanguarda. Risco Zero com a nossa Garantia Incondicional.' : 'Junta-te aos profissionais de marketing de vanguarda. Risco Zero com a nossa Garantia Incondicional.'}
           </p>
