@@ -988,15 +988,13 @@ const Index = () => {
               const data = await response.json();
               
               if (response.ok && data.success) {
-                button.textContent = 'Recebemos a sua inscrição!';
-                button.style.backgroundColor = '#22c55e';
+                button.textContent = 'Sucesso! Redirecionando...';
+                button.style.backgroundColor = '#67BBC0';
                 
+                // Redireciona para o Stripe após salvar o lead
                 setTimeout(() => {
-                  form.reset();
-                  button.textContent = originalText;
-                  button.disabled = false;
-                  button.style.backgroundColor = '';
-                }, 3000);
+                  window.location.href = 'https://buy.stripe.com/4gM00j0ryaGX82q9az4Rq00';
+                }, 500);
               } else {
                 throw new Error(data.error || 'Erro ao enviar');
               }
@@ -1083,22 +1081,17 @@ const Index = () => {
               </label>
             </div>
           </fieldset>
-          <a 
-            href={isFormValid ? "https://buy.stripe.com/4gM00j0ryaGX82q9az4Rq00" : undefined}
+          <button 
+            type="submit"
             className="cta-primary" 
+            disabled={!isFormValid}
             style={{
               width: '100%', 
               textAlign: 'center',
               opacity: isFormValid ? 1 : 0.5,
-              pointerEvents: isFormValid ? 'auto' : 'none',
               cursor: isFormValid ? 'pointer' : 'not-allowed'
             }}
-            onClick={(e) => {
-              if (!isFormValid) {
-                e.preventDefault();
-              }
-            }}
-          >RESERVAR A MINHA VAGA</a>
+          >RESERVAR A MINHA VAGA</button>
           <p style={{fontSize:'0.875rem', color:'#555555', textAlign:'center', marginTop:'0.5rem'}}>
             {language === 'pt-BR' ? 'Junte-se aos profissionais de marketing de vanguarda. Risco Zero com a nossa Garantia Incondicional.' : 'Junta-te aos profissionais de marketing de vanguarda. Risco Zero com a nossa Garantia Incondicional.'}
           </p>
