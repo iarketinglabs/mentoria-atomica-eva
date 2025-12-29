@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { toast } from 'sonner';
 
 const Index = () => {
   const [language, setLanguage] = useState<'pt-PT' | 'pt-BR'>('pt-PT');
@@ -12,11 +13,50 @@ const Index = () => {
   const [formEmail, setFormEmail] = useState('');
   const [formPhone, setFormPhone] = useState('');
   const [formMentorias, setFormMentorias] = useState<string[]>([]);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   
-  const isFormValid = formName.trim().length >= 2 && 
-    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formEmail) && 
-    formPhone.trim().length >= 6 && 
-    formMentorias.length > 0;
+  // Field touch state for onBlur validation
+  const [touchedFields, setTouchedFields] = useState({
+    name: false,
+    email: false,
+    phone: false
+  });
+  
+  // Validation functions
+  const isNameValid = formName.trim().length > 3;
+  const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formEmail);
+  const isPhoneValid = formPhone.replace(/\D/g, '').length >= 9;
+  const hasMentoriaSelected = formMentorias.length > 0;
+  
+  const isFormValid = isNameValid && isEmailValid && isPhoneValid && hasMentoriaSelected;
+  
+  // Get validation error messages
+  const getFieldError = (field: 'name' | 'email' | 'phone') => {
+    if (field === 'name' && touchedFields.name && !isNameValid) {
+      return 'Nome deve ter mais de 3 caracteres';
+    }
+    if (field === 'email' && touchedFields.email && !isEmailValid) {
+      return 'Por favor, insira um email válido';
+    }
+    if (field === 'phone' && touchedFields.phone && !isPhoneValid) {
+      return 'Telefone deve ter no mínimo 9 dígitos';
+    }
+    return null;
+  };
+  
+  // Get Stripe URL based on number of selected mentorias
+  const getStripeUrl = (count: number): string => {
+    switch (count) {
+      case 1:
+        return 'https://buy.stripe.com/4gM00j0ryaGX82q9az4Rq00';
+      case 2:
+        return 'https://buy.stripe.com/cNieVd5LSaGXbeCbiH4Rq01';
+      case 3:
+        return 'https://buy.stripe.com/00w8wP8Y4aGX5Ui86v4Rq02';
+      default:
+        return 'https://buy.stripe.com/4gM00j0ryaGX82q9az4Rq00';
+    }
+  };
   
   const handleMentoriaChange = (value: string, checked: boolean) => {
     if (checked) {
@@ -24,6 +64,10 @@ const Index = () => {
     } else {
       setFormMentorias(prev => prev.filter(m => m !== value));
     }
+  };
+  
+  const handleFieldBlur = (field: 'name' | 'email' | 'phone') => {
+    setTouchedFields(prev => ({ ...prev, [field]: true }));
   };
   return (
     <div style={{ fontFamily: "'Jost', sans-serif", backgroundColor: '#FCF9F2', color: '#1B1B1B', margin: 0, padding: 0 }}>
@@ -322,10 +366,49 @@ const Index = () => {
           text-decoration: none; display: inline-block;
         }
 
-        .signup-form input, .signup-form select { border:2px solid #E5DBC7; border-radius:4px; padding:0.75rem; font-size:1rem; background:#FCF9F2; width: 100%; box-sizing: border-box; }
+        .signup-form input, .signup-form select { border:2px solid #E5DBC7; border-radius:4px; padding:0.75rem; font-size:1rem; background:#FCF9F2; width: 100%; box-sizing: border-box; transition: border-color 0.2s ease; }
+        .signup-form input.field-error { border-color: #ef4444; }
+        .signup-form input:focus { outline: none; border-color: #67BBC0; }
+        .signup-form .field-error-message { color: #ef4444; font-size: 0.75rem; margin-top: 0.25rem; }
         .signup-form .checkbox-custom { display:flex; align-items:center; gap:0.5rem; cursor:pointer; }
         .signup-form .checkbox-custom input { appearance:none; width:20px; height:20px; border:2px solid #E5DBC7; border-radius:4px; position:relative; flex-shrink: 0; }
         .signup-form .checkbox-custom input:checked::before { content:'✱'; position:absolute; top: -3px; left: 2px; color:#67BBC0; font-size:1.25rem; }
+        
+        /* Tooltip for disabled button */
+        .tooltip-wrapper { position: relative; display: inline-block; width: 100%; }
+        .tooltip-text { 
+          visibility: hidden; 
+          opacity: 0;
+          background-color: #3D3D3D; 
+          color: #FCF9F2; 
+          text-align: center; 
+          border-radius: 6px; 
+          padding: 8px 12px; 
+          position: absolute; 
+          z-index: 100; 
+          bottom: calc(100% + 10px); 
+          left: 50%; 
+          transform: translateX(-50%); 
+          font-size: 0.875rem;
+          font-weight: 400;
+          white-space: nowrap;
+          transition: opacity 0.2s ease, visibility 0.2s ease;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+        .tooltip-text::after {
+          content: '';
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          margin-left: -5px;
+          border-width: 5px;
+          border-style: solid;
+          border-color: #3D3D3D transparent transparent transparent;
+        }
+        .tooltip-wrapper:hover .tooltip-text.show-tooltip { 
+          visibility: visible; 
+          opacity: 1;
+        }
       `}</style>
 
       {/* Language Switcher */}
@@ -944,39 +1027,31 @@ const Index = () => {
         <div className="max-w-6xl mx-auto">
           <form onSubmit={async (e) => {
             e.preventDefault();
+            
+            // Previne cliques duplos imediatamente
+            if (isSubmitting) return;
+            setIsSubmitting(true);
+            
             const button = e.currentTarget.querySelector('button[type="submit"]') as HTMLButtonElement;
             const originalText = button.textContent;
-            const form = e.target as HTMLFormElement;
             
-            // Get form values
-            const nome = (form.querySelector('#nome-completo') as HTMLInputElement).value.trim();
-            const email = (form.querySelector('#email') as HTMLInputElement).value.trim();
-            const telefone = (form.querySelector('#phone') as HTMLInputElement).value.trim();
+            // Get form values from state
+            const nome = formName.trim();
+            const email = formEmail.trim();
+            const telefone = formPhone.trim();
+            const mentorias = formMentorias;
             
-            // Client-side validation
-            if (nome.length < 2 || nome.length > 100) {
-              alert('Nome deve ter entre 2 e 100 caracteres.');
+            // Validação final antes de enviar
+            if (!isFormValid) {
+              setIsSubmitting(false);
+              toast.error('Por favor, preencha todos os campos corretamente.');
               return;
             }
-            
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
-              alert('Por favor, insira um email válido.');
-              return;
-            }
-            
-            const phoneRegex = /^[0-9\s\-\+\(\)]+$/;
-            if (!phoneRegex.test(telefone) || telefone.length < 6) {
-              alert('Por favor, insira um telefone válido.');
-              return;
-            }
-            
-            // Get selected mentorships
-            const mentoriasInputs = form.querySelectorAll('input[name="Mentoria(s) de Interesse"]:checked') as NodeListOf<HTMLInputElement>;
-            const mentorias = Array.from(mentoriasInputs).map(input => input.value);
             
             button.textContent = 'ENVIANDO...';
-            button.disabled = true;
+            
+            // Log para debug
+            console.log('Form submission started:', { nome, email, telefone, mentorias: mentorias.length });
             
             try {
               const response = await fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/submit-form`, {
@@ -991,15 +1066,18 @@ const Index = () => {
                 button.textContent = 'Sucesso! Redirecionando...';
                 button.style.backgroundColor = '#67BBC0';
                 
-                // Redireciona para o Stripe após salvar o lead
-                // Usa window.open para evitar bloqueios em iframes
-                const stripeUrl = 'https://buy.stripe.com/4gM00j0ryaGX82q9az4Rq00';
+                // Determina URL do Stripe baseado na quantidade de mentorias
+                const targetUrl = getStripeUrl(mentorias.length);
+                console.log('Redirecting to:', targetUrl);
+                
+                toast.success('Dados salvos com sucesso! Redirecionando para pagamento...');
+                
                 setTimeout(() => {
                   // Tenta abrir em nova aba primeiro (mais confiável)
-                  const newWindow = window.open(stripeUrl, '_blank');
+                  const newWindow = window.open(targetUrl, '_blank');
                   // Se bloqueado por popup blocker, faz redirect normal
                   if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
-                    window.location.href = stripeUrl;
+                    window.location.href = targetUrl;
                   }
                 }, 500);
               } else {
@@ -1008,17 +1086,20 @@ const Index = () => {
               
             } catch (error) {
               console.error('Error:', error);
-              button.textContent = 'Não foi possível enviar. Tente novamente.';
+              toast.error('Ocorreu um erro ao reservar. Por favor, tente novamente.');
+              button.textContent = 'Erro. Tente novamente.';
               button.style.backgroundColor = '#ef4444';
               
               setTimeout(() => {
                 button.textContent = originalText;
-                button.disabled = false;
                 button.style.backgroundColor = '';
+                setIsSubmitting(false);
               }, 3000);
             }
           }} className="card-raised" style={{maxWidth:'600px', margin:'0 auto', display:'flex', flexDirection:'column', gap:'1.5rem', padding: '2rem'}}>
           <h2 style={{fontFamily:"'Caprasimo',serif", fontSize:'2.5rem', textAlign:'center', marginBottom:'1rem', color: '#1B1B1B', textShadow: '3px 3px 0px #A8DEE0'}}>{language === 'pt-BR' ? 'Reserve a sua Vaga' : 'Reserva a tua Vaga'}</h2>
+          
+          {/* Nome */}
           <div>
               <label htmlFor="nome-completo" style={{fontWeight:600, display: 'block', marginBottom: '0.5rem'}}>Nome Completo</label>
               <input 
@@ -1029,8 +1110,15 @@ const Index = () => {
                 required 
                 value={formName}
                 onChange={(e) => setFormName(e.target.value)}
+                onBlur={() => handleFieldBlur('name')}
+                className={touchedFields.name && !isNameValid ? 'field-error' : ''}
               />
+              {getFieldError('name') && (
+                <p className="field-error-message">{getFieldError('name')}</p>
+              )}
           </div>
+          
+          {/* Email */}
           <div>
               <label htmlFor="email" style={{fontWeight:600, display: 'block', marginBottom: '0.5rem'}}>Email</label>
               <input 
@@ -1041,8 +1129,15 @@ const Index = () => {
                 required 
                 value={formEmail}
                 onChange={(e) => setFormEmail(e.target.value)}
+                onBlur={() => handleFieldBlur('email')}
+                className={touchedFields.email && !isEmailValid ? 'field-error' : ''}
               />
+              {getFieldError('email') && (
+                <p className="field-error-message">{getFieldError('email')}</p>
+              )}
           </div>
+          
+          {/* Telefone */}
           <div>
               <label htmlFor="phone" style={{fontWeight:600, display: 'block', marginBottom: '0.5rem'}}>Telefone</label>
               <input 
@@ -1054,10 +1149,17 @@ const Index = () => {
                 style={{width: '100%'}} 
                 value={formPhone}
                 onChange={(e) => setFormPhone(e.target.value)}
+                onBlur={() => handleFieldBlur('phone')}
+                className={touchedFields.phone && !isPhoneValid ? 'field-error' : ''}
               />
+              {getFieldError('phone') && (
+                <p className="field-error-message">{getFieldError('phone')}</p>
+              )}
           </div>
+          
+          {/* Mentorias */}
           <fieldset style={{border:'none', padding:0}}>
-            <legend style={{fontWeight:600, marginBottom:'0.5rem'}}>Mentoria(s) de Interesse</legend>
+            <legend style={{fontWeight:600, marginBottom:'0.5rem'}}>Mentoria(s) de Interesse <span style={{color: '#ef4444'}}>*</span></legend>
             <div style={{display:'flex', flexDirection:'column', gap:'0.5rem'}}>
               <label className="checkbox-custom">
                 <input 
@@ -1087,18 +1189,31 @@ const Index = () => {
                 /> IA generativa para automação de marketing
               </label>
             </div>
+            {!hasMentoriaSelected && (
+              <p style={{fontSize: '0.75rem', color: '#3D3D3D', marginTop: '0.5rem'}}>
+                Selecione pelo menos uma mentoria
+              </p>
+            )}
           </fieldset>
-          <button 
-            type="submit"
-            className="cta-primary" 
-            disabled={!isFormValid}
-            style={{
-              width: '100%', 
-              textAlign: 'center',
-              opacity: isFormValid ? 1 : 0.5,
-              cursor: isFormValid ? 'pointer' : 'not-allowed'
-            }}
-          >RESERVAR A MINHA VAGA</button>
+          
+          {/* Botão com Tooltip */}
+          <div className="tooltip-wrapper">
+            <span className={`tooltip-text ${!isFormValid && !isSubmitting ? 'show-tooltip' : ''}`}>
+              Por favor, preencha todos os campos e escolha uma mentoria
+            </span>
+            <button 
+              type="submit"
+              className="cta-primary" 
+              disabled={!isFormValid || isSubmitting}
+              style={{
+                width: '100%', 
+                textAlign: 'center',
+                opacity: (isFormValid && !isSubmitting) ? 1 : 0.5,
+                cursor: (isFormValid && !isSubmitting) ? 'pointer' : 'not-allowed'
+              }}
+            >{isSubmitting ? 'ENVIANDO...' : 'RESERVAR A MINHA VAGA'}</button>
+          </div>
+          
           <p style={{fontSize:'0.875rem', color:'#555555', textAlign:'center', marginTop:'0.5rem'}}>
             {language === 'pt-BR' ? 'Junte-se aos profissionais de marketing de vanguarda. Risco Zero com a nossa Garantia Incondicional.' : 'Junta-te aos profissionais de marketing de vanguarda. Risco Zero com a nossa Garantia Incondicional.'}
           </p>
