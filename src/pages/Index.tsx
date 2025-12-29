@@ -445,10 +445,10 @@ const Index = () => {
             {language === 'pt-BR' ? 'Use IA para entregar em 5 dias o que hoje leva 30' : 'Usa a IA para conquistares em 5 dias o que hoje farias em 30'}
           </h2>
           
-          {/* Placeholder para Vídeo */}
+          {/* Imagem de Apresentação */}
           <div className="max-w-3xl mx-auto my-8">
-            <div className="aspect-w-16 aspect-h-9 bg-[#1B1B1B] rounded-xl border-4 border-[#1B1B1B] shadow-[8px_8px_0px_#FCCA29]">
-              <img src="https://placehold.co/1280x720/1B1B1B/FCF9F2?text=V%C3%ADdeo+de+Apresenta%C3%A7%C3%A3o" alt="Vídeo de Apresentação da Mentoria" className="w-full h-full object-cover rounded-lg"/>
+            <div className="rounded-xl border-4 border-[#1B1B1B] shadow-[8px_8px_0px_#FCCA29] overflow-hidden">
+              <img src="/assets/hero-presentation.png" alt="Apresentação da Mentoria" className="w-full h-auto object-cover"/>
             </div>
           </div>
 
