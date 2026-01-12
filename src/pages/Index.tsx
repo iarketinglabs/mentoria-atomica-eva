@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Globe } from 'lucide-react';
+import { Globe, CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { toast } from 'sonner';
+import StickyBar from '@/components/StickyBar';
 
 const Index = () => {
   const [language, setLanguage] = useState<'pt-PT' | 'pt-BR'>('pt-PT');
@@ -95,11 +96,38 @@ const Index = () => {
             top: 0; left: 0; right: 0; bottom: 0;
             width: 100%; height: 100%;
             pointer-events: none;
-            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJub2lzZSI+PGZlVHVyYnVsZW5jZSB0eXBlPSJmcmFjdGFsTm9pc2UiIGJhc2VGcmVxdWVuY3k9IjAuNyIgbnVtT2N0YXZlcz0iMiIgc3RpdGNoVGlsZXM9InN0aXRjaCIvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNub2lzZSkiIG9wYWNpdHk9IjAuMDciLz48L3N2Zz4=');
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJub2lzZSI+PGZlVHVyYnVsZW5jZSB0eXBlPSJmcmFjdGFsTm9pc2UiIGJhc2VGcmVxdWVuY3k9IjAuNyIgbnVtT2N0YXZlcz0iMiIgc3RpdGNoVGlsZXM9InN0aXRjaCIvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNub2lzZSkiIG9wYWNpdHk9IjAuMTIiLz48L3N2Zz4=');
+            opacity: 0.12;
+            mix-blend-mode: multiply;
             z-index: 0;
         }
         section > div, section > h1, section > h2, section > h3, section > h4, section > p, section > a {
-            position: relative; z-index: 1;
+            position: relative; z-index: 10;
+        }
+        
+        /* Depth layer utility class */
+        .depth-layer {
+            position: relative;
+            z-index: 10;
+        }
+        
+        /* Form inputs elevated z-index */
+        input, button, select, textarea, a.cta-primary, a.cta-secondary, a.cta-card {
+            position: relative;
+            z-index: 10;
+        }
+        
+        /* Form field success state */
+        .field-success {
+            border-color: #67BBC0 !important;
+        }
+        
+        .field-success-icon {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #67BBC0;
         }
         
         .card-raised {
@@ -521,28 +549,28 @@ const Index = () => {
       {/* Hero Section */}
       <section className="bg-grain-pulp relative py-16 px-4 text-center overflow-hidden">
         <div className="relative z-10">
-          <h1 className="font-swanky text-5xl md:text-7xl font-normal leading-tight text-[#67BBC0]" style={{textShadow: '3px 3px 0px #1B1B1B', fontFamily: "'Fontdiner Swanky', cursive"}}>
+          <h1 className="font-swanky text-5xl md:text-7xl font-normal leading-tight text-[#67BBC0] text-balance" style={{textShadow: '3px 3px 0px #1B1B1B', fontFamily: "'Fontdiner Swanky', cursive"}}>
             {language === 'pt-BR' ? 'Entre na Vanguarda do Marketing' : 'Entra na Vanguarda do Marketing'}
           </h1>
-          <h2 className="font-oswald text-3xl md:text-5xl font-medium leading-snug my-6 max-w-4xl mx-auto uppercase" style={{fontFamily: "'Oswald', sans-serif"}}>
+          <h2 className="font-oswald text-3xl md:text-5xl font-medium leading-snug my-6 max-w-4xl mx-auto uppercase text-balance" style={{fontFamily: "'Oswald', sans-serif"}}>
             {language === 'pt-BR' ? 'Use IA para entregar em 5 dias o que hoje leva 30' : 'Usa a IA para conquistares em 5 dias o que hoje farias em 30'}
           </h2>
           
           {/* Imagem de Apresentação */}
           <div className="max-w-3xl mx-auto my-8">
             <div className="rounded-xl border-4 border-[#1B1B1B] shadow-[8px_8px_0px_#FCCA29] overflow-hidden">
-              <img src="/assets/hero-presentation.png" alt="Apresentação da Mentoria" className="w-full h-auto object-cover"/>
+              <img src="/assets/hero-presentation.png" alt="Apresentação da Mentoria" className="w-full h-auto object-cover" width="800" height="450" loading="eager"/>
             </div>
           </div>
 
-          <h3 className="font-oswald text-xl md:text-2xl font-medium leading-normal text-[#3D3D3D] max-w-4xl mx-auto mb-8" style={{fontFamily: "'Oswald', sans-serif"}}>
+          <h3 className="font-oswald text-xl md:text-2xl font-medium leading-normal text-[#3D3D3D] max-w-4xl mx-auto mb-8 text-balance" style={{fontFamily: "'Oswald', sans-serif"}}>
             {language === 'pt-BR' ? 'Enquanto os seus concorrentes apenas arranham a superfície do ChatGPT, este é o seu plano de voo para dominar a IA a sério e garantir a sua vantagem competitiva.' : 'Enquanto a tua concorrência apenas arranha a superfície do ChatGPT, este é o teu plano de voo para dominar a IA a sério e garantir uma vantagem competitiva.'}
           </h3>
-          <a href="#how-it-works" className="cta-primary mb-4">
-            Reservar o meu lugar na Mentoria
+          <a href="#how-it-works-cards" className="cta-primary mb-4">
+            Escolher a minha turma
           </a>
           <p className="text-sm text-[#3D3D3D] max-w-lg mx-auto mt-4">
-            Apenas 12 vagas por turma • -20 % pré‑lançamento • Garantia de reembolso total
+            Apenas 12 vagas por turma • Reembolso em caso de insatisfação
           </p>
           <p className="text-xs text-[#67BBC0] font-semibold max-w-lg mx-auto mt-2">
             {language === 'pt-BR' ? 'Desconto de pré-lançamento (20%) válido até 31/03/2026.' : 'Desconto de pré-lançamento (20%) válido até 31/03/2026.'}
@@ -552,10 +580,10 @@ const Index = () => {
           <div className="mt-12">
             <p className="font-oswald text-lg text-[#3D3D3D] mb-4" style={{fontFamily: "'Oswald', sans-serif"}}>Empresas cujos colaboradores já foram nossos alunos:</p>
             <div className="company-logos-grid flex justify-center items-center space-x-8 md:space-x-12 grayscale opacity-60">
-              <img src="/lovable-uploads/c41a9516-d15e-4713-bd6e-3fbae0530b2c.png" alt="Logo Empresa 1" className="h-12" style={{height: '50px'}} />
-              <img src="/lovable-uploads/38467e40-d55a-464e-a1a5-6583161e9211.png" alt="Logo Empresa 2" className="h-12" style={{height: '50px'}} />
-              <img src="/lovable-uploads/9284f42b-9f7b-4b8a-8c55-a867f975594c.png" alt="Logo Empresa 3" className="h-12" style={{height: '50px'}} />
-              <img src="/lovable-uploads/231f247f-884f-4dfc-8d76-0d203ec097d3.png" alt="Logo Empresa 4" className="h-12" style={{height: '50px'}} />
+              <img src="/lovable-uploads/c41a9516-d15e-4713-bd6e-3fbae0530b2c.png" alt="Logo Empresa 1" className="h-12" style={{height: '50px'}} width="120" height="50" loading="lazy" />
+              <img src="/lovable-uploads/38467e40-d55a-464e-a1a5-6583161e9211.png" alt="Logo Empresa 2" className="h-12" style={{height: '50px'}} width="120" height="50" loading="lazy" />
+              <img src="/lovable-uploads/9284f42b-9f7b-4b8a-8c55-a867f975594c.png" alt="Logo Empresa 3" className="h-12" style={{height: '50px'}} width="120" height="50" loading="lazy" />
+              <img src="/lovable-uploads/231f247f-884f-4dfc-8d76-0d203ec097d3.png" alt="Logo Empresa 4" className="h-12" style={{height: '50px'}} width="120" height="50" loading="lazy" />
             </div>
           </div>
         </div>
@@ -564,10 +592,10 @@ const Index = () => {
       {/* Problem Section */}
       <section className="bg-[#E0F2F3] py-20 px-4">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="font-caprasimo text-4xl md:text-6xl font-bold leading-tight" style={{textShadow: '3px 3px 0px #FDE68A', fontFamily: "'Caprasimo', serif"}}>
+          <h2 className="font-caprasimo text-4xl md:text-6xl font-bold leading-tight text-balance" style={{textShadow: '3px 3px 0px #FDE68A', fontFamily: "'Caprasimo', serif"}}>
             A IA já não é o futuro, é o presente.
           </h2>
-          <h3 className="font-oswald text-2xl md:text-3xl font-medium text-[#3D3D3D] mt-4 mb-8" style={{fontFamily: "'Oswald', sans-serif"}}>
+          <h3 className="font-oswald text-2xl md:text-3xl font-medium text-[#3D3D3D] mt-4 mb-8 text-balance" style={{fontFamily: "'Oswald', sans-serif"}}>
             {language === 'pt-BR' ? 'Está no comando ou a ficar para trás?' : 'Sentes-te no comando ou a ficar para trás?'}
           </h3>
           <p className="text-lg md:text-xl text-[#3D3D3D] mb-12 max-w-3xl mx-auto">
@@ -577,7 +605,7 @@ const Index = () => {
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center mt-12">
           {/* Coluna da Esquerda: Imagem */}
           <div>
-            <img src="/lovable-uploads/04c82f71-7985-4a26-b53d-a81bb9857d83.png" alt="Ilustração retro-futurista de um marketer a comandar IAs" className="retro-futurista-img rounded-xl w-full max-w-[500px] mx-auto"/>
+            <img src="/lovable-uploads/04c82f71-7985-4a26-b53d-a81bb9857d83.png" alt="Ilustração retro-futurista de um marketer a comandar IAs" className="retro-futurista-img rounded-xl w-full max-w-[500px] mx-auto" width="500" height="500" loading="lazy"/>
           </div>
           {/* Coluna da Direita: Grelha de Dores */}
           <div className="flex flex-col gap-6">
@@ -600,13 +628,13 @@ const Index = () => {
       {/* Para Quem É Section */}
       <section className="bg-grain-pulp relative py-16 px-4 overflow-hidden">
         <div className="max-w-6xl mx-auto text-center relative z-10">
-          <h2 className="font-caprasimo text-4xl md:text-6xl font-bold leading-tight mb-12" style={{textShadow: '3px 3px 0px #FF8C9B', fontFamily: "'Caprasimo', serif"}}>
+          <h2 className="font-caprasimo text-4xl md:text-6xl font-bold leading-tight mb-12 text-balance" style={{textShadow: '3px 3px 0px #FF8C9B', fontFamily: "'Caprasimo', serif"}}>
             {language === 'pt-BR' ? 'Esta missão é para si?' : 'Esta missão é para ti?'}
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
             {/* Card Marketer */}
             <div className="mission-card bg-[#FCF9F2] rounded-xl border-2 border-[#1B1B1B] text-center shadow-[8px_8px_0px_#1B1B1B] transition-all duration-300" style={{padding: '2rem'}}>
-              <img src="/lovable-uploads/b5ad3c58-2619-4326-99a9-cf14c06792d5.png" alt="Ícone para Marketer" className="mx-auto mb-6 rounded-full border-2 border-[#1B1B1B]" style={{width: '170px', height: '170px'}} />
+              <img src="/lovable-uploads/b5ad3c58-2619-4326-99a9-cf14c06792d5.png" alt="Ícone para Marketer" className="mx-auto mb-6 rounded-full border-2 border-[#1B1B1B]" style={{width: '170px', height: '170px'}} width="170" height="170" loading="lazy" />
               <h3 className="font-caprasimo text-2xl text-[#1B1B1B] mb-1" style={{fontFamily: "'Caprasimo', serif"}}>PARA O(A) MARKETER</h3>
               <h4 className="font-oswald text-xl font-medium text-[#67BBC0] mb-4" style={{fontFamily: "'Oswald', sans-serif"}}>Que se recusa a ser obsoleto</h4>
               <p className="text-lg text-[#3D3D3D] leading-relaxed">
@@ -615,7 +643,7 @@ const Index = () => {
             </div>
             {/* Card Diretor(a) */}
             <div className="mission-card bg-[#FCF9F2] rounded-xl border-2 border-[#1B1B1B] text-center shadow-[8px_8px_0px_#1B1B1B] transition-all duration-300" style={{padding: '2rem'}}>
-              <img src="/lovable-uploads/311299fb-2f65-4df0-a9ff-054964a5906e.png" alt="Ícone para Diretor" className="mx-auto mb-6 rounded-full border-2 border-[#1B1B1B]" style={{width: '170px', height: '170px'}} />
+              <img src="/lovable-uploads/311299fb-2f65-4df0-a9ff-054964a5906e.png" alt="Ícone para Diretor" className="mx-auto mb-6 rounded-full border-2 border-[#1B1B1B]" style={{width: '170px', height: '170px'}} width="170" height="170" loading="lazy" />
               <h3 className="font-caprasimo text-2xl text-[#1B1B1B] mb-1" style={{fontFamily: "'Caprasimo', serif"}}>PARA O(A) DIRETOR(A)</h3>
               <h4 className="font-oswald text-xl font-medium text-[#67BBC0] mb-4" style={{fontFamily: "'Oswald', sans-serif"}}>Que lidera a vanguarda</h4>
               <p className="text-lg text-[#3D3D3D] leading-relaxed">
@@ -624,7 +652,7 @@ const Index = () => {
             </div>
             {/* Card Criativo(a) */}
             <div className="mission-card bg-[#FCF9F2] rounded-xl border-2 border-[#1B1B1B] text-center shadow-[8px_8px_0px_#1B1B1B] transition-all duration-300" style={{padding: '2rem'}}>
-              <img src="/lovable-uploads/b63df122-307e-4ffc-b627-ac381dfa8f27.png" alt="Ícone para Criativo" className="mx-auto mb-6 rounded-full border-2 border-[#1B1B1B]" style={{width: '170px', height: '170px'}} />
+              <img src="/lovable-uploads/b63df122-307e-4ffc-b627-ac381dfa8f27.png" alt="Ícone para Criativo" className="mx-auto mb-6 rounded-full border-2 border-[#1B1B1B]" style={{width: '170px', height: '170px'}} width="170" height="170" loading="lazy" />
               <h3 className="font-caprasimo text-2xl text-[#1B1B1B] mb-1" style={{fontFamily: "'Caprasimo', serif"}}>PARA O(A) CRIATIVO(A)</h3>
               <h4 className="font-oswald text-xl font-medium text-[#67BBC0] mb-4" style={{fontFamily: "'Oswald', sans-serif"}}>Cujos limites são a imaginação</h4>
               <p className="text-lg text-[#3D3D3D] leading-relaxed">
@@ -633,13 +661,20 @@ const Index = () => {
             </div>
             {/* Card Empreendedor(a) */}
             <div className="mission-card bg-[#FCF9F2] rounded-xl border-2 border-[#1B1B1B] text-center shadow-[8px_8px_0px_#1B1B1B] transition-all duration-300" style={{padding: '2rem'}}>
-              <img src="/lovable-uploads/24e5342e-71fb-462e-9f42-f6147aa6c256.png" alt="Ícone para Empreendedor" className="mx-auto mb-6 rounded-full border-2 border-[#1B1B1B]" style={{width: '170px', height: '170px'}} />
+              <img src="/lovable-uploads/24e5342e-71fb-462e-9f42-f6147aa6c256.png" alt="Ícone para Empreendedor" className="mx-auto mb-6 rounded-full border-2 border-[#1B1B1B]" style={{width: '170px', height: '170px'}} width="170" height="170" loading="lazy" />
               <h3 className="font-caprasimo text-2xl text-[#1B1B1B] mb-1" style={{fontFamily: "'Caprasimo', serif"}}>PARA O(A) EMPREENDEDOR(A)</h3>
               <h4 className="font-oswald text-xl font-medium text-[#67BBC0] mb-4" style={{fontFamily: "'Oswald', sans-serif"}}>Que ganha vantagem de forma ágil</h4>
               <p className="text-lg text-[#3D3D3D] leading-relaxed">
                 {language === 'pt-BR' ? 'Sabe que neste novo mercado, a agilidade supera o tamanho e que os "mamutes" estão vulneráveis. Use a IA para impulsionar vendas, a partir de um marketing mais inteligente e eficiente com menos investimento. Ganhe vantagem competitiva sobre os concorrentes mais lentos e aproveite a maior reconfiguração do mercado do século.' : 'Já percebeste que neste novo mercado, a agilidade supera o tamanho e que os "mamutes" estão vulneráveis. Usa a IA para impulsionar vendas, a partir de um marketing mais inteligente e eficiente com menos investimento. Ganha vantagem competitiva sobre a concorrência mais lenta e aproveita a maior reconfiguração do mercado do século.'}
               </p>
             </div>
+          </div>
+          
+          {/* CTA Button after Card Empreendedor */}
+          <div style={{textAlign:'center', marginTop:'2.5rem'}}>
+            <a href="#how-it-works-cards" className="cta-primary">
+              Escolher a minha turma
+            </a>
           </div>
         </div>
       </section>
@@ -648,19 +683,19 @@ const Index = () => {
       <section className="py-16 px-4 text-center">
         <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 items-start">
           <div className="bab-step">
-            <img src="/lovable-uploads/d8bcdf7a-4eee-4f99-b2e1-8fb14e15a981.png" alt="Ícone de sobrecarga de informação" className="h-30 ml-0 mb-0" style={{width: '120px', height: '120px', marginLeft: '0px', marginBottom: '0px'}}/>
+            <img src="/lovable-uploads/d8bcdf7a-4eee-4f99-b2e1-8fb14e15a981.png" alt="Ícone de sobrecarga de informação" className="h-30 ml-0 mb-0" style={{width: '120px', height: '120px', marginLeft: '0px', marginBottom: '0px'}} width="120" height="120" loading="lazy"/>
             <span className="font-oswald text-lg font-bold text-[#FF304C] block mb-2" style={{fontFamily: "'Oswald', sans-serif"}}>ANTES</span>
             <h3 className="font-caprasimo text-3xl text-[#1B1B1B] mb-2" style={{fontFamily: "'Caprasimo', serif"}}>Profissional Reativo</h3>
             <p className="text-lg text-[#3D3D3D]">{language === 'pt-BR' ? 'Passa mais tempo a testar ferramentas do que a criar resultados. Sente que os concorrentes estão a decolar enquanto você continua na pista, com medo de se tornar obsoleto.' : 'Passas mais tempo a testar ferramentas do que a criar resultados. Sentes que a concorrência está a levantar voo enquanto tu continuas na pista, com medo de te tornares obsoleto. Dá medo, né?'}</p>
           </div>
           <div className="bab-step">
-            <img src="/lovable-uploads/c20bd8ef-123a-4a7c-a077-ee2fdf3e7917.png" alt="Ícone de lançamento de jornada" className="h-30 ml-0 mb-0" style={{width: '120px', height: '120px', marginLeft: '0px', marginBottom: '0px'}}/>
+            <img src="/lovable-uploads/c20bd8ef-123a-4a7c-a077-ee2fdf3e7917.png" alt="Ícone de lançamento de jornada" className="h-30 ml-0 mb-0" style={{width: '120px', height: '120px', marginLeft: '0px', marginBottom: '0px'}} width="120" height="120" loading="lazy"/>
             <span className="font-oswald text-lg font-bold text-[#67BBC0] block mb-2" style={{fontFamily: "'Oswald', sans-serif"}}>A PONTE</span>
             <h3 className="font-caprasimo text-3xl text-[#1B1B1B] mb-2" style={{fontFamily: "'Caprasimo', serif"}}>A Mentoria Atomica</h3>
             <p className="text-lg text-[#3D3D3D]">{language === 'pt-BR' ? 'Condensei quase 2 anos de experiência diária e mais de uma década em marketing neste plano de voo intensivo. Filtrei o ruído por si. Em apenas 30 dias, irá dominar fluxos práticos e frameworks prontos para implementar IA real no seu marketing.' : 'Condensei quase 2 anos de experiência diária e mais de uma década em marketing neste plano de voo intensivo. Filtrei o ruído por ti. Em apenas 30 dias, irás dominar fluxos práticos e frameworks prontos para implementar IA real no teu marketing.'}</p>
           </div>
           <div className="bab-step">
-            <img src="/lovable-uploads/4566798f-cf76-47c1-a33b-3c7411f83489.png" alt="Ícone de sucesso e clareza" className="h-30 ml-0 mb-0" style={{width: '120px', height: '120px', marginLeft: '0px', marginBottom: '0px'}}/>
+            <img src="/lovable-uploads/4566798f-cf76-47c1-a33b-3c7411f83489.png" alt="Ícone de sucesso e clareza" className="h-30 ml-0 mb-0" style={{width: '120px', height: '120px', marginLeft: '0px', marginBottom: '0px'}} width="120" height="120" loading="lazy"/>
             <span className="font-oswald text-lg font-bold text-[#FCCA29] block mb-2" style={{fontFamily: "'Oswald', sans-serif"}}>DEPOIS</span>
             <h3 className="font-caprasimo text-3xl text-[#1B1B1B] mb-2" style={{fontFamily: "'Caprasimo', serif"}}>Estratega no Comando</h3>
             <p className="text-lg text-[#3D3D3D]">{language === 'pt-BR' ? 'Automatiza o trabalho repetitivo para se focar onde a sua criatividade e pensamento crítico brilham, transformando ideias complexas em realidade e ser a referência que a sua equipa procura quando o tema é inovação.' : 'Automatizas o trabalho repetitivo para te focares onde a tua criatividade e pensamento crítico brilham, transformando ideias complexas em realidade e ser a referência que a tua equipa procura quando o tema é inovação.'}</p>
@@ -671,7 +706,7 @@ const Index = () => {
       {/* A Solução e Oportunidade Section */}
       <section className="bg-[#FEF8E4] py-16 px-4">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="font-caprasimo text-4xl md:text-6xl font-bold leading-tight mb-12" style={{textShadow: '3px 3px 0px #a8dee0', fontFamily: "'Caprasimo', serif"}}>
+          <h2 className="font-caprasimo text-4xl md:text-6xl font-bold leading-tight mb-12 text-balance" style={{textShadow: '3px 3px 0px #a8dee0', fontFamily: "'Caprasimo', serif"}}>
             {language === 'pt-BR' ? 'Saia da Teoria para Aplicações Práticas de IA no Marketing' : 'Sai da Teoria para Aplicações Práticas de IA no Marketing'}
           </h2>
           
@@ -760,9 +795,9 @@ const Index = () => {
       </section>
 
       {/* How It Works Cards */}
-      <section id="how-it-works" className="how-it-works-cards" style={{background:'#FEF8E4', padding:'4rem 1rem'}}>
+      <section id="how-it-works-cards" className="how-it-works-cards" style={{background:'#FEF8E4', padding:'4rem 1rem'}}>
         <div className="max-w-6xl mx-auto">
-          <h2 style={{fontFamily:"'Caprasimo',serif", fontSize:'2.5rem', fontWeight:700, color:'#1B1B1B', textAlign:'center', marginBottom:'1.5rem', textShadow: '3px 3px 0px #A8DEE0'}}>
+          <h2 className="text-balance" style={{fontFamily:"'Caprasimo',serif", fontSize:'2.5rem', fontWeight:700, color:'#1B1B1B', textAlign:'center', marginBottom:'1.5rem', textShadow: '3px 3px 0px #A8DEE0'}}>
             {language === 'pt-BR' ? 'Os 3 Pilares da Sua Transformação em IA' : 'Os 3 Pilares da Tua Transformação em IA'}
           </h2>
           <div className="general-info" style={{maxWidth:'900px', margin:'0 auto 2rem', textAlign:'center'}}>
@@ -778,8 +813,8 @@ const Index = () => {
           </div>
           <div className="cards-container pillar-cards" style={{gap: '0.5rem'}}>
             <div className="card card-raised" style={{padding: '2rem', flex: '1', maxWidth: '400px'}}>
-            <img src="/lovable-uploads/3a5df82f-f4cb-44ab-bbf5-61e9e715c22f.png" alt="Conteúdo IA" />
-            <h3>Criação de Conteúdo com IA</h3>
+            <img src="/lovable-uploads/3a5df82f-f4cb-44ab-bbf5-61e9e715c22f.png" alt="Conteúdo IA" width="240" height="240" loading="lazy" />
+            <h3>IA para Estratégia e Criação de Conteúdo</h3>
             <div style={{display: 'inline-block', background: '#67BBC0', color: '#f7f1e1', fontFamily: "'Caprasimo', serif", fontSize: '0.875rem', fontWeight: '700', padding: '0.25rem 0.75rem', borderRadius: '4px', marginTop: '0.5rem', marginBottom: '1rem'}}>
               Mentoria 1
             </div>
@@ -792,8 +827,8 @@ const Index = () => {
             </ul>
           </div>
           <div className="card card-raised" style={{padding: '2rem', flex: '1', maxWidth: '400px'}}>
-            <img src="/lovable-uploads/9b8b72a4-73dd-4d92-b2a8-e18d84e26be1.png" alt="Audiovisual IA" />
-            <h3>Produção Audiovisual com IA</h3>
+            <img src="/lovable-uploads/9b8b72a4-73dd-4d92-b2a8-e18d84e26be1.png" alt="Audiovisual IA" width="240" height="240" loading="lazy" />
+            <h3>IA para Design e Audiovisual</h3>
             <div style={{display: 'inline-block', background: '#67BBC0', color: '#f7f1e1', fontFamily: "'Caprasimo', serif", fontSize: '0.875rem', fontWeight: '700', padding: '0.25rem 0.75rem', borderRadius: '4px', marginTop: '0.5rem', marginBottom: '1rem'}}>
               Mentoria 2
             </div>
@@ -805,8 +840,8 @@ const Index = () => {
             </ul>
           </div>
           <div className="card card-raised" style={{padding: '2rem', flex: '1', maxWidth: '400px'}}>
-            <img src="/lovable-uploads/fb394bd6-e0d1-46de-88d5-5d621c8514b9.png" alt="Automação IA" />
-            <h3>Automação de Marketing com IA</h3>
+            <img src="/lovable-uploads/fb394bd6-e0d1-46de-88d5-5d621c8514b9.png" alt="Automação IA" width="240" height="240" loading="lazy" />
+            <h3>IA para Vibe Coding e Automação Agêntica</h3>
             <div style={{display: 'inline-block', background: '#67BBC0', color: '#f7f1e1', fontFamily: "'Caprasimo', serif", fontSize: '0.875rem', fontWeight: '700', padding: '0.25rem 0.75rem', borderRadius: '4px', marginTop: '0.5rem', marginBottom: '1rem'}}>
               Mentoria 3
             </div>
@@ -820,7 +855,7 @@ const Index = () => {
           </div>
         </div>
           <div style={{textAlign:'center', marginTop:'2rem'}}>
-            <a href="#formulario" className="cta-secondary">Ver Preços e Próximas Turmas</a>
+            <a href="#pricing" className="cta-secondary">Ver Preços e Datas</a>
           </div>
         </div>
       </section>
@@ -867,17 +902,17 @@ const Index = () => {
           </div>
           <div className="testimonials">
             <div className="testimonial">
-              <img src="/lovable-uploads/ff179a0b-4c4e-4026-88e8-cd4e4ccf43d7.png" alt="Luísa Lemos depoimento" />
+              <img src="/lovable-uploads/ff179a0b-4c4e-4026-88e8-cd4e4ccf43d7.png" alt="Luísa Lemos depoimento" width="300" height="169" loading="lazy" />
               <blockquote>"Com IA, o meu processo criativo, antes demorado, vai da ideia à execução muito mais rápido!"</blockquote>
               <cite>— Luísa Lemos, Brand Strategist</cite>
             </div>
             <div className="testimonial">
-              <img src="/lovable-uploads/daa2fade-028f-458c-b36f-121f2636fdd2.png" alt="Rita Bandeira depoimento" />
+              <img src="/lovable-uploads/daa2fade-028f-458c-b36f-121f2636fdd2.png" alt="Rita Bandeira depoimento" width="300" height="169" loading="lazy" />
               <blockquote>"Mesmo não sendo marketer, ganhei sentido crítico para aplicar a IA em qualquer projeto."</blockquote>
               <cite>— Rita Bandeira, Project Manager na Sword Health</cite>
             </div>
             <div className="testimonial">
-              <img src="/lovable-uploads/1310eb1a-7a6f-4423-832a-9869d3f3368b.png" alt="Pedro Lino depoimento" />
+              <img src="/lovable-uploads/1310eb1a-7a6f-4423-832a-9869d3f3368b.png" alt="Pedro Lino depoimento" width="300" height="169" loading="lazy" />
               <blockquote>"Enquanto o mundo fala de ChatGPT, eu já uso o que nem 10% do mercado conhece."</blockquote>
               <cite>— Pedro Lino, Empreendedor</cite>
             </div>
@@ -886,16 +921,16 @@ const Index = () => {
       </section>
 
       {/* Pricing & Offer */}
-      <section className="pricing-offer-cards" style={{background:'#E5DBC7', padding:'4rem 1rem'}}>
+      <section id="pricing" className="pricing-offer-cards" style={{background:'#E5DBC7', padding:'4rem 1rem'}}>
         <div className="max-w-6xl mx-auto">
-          <h2 style={{fontFamily:"'Caprasimo',serif", fontSize:'2.5rem', fontWeight:700, color:'#1B1B1B', textAlign:'center', marginBottom:'2rem', textShadow: '3px 3px 0px #A8DEE0'}}>
+          <h2 className="text-balance" style={{fontFamily:"'Caprasimo',serif", fontSize:'2.5rem', fontWeight:700, color:'#1B1B1B', textAlign:'center', marginBottom:'2rem', textShadow: '3px 3px 0px #A8DEE0'}}>
             {language === 'pt-BR' ? 'Escolha o Seu Plano de Voo' : 'Escolhe o Teu Plano de Voo'}
           </h2>
           <div className="cards-container">
           <div className="price-card">
             <h3>Mentoria Avulsa</h3>
             <div className="price-original">{language === 'pt-BR' ? '1.450R$' : '230€'}</div>
-            <div className="price-value">{language === 'pt-BR' ? '1.200R$' : '184€'}</div>
+            <div className="price-value">{language === 'pt-BR' ? '1.200R$' : '184€'} <span style={{fontSize:'0.75rem', fontWeight:400, color:'#3D3D3D'}}>+IVA</span></div>
             <div className="price-note">(20% desconto pré-lançamento válido até 31/03/2026)</div>
             <ul className="inclusions">
               <li><span>✱</span>{language === 'pt-BR' ? '20h de mentoria ao longo de 1 mês' : '20h de mentoria durante 1 mês'}</li>
@@ -972,14 +1007,13 @@ const Index = () => {
             <div className="badge">MELHOR VALOR</div>
             <h3>Pacote 3 Mentorias</h3>
             <div className="price-original">{language === 'pt-BR' ? '4.350R$' : '690€'}</div>
-            <div className="price-value">{language === 'pt-BR' ? '3.140R$' : '497€'}</div>
+            <div className="price-value">{language === 'pt-BR' ? '3.140R$' : '497€'} <span style={{fontSize:'0.75rem', fontWeight:400, color:'#3D3D3D'}}>+IVA</span></div>
             <div className="price-note">(+10% desconto no pacote + 20% pré-lançamento até 31/03/2026)</div>
             <ul className="inclusions">
               <li><span>✱</span>60h de mentoria (3 x 20h)</li>
-              <li style={{fontSize:'0.8rem', color:'#FF304C', paddingLeft:'1.5rem'}}>– {language === 'pt-BR' ? 'O Pacote de 3 turmas deve ser usado em até 6 meses a partir da data da compra.' : 'O Pacote de 3 turmas deve ser utilizado em até 6 meses a partir da data da compra.'}</li>
-              <li style={{fontSize:'0.875rem', color:'#3D3D3D', paddingLeft:'1.5rem'}}>– IA para Criação de Conteúdo</li>
-              <li style={{fontSize:'0.875rem', color:'#3D3D3D', paddingLeft:'1.5rem'}}>– IA para Produção Audiovisual</li>
-              <li style={{fontSize:'0.875rem', color:'#3D3D3D', paddingLeft:'1.5rem'}}>– IA para Automação de Marketing</li>
+              <li style={{fontSize:'0.875rem', color:'#3D3D3D', paddingLeft:'1.5rem'}}>– IA para Estratégia e Criação de Conteúdo</li>
+              <li style={{fontSize:'0.875rem', color:'#3D3D3D', paddingLeft:'1.5rem'}}>– IA para Design e Audiovisual</li>
+              <li style={{fontSize:'0.875rem', color:'#3D3D3D', paddingLeft:'1.5rem'}}>– IA para Vibe Coding e Automação Agêntica</li>
               <li><span>✱</span>1 hora de Consultoria Individual</li>
               <li><span>✱</span>Inclui todos os benefícios da Mentoria Avulsa</li>
             </ul>
@@ -988,10 +1022,9 @@ const Index = () => {
         </div>
           <div style={{textAlign:'center', marginTop:'1.5rem', color:'#1B1B1B', fontSize:'1rem', display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', gap:'0.5rem'}}>
             <div style={{display:'flex', alignItems:'center', gap:'0.5rem'}}>
-              <img src="/lovable-uploads/1d68c02c-1579-450d-b879-266bde8d46d4.png" alt="Garantia" style={{width:'20px', height:'20px'}} />
+              <img src="/lovable-uploads/1d68c02c-1579-450d-b879-266bde8d46d4.png" alt="Garantia" style={{width:'20px', height:'20px'}} width="20" height="20" loading="lazy" />
               <span>{language === 'pt-BR' ? 'Reembolso total após a 1ª aula completa, solicitado em até 30 dias após essa 1ª aula. Sem necessidade de justificativa (feedback é opcional).' : 'Reembolso total após a 1ª aula completa, solicitado em até 30 dias após essa 1ª aula. Sem necessidade de justificativa (feedback é opcional).'}</span>
             </div>
-            <p style={{fontSize:'0.8rem', color:'#3D3D3D', maxWidth:'600px'}}>{language === 'pt-BR' ? 'A participação na 1ª aula é verificada via relatório do Google Meet.' : 'A participação na 1ª aula é verificada via relatório do Google Meet.'}</p>
             <p style={{fontSize:'0.75rem', color:'#555', maxWidth:'700px', marginTop:'0.5rem'}}>{language === 'pt-BR' ? 'É possível se inscrever em 2 turmas. Nesse caso não há desconto: o valor é o dobro (uma inscrição por turma).' : 'É possível inscrever-se em 2 turmas. Neste caso não há desconto: o valor é o dobro (uma inscrição por turma).'}</p>
           </div>
         </div>
@@ -1126,58 +1159,69 @@ const Index = () => {
           <h2 style={{fontFamily:"'Caprasimo',serif", fontSize:'2.5rem', textAlign:'center', marginBottom:'1rem', color: '#1B1B1B', textShadow: '3px 3px 0px #A8DEE0'}}>{language === 'pt-BR' ? 'Reserve a sua Vaga' : 'Reserva a tua Vaga'}</h2>
           
           {/* Nome */}
-          <div>
+          <div style={{position: 'relative'}}>
               <label htmlFor="nome-completo" style={{fontWeight:600, display: 'block', marginBottom: '0.5rem'}}>Nome Completo</label>
-              <input 
-                type="text" 
-                id="nome-completo" 
-                name="Nome Completo" 
-                placeholder="Maria Silva" 
-                required 
-                value={formName}
-                onChange={(e) => setFormName(e.target.value)}
-                onBlur={() => handleFieldBlur('name')}
-                className={touchedFields.name && !isNameValid ? 'field-error' : ''}
-              />
+              <div style={{position: 'relative'}}>
+                <input 
+                  type="text" 
+                  id="nome-completo" 
+                  name="Nome Completo" 
+                  placeholder="Maria Silva" 
+                  required 
+                  value={formName}
+                  onChange={(e) => setFormName(e.target.value)}
+                  onBlur={() => handleFieldBlur('name')}
+                  className={touchedFields.name && !isNameValid ? 'field-error' : isNameValid ? 'field-success' : ''}
+                  style={{paddingRight: isNameValid ? '40px' : undefined}}
+                />
+                {isNameValid && <CheckCircle size={20} style={{position: 'absolute', right: '12px', top: '50%', transform: 'translateY(-50%)', color: '#67BBC0'}} />}
+              </div>
               {getFieldError('name') && (
                 <p className="field-error-message">{getFieldError('name')}</p>
               )}
           </div>
           
           {/* Email */}
-          <div>
+          <div style={{position: 'relative'}}>
               <label htmlFor="email" style={{fontWeight:600, display: 'block', marginBottom: '0.5rem'}}>Email</label>
-              <input 
-                type="email" 
-                id="email" 
-                name="E-mail" 
-                placeholder="email@exemplo.com" 
-                required 
-                value={formEmail}
-                onChange={(e) => setFormEmail(e.target.value)}
-                onBlur={() => handleFieldBlur('email')}
-                className={touchedFields.email && !isEmailValid ? 'field-error' : ''}
-              />
+              <div style={{position: 'relative'}}>
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="E-mail" 
+                  placeholder="email@exemplo.com" 
+                  required 
+                  value={formEmail}
+                  onChange={(e) => setFormEmail(e.target.value)}
+                  onBlur={() => handleFieldBlur('email')}
+                  className={touchedFields.email && !isEmailValid ? 'field-error' : isEmailValid ? 'field-success' : ''}
+                  style={{paddingRight: isEmailValid ? '40px' : undefined}}
+                />
+                {isEmailValid && <CheckCircle size={20} style={{position: 'absolute', right: '12px', top: '50%', transform: 'translateY(-50%)', color: '#67BBC0'}} />}
+              </div>
               {getFieldError('email') && (
                 <p className="field-error-message">{getFieldError('email')}</p>
               )}
           </div>
           
           {/* Telefone */}
-          <div>
+          <div style={{position: 'relative'}}>
               <label htmlFor="phone" style={{fontWeight:600, display: 'block', marginBottom: '0.5rem'}}>Telefone</label>
-              <input 
-                type="tel" 
-                id="phone" 
-                name="Telefone" 
-                placeholder="912 345 678" 
-                required 
-                style={{width: '100%'}} 
-                value={formPhone}
-                onChange={(e) => setFormPhone(e.target.value)}
-                onBlur={() => handleFieldBlur('phone')}
-                className={touchedFields.phone && !isPhoneValid ? 'field-error' : ''}
-              />
+              <div style={{position: 'relative'}}>
+                <input 
+                  type="tel" 
+                  id="phone" 
+                  name="Telefone" 
+                  placeholder="912 345 678" 
+                  required 
+                  style={{width: '100%', paddingRight: isPhoneValid ? '40px' : undefined}} 
+                  value={formPhone}
+                  onChange={(e) => setFormPhone(e.target.value)}
+                  onBlur={() => handleFieldBlur('phone')}
+                  className={touchedFields.phone && !isPhoneValid ? 'field-error' : isPhoneValid ? 'field-success' : ''}
+                />
+                {isPhoneValid && <CheckCircle size={20} style={{position: 'absolute', right: '12px', top: '50%', transform: 'translateY(-50%)', color: '#67BBC0'}} />}
+              </div>
               {getFieldError('phone') && (
                 <p className="field-error-message">{getFieldError('phone')}</p>
               )}
@@ -1186,34 +1230,43 @@ const Index = () => {
           {/* Mentorias */}
           <fieldset style={{border:'none', padding:0}}>
             <legend style={{fontWeight:600, marginBottom:'0.5rem'}}>Mentoria(s) de Interesse <span style={{color: '#ef4444'}}>*</span></legend>
-            <div style={{display:'flex', flexDirection:'column', gap:'0.5rem'}}>
-              <label className="checkbox-custom">
-                <input 
-                  type="checkbox" 
-                  name="Mentoria(s) de Interesse" 
-                  value="IA generativa para criação de conteúdo"
-                  checked={formMentorias.includes("IA generativa para criação de conteúdo")}
-                  onChange={(e) => handleMentoriaChange(e.target.value, e.target.checked)}
-                /> IA generativa para criação de conteúdo
-              </label>
-              <label className="checkbox-custom">
-                <input 
-                  type="checkbox" 
-                  name="Mentoria(s) de Interesse" 
-                  value="IA generativa para audiovisual"
-                  checked={formMentorias.includes("IA generativa para audiovisual")}
-                  onChange={(e) => handleMentoriaChange(e.target.value, e.target.checked)}
-                /> IA generativa para audiovisual
-              </label>
-              <label className="checkbox-custom">
-                <input 
-                  type="checkbox" 
-                  name="Mentoria(s) de Interesse" 
-                  value="IA generativa para automação de marketing"
-                  checked={formMentorias.includes("IA generativa para automação de marketing")}
-                  onChange={(e) => handleMentoriaChange(e.target.value, e.target.checked)}
-                /> IA generativa para automação de marketing
-              </label>
+            <div style={{display:'flex', flexDirection:'column', gap:'0.75rem'}}>
+              <div>
+                <label className="checkbox-custom">
+                  <input 
+                    type="checkbox" 
+                    name="Mentoria(s) de Interesse" 
+                    value="IA para Estratégia e Criação de Conteúdo"
+                    checked={formMentorias.includes("IA para Estratégia e Criação de Conteúdo") || formMentorias.includes("IA generativa para criação de conteúdo")}
+                    onChange={(e) => handleMentoriaChange(e.target.value, e.target.checked)}
+                  /> IA para Estratégia e Criação de Conteúdo
+                </label>
+                <p style={{fontSize:'0.75rem', color:'#008C94', marginLeft:'1.5rem', marginTop:'0.25rem'}}>{language === 'pt-BR' ? 'Inicia em 23/02 • 2ª e 4ª f • 17h30–20h' : 'Inicia em 23/02 • 2ª e 4ª f • 20h30-23h'}</p>
+              </div>
+              <div>
+                <label className="checkbox-custom">
+                  <input 
+                    type="checkbox" 
+                    name="Mentoria(s) de Interesse" 
+                    value="IA para Design e Audiovisual"
+                    checked={formMentorias.includes("IA para Design e Audiovisual") || formMentorias.includes("IA generativa para audiovisual")}
+                    onChange={(e) => handleMentoriaChange(e.target.value, e.target.checked)}
+                  /> IA para Design e Audiovisual
+                </label>
+                <p style={{fontSize:'0.75rem', color:'#008C94', marginLeft:'1.5rem', marginTop:'0.25rem'}}>{language === 'pt-BR' ? 'Inicia em 24/02 • 3ª e 5ª f • 17h30–20h' : 'Inicia em 24/02 • 3ª e 5ª f • 20h30-23h'}</p>
+              </div>
+              <div>
+                <label className="checkbox-custom">
+                  <input 
+                    type="checkbox" 
+                    name="Mentoria(s) de Interesse" 
+                    value="IA para Vibe Coding e Automação Agêntica"
+                    checked={formMentorias.includes("IA para Vibe Coding e Automação Agêntica") || formMentorias.includes("IA generativa para automação de marketing")}
+                    onChange={(e) => handleMentoriaChange(e.target.value, e.target.checked)}
+                  /> IA para Vibe Coding e Automação Agêntica
+                </label>
+                <p style={{fontSize:'0.75rem', color:'#008C94', marginLeft:'1.5rem', marginTop:'0.25rem'}}>{language === 'pt-BR' ? 'Inicia em 30/03 • 2ª e 4ª f • 17h–19h30' : 'Inicia em 30/03 • 2ª e 4ª f • 18h-20h30'}</p>
+              </div>
             </div>
             {!hasMentoriaSelected && (
               <p style={{fontSize: '0.75rem', color: '#3D3D3D', marginTop: '0.5rem'}}>
@@ -1262,7 +1315,8 @@ const Index = () => {
           </p>
         </div>
       </footer>
-
+      
+      <StickyBar />
     </div>
   );
 };
