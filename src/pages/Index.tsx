@@ -560,10 +560,12 @@ const Index = () => {
               : "Enquanto a tua concorrência apenas arranha a superfície do ChatGPT, este é o teu plano de voo para dominar a IA a sério e garantir uma vantagem competitiva."}
           </h3>
           <a href="#how-it-works" className="cta-primary mb-4">
-            Reservar o meu lugar na Mentoria
+            {language === "pt-BR" ? "Reservar o meu lugar na Mentoria" : "Reservar o meu lugar na Mentoria"}
           </a>
           <p className="text-sm text-[#3D3D3D] max-w-lg mx-auto mt-4">
-            Apenas 12 vagas por turma • -20 % pré‑lançamento • Garantia de reembolso total
+            {language === "pt-BR"
+              ? "Apenas 12 vagas por turma • Reembolso em caso de insatisfação"
+              : "Apenas 12 vagas por turma • Reembolso em caso de insatisfação"}
           </p>
           <p className="text-xs text-[#67BBC0] font-semibold max-w-lg mx-auto mt-2">
             {language === "pt-BR"
@@ -574,7 +576,9 @@ const Index = () => {
           {/* Logos de Empresas */}
           <div className="mt-12">
             <p className="font-oswald text-lg text-[#3D3D3D] mb-4" style={{ fontFamily: "'Oswald', sans-serif" }}>
-              Empresas cujos colaboradores já foram nossos alunos:
+              {language === "pt-BR"
+                ? "Empresas cujos colaboradores já foram nossos alunos:"
+                : "Empresas cujos colaboradores já foram nossos alunos:"}
             </p>
             <div className="company-logos-grid flex justify-center items-center space-x-8 md:space-x-12 grayscale opacity-60">
               <img
@@ -613,7 +617,9 @@ const Index = () => {
             className="font-caprasimo text-4xl md:text-6xl font-bold leading-tight"
             style={{ textShadow: "3px 3px 0px #FDE68A", fontFamily: "'Caprasimo', serif" }}
           >
-            A IA já não é o futuro, é o presente.
+            {language === "pt-BR"
+              ? "A IA já não é o futuro, é o presente."
+              : "A IA já não é o futuro, é o presente."}
           </h2>
           <h3
             className="font-oswald text-2xl md:text-3xl font-medium text-[#3D3D3D] mt-4 mb-8"
@@ -624,8 +630,9 @@ const Index = () => {
               : "Sentes-te no comando ou a ficar para trás?"}
           </h3>
           <p className="text-lg md:text-xl text-[#3D3D3D] mb-12 max-w-3xl mx-auto">
-            O marketing que funcionava até 2025 está a tornar-se obsoleto. A cada dia que passa, a distância entre quem
-            domina IA e quem apenas "usa o ChatGPT" aumenta exponencialmente.
+            {language === "pt-BR"
+              ? "O marketing que funcionava até 2025 está se tornando obsoleto. A cada dia que passa, a distância entre quem domina IA e quem apenas \"usa o ChatGPT\" aumenta exponencialmente."
+              : "O marketing que funcionava até 2025 está a tornar-se obsoleto. A cada dia que passa, a distância entre quem domina IA e quem apenas \"usa o ChatGPT\" aumenta exponencialmente."}
           </p>
         </div>
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center mt-12">
@@ -642,9 +649,10 @@ const Index = () => {
             <div className="bg-[#FCF9F2] p-6 rounded-lg border border-[#E5DBC7]">
               <p className="text-lg">
                 <span className="text-[#67BBC0] font-bold text-2xl mr-2">→</span>
-                <strong>A queda do tráfego orgânico:</strong> O Google AI Overview trouxe uma queda de 34,5% em CTR, e
-                as estratégias de SEO que antes garantiam visibilidade e resultados estão a perder relevância
-                vertiginosamente.
+                <strong>{language === "pt-BR" ? "A queda do tráfego orgânico:" : "A queda do tráfego orgânico:"}</strong>{" "}
+                {language === "pt-BR"
+                  ? "O Google AI Overview trouxe uma queda de 34,5% em CTR, e as estratégias de SEO que antes garantiam visibilidade e resultados estão perdendo relevância vertiginosamente."
+                  : "O Google AI Overview trouxe uma queda de 34,5% em CTR, e as estratégias de SEO que antes garantiam visibilidade e resultados estão a perder relevância vertiginosamente."}
               </p>
             </div>
             <div className="bg-[#FCF9F2] p-6 rounded-lg border border-[#E5DBC7]">
@@ -659,8 +667,10 @@ const Index = () => {
             <div className="bg-[#FCF9F2] p-6 rounded-lg border border-[#E5DBC7]">
               <p className="text-lg">
                 <span className="text-[#67BBC0] font-bold text-2xl mr-2">→</span>
-                <strong>A democratização da concorrência:</strong> Qualquer um agora pode construir lead magnets,
-                ferramentas e até SaaS sem código, o que torna o mercado mais competitivo e inovador do que nunca.
+                <strong>{language === "pt-BR" ? "A democratização da concorrência:" : "A democratização da concorrência:"}</strong>{" "}
+                {language === "pt-BR"
+                  ? "Qualquer um agora pode construir lead magnets, ferramentas e até SaaS sem código, o que torna o mercado mais competitivo e inovador do que nunca."
+                  : "Qualquer um agora pode construir lead magnets, ferramentas e até SaaS sem código, o que torna o mercado mais competitivo e inovador do que nunca."}
               </p>
             </div>
             <div className="bg-[#FCF9F2] p-6 rounded-lg border border-[#E5DBC7]">
@@ -698,13 +708,13 @@ const Index = () => {
                 style={{ width: "170px", height: "170px" }}
               />
               <h3 className="font-caprasimo text-2xl text-[#1B1B1B] mb-1" style={{ fontFamily: "'Caprasimo', serif" }}>
-                PARA O(A) MARKETER
+                {language === "pt-BR" ? "PARA O(A) MARKETER" : "PARA O(A) MARKETER"}
               </h3>
               <h4
                 className="font-oswald text-xl font-medium text-[#67BBC0] mb-4"
                 style={{ fontFamily: "'Oswald', sans-serif" }}
               >
-                Que se recusa a ser obsoleto
+                {language === "pt-BR" ? "Que se recusa a ser obsoleto" : "Que se recusa a ser obsoleto"}
               </h4>
               <p className="text-lg text-[#3D3D3D] leading-relaxed">
                 {language === "pt-BR"
@@ -724,13 +734,13 @@ const Index = () => {
                 style={{ width: "170px", height: "170px" }}
               />
               <h3 className="font-caprasimo text-2xl text-[#1B1B1B] mb-1" style={{ fontFamily: "'Caprasimo', serif" }}>
-                PARA O(A) DIRETOR(A)
+                {language === "pt-BR" ? "PARA O(A) DIRETOR(A)" : "PARA O(A) DIRETOR(A)"}
               </h3>
               <h4
                 className="font-oswald text-xl font-medium text-[#67BBC0] mb-4"
                 style={{ fontFamily: "'Oswald', sans-serif" }}
               >
-                Que lidera a vanguarda
+                {language === "pt-BR" ? "Que lidera a vanguarda" : "Que lidera a vanguarda"}
               </h4>
               <p className="text-lg text-[#3D3D3D] leading-relaxed">
                 {language === "pt-BR"
@@ -750,13 +760,13 @@ const Index = () => {
                 style={{ width: "170px", height: "170px" }}
               />
               <h3 className="font-caprasimo text-2xl text-[#1B1B1B] mb-1" style={{ fontFamily: "'Caprasimo', serif" }}>
-                PARA O(A) CRIATIVO(A)
+                {language === "pt-BR" ? "PARA O(A) CRIATIVO(A)" : "PARA O(A) CRIATIVO(A)"}
               </h3>
               <h4
                 className="font-oswald text-xl font-medium text-[#67BBC0] mb-4"
                 style={{ fontFamily: "'Oswald', sans-serif" }}
               >
-                Cujos limites são a imaginação
+                {language === "pt-BR" ? "Cujos limites são a imaginação" : "Cujos limites são a imaginação"}
               </h4>
               <p className="text-lg text-[#3D3D3D] leading-relaxed">
                 {language === "pt-BR"
@@ -776,13 +786,13 @@ const Index = () => {
                 style={{ width: "170px", height: "170px" }}
               />
               <h3 className="font-caprasimo text-2xl text-[#1B1B1B] mb-1" style={{ fontFamily: "'Caprasimo', serif" }}>
-                PARA O(A) EMPREENDEDOR(A)
+                {language === "pt-BR" ? "PARA O(A) EMPREENDEDOR(A)" : "PARA O(A) EMPREENDEDOR(A)"}
               </h3>
               <h4
                 className="font-oswald text-xl font-medium text-[#67BBC0] mb-4"
                 style={{ fontFamily: "'Oswald', sans-serif" }}
               >
-                Que ganha vantagem de forma ágil
+                {language === "pt-BR" ? "Que ganha vantagem de forma ágil" : "Que ganha vantagem de forma ágil"}
               </h4>
               <p className="text-lg text-[#3D3D3D] leading-relaxed">
                 {language === "pt-BR"
@@ -808,10 +818,10 @@ const Index = () => {
               className="font-oswald text-lg font-bold text-[#FF304C] block mb-2"
               style={{ fontFamily: "'Oswald', sans-serif" }}
             >
-              ANTES
+              {language === "pt-BR" ? "ANTES" : "ANTES"}
             </span>
             <h3 className="font-caprasimo text-3xl text-[#1B1B1B] mb-2" style={{ fontFamily: "'Caprasimo', serif" }}>
-              Profissional Reativo
+              {language === "pt-BR" ? "Profissional Reativo" : "Profissional Reativo"}
             </h3>
             <p className="text-lg text-[#3D3D3D]">
               {language === "pt-BR"
@@ -830,10 +840,10 @@ const Index = () => {
               className="font-oswald text-lg font-bold text-[#67BBC0] block mb-2"
               style={{ fontFamily: "'Oswald', sans-serif" }}
             >
-              A PONTE
+              {language === "pt-BR" ? "A PONTE" : "A PONTE"}
             </span>
             <h3 className="font-caprasimo text-3xl text-[#1B1B1B] mb-2" style={{ fontFamily: "'Caprasimo', serif" }}>
-              A Mentoria Atomica
+              {language === "pt-BR" ? "A Mentoria Atomica" : "A Mentoria Atomica"}
             </h3>
             <p className="text-lg text-[#3D3D3D]">
               {language === "pt-BR"
@@ -852,10 +862,10 @@ const Index = () => {
               className="font-oswald text-lg font-bold text-[#FCCA29] block mb-2"
               style={{ fontFamily: "'Oswald', sans-serif" }}
             >
-              DEPOIS
+              {language === "pt-BR" ? "DEPOIS" : "DEPOIS"}
             </span>
             <h3 className="font-caprasimo text-3xl text-[#1B1B1B] mb-2" style={{ fontFamily: "'Caprasimo', serif" }}>
-              Estratega no Comando
+              {language === "pt-BR" ? "Estratega no Comando" : "Estratega no Comando"}
             </h3>
             <p className="text-lg text-[#3D3D3D]">
               {language === "pt-BR"
@@ -935,7 +945,7 @@ const Index = () => {
             </div>
             <div>
               <h3 className="font-oswald text-3xl text-[#1B1B1B] mb-6" style={{ fontFamily: "'Oswald', sans-serif" }}>
-                A Oportunidade: Porquê Agora
+                {language === "pt-BR" ? "A Oportunidade: Por que Agora" : "A Oportunidade: Porquê Agora"}
               </h3>
               <ul className="space-y-6 text-lg text-[#3D3D3D]">
                 <li className="flex items-start">
@@ -970,7 +980,7 @@ const Index = () => {
 
           <div className="mt-16">
             <a href="#how-it-works" className="cta-primary">
-              Garantir a minha Vantagem Competitiva
+              {language === "pt-BR" ? "Garantir a minha Vantagem Competitiva" : "Garantir a minha Vantagem Competitiva"}
             </a>
           </div>
         </div>
@@ -984,7 +994,7 @@ const Index = () => {
           </div>
           <div className="mentor-bio">
             <h2 className="mentor-title" style={{ textShadow: "3px 3px 0px #A8DEE0" }}>
-              Sobre o Mentor: Pedro Armbrust
+              {language === "pt-BR" ? "Sobre o Mentor: Pedro Armbrust" : "Sobre o Mentor: Pedro Armbrust"}
             </h2>
             <p className="mentor-text">
               {language === "pt-BR"
@@ -996,25 +1006,31 @@ const Index = () => {
               className="font-oswald text-xl font-medium uppercase tracking-wider text-[#008C94] mt-6 mb-3"
               style={{ fontFamily: "'Oswald', sans-serif" }}
             >
-              Mais de 10 anos de experiência em marketing
+              {language === "pt-BR" ? "Mais de 10 anos de experiência em marketing" : "Mais de 10 anos de experiência em marketing"}
             </h3>
             <p className="mentor-text">
-              A sua carreira foi construída na linha da frente do marketing digital, onde liderou projetos de grande
-              impacto:
+              {language === "pt-BR"
+                ? "A sua carreira foi construída na linha de frente do marketing digital, onde liderou projetos de grande impacto:"
+                : "A sua carreira foi construída na linha da frente do marketing digital, onde liderou projetos de grande impacto:"}
             </p>
             <ul style={{ marginTop: "1rem", marginBottom: "1rem", paddingLeft: "0", listStyle: "none" }}>
               <li style={{ marginBottom: "0.75rem", color: "#3D3D3D", lineHeight: "1.6" }}>
-                ✱ <strong>Resultados Comprovados:</strong> Gerou um crescimento superior a 187% na receita digital de
-                uma empresa {language === "pt-PT" ? "multinacional " : ""}através da reestruturação de funis de
-                marketing e da automação de processos de CRM.
+                ✱ <strong>{language === "pt-BR" ? "Resultados Comprovados:" : "Resultados Comprovados:"}</strong>{" "}
+                {language === "pt-BR"
+                  ? "Gerou um crescimento superior a 187% na receita digital de uma empresa através da reestruturação de funis de marketing e da automação de processos de CRM."
+                  : "Gerou um crescimento superior a 187% na receita digital de uma empresa multinacional através da reestruturação de funis de marketing e da automação de processos de CRM."}
               </li>
               <li style={{ marginBottom: "0.75rem", color: "#3D3D3D", lineHeight: "1.6" }}>
-                ✱ <strong>Domínio de Conteúdo:</strong> Idealizou e construiu um blog de raiz que se tornou o principal
-                canal de tráfego orgânico da empresa, ultrapassando as 66.000 visitas mensais.
+                ✱ <strong>{language === "pt-BR" ? "Domínio de Conteúdo:" : "Domínio de Conteúdo:"}</strong>{" "}
+                {language === "pt-BR"
+                  ? "Idealizou e construiu um blog do zero que se tornou o principal canal de tráfego orgânico da empresa, ultrapassando as 66.000 visitas mensais."
+                  : "Idealizou e construiu um blog de raiz que se tornou o principal canal de tráfego orgânico da empresa, ultrapassando as 66.000 visitas mensais."}
               </li>
               <li style={{ marginBottom: "0.75rem", color: "#3D3D3D", lineHeight: "1.6" }}>
-                ✱ <strong>Visão Estratégica:</strong> Liderou um projeto complexo de rebranding, implementando a nova
-                identidade de marca no mercado.
+                ✱ <strong>{language === "pt-BR" ? "Visão Estratégica:" : "Visão Estratégica:"}</strong>{" "}
+                {language === "pt-BR"
+                  ? "Liderou um projeto complexo de rebranding, implementando a nova identidade de marca no mercado."
+                  : "Liderou um projeto complexo de rebranding, implementando a nova identidade de marca no mercado."}
               </li>
             </ul>
 
@@ -1022,25 +1038,29 @@ const Index = () => {
               className="font-oswald text-xl font-medium uppercase tracking-wider text-[#008C94] mt-6 mb-3"
               style={{ fontFamily: "'Oswald', sans-serif" }}
             >
-              Trajetória Internacional
+              {language === "pt-BR" ? "Trajetória Internacional" : "Trajetória Internacional"}
             </h3>
             <p className="mentor-text">
-              Brasileiro a viver em Portugal há 4 anos, desenvolveu e adaptou estratégias para mercados como o do
-              Brasil, Portugal, Reino Unido e França.
+              {language === "pt-BR"
+                ? "Brasileiro morando em Portugal há 4 anos, desenvolveu e adaptou estratégias para mercados como o do Brasil, Portugal, Reino Unido e França."
+                : "Brasileiro a viver em Portugal há 4 anos, desenvolveu e adaptou estratégias para mercados como o do Brasil, Portugal, Reino Unido e França."}
             </p>
 
             <h3
               className="font-oswald text-xl font-medium uppercase tracking-wider text-[#008C94] mt-6 mb-3"
               style={{ fontFamily: "'Oswald', sans-serif" }}
             >
-              Fundador da Atomica
+              {language === "pt-BR" ? "Fundador da Atomica" : "Fundador da Atomica"}
             </h3>
             <p className="mentor-text">
-              Com o objetivo de promover a literacia em IA junto de marketers e criativos. Para isso, desenvolveu um
-              método de ensino focado nos 5 Pilares da IA, partilhado em workshops e bootcamps.
+              {language === "pt-BR"
+                ? "Com o objetivo de promover a literacia em IA junto de marketers e criativos. Para isso, desenvolveu um método de ensino focado nos 5 Pilares da IA, compartilhado em workshops e bootcamps."
+                : "Com o objetivo de promover a literacia em IA junto de marketers e criativos. Para isso, desenvolveu um método de ensino focado nos 5 Pilares da IA, partilhado em workshops e bootcamps."}
             </p>
             <h4 className="trust-title" style={{ marginTop: "2rem", textAlign: "center", color: "#3D3D3D" }}>
-              Um percurso validado por grandes marcas e instituições:
+              {language === "pt-BR"
+                ? "Um percurso validado por grandes marcas e instituições:"
+                : "Um percurso validado por grandes marcas e instituições:"}
             </h4>
             <div
               className="logo-bar"
@@ -1119,7 +1139,7 @@ const Index = () => {
           <div className="cards-container pillar-cards" style={{ gap: "0.5rem" }}>
             <div className="card card-raised" style={{ padding: "2rem", flex: "1", maxWidth: "400px" }}>
               <img src="/lovable-uploads/3a5df82f-f4cb-44ab-bbf5-61e9e715c22f.png" alt="Conteúdo IA" />
-              <h3>Criação de Conteúdo com IA</h3>
+              <h3>{language === "pt-BR" ? "Criação de Conteúdo com IA" : "Criação de Conteúdo com IA"}</h3>
               <div
                 style={{
                   display: "inline-block",
@@ -1134,7 +1154,7 @@ const Index = () => {
                   marginBottom: "1rem",
                 }}
               >
-                Mentoria 1
+                {language === "pt-BR" ? "Mentoria 1" : "Mentoria 1"}
               </div>
               <p>
                 {language === "pt-BR"
@@ -1170,7 +1190,7 @@ const Index = () => {
             </div>
             <div className="card card-raised" style={{ padding: "2rem", flex: "1", maxWidth: "400px" }}>
               <img src="/lovable-uploads/9b8b72a4-73dd-4d92-b2a8-e18d84e26be1.png" alt="Audiovisual IA" />
-              <h3>Produção Audiovisual com IA</h3>
+              <h3>{language === "pt-BR" ? "Produção Audiovisual com IA" : "Produção Audiovisual com IA"}</h3>
               <div
                 style={{
                   display: "inline-block",
@@ -1185,7 +1205,7 @@ const Index = () => {
                   marginBottom: "1rem",
                 }}
               >
-                Mentoria 2
+                {language === "pt-BR" ? "Mentoria 2" : "Mentoria 2"}
               </div>
               <p>
                 {language === "pt-BR"
@@ -1215,7 +1235,7 @@ const Index = () => {
             </div>
             <div className="card card-raised" style={{ padding: "2rem", flex: "1", maxWidth: "400px" }}>
               <img src="/lovable-uploads/fb394bd6-e0d1-46de-88d5-5d621c8514b9.png" alt="Automação IA" />
-              <h3>Automação de Marketing com IA</h3>
+              <h3>{language === "pt-BR" ? "Automação de Marketing com IA" : "Automação de Marketing com IA"}</h3>
               <div
                 style={{
                   display: "inline-block",
@@ -1230,7 +1250,7 @@ const Index = () => {
                   marginBottom: "1rem",
                 }}
               >
-                Mentoria 3
+                {language === "pt-BR" ? "Mentoria 3" : "Mentoria 3"}
               </div>
               <p>
                 {language === "pt-BR"
@@ -1267,7 +1287,7 @@ const Index = () => {
           </div>
           <div style={{ textAlign: "center", marginTop: "2rem" }}>
             <a href="#formulario" className="cta-secondary">
-              Ver Preços e Próximas Turmas
+              {language === "pt-BR" ? "Ver Preços e Próximas Turmas" : "Ver Preços e Próximas Turmas"}
             </a>
           </div>
         </div>
@@ -1285,7 +1305,9 @@ const Index = () => {
               </span>
               <br />
               <span className="bonus-included-text" style={{ fontSize: "1rem", fontWeight: 400 }}>
-                (incluído em todas as mentorias, sem custo adicional)
+                {language === "pt-BR"
+                  ? "(incluído em todas as mentorias, sem custo adicional)"
+                  : "(incluído em todas as mentorias, sem custo adicional)"}
               </span>
             </h2>
             <p>
@@ -1298,11 +1320,11 @@ const Index = () => {
             <div className="bonus-item card-raised bonus-guides">
               <img src="/lovable-uploads/36c32b95-f826-4be1-a77a-6d166afa9ec9.png" alt="Guias Vivos" />
               <div className="bonus-item-content">
-                <h3>1 Ano de Guias Vivos</h3>
+                <h3>{language === "pt-BR" ? "1 Ano de Guias Vivos" : "1 Ano de Guias Vivos"}</h3>
                 <div className="value-tag">
                   <s>Valor: {language === "pt-BR" ? "2.000R$" : "324€/ano"}</s>
                 </div>
-                <span className="tag-included">incluído</span>
+                <span className="tag-included">{language === "pt-BR" ? "incluído" : "incluído"}</span>
                 <p>
                   {language === "pt-BR"
                     ? "O seu investimento na mentoria não pode ficar obsoleto. Por isso, criámos os nossos 3 Guias Vivos: uma base de conhecimento que está sempre 100% atualizada com as novidades de IA. Tenha acesso 24/7 a prompts, ferramentas testadas e estratégias que só partilhamos dentro do nosso ecossistema."
@@ -1313,11 +1335,11 @@ const Index = () => {
             <div className="bonus-item card-raised bonus-community">
               <img src="/lovable-uploads/7dd9bd91-9bcd-4fd6-80b4-8c8dc8ee647e.png" alt="Comunidade Discord" />
               <div className="bonus-item-content">
-                <h3>Comunidade Visionários do Marketing</h3>
+                <h3>{language === "pt-BR" ? "Comunidade Visionários do Marketing" : "Comunidade Visionários do Marketing"}</h3>
                 <div className="value-tag">
                   <s>Valor: {language === "pt-BR" ? "630R$" : "108€/ano"}</s>
                 </div>
-                <span className="tag-included">incluído</span>
+                <span className="tag-included">{language === "pt-BR" ? "incluído" : "incluído"}</span>
                 <p>
                   {language === "pt-BR"
                     ? "A inovação é um desporto de equipa. Entre para o círculo fechado dos profissionais que, como você, estão na linha da frente a testar as novas fronteiras da IA. Um ambiente para partilhar o que funciona, receber ajuda para o que não funciona, e encontrar parceiros para as suas próximas missões profissionais."
@@ -1343,31 +1365,42 @@ const Index = () => {
       <section className="social-proof" style={{ background: "#FCF9F2", padding: "4rem 1rem" }}>
         <div className="proof-container max-w-6xl mx-auto">
           <div className="proof-header">
-            <h2 style={{ textShadow: "3px 3px 0px #FF8C9B" }}>O Que Dizem Nossos Comandantes</h2>
+            <h2 style={{ textShadow: "3px 3px 0px #FF8C9B" }}>
+              {language === "pt-BR" ? "O Que Dizem Nossos Comandantes" : "O Que Dizem Nossos Comandantes"}
+            </h2>
             <p>
-              Histórias reais de marketers que transformaram as suas carreiras — e os seus resultados — com o nosso
-              plano de voo em IA.
+              {language === "pt-BR"
+                ? "Histórias reais de marketers que transformaram as suas carreiras — e os seus resultados — com o nosso plano de voo em IA."
+                : "Histórias reais de marketers que transformaram as suas carreiras — e os seus resultados — com o nosso plano de voo em IA."}
             </p>
           </div>
           <div className="testimonials">
             <div className="testimonial">
               <img src="/lovable-uploads/ff179a0b-4c4e-4026-88e8-cd4e4ccf43d7.png" alt="Luísa Lemos depoimento" />
               <blockquote>
-                "Com IA, o meu processo criativo, antes demorado, vai da ideia à execução muito mais rápido!"
+                {language === "pt-BR"
+                  ? "\"Com IA, o meu processo criativo, antes demorado, vai da ideia à execução muito mais rápido!\""
+                  : "\"Com IA, o meu processo criativo, antes demorado, vai da ideia à execução muito mais rápido!\""}
               </blockquote>
-              <cite>— Luísa Lemos, Brand Strategist</cite>
+              <cite>{language === "pt-BR" ? "— Luísa Lemos, Brand Strategist" : "— Luísa Lemos, Brand Strategist"}</cite>
             </div>
             <div className="testimonial">
               <img src="/lovable-uploads/daa2fade-028f-458c-b36f-121f2636fdd2.png" alt="Rita Bandeira depoimento" />
               <blockquote>
-                "Mesmo não sendo marketer, ganhei sentido crítico para aplicar a IA em qualquer projeto."
+                {language === "pt-BR"
+                  ? "\"Mesmo não sendo marketer, ganhei sentido crítico para aplicar a IA em qualquer projeto.\""
+                  : "\"Mesmo não sendo marketer, ganhei sentido crítico para aplicar a IA em qualquer projeto.\""}
               </blockquote>
-              <cite>— Rita Bandeira, Project Manager na Sword Health</cite>
+              <cite>{language === "pt-BR" ? "— Rita Bandeira, Project Manager na Sword Health" : "— Rita Bandeira, Project Manager na Sword Health"}</cite>
             </div>
             <div className="testimonial">
               <img src="/lovable-uploads/1310eb1a-7a6f-4423-832a-9869d3f3368b.png" alt="Pedro Lino depoimento" />
-              <blockquote>"Enquanto o mundo fala de ChatGPT, eu já uso o que nem 10% do mercado conhece."</blockquote>
-              <cite>— Pedro Lino, Empreendedor</cite>
+              <blockquote>
+                {language === "pt-BR"
+                  ? "\"Enquanto o mundo fala de ChatGPT, eu já uso o que nem 10% do mercado conhece.\""
+                  : "\"Enquanto o mundo fala de ChatGPT, eu já uso o que nem 10% do mercado conhece.\""}
+              </blockquote>
+              <cite>{language === "pt-BR" ? "— Pedro Lino, Empreendedor" : "— Pedro Lino, Empreendedor"}</cite>
             </div>
           </div>
         </div>
@@ -1391,31 +1424,31 @@ const Index = () => {
           </h2>
           <div className="cards-container">
             <div className="price-card">
-              <h3>Mentoria Avulsa</h3>
+              <h3>{language === "pt-BR" ? "Mentoria Avulsa" : "Mentoria Avulsa"}</h3>
               <div className="price-original">{language === "pt-BR" ? "1.450R$" : "230€"}</div>
               <div className="price-value">{language === "pt-BR" ? "1.200R$" : "184€"}</div>
-              <div className="price-note">(20% desconto pré-lançamento válido até 31/03/2026)</div>
+              <div className="price-note">{language === "pt-BR" ? "(20% desconto pré-lançamento válido até 31/03/2026)" : "(20% desconto pré-lançamento válido até 31/03/2026)"}</div>
               <ul className="inclusions">
                 <li>
                   <span>✱</span>
                   {language === "pt-BR" ? "20h de mentoria ao longo de 1 mês" : "20h de mentoria durante 1 mês"}
                 </li>
                 <li>
-                  <span>✱</span>Grupos de 8 a 12 profissionais de marketing
+                  <span>✱</span>{language === "pt-BR" ? "Grupos de 8 a 12 profissionais de marketing" : "Grupos de 8 a 12 profissionais de marketing"}
                 </li>
                 <li>
-                  <span>✱</span>Guias Vivos <s>({language === "pt-BR" ? "2.000R$" : "324€/ano"})</s>{" "}
+                  <span>✱</span>{language === "pt-BR" ? "Guias Vivos" : "Guias Vivos"} <s>({language === "pt-BR" ? "2.000R$" : "324€/ano"})</s>{" "}
                   <span className="tag-included-container">
                     <span className="tag-included-bg">
-                      <span className="tag-included-text">incluído</span>
+                      <span className="tag-included-text">{language === "pt-BR" ? "incluído" : "incluído"}</span>
                     </span>
                   </span>
                 </li>
                 <li>
-                  <span>✱</span>Comunidade Visionários <s>({language === "pt-BR" ? "680R$" : "108€/ano"})</s>{" "}
+                  <span>✱</span>{language === "pt-BR" ? "Comunidade Visionários" : "Comunidade Visionários"} <s>({language === "pt-BR" ? "680R$" : "108€/ano"})</s>{" "}
                   <span className="tag-included-container">
                     <span className="tag-included-bg">
-                      <span className="tag-included-text">incluído</span>
+                      <span className="tag-included-text">{language === "pt-BR" ? "incluído" : "incluído"}</span>
                     </span>
                   </span>
                 </li>
@@ -1433,11 +1466,11 @@ const Index = () => {
                 onChange={(e) => setSelectedMission(e.target.value)}
               >
                 <option value="" hidden>
-                  Selecionar missão
+                  {language === "pt-BR" ? "Selecionar missão" : "Selecionar missão"}
                 </option>
-                <option value="conteudo">IA para Criação de Conteúdo</option>
-                <option value="audiovisual">IA para Produção Audiovisual</option>
-                <option value="automacao">IA para Automação de Marketing</option>
+                <option value="conteudo">{language === "pt-BR" ? "IA para Criação de Conteúdo" : "IA para Criação de Conteúdo"}</option>
+                <option value="audiovisual">{language === "pt-BR" ? "IA para Produção Audiovisual" : "IA para Produção Audiovisual"}</option>
+                <option value="automacao">{language === "pt-BR" ? "IA para Automação de Marketing" : "IA para Automação de Marketing"}</option>
               </select>
 
               {selectedMission && (
@@ -1477,7 +1510,7 @@ const Index = () => {
                     {(() => {
                       const enrollmentCounts = { conteudo: 3, audiovisual: 6, automacao: 9 };
                       const enrolled = enrollmentCounts[selectedMission as keyof typeof enrollmentCounts] || 0;
-                      return `${12 - enrolled} vagas disponíveis`;
+                      return language === "pt-BR" ? `${12 - enrolled} vagas disponíveis` : `${12 - enrolled} vagas disponíveis`;
                     })()}
                   </div>
                   <div
@@ -1500,18 +1533,18 @@ const Index = () => {
               )}
 
               <a href="#formulario" className="cta-card">
-                Reservar Mentoria Avulsa
+                {language === "pt-BR" ? "Reservar Mentoria Avulsa" : "Reservar Mentoria Avulsa"}
               </a>
             </div>
             <div className="price-card highlight">
-              <div className="badge">MELHOR VALOR</div>
-              <h3>Pacote 3 Mentorias</h3>
+              <div className="badge">{language === "pt-BR" ? "MELHOR VALOR" : "MELHOR VALOR"}</div>
+              <h3>{language === "pt-BR" ? "Pacote 3 Mentorias" : "Pacote 3 Mentorias"}</h3>
               <div className="price-original">{language === "pt-BR" ? "4.350R$" : "690€"}</div>
               <div className="price-value">{language === "pt-BR" ? "3.140R$" : "497€"}</div>
-              <div className="price-note">(+10% desconto no pacote + 20% pré-lançamento até 31/03/2026)</div>
+              <div className="price-note">{language === "pt-BR" ? "(+10% desconto no pacote + 20% pré-lançamento até 31/03/2026)" : "(+10% desconto no pacote + 20% pré-lançamento até 31/03/2026)"}</div>
               <ul className="inclusions">
                 <li>
-                  <span>✱</span>60h de mentoria (3 x 20h)
+                  <span>✱</span>{language === "pt-BR" ? "60h de mentoria (3 x 20h)" : "60h de mentoria (3 x 20h)"}
                 </li>
                 <li style={{ fontSize: "0.8rem", color: "#FF304C", paddingLeft: "1.5rem" }}>
                   –{" "}
@@ -1520,23 +1553,23 @@ const Index = () => {
                     : "O Pacote de 3 turmas deve ser utilizado em até 6 meses a partir da data da compra."}
                 </li>
                 <li style={{ fontSize: "0.875rem", color: "#3D3D3D", paddingLeft: "1.5rem" }}>
-                  – IA para Criação de Conteúdo
+                  – {language === "pt-BR" ? "IA para Criação de Conteúdo" : "IA para Criação de Conteúdo"}
                 </li>
                 <li style={{ fontSize: "0.875rem", color: "#3D3D3D", paddingLeft: "1.5rem" }}>
-                  – IA para Produção Audiovisual
+                  – {language === "pt-BR" ? "IA para Produção Audiovisual" : "IA para Produção Audiovisual"}
                 </li>
                 <li style={{ fontSize: "0.875rem", color: "#3D3D3D", paddingLeft: "1.5rem" }}>
-                  – IA para Automação de Marketing
+                  – {language === "pt-BR" ? "IA para Automação de Marketing" : "IA para Automação de Marketing"}
                 </li>
                 <li>
-                  <span>✱</span>1 hora de Consultoria Individual
+                  <span>✱</span>{language === "pt-BR" ? "1 hora de Consultoria Individual" : "1 hora de Consultoria Individual"}
                 </li>
                 <li>
-                  <span>✱</span>Inclui todos os benefícios da Mentoria Avulsa
+                  <span>✱</span>{language === "pt-BR" ? "Inclui todos os benefícios da Mentoria Avulsa" : "Inclui todos os benefícios da Mentoria Avulsa"}
                 </li>
               </ul>
               <a href="#formulario" className="cta-card">
-                Reservar Pacote Completo
+                {language === "pt-BR" ? "Reservar Pacote Completo" : "Reservar Pacote Completo"}
               </a>
             </div>
           </div>
@@ -1587,7 +1620,7 @@ const Index = () => {
         >
           <div className="faq" style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
             <details>
-              <summary>Preciso de tempo extra para acompanhar as aulas?</summary>
+              <summary>{language === "pt-BR" ? "Preciso de tempo extra para acompanhar as aulas?" : "Preciso de tempo extra para acompanhar as aulas?"}</summary>
               <div>
                 {language === "pt-BR"
                   ? "Sabemos que a sua agenda está sempre ao rubro. Por isso, cada sessão de 2h30m é gravada em alta qualidade e disponibilizada nos Guias Vivos, permitindo rever as lições a qualquer momento. Em vez de roubar o seu tempo, esta mentoria é desenhada para devolvê‑lhe tempo livre: aprenda a otimizar fluxos com IA e ganhe horas semanais para o que realmente importa."
@@ -1595,7 +1628,7 @@ const Index = () => {
               </div>
             </details>
             <details>
-              <summary>Não estou seguro do meu nível de domínio de IA.</summary>
+              <summary>{language === "pt-BR" ? "Não estou seguro do meu nível de domínio de IA." : "Não estou seguro do meu nível de domínio de IA."}</summary>
               <div>
                 {language === "pt-BR"
                   ? 'Esta mentoria foi concebida exatamente para si, independentemente do seu ponto de partida. Começamos com o essencial — conhecer o "Olá, Mundo!" da IA — e evoluímos progressivamente para casos avançados. Além das aulas, poderá trocar ideias com a comunidade Visionários do Marketing, garantindo suporte contínuo. Ao final das 20h, terá confiança para criar, automatizar e liderar projetos com IA.'
@@ -1603,7 +1636,7 @@ const Index = () => {
               </div>
             </details>
             <details>
-              <summary>Qual será o retorno sobre o investimento?</summary>
+              <summary>{language === "pt-BR" ? "Qual será o retorno sobre o investimento?" : "Qual será o retorno sobre o investimento?"}</summary>
               <div>
                 {language === "pt-BR" ? "O ROI traduz-se em três níveis:" : "O ROI traduz-se em três níveis:"}
                 <ol style={{ margin: "0.5rem 0 0", paddingLeft: "1.5rem" }}>
