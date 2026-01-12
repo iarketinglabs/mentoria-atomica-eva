@@ -886,8 +886,8 @@ const Index = () => {
             </h3>
             <p className="text-lg text-[#3D3D3D]">
               {language === "pt-BR"
-                ? "Automatiza o trabalho repetitivo para se focar onde a sua criatividade e pensamento crítico brilham, transformando ideias complexas em realidade e ser a referência que a sua equipa procura quando o tema é inovação."
-                : "Automatizas o trabalho repetitivo para te focares onde a tua criatividade e pensamento crítico brilham, transformando ideias complexas em realidade e ser a referência que a tua equipa procura quando o tema é inovação."}
+                ? "Torne-se o Maestro do Marketing orquestrando uma equipa de agentes que automatizam o trabalho repetitivo para focar onde a sua criatividade e pensamento crítico brilham, transformando ideias em resultados em tempo recorde."
+                : "Torna-te o Maestro do Marketing ao orquestrar uma equipa de agentes que automatizam o trabalho repetitivo para te focares onde a tua criatividade e pensamento crítico brilham, e transformar ideias em resultados em tempo recorde."}
             </p>
           </div>
         </div>
@@ -901,8 +901,8 @@ const Index = () => {
             style={{ textShadow: "3px 3px 0px #a8dee0", fontFamily: "'Caprasimo', serif" }}
           >
             {language === "pt-BR"
-              ? "Saia da Teoria para Aplicações Práticas de IA no Marketing"
-              : "Sai da Teoria para Aplicações Práticas de IA no Marketing"}
+              ? "Fundamentos Sólidos + Aplicações Práticas de IA no Marketing"
+              : "Fundamentos Sólidos + Aplicações Práticas de IA no Marketing"}
           </h2>
 
           {/* Parte 1: A Solução */}
@@ -926,8 +926,8 @@ const Index = () => {
                 <li className="flex items-start">
                   <span className="text-[#67BBC0] font-bold text-2xl mr-4 mt-1">✓</span>
                   <span>
-                    <strong>A capacidade de prototipar o impossível:</strong> com o Vibe Coding,{" "}
-                    {language === "pt-BR" ? "Ideias" : "ideias"} que antes ficavam na gaveta por serem muito caras ou
+                    <strong>A capacidade de prototipar o impossível:</strong> Com IA,{" "}
+                    {language === "pt-BR" ? "ideias" : "ideias"} que antes ficavam na gaveta por serem muito caras ou
                     complexas, agora podem ser testadas e lançadas em dias, não em meses.
                   </span>
                 </li>
@@ -936,8 +936,8 @@ const Index = () => {
                   <span>
                     <strong>O fim das tarefas repetitivas:</strong>{" "}
                     {language === "pt-BR"
-                      ? "Aprenda a automatizar tudo o que é aborrecido, demorado e de baixo valor, para que possa focar a sua energia onde ela cria mais impacto e diversão."
-                      : "Aprende a automatizar tudo o que é aborrecido, demorado e de baixo valor, para que possas focar a tua energia onde ela tem mais impacto e diversão."}
+                      ? "Aprenda a automatizar tudo o que é chato, repetitivo e de baixo valor, para que possa focar a sua energia em tarefas mais impactantes e gratificantes."
+                      : "Aprende a automatizar tudo o que é aborrecido, repetitivo e de baixo valor, para que possas focar a tua energia em tarefas mais impactantes e gratificantes."}
                   </span>
                 </li>
               </ul>
@@ -1059,8 +1059,8 @@ const Index = () => {
             </h3>
             <p className="mentor-text">
               {language === "pt-BR"
-                ? "Brasileiro morando em Portugal há 4 anos, desenvolveu e adaptou estratégias para mercados como o do Brasil, Portugal, Reino Unido e França."
-                : "Brasileiro a viver em Portugal há 4 anos, desenvolveu e adaptou estratégias para mercados como o do Brasil, Portugal, Reino Unido e França."}
+                ? "Brasileiro morando em Portugal há 5 anos, desenvolveu e adaptou estratégias para mercados como o do Brasil, Portugal, Reino Unido e França."
+                : "Brasileiro a viver em Portugal há 5 anos, desenvolveu e adaptou estratégias para mercados como o do Brasil, Portugal, Reino Unido e França."}
             </p>
 
             <h3
@@ -1071,8 +1071,8 @@ const Index = () => {
             </h3>
             <p className="mentor-text">
               {language === "pt-BR"
-                ? "Com o objetivo de promover a literacia em IA junto de marketers e criativos. Para isso, desenvolveu um método de ensino focado nos 5 Pilares da IA, compartilhado em workshops e bootcamps."
-                : "Com o objetivo de promover a literacia em IA junto de marketers e criativos. Para isso, desenvolveu um método de ensino focado nos 5 Pilares da IA, partilhado em workshops e bootcamps."}
+                ? "Com o objetivo de promover a literacia em IA junto de marketers e criativos. Para isso, desenvolveu um método de ensino focado nos 6 Pilares da IA, compartilhado em workshops e bootcamps."
+                : "Com o objetivo de promover a literacia em IA junto de marketers e criativos. Para isso, desenvolveu um método de ensino focado nos 6 Pilares da IA, partilhado em workshops e bootcamps."}
             </p>
             <h4 className="trust-title" style={{ marginTop: "2rem", textAlign: "center", color: "#3D3D3D" }}>
               {language === "pt-BR"
@@ -1131,26 +1131,54 @@ const Index = () => {
             }}
           >
             {language === "pt-BR"
-              ? "Os 3 Pilares da Sua Transformação em IA"
-              : "Os 3 Pilares da Tua Transformação em IA"}
+              ? "Método Atômico: domine os 6 Pilares do Vibe Marketing"
+              : "Método Atómico: domina os 6 Pilares do Vibe Marketing"}
           </h2>
-          <div className="general-info" style={{ maxWidth: "900px", margin: "0 auto 2rem", textAlign: "center" }}>
-            <p style={{ fontSize: "1rem", lineHeight: 1.5 }}>
-              <span style={{ color: "#008C94", fontWeight: 700 }}>✱</span>{" "}
+          <div className="general-info" style={{ maxWidth: "900px", margin: "0 auto 2rem", textAlign: "left" }}>
+            <p style={{ fontSize: "1rem", lineHeight: 1.6, marginBottom: "1rem" }}>
               {language === "pt-BR"
-                ? "Cada turma tem 20 horas no total, com 8 encontros ao vivo de 2h30 (2 aulas por semana, em regra)."
-                : "Cada turma tem 20 horas no total, com 8 encontros ao vivo de 2h30 (2 aulas por semana, em regra)."}
+                ? "Aqui não é um \"curso de ferramentas\". É um método que combina:"
+                : "Aqui não é um \"curso de ferramentas\". É um método que combina:"}
             </p>
-            <p style={{ fontSize: "0.9rem", lineHeight: 1.5, marginTop: "0.5rem", color: "#3D3D3D" }}>
-              <span style={{ color: "#008C94", fontWeight: 700 }}>✱</span>{" "}
+            <p style={{ fontSize: "1rem", lineHeight: 1.6, marginBottom: "1rem" }}>
               {language === "pt-BR"
-                ? "Os horários indicados são no fuso do Brasil (Brasília UTC−3). O aluno é responsável por ajustar ao seu fuso horário."
-                : "Os horários indicados são no fuso de Portugal (Lisboa GMT+0)."}
+                ? "Fundamentos que resistem a novos lançamentos + projetos práticos com casos de uso reais de IA no Marketing."
+                : "Fundamentos que resistem a novos lançamentos + projectos práticos com casos de uso reais de IA no Marketing."}
             </p>
-            <p style={{ fontSize: "0.9rem", lineHeight: 1.5, marginTop: "0.5rem", color: "#3D3D3D" }}>
+            <p style={{ fontSize: "1rem", lineHeight: 1.6, marginBottom: "1rem" }}>
               {language === "pt-BR"
-                ? "Os horários padrão (Portugal/Lisboa) são: 2ª e 4ª 18:00–20:30, 2ª e 4ª 21:00–23:30, 3ª e 5ª 18:00–20:30, 3ª e 5ª 21:00–23:30."
-                : "Os horários padrão (Portugal/Lisboa) são: 2ª e 4ª 18:00–20:30, 2ª e 4ª 21:00–23:30, 3ª e 5ª 18:00–20:30, 3ª e 5ª 21:00–23:30."}
+                ? "Tudo guiado pela experiência de +10 anos em Marketing do Pedro Armbrust, com acompanhamento direto aos mentorados e troca constante com outros profissionais da área."
+                : "Tudo guiado pela experiência de +10 anos em Marketing do Pedro Armbrust, que garante acompanhamento directo aos mentorados e troca constante com outros profissionais da área."}
+            </p>
+            <p style={{ fontSize: "1rem", lineHeight: 1.6, marginBottom: "1rem" }}>
+              {language === "pt-BR"
+                ? "Você tem 3 tipos de Mentorias para sair da teoria e ir pra execução com IA no Marketing:"
+                : "Tens 3 tipos de Mentoria para te levar da teoria à execução com IA no Marketing:"}
+            </p>
+            <p style={{ fontSize: "1rem", lineHeight: 1.6, marginBottom: "0.5rem", color: "#008C94", fontWeight: 600 }}>
+              ➙ IA para Estratégia e Criação de Conteúdo
+            </p>
+            <p style={{ fontSize: "1rem", lineHeight: 1.6, marginBottom: "0.5rem", color: "#008C94", fontWeight: 600 }}>
+              ➙ IA para Design e Audiovisual
+            </p>
+            <p style={{ fontSize: "1rem", lineHeight: 1.6, marginBottom: "1rem", color: "#008C94", fontWeight: 600 }}>
+              ➙ IA para Vibe Coding e Automação Agêntica
+            </p>
+            <p style={{ fontSize: "1rem", lineHeight: 1.6, marginBottom: "0.5rem", fontWeight: 600 }}>
+              {language === "pt-BR" ? "Formato da Mentoria:" : "Formato da mentoria:"}
+            </p>
+            <p style={{ fontSize: "1rem", lineHeight: 1.6, marginBottom: "1rem" }}>
+              20h por turma • 8 encontros ao vivo de 2h30 • Grupo pequeno: até 12 mentorados
+            </p>
+            <p style={{ fontSize: "1rem", lineHeight: 1.6, marginBottom: "1rem" }}>
+              {language === "pt-BR"
+                ? "O objetivo dessas 3 Mentorias é fazer com que você domine os 6 pilares da IA (LLMs, Imagem, Vídeo, Áudio, Automação Agêntica e Vibe Coding) para se tornar um Maestro que, através do Vibe Marketing, orquestra a IA e sai da ideia para resultados com o mínimo de barreiras técnicas."
+                : "O objetivo destas 3 Mentorias é fazer com que domines os 6 pilares da IA (LLMs, Imagem, Vídeo, Áudio, Automação Agêntica e Vibe Coding) para te tornares um Maestro que, através do Vibe Marketing, orquestra a IA para sair da ideia para resultados com o mínimo de barreiras técnicas."}
+            </p>
+            <p style={{ fontSize: "0.9rem", lineHeight: 1.5, marginTop: "1rem", color: "#3D3D3D" }}>
+              {language === "pt-BR"
+                ? "Os horários padrão (Brasil - horário de Brasília) são: 2ª e 4ª 17:30–20:00, 3ª e 5ª 17:30–20:00"
+                : "Os horários padrão (Portugal) são: 2ª e 4ª 20:30–23:00, 3ª e 5ª 20:30–23:00"}
             </p>
           </div>
           <div className="cards-container pillar-cards" style={{ gap: "0.5rem" }}>
@@ -1233,14 +1261,20 @@ const Index = () => {
                 <li style={{ marginBottom: "0.5rem", color: "#3D3D3D", lineHeight: "1.4" }}>
                   ✱{" "}
                   {language === "pt-BR"
+                    ? "Aprenda a usar a IA como parceira criativa para desenvolver UX/UI, infográficos, apresentações e posts de redes sociais consistentes com o estilo da sua marca."
+                    : "Aprende a usar a IA como parceiro criativo para desenvolver UX/UI, infográficos, apresentações e posts de redes sociais consistentes com o estilo da tua marca."}
+                </li>
+                <li style={{ marginBottom: "0.5rem", color: "#3D3D3D", lineHeight: "1.4" }}>
+                  ✱{" "}
+                  {language === "pt-BR"
                     ? "Aplicar técnicas avançadas como engenharia de prompt de imagem e vídeo, consistência, upscale, VFX, lipsync e deepfake para um acabamento profissional."
                     : "Aplica técnicas avançadas como engenharia de prompt de imagem e vídeo, consistência, upscale, VFX, lipsync e deepfake para um acabamento profissional."}
                 </li>
                 <li style={{ marginBottom: "0.5rem", color: "#3D3D3D", lineHeight: "1.4" }}>
                   ✱{" "}
                   {language === "pt-BR"
-                    ? "Construir o seu arsenal de produção completo, ao explorar workflows envolvendo Midjourney, Google Veo3, Eleven Labs, Descript, ChatGPT, Flux, Suno, HeyGen, Kling, Runway, Hailuo, Capcut e muitas outras."
-                    : "Constrói o teu arsenal de produção completo, ao explorar workflows envolvendo Midjourney, Google Veo3, Eleven Labs, Descript, ChatGPT, Flux, Suno, HeyGen, Kling, Runway, Hailuo, Capcut e muitas outras."}
+                    ? "Construir o seu arsenal de produção completo, ao explorar workflows envolvendo ChatGPT, Nanobanana, Seedream, Flux, Google Veo, Kling, Eleven Labs, Descript, Suno, HeyGen e muitas outras."
+                    : "Constrói o teu arsenal de produção completo, ao explorar workflows envolvendo ChatGPT, Nanobanana, Seedream, Flux, Google Veo, Kling, Eleven Labs, Descript, Suno, HeyGen e muitas outras."}
                 </li>
                 <li style={{ marginBottom: "0.5rem", color: "#3D3D3D", lineHeight: "1.4" }}>
                   ✱{" "}
@@ -1329,7 +1363,7 @@ const Index = () => {
             </h2>
             <p>
               {language === "pt-BR"
-                ? "Ao garantir a sua vaga na mentoria, recebe automaticamente e sem qualquer custo adicional acesso a este ecossistema de valor. Cada bónus foi desenhado para acelerar os seus resultados e mantê-lo na vanguarda, muito depois de a mentoria terminar."
+                ? "Ao garantir a sua vaga na mentoria, recebe automaticamente e sem qualquer custo adicional acesso ao nosso ecossistema de valor. Cada bônus foi desenhado para acelerar os seus resultados e mantê-lo na vanguarda, muito depois de a mentoria terminar."
                 : "Ao garantires a tua vaga na mentoria, recebes automaticamente e sem qualquer custo adicional acesso a um ecossistema de valor. Cada bónus foi desenhado para acelerar os teus resultados e manter-te na vanguarda, muito depois de a mentoria terminar."}
             </p>
           </div>
@@ -1446,7 +1480,7 @@ const Index = () => {
               <div className="price-original">{language === "pt-BR" ? "1.450R$" : "230€"}</div>
               <div className="price-value">
                 {language === "pt-BR" ? "1.200R$" : "184€"}
-                <span style={{ fontSize: "0.75rem", fontWeight: 400, color: "#3D3D3D", marginLeft: "4px" }}>+IVA</span>
+                <span style={{ fontSize: "0.75rem", fontWeight: 400, color: "#3D3D3D", marginLeft: "4px", textShadow: "none" }}>+IVA</span>
               </div>
               <div className="price-note">{language === "pt-BR" ? "(20% desconto pré-lançamento válido até 31/03/2026)" : "(20% desconto pré-lançamento válido até 31/03/2026)"}</div>
               <ul className="inclusions">
@@ -1556,6 +1590,9 @@ const Index = () => {
               <a href="#formulario" className="cta-card">
                 {language === "pt-BR" ? "Reservar Mentoria Avulsa" : "Reservar Mentoria Avulsa"}
               </a>
+              <p style={{ fontSize: "0.75rem", color: "#3D3D3D", marginTop: "0.75rem", textAlign: "center" }}>
+                {language === "pt-BR" ? "É possível se inscrever em 2 turmas." : "É possível se inscrever em 2 turmas."}
+              </p>
             </div>
             <div className="price-card highlight">
               <div className="badge">{language === "pt-BR" ? "MELHOR VALOR" : "MELHOR VALOR"}</div>
@@ -1563,7 +1600,7 @@ const Index = () => {
               <div className="price-original">{language === "pt-BR" ? "4.350R$" : "690€"}</div>
               <div className="price-value">
                 {language === "pt-BR" ? "3.140R$" : "497€"}
-                <span style={{ fontSize: "0.75rem", fontWeight: 400, color: "#3D3D3D", marginLeft: "4px" }}>+IVA</span>
+                <span style={{ fontSize: "0.75rem", fontWeight: 400, color: "#3D3D3D", marginLeft: "4px", textShadow: "none" }}>+IVA</span>
               </div>
               <div className="price-note">{language === "pt-BR" ? "(+10% desconto no pacote + 20% pré-lançamento até 31/03/2026)" : "(+10% desconto no pacote + 20% pré-lançamento até 31/03/2026)"}</div>
               <ul className="inclusions">
@@ -1615,15 +1652,10 @@ const Index = () => {
               />
               <span>
                 {language === "pt-BR"
-                  ? "Reembolso total após a 1ª aula completa, solicitado em até 30 dias após essa 1ª aula. Sem necessidade de justificativa (feedback é opcional)."
-                  : "Reembolso total após a 1ª aula completa, solicitado em até 30 dias após essa 1ª aula. Sem necessidade de justificativa (feedback é opcional)."}
+                  ? "Reembolso total (IVA não é devolvido) caso não esteja 100% satisfeito após a 1ª aula. Sem necessidade de justificativa."
+                  : "Reembolso total (IVA não é devolvido) caso não esteja 100% satisfeito após a 1ª aula. Sem necessidade de justificativa."}
               </span>
             </div>
-            <p style={{ fontSize: "0.75rem", color: "#555", maxWidth: "700px", marginTop: "0.5rem" }}>
-              {language === "pt-BR"
-                ? "É possível se inscrever em 2 turmas. Nesse caso não há desconto: o valor é o dobro (uma inscrição por turma)."
-                : "É possível inscrever-se em 2 turmas. Neste caso não há desconto: o valor é o dobro (uma inscrição por turma)."}
-            </p>
           </div>
         </div>
       </section>
