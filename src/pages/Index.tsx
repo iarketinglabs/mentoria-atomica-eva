@@ -1373,13 +1373,13 @@ const Index = () => {
               <div className="bonus-item-content">
                 <h3>{language === "pt-BR" ? "1 Ano de Guias Vivos" : "1 Ano de Guias Vivos"}</h3>
                 <div className="value-tag">
-                  <s>Valor: {language === "pt-BR" ? "2.000R$" : "324€/ano"}</s>
+                  <s>Valor: {language === "pt-BR" ? "R$ 1.692 /ano" : "288 € /ano"}</s>
                 </div>
                 <span className="tag-included">{language === "pt-BR" ? "incluído" : "incluído"}</span>
                 <p>
                   {language === "pt-BR"
-                    ? "O seu investimento na mentoria não pode ficar obsoleto. Por isso, criámos os nossos 3 Guias Vivos: uma base de conhecimento que está sempre 100% atualizada com as novidades de IA. Tenha acesso 24/7 a prompts, ferramentas testadas e estratégias que só partilhamos dentro do nosso ecossistema."
-                    : "O teu investimento na mentoria não pode ficar obsoleto. Por isso, criámos os nossos 3 Guias Vivos: uma base de conhecimento que está sempre 100% atualizada com as novidades de IA. Terás acesso 24/7 a prompts, ferramentas testadas e estratégias que só partilhamos dentro do nosso ecossistema."}
+                    ? "Para servir como material de estudo complementar, criamos 3 Guias Vivos — Estratégia e Criação de Conteúdo, Design e Produção Audiovisual, e Vibe Coding e Automação Agêntica. Pense neles como enciclopédias digitais sempre 100% atualizadas com o estado da arte de IA aplicada ao Marketing. Cada guia reúne fundamentos, técnicas, ferramentas, funcionalidades e casos de uso reais, com exercícios práticos para você continuar evoluindo e aplicando IA mesmo depois que a mentoria acabar."
+                    : "Para servir como material de estudo complementar, criámos 3 Guias Vivos — Estratégia e Criação de Conteúdo, Design e Produção Audiovisual, e Vibe Coding e Automação Agêntica. Pensa neles como enciclopédias digitais sempre 100% actualizadas com o estado da arte de IA aplicada ao Marketing. Cada guia organiza fundamentos, técnicas, ferramentas, funcionalidades e casos de uso reais, com exercícios práticos para continuares a evoluir e aplicar IA mesmo depois de a mentoria terminar."}
                 </p>
               </div>
             </div>
@@ -1388,13 +1388,13 @@ const Index = () => {
               <div className="bonus-item-content">
                 <h3>{language === "pt-BR" ? "Comunidade Visionários do Marketing" : "Comunidade Visionários do Marketing"}</h3>
                 <div className="value-tag">
-                  <s>Valor: {language === "pt-BR" ? "630R$" : "108€/ano"}</s>
+                  <s>Valor: {language === "pt-BR" ? "R$ 564 /ano" : "96€ /ano"}</s>
                 </div>
                 <span className="tag-included">{language === "pt-BR" ? "incluído" : "incluído"}</span>
                 <p>
                   {language === "pt-BR"
-                    ? "A inovação é um desporto de equipa. Entre para o círculo fechado dos profissionais que, como você, estão na linha da frente a testar as novas fronteiras da IA. Um ambiente para partilhar o que funciona, receber ajuda para o que não funciona, e encontrar parceiros para as suas próximas missões profissionais."
-                    : "A inovação é um desporto de equipa. Entra para o círculo fechado dos profissionais que, como tu, estão na linha da frente a testar as novas fronteiras da IA. Um ambiente para partilhar o que funciona, receber ajuda para o que não funciona, e encontrar parceiros para as tuas próximas missões profissionais."}
+                    ? "O ecossistema da Atomica pra te manter atualizado, fazer networking e continuar evoluindo sem se afogar em ruído. Lá dentro, você recebe uma curadoria diária de notícias e conteúdos sobre o que realmente importa sobre IA aplicada ao Marketing. Além disso, você entra numa comunidade viva pra pedir ajuda, ajudar outras pessoas, trocar benchmarks, participar de discussões, se conectar com gente da área e mostrar seus projetos com IA. Também tem acesso à biblioteca de materiais complementares, com +150 NotebookLMs sobre os temas mais atuais e relevantes de AI Marketing — pensa neles como professores digitais que te explicam de forma personalizada, no seu ritmo. Pra fechar o ciclo, rolam office hours mensais exclusivas: lives em que o Pedro interage com a comunidade, responde a perguntas, dá a sua opinião e compartilha novidades e aprendizados em primeira mão."
+                    : "O ecossistema da Atomica para te manteres atualizado, fazer networking e continuares a evoluir — sem te afogares em ruído. Lá dentro, recebes uma curadoria diária de notícias e conteúdos sobre o que realmente importa na IA aplicada ao Marketing. Além disso, entras numa comunidade viva para pedir ajuda, ajudar outras pessoas, trocar benchmarks, participar em discussões, ligar-te a profissionais da área e mostrar os teus projectos com IA. Também tens acesso à biblioteca de materiais complementares, com +150 NotebookLMs sobre os temas mais actuais e relevantes de AI Marketing — pensa neles como professores digitais que te explicam tudo de forma personalizada, ao teu ritmo. Para fechar o ciclo, há office hours mensais exclusivas: lives em que o Pedro interage com a comunidade, responde a perguntas, dá a sua opinião e partilha novidades e aprendizagens em primeira mão."}
                 </p>
                 <p style={{ marginTop: "1rem", color: "#FF304C", fontWeight: 600, fontSize: "0.95rem" }}>
                   {language === "pt-BR"
@@ -1477,9 +1477,9 @@ const Index = () => {
           <div className="cards-container">
             <div className="price-card">
               <h3>{language === "pt-BR" ? "Mentoria Avulsa" : "Mentoria Avulsa"}</h3>
-              <div className="price-original">{language === "pt-BR" ? "1.450R$" : "230€"}</div>
+              <div className="price-original">{language === "pt-BR" ? "R$ 1.495" : "230€"}</div>
               <div className="price-value">
-                {language === "pt-BR" ? "1.200R$" : "184€"}
+                {language === "pt-BR" ? "R$ 1.200" : "184€"}
                 <span style={{ fontSize: "0.75rem", fontWeight: 400, color: "#3D3D3D", marginLeft: "4px", textShadow: "none" }}>+IVA</span>
               </div>
               <div className="price-note">{language === "pt-BR" ? "(20% desconto pré-lançamento válido até 31/03/2026)" : "(20% desconto pré-lançamento válido até 31/03/2026)"}</div>
@@ -1489,10 +1489,10 @@ const Index = () => {
                   {language === "pt-BR" ? "20h de mentoria ao longo de 1 mês" : "20h de mentoria durante 1 mês"}
                 </li>
                 <li>
-                  <span>✱</span>{language === "pt-BR" ? "Grupos de 8 a 12 profissionais de marketing" : "Grupos de 8 a 12 profissionais de marketing"}
+                  <span>✱</span>{language === "pt-BR" ? "Grupos de 6 a 12 mentorados" : "Grupos de 6 a 12 mentorados"}
                 </li>
                 <li>
-                  <span>✱</span>{language === "pt-BR" ? "Guias Vivos" : "Guias Vivos"} <s>({language === "pt-BR" ? "2.000R$" : "324€/ano"})</s>{" "}
+                  <span>✱</span>{language === "pt-BR" ? "Guias Vivos" : "Guias Vivos"} <s>({language === "pt-BR" ? "R$ 1.692" : "288 € /ano"})</s>{" "}
                   <span className="tag-included-container">
                     <span className="tag-included-bg">
                       <span className="tag-included-text">{language === "pt-BR" ? "incluído" : "incluído"}</span>
@@ -1500,7 +1500,7 @@ const Index = () => {
                   </span>
                 </li>
                 <li>
-                  <span>✱</span>{language === "pt-BR" ? "Comunidade Visionários" : "Comunidade Visionários"} <s>({language === "pt-BR" ? "680R$" : "108€/ano"})</s>{" "}
+                  <span>✱</span>{language === "pt-BR" ? "Comunidade Visionários" : "Comunidade Visionários"} <s>({language === "pt-BR" ? "R$ 564" : "96€ /ano"})</s>{" "}
                   <span className="tag-included-container">
                     <span className="tag-included-bg">
                       <span className="tag-included-text">{language === "pt-BR" ? "incluído" : "incluído"}</span>
@@ -1523,51 +1523,13 @@ const Index = () => {
                 <option value="" hidden>
                   {language === "pt-BR" ? "Selecionar missão" : "Selecionar missão"}
                 </option>
-                <option value="conteudo">{language === "pt-BR" ? "IA para Criação de Conteúdo" : "IA para Criação de Conteúdo"}</option>
-                <option value="audiovisual">{language === "pt-BR" ? "IA para Produção Audiovisual" : "IA para Produção Audiovisual"}</option>
-                <option value="automacao">{language === "pt-BR" ? "IA para Automação de Marketing" : "IA para Automação de Marketing"}</option>
+                <option value="conteudo">{language === "pt-BR" ? "IA para Estratégia e Criação de Conteúdo" : "IA para Estratégia e Criação de Conteúdo"}</option>
+                <option value="audiovisual">{language === "pt-BR" ? "IA para Design e Audiovisual" : "IA para Design e Audiovisual"}</option>
+                <option value="automacao">{language === "pt-BR" ? "IA para Vibe Coding e Automação Agêntica" : "IA para Vibe Coding e Automação Agêntica"}</option>
               </select>
 
               {selectedMission && (
                 <div style={{ marginTop: "1rem", marginBottom: "1rem" }}>
-                  <div
-                    style={{
-                      display: "flex",
-                      gap: "4px",
-                      marginBottom: "0.5rem",
-                      height: "24px",
-                    }}
-                  >
-                    {Array.from({ length: 12 }).map((_, index) => {
-                      const enrollmentCounts = { conteudo: 3, audiovisual: 6, automacao: 9 };
-                      const enrolled = enrollmentCounts[selectedMission as keyof typeof enrollmentCounts] || 0;
-                      return (
-                        <div
-                          key={index}
-                          style={{
-                            flex: 1,
-                            backgroundColor: index < enrolled ? "#67BBC0" : "#E5DBC7",
-                            borderRadius: "2px",
-                            transition: "background-color 0.3s ease",
-                          }}
-                        />
-                      );
-                    })}
-                  </div>
-                  <div
-                    style={{
-                      fontSize: "0.875rem",
-                      color: "#3D3D3D",
-                      marginBottom: "0.75rem",
-                      textAlign: "center",
-                    }}
-                  >
-                    {(() => {
-                      const enrollmentCounts = { conteudo: 3, audiovisual: 6, automacao: 9 };
-                      const enrolled = enrollmentCounts[selectedMission as keyof typeof enrollmentCounts] || 0;
-                      return language === "pt-BR" ? `${12 - enrolled} vagas disponíveis` : `${12 - enrolled} vagas disponíveis`;
-                    })()}
-                  </div>
                   <div
                     style={{
                       fontSize: "0.95rem",
@@ -1577,12 +1539,9 @@ const Index = () => {
                       fontFamily: "'Oswald', sans-serif",
                     }}
                   >
-                    {selectedMission === "conteudo" &&
-                      (language === "pt-BR" ? "Horário: 2ª e 4ª às 17h" : "Horário: 2ª e 4ª às 21h")}
-                    {selectedMission === "audiovisual" &&
-                      (language === "pt-BR" ? "Horário: 3ª e 5ª às 17h" : "Horário: 3ª e 5ª às 21h")}
-                    {selectedMission === "automacao" &&
-                      (language === "pt-BR" ? "Horário: 2ª e 4ª às 17h" : "Horário: 2ª e 4ª às 21h")}
+                    {selectedMission === "conteudo" && "Inicia em 23/02 • 2ª e 4ª f • 20h30-23h (Total: 20 horas)"}
+                    {selectedMission === "audiovisual" && "Inicia em 24/02 • 3ª e 5ª f • 20h30-23h (Total: 20 horas)"}
+                    {selectedMission === "automacao" && "Inicia em 30/03 • 2ª e 4ª f • 18h-20h30"}
                   </div>
                 </div>
               )}
@@ -1597,9 +1556,9 @@ const Index = () => {
             <div className="price-card highlight">
               <div className="badge">{language === "pt-BR" ? "MELHOR VALOR" : "MELHOR VALOR"}</div>
               <h3>{language === "pt-BR" ? "Pacote 3 Mentorias" : "Pacote 3 Mentorias"}</h3>
-              <div className="price-original">{language === "pt-BR" ? "4.350R$" : "690€"}</div>
+              <div className="price-original">{language === "pt-BR" ? "R$ 4.612" : "710€"}</div>
               <div className="price-value">
-                {language === "pt-BR" ? "3.140R$" : "497€"}
+                {language === "pt-BR" ? "R$ 3.229" : "497€"}
                 <span style={{ fontSize: "0.75rem", fontWeight: 400, color: "#3D3D3D", marginLeft: "4px", textShadow: "none" }}>+IVA</span>
               </div>
               <div className="price-note">{language === "pt-BR" ? "(+10% desconto no pacote + 20% pré-lançamento até 31/03/2026)" : "(+10% desconto no pacote + 20% pré-lançamento até 31/03/2026)"}</div>
@@ -1623,7 +1582,17 @@ const Index = () => {
                   <span>✱</span>{language === "pt-BR" ? "Inclui todos os benefícios da Mentoria Avulsa" : "Inclui todos os benefícios da Mentoria Avulsa"}
                 </li>
               </ul>
-              <a href="#formulario" className="cta-card">
+              <a 
+                href="#formulario" 
+                className="cta-card"
+                onClick={() => {
+                  setFormMentorias([
+                    "IA para Estratégia e Criação de Conteúdo",
+                    "IA para Design e Audiovisual",
+                    "IA para Vibe Coding e Automação Agêntica"
+                  ]);
+                }}
+              >
                 {language === "pt-BR" ? "Reservar Pacote Completo" : "Reservar Pacote Completo"}
               </a>
             </div>
@@ -1888,9 +1857,9 @@ const Index = () => {
               <strong>Resumo de Valor:</strong>
             </p>
             <ul>
-              <li>Mentoria de 20h (Valor Original: {language === "pt-BR" ? "1.450R$" : "230€"})</li>
-              <li>Guias Vivos (Assinatura Anual: {language === "pt-BR" ? "2.000R$" : "324€"})</li>
-              <li>Comunidade Visionários do Marketing (Assinatura Anual: {language === "pt-BR" ? "680R$" : "108€"})</li>
+              <li>Mentoria de 20h (Valor Original: {language === "pt-BR" ? "R$ 1.495" : "230€"})</li>
+              <li>Guias Vivos (Assinatura Anual: {language === "pt-BR" ? "R$ 1.692" : "288€"})</li>
+              <li>Comunidade Visionários do Marketing (Assinatura Anual: {language === "pt-BR" ? "R$ 564" : "96€"})</li>
             </ul>
             <p>
               <strong>Valor Original Total:</strong>{" "}
@@ -1899,7 +1868,7 @@ const Index = () => {
             <div className="investment-highlight">
               {language === "pt-BR" ? "O seu investimento hoje:" : "O teu investimento hoje:"} Apenas{" "}
               <span style={{ color: "#1B1B1B", textShadow: "2px 2px 0px #FCCA29" }}>
-                {language === "pt-BR" ? "1.200R$" : "184€"}
+                {language === "pt-BR" ? "R$ 1.200" : "184€"}
               </span>
             </div>
           </div>
