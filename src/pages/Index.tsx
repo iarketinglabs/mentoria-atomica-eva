@@ -47,15 +47,15 @@ const Index = () => {
 
   // Get Stripe URL based on number of selected mentorias
   const getStripeUrl = (count: number): string => {
-    switch (count) {
+  switch (count) {
       case 1:
-        return "https://buy.stripe.com/4gM00j0ryaGX82q9az4Rq00";
+        return "https://buy.stripe.com/test_00w00jfnkfiSaYa2PU8Zq01";
       case 2:
-        return "https://buy.stripe.com/cNieVd5LSaGXbeCbiH4Rq01";
+        return "https://buy.stripe.com/test_28E4gz6QOc6G6HU4Y28Zq02";
       case 3:
-        return "https://buy.stripe.com/00w8wP8Y4aGX5Ui86v4Rq02";
+        return "https://buy.stripe.com/test_8x26oHfnkeeOaYa8ae8Zq03";
       default:
-        return "https://buy.stripe.com/4gM00j0ryaGX82q9az4Rq00";
+        return "https://buy.stripe.com/test_00w00jfnkfiSaYa2PU8Zq01";
     }
   };
 
