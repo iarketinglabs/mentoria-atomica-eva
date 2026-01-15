@@ -3,6 +3,7 @@ import { Globe, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
 import StickyBar from "@/components/StickyBar";
+import PhoneInput from "@/components/PhoneInput";
 
 const Index = () => {
   const [language, setLanguage] = useState<"pt-PT" | "pt-BR">("pt-PT");
@@ -1134,53 +1135,141 @@ const Index = () => {
               ? "Método Atômico: domine os 6 Pilares do Vibe Marketing"
               : "Método Atómico: domina os 6 Pilares do Vibe Marketing"}
           </h2>
-          <div className="general-info" style={{ maxWidth: "900px", margin: "0 auto 2rem", textAlign: "left" }}>
-            <p style={{ fontSize: "1rem", lineHeight: 1.6, marginBottom: "1rem" }}>
-              {language === "pt-BR"
-                ? "Aqui não é um \"curso de ferramentas\". É um método que combina:"
-                : "Aqui não é um \"curso de ferramentas\". É um método que combina:"}
-            </p>
-            <p style={{ fontSize: "1rem", lineHeight: 1.6, marginBottom: "1rem" }}>
-              {language === "pt-BR"
-                ? "Fundamentos que resistem a novos lançamentos + projetos práticos com casos de uso reais de IA no Marketing."
-                : "Fundamentos que resistem a novos lançamentos + projectos práticos com casos de uso reais de IA no Marketing."}
-            </p>
-            <p style={{ fontSize: "1rem", lineHeight: 1.6, marginBottom: "1rem" }}>
-              {language === "pt-BR"
-                ? "Tudo guiado pela experiência de +10 anos em Marketing do Pedro Armbrust, com acompanhamento direto aos mentorados e troca constante com outros profissionais da área."
-                : "Tudo guiado pela experiência de +10 anos em Marketing do Pedro Armbrust, que garante acompanhamento directo aos mentorados e troca constante com outros profissionais da área."}
-            </p>
-            <p style={{ fontSize: "1rem", lineHeight: 1.6, marginBottom: "1rem" }}>
-              {language === "pt-BR"
-                ? "Você tem 3 tipos de Mentorias para sair da teoria e ir pra execução com IA no Marketing:"
-                : "Tens 3 tipos de Mentoria para te levar da teoria à execução com IA no Marketing:"}
-            </p>
-            <p style={{ fontSize: "1rem", lineHeight: 1.6, marginBottom: "0.5rem", color: "#008C94", fontWeight: 600 }}>
-              ➙ IA para Estratégia e Criação de Conteúdo
-            </p>
-            <p style={{ fontSize: "1rem", lineHeight: 1.6, marginBottom: "0.5rem", color: "#008C94", fontWeight: 600 }}>
-              ➙ IA para Design e Audiovisual
-            </p>
-            <p style={{ fontSize: "1rem", lineHeight: 1.6, marginBottom: "1rem", color: "#008C94", fontWeight: 600 }}>
-              ➙ IA para Vibe Coding e Automação Agêntica
-            </p>
-            <p style={{ fontSize: "1rem", lineHeight: 1.6, marginBottom: "0.5rem", fontWeight: 600 }}>
-              {language === "pt-BR" ? "Formato da Mentoria:" : "Formato da mentoria:"}
-            </p>
-            <p style={{ fontSize: "1rem", lineHeight: 1.6, marginBottom: "1rem" }}>
-              20h por turma • 8 encontros ao vivo de 2h30 • Grupo pequeno: até 12 mentorados
-            </p>
-            <p style={{ fontSize: "1rem", lineHeight: 1.6, marginBottom: "1rem" }}>
-              {language === "pt-BR"
-                ? "O objetivo dessas 3 Mentorias é fazer com que você domine os 6 pilares da IA (LLMs, Imagem, Vídeo, Áudio, Automação Agêntica e Vibe Coding) para se tornar um Maestro que, através do Vibe Marketing, orquestra a IA e sai da ideia para resultados com o mínimo de barreiras técnicas."
-                : "O objetivo destas 3 Mentorias é fazer com que domines os 6 pilares da IA (LLMs, Imagem, Vídeo, Áudio, Automação Agêntica e Vibe Coding) para te tornares um Maestro que, através do Vibe Marketing, orquestra a IA para sair da ideia para resultados com o mínimo de barreiras técnicas."}
-            </p>
-            <p style={{ fontSize: "0.9rem", lineHeight: 1.5, marginTop: "1rem", color: "#3D3D3D" }}>
-              {language === "pt-BR"
-                ? "Os horários padrão (Brasil - horário de Brasília) são: 2ª e 4ª 17:30–20:00, 3ª e 5ª 17:30–20:00"
-                : "Os horários padrão (Portugal) são: 2ª e 4ª 20:30–23:00, 3ª e 5ª 20:30–23:00"}
-            </p>
+          <div className="general-info" style={{ maxWidth: "1000px", margin: "0 auto 2.5rem" }}>
+            <div style={{ 
+              display: "grid", 
+              gridTemplateColumns: "1fr", 
+              gap: "2rem",
+              textAlign: "left"
+            }} className="method-columns">
+              {/* Column 1 */}
+              <div style={{ 
+                background: "#FCF9F2", 
+                padding: "1.5rem", 
+                borderRadius: "8px",
+                border: "2px solid #67BBC0"
+              }}>
+                <p style={{ fontSize: "1.1rem", lineHeight: 1.7, marginBottom: "1rem", fontStyle: "italic", color: "#3D3D3D" }}>
+                  {language === "pt-BR"
+                    ? "Aqui não é um \"curso de ferramentas\". É um método que combina:"
+                    : "Aqui não é um \"curso de ferramentas\". É um método que combina:"}
+                </p>
+                <p style={{ fontSize: "1rem", lineHeight: 1.7, marginBottom: "1.25rem", color: "#1B1B1B" }}>
+                  <strong style={{ color: "#008C94" }}>Fundamentos que resistem a novos lançamentos</strong> + {language === "pt-BR" ? "projetos práticos com casos de uso reais de IA no Marketing." : "projectos práticos com casos de uso reais de IA no Marketing."}
+                </p>
+                <p style={{ fontSize: "1rem", lineHeight: 1.7, marginBottom: "1.25rem", color: "#3D3D3D" }}>
+                  {language === "pt-BR"
+                    ? "Tudo guiado pela experiência de +10 anos em Marketing do Pedro Armbrust, com acompanhamento direto aos mentorados e troca constante com outros profissionais da área."
+                    : "Tudo guiado pela experiência de +10 anos em Marketing do Pedro Armbrust, que garante acompanhamento directo aos mentorados e troca constante com outros profissionais da área."}
+                </p>
+                <p style={{ fontSize: "1rem", lineHeight: 1.7, marginBottom: "1rem", fontWeight: 600, color: "#1B1B1B" }}>
+                  {language === "pt-BR"
+                    ? "Você tem 3 tipos de Mentorias para sair da teoria e ir pra execução com IA no Marketing:"
+                    : "Tens 3 tipos de Mentoria para te levar da teoria à execução com IA no Marketing:"}
+                </p>
+                <div style={{ 
+                  background: "linear-gradient(135deg, #E0F2F3 0%, #FCF9F2 100%)", 
+                  padding: "1rem", 
+                  borderRadius: "6px",
+                  border: "1px solid #A8DEE0"
+                }}>
+                  <p style={{ fontSize: "1rem", lineHeight: 1.8, marginBottom: "0.5rem", color: "#008C94", fontWeight: 600 }}>
+                    ➙ IA para Estratégia e Criação de Conteúdo
+                  </p>
+                  <p style={{ fontSize: "1rem", lineHeight: 1.8, marginBottom: "0.5rem", color: "#008C94", fontWeight: 600 }}>
+                    ➙ IA para Design e Audiovisual
+                  </p>
+                  <p style={{ fontSize: "1rem", lineHeight: 1.8, marginBottom: "0", color: "#008C94", fontWeight: 600 }}>
+                    ➙ IA para Vibe Coding e Automação Agêntica
+                  </p>
+                </div>
+              </div>
+
+              {/* Column 2 */}
+              <div style={{ 
+                background: "#E0F2F3", 
+                padding: "1.5rem", 
+                borderRadius: "8px",
+                border: "2px solid #67BBC0"
+              }}>
+                <h4 style={{ 
+                  fontFamily: "'Caprasimo', serif", 
+                  fontSize: "1.25rem", 
+                  color: "#1B1B1B", 
+                  marginBottom: "1rem",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "0.5rem"
+                }}>
+                  📋 {language === "pt-BR" ? "Formato da Mentoria:" : "Formato da mentoria:"}
+                </h4>
+                <div style={{ 
+                  display: "flex", 
+                  flexWrap: "wrap", 
+                  gap: "0.75rem", 
+                  marginBottom: "1.25rem" 
+                }}>
+                  <span style={{ 
+                    background: "#FCCA29", 
+                    padding: "0.5rem 1rem", 
+                    borderRadius: "20px", 
+                    fontSize: "0.9rem", 
+                    fontWeight: 600,
+                    color: "#1B1B1B",
+                    border: "1px solid #1B1B1B"
+                  }}>
+                    20h por turma
+                  </span>
+                  <span style={{ 
+                    background: "#FCCA29", 
+                    padding: "0.5rem 1rem", 
+                    borderRadius: "20px", 
+                    fontSize: "0.9rem", 
+                    fontWeight: 600,
+                    color: "#1B1B1B",
+                    border: "1px solid #1B1B1B"
+                  }}>
+                    8 encontros ao vivo de 2h30
+                  </span>
+                  <span style={{ 
+                    background: "#FCCA29", 
+                    padding: "0.5rem 1rem", 
+                    borderRadius: "20px", 
+                    fontSize: "0.9rem", 
+                    fontWeight: 600,
+                    color: "#1B1B1B",
+                    border: "1px solid #1B1B1B"
+                  }}>
+                    Grupo pequeno: até 12 mentorados
+                  </span>
+                </div>
+                <p style={{ fontSize: "1rem", lineHeight: 1.7, marginBottom: "1.25rem", color: "#3D3D3D" }}>
+                  {language === "pt-BR"
+                    ? "O objetivo dessas 3 Mentorias é fazer com que você domine os 6 pilares da IA (LLMs, Imagem, Vídeo, Áudio, Automação Agêntica e Vibe Coding) para se tornar um Maestro que, através do Vibe Marketing, orquestra a IA e sai da ideia para resultados com o mínimo de barreiras técnicas."
+                    : "O objetivo destas 3 Mentorias é fazer com que domines os 6 pilares da IA (LLMs, Imagem, Vídeo, Áudio, Automação Agêntica e Vibe Coding) para te tornares um Maestro que, através do Vibe Marketing, orquestra a IA para sair da ideia para resultados com o mínimo de barreiras técnicas."}
+                </p>
+                <div style={{ 
+                  background: "#FCF9F2", 
+                  padding: "1rem", 
+                  borderRadius: "6px",
+                  border: "1px solid #A8DEE0"
+                }}>
+                  <p style={{ fontSize: "0.95rem", lineHeight: 1.6, color: "#1B1B1B", fontWeight: 500, marginBottom: "0" }}>
+                    🕐 {language === "pt-BR"
+                      ? "Os horários padrão (Brasil - horário de Brasília) são: 2ª e 4ª 17:30–20:00, 3ª e 5ª 17:30–20:00"
+                      : "Os horários padrão (Portugal) são: 2ª e 4ª 20:30–23:00, 3ª e 5ª 20:30–23:00"}
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
+          <style>{`
+            @media(min-width: 768px) {
+              .method-columns {
+                grid-template-columns: 1fr 1fr !important;
+              }
+            }
+          `}</style>
           <div className="cards-container pillar-cards" style={{ gap: "0.5rem" }}>
             <div className="card card-raised" style={{ padding: "2rem", flex: "1", maxWidth: "400px" }}>
               <img src="/lovable-uploads/3a5df82f-f4cb-44ab-bbf5-61e9e715c22f.png" alt="Conteúdo IA" loading="lazy" width="240" height="240" />
@@ -1228,8 +1317,8 @@ const Index = () => {
                 <li style={{ marginBottom: "0.5rem", color: "#3D3D3D", lineHeight: "1.4" }}>
                   ✱{" "}
                   {language === "pt-BR"
-                    ? "Construir, num laboratório prático, Agentes e ativos de marketing reais (e-mails, LPs, posts), enquanto faz um raio-x completo às ferramentas de vanguarda como ChatGPT, Gemini, Claude, Manus e Lovable."
-                    : "Constrói, num laboratório prático, Agentes e ativos de marketing reais (e-mails, LPs, posts), enquanto fazes um raio-x completo às ferramentas de vanguarda como ChatGPT, Gemini, Claude, Manus e Lovable."}
+                  ? "Construir, num laboratório prático, Agentes e ativos de marketing reais (e-mails, LPs, posts), enquanto faz um raio-x completo às ferramentas de vanguarda como ChatGPT, Gemini, Claude, Perplexity, Grok, Manus e Genspark."
+                    : "Constrói, num laboratório prático, Agentes e ativos de marketing reais (e-mails, LPs, posts), enquanto fazes um raio-x completo às ferramentas de vanguarda como ChatGPT, Gemini, Claude, Perplexity, Grok, Manus e Genspark."}
                 </li>
               </ul>
             </div>
@@ -1318,8 +1407,8 @@ const Index = () => {
                 <li style={{ marginBottom: "0.5rem", color: "#3D3D3D", lineHeight: "1.4" }}>
                   ✱{" "}
                   {language === "pt-BR"
-                    ? "Dominar do zero um arsenal de ferramentas low/no-code (Make, n8n, Apify, Airtable) e explorar técnicas avançadas como RAG, APIs e MCPs para construir sistemas robustos."
-                    : "Domina do zero um arsenal de ferramentas low/no-code (Make, n8n, Apify, Airtable) e explora técnicas avançadas como RAG, APIs e MCPs para construir sistemas robustos."}
+                    ? "Dominar do zero um arsenal de ferramentas low/no-code (n8n, Apify, Airtable, Supabase) e explorar técnicas avançadas como RAG, APIs e MCPs para construir sistemas robustos."
+                    : "Domina do zero um arsenal de ferramentas low/no-code (n8n, Apify, Airtable, Supabase) e explora técnicas avançadas como RAG, APIs e MCPs para construir sistemas robustos."}
                 </li>
                 <li style={{ marginBottom: "0.5rem", color: "#3D3D3D", lineHeight: "1.4" }}>
                   ✱{" "}
@@ -1330,8 +1419,8 @@ const Index = () => {
                 <li style={{ marginBottom: "0.5rem", color: "#3D3D3D", lineHeight: "1.4" }}>
                   ✱{" "}
                   {language === "pt-BR"
-                    ? "Desbloquear o poder do Vibe Coding para desenvolver apps, ferramentas e lead magnets complexos sem saber programar. Foque na ideia e resultado, em um fluxo contínuo e agradável de criação, enquanto a IA faz o trabalho duro."
-                    : "Desbloqueia o poder do Vibe Coding para desenvolver apps, ferramentas e lead magnets complexos sem saber programar. Foca-te na ideia e resultado, num fluxo contínuo e agradável de criação, enquanto a IA faz o trabalho duro."}
+                    ? "Desbloquear o poder do Vibe Coding com Lovable, Claude Code e Antigravity para desenvolver apps, ferramentas e lead magnets complexos sem saber programar. Foque na ideia e resultado, em um fluxo contínuo e agradável de criação, enquanto a IA faz o trabalho duro."
+                    : "Desbloqueia o poder do Vibe Coding com Lovable, Claude Code e Antigravity para desenvolver apps, ferramentas e lead magnets complexos sem saber programar. Foca-te na ideia e resultado, num fluxo contínuo e agradável de criação, enquanto a IA faz o trabalho duro."}
                 </li>
               </ul>
             </div>
@@ -1371,16 +1460,31 @@ const Index = () => {
             <div className="bonus-item card-raised bonus-guides">
               <img src="/lovable-uploads/36c32b95-f826-4be1-a77a-6d166afa9ec9.png" alt="Guias Vivos" />
               <div className="bonus-item-content">
-                <h3>{language === "pt-BR" ? "1 Ano de Guias Vivos" : "1 Ano de Guias Vivos"}</h3>
+                <h3>{language === "pt-BR" ? "Guias Vivos" : "Guias Vivos"}</h3>
                 <div className="value-tag">
                   <s>Valor: {language === "pt-BR" ? "R$ 1.692 /ano" : "288 € /ano"}</s>
                 </div>
-                <span className="tag-included">{language === "pt-BR" ? "incluído" : "incluído"}</span>
+                <span className="tag-included">{language === "pt-BR" ? "incluído 1 ano de acesso" : "incluído 1 ano de acesso"}</span>
                 <p>
                   {language === "pt-BR"
-                    ? "Para servir como material de estudo complementar, criamos 3 Guias Vivos — Estratégia e Criação de Conteúdo, Design e Produção Audiovisual, e Vibe Coding e Automação Agêntica. Pense neles como enciclopédias digitais sempre 100% atualizadas com o estado da arte de IA aplicada ao Marketing. Cada guia reúne fundamentos, técnicas, ferramentas, funcionalidades e casos de uso reais, com exercícios práticos para você continuar evoluindo e aplicando IA mesmo depois que a mentoria acabar."
-                    : "Para servir como material de estudo complementar, criámos 3 Guias Vivos — Estratégia e Criação de Conteúdo, Design e Produção Audiovisual, e Vibe Coding e Automação Agêntica. Pensa neles como enciclopédias digitais sempre 100% actualizadas com o estado da arte de IA aplicada ao Marketing. Cada guia organiza fundamentos, técnicas, ferramentas, funcionalidades e casos de uso reais, com exercícios práticos para continuares a evoluir e aplicar IA mesmo depois de a mentoria terminar."}
+                    ? "Para servir como material de estudo complementar, criamos 3 Guias Vivos: Estratégia e Criação de Conteúdo, Design e Produção Audiovisual, e Vibe Coding e Automação Agêntica."
+                    : "Para servir como material de estudo complementar, criámos 3 Guias Vivos: Estratégia e Criação de Conteúdo, Design e Produção Audiovisual, e Vibe Coding e Automação Agêntica."}
                 </p>
+                <p style={{ marginTop: "0.75rem" }}>
+                  {language === "pt-BR"
+                    ? "Pense neles como enciclopédias digitais sempre 100% atualizadas com o estado da arte de IA aplicada ao Marketing."
+                    : "Pensa neles como enciclopédias digitais sempre 100% actualizadas com o estado da arte de IA aplicada ao Marketing."}
+                </p>
+                <p style={{ marginTop: "0.75rem" }}>
+                  {language === "pt-BR" ? "Em cada guia, você encontra:" : "Em cada guia, encontras:"}
+                </p>
+                <ul style={{ marginTop: "0.5rem", paddingLeft: "0", listStyle: "none", color: "#3D3D3D" }}>
+                  <li style={{ marginBottom: "0.35rem" }}>➙ Fundamentos que não envelhecem a cada novo lançamento</li>
+                  <li style={{ marginBottom: "0.35rem" }}>➙ Técnicas e frameworks {language === "pt-BR" ? "pra executar" : "para executares"} com mais clareza</li>
+                  <li style={{ marginBottom: "0.35rem" }}>➙ Ferramentas e funcionalidades (o que usar e como usar)</li>
+                  <li style={{ marginBottom: "0.35rem" }}>➙ Casos de uso reais do dia a dia de marketing</li>
+                  <li style={{ marginBottom: "0" }}>➙ Exercícios práticos {language === "pt-BR" ? "pra continuar evoluindo e aplicando IA, mesmo depois que a mentoria acabar" : "para continuares a evoluir e aplicar IA, mesmo depois de a mentoria terminar"}</li>
+                </ul>
               </div>
             </div>
             <div className="bonus-item card-raised bonus-community">
@@ -1390,12 +1494,21 @@ const Index = () => {
                 <div className="value-tag">
                   <s>Valor: {language === "pt-BR" ? "R$ 564 /ano" : "96€ /ano"}</s>
                 </div>
-                <span className="tag-included">{language === "pt-BR" ? "incluído" : "incluído"}</span>
+                <span className="tag-included">{language === "pt-BR" ? "incluído acesso vitalício" : "incluído acesso vitalício"}</span>
                 <p>
                   {language === "pt-BR"
-                    ? "O ecossistema da Atomica pra te manter atualizado, fazer networking e continuar evoluindo sem se afogar em ruído. Lá dentro, você recebe uma curadoria diária de notícias e conteúdos sobre o que realmente importa sobre IA aplicada ao Marketing. Além disso, você entra numa comunidade viva pra pedir ajuda, ajudar outras pessoas, trocar benchmarks, participar de discussões, se conectar com gente da área e mostrar seus projetos com IA. Também tem acesso à biblioteca de materiais complementares, com +150 NotebookLMs sobre os temas mais atuais e relevantes de AI Marketing — pensa neles como professores digitais que te explicam de forma personalizada, no seu ritmo. Pra fechar o ciclo, rolam office hours mensais exclusivas: lives em que o Pedro interage com a comunidade, responde a perguntas, dá a sua opinião e compartilha novidades e aprendizados em primeira mão."
-                    : "O ecossistema da Atomica para te manteres atualizado, fazer networking e continuares a evoluir — sem te afogares em ruído. Lá dentro, recebes uma curadoria diária de notícias e conteúdos sobre o que realmente importa na IA aplicada ao Marketing. Além disso, entras numa comunidade viva para pedir ajuda, ajudar outras pessoas, trocar benchmarks, participar em discussões, ligar-te a profissionais da área e mostrar os teus projectos com IA. Também tens acesso à biblioteca de materiais complementares, com +150 NotebookLMs sobre os temas mais actuais e relevantes de AI Marketing — pensa neles como professores digitais que te explicam tudo de forma personalizada, ao teu ritmo. Para fechar o ciclo, há office hours mensais exclusivas: lives em que o Pedro interage com a comunidade, responde a perguntas, dá a sua opinião e partilha novidades e aprendizagens em primeira mão."}
+                    ? "O ecossistema da Atomica pra você se manter atualizado, fazer networking e continuar evoluindo — sem se afogar em ruído."
+                    : "O ecossistema da Atomica para te manteres atualizado, fazer networking e continuares a evoluir — sem te afogares em ruído."}
                 </p>
+                <p style={{ marginTop: "0.75rem" }}>
+                  {language === "pt-BR" ? "Lá dentro, você tem:" : "Dentro da comunidade, tens:"}
+                </p>
+                <ul style={{ marginTop: "0.5rem", paddingLeft: "0", listStyle: "none", color: "#3D3D3D" }}>
+                  <li style={{ marginBottom: "0.35rem" }}>➙ <strong>Curadoria diária (sem ruído):</strong> notícias e conteúdos sobre o que realmente importa {language === "pt-BR" ? "em" : "na"} IA aplicada ao Marketing.</li>
+                  <li style={{ marginBottom: "0.35rem" }}>➙ <strong>Comunidade viva (networking + ajuda):</strong> {language === "pt-BR" ? "pedir ajuda, ajudar outras pessoas, trocar benchmarks, participar de discussões, se conectar com gente da área e mostrar seus projetos com IA." : "pede ajuda, ajuda outras pessoas, troca benchmarks, participa em discussões, liga-te a profissionais da área e mostra os teus projectos com IA."}</li>
+                  <li style={{ marginBottom: "0.35rem" }}>➙ <strong>Biblioteca complementar (+150 NotebookLMs):</strong> materiais sobre os temas mais {language === "pt-BR" ? "atuais" : "actuais"} e relevantes de AI Marketing. {language === "pt-BR" ? "Pense neles como professores digitais, que te explicam de forma personalizada, no seu ritmo." : "Pensa neles como professores digitais, que te explicam tudo de forma personalizada, ao teu ritmo."}</li>
+                  <li style={{ marginBottom: "0" }}>➙ <strong>Office hours mensais (ao vivo):</strong> {language === "pt-BR" ? "lives exclusivas em que o Pedro interage com a comunidade, responde perguntas, dá a opinião dele e compartilha novidades e aprendizados em primeira mão." : "lives em que o Pedro interage com a comunidade, responde a perguntas, dá a sua opinião e partilha novidades e aprendizagens em primeira mão."}</li>
+                </ul>
                 <p style={{ marginTop: "1rem", color: "#FF304C", fontWeight: 600, fontSize: "0.95rem" }}>
                   {language === "pt-BR"
                     ? "Bônus de lançamento: acesso vitalício à Comunidade Visionários do Marketing para compras realizadas até 31/03/2026. Promoção limitada."
@@ -1479,8 +1592,7 @@ const Index = () => {
               <h3>{language === "pt-BR" ? "Mentoria Avulsa" : "Mentoria Avulsa"}</h3>
               <div className="price-original">{language === "pt-BR" ? "R$ 1.495" : "230€"}</div>
               <div className="price-value">
-                {language === "pt-BR" ? "R$ 1.200" : "184€"}
-                <span style={{ fontSize: "0.75rem", fontWeight: 400, color: "#3D3D3D", marginLeft: "4px", textShadow: "none" }}>+IVA</span>
+                {language === "pt-BR" ? "R$ 1.196" : "184€"}
               </div>
               <div className="price-note">{language === "pt-BR" ? "(20% desconto pré-lançamento válido até 31/03/2026)" : "(20% desconto pré-lançamento válido até 31/03/2026)"}</div>
               <ul className="inclusions">
@@ -1541,7 +1653,7 @@ const Index = () => {
                   >
                     {selectedMission === "conteudo" && "Inicia em 23/02 • 2ª e 4ª f • 20h30-23h (Total: 20 horas)"}
                     {selectedMission === "audiovisual" && "Inicia em 24/02 • 3ª e 5ª f • 20h30-23h (Total: 20 horas)"}
-                    {selectedMission === "automacao" && "Inicia em 30/03 • 2ª e 4ª f • 18h-20h30"}
+                    {selectedMission === "automacao" && "Inicia em 30/03 • 2ª e 4ª f • 18h-20h30 (Total: 20 horas)"}
                   </div>
                 </div>
               )}
@@ -1559,7 +1671,6 @@ const Index = () => {
               <div className="price-original">{language === "pt-BR" ? "R$ 4.612" : "710€"}</div>
               <div className="price-value">
                 {language === "pt-BR" ? "R$ 3.229" : "497€"}
-                <span style={{ fontSize: "0.75rem", fontWeight: 400, color: "#3D3D3D", marginLeft: "4px", textShadow: "none" }}>+IVA</span>
               </div>
               <div className="price-note">{language === "pt-BR" ? "(+10% desconto no pacote + 20% pré-lançamento até 31/03/2026)" : "(+10% desconto no pacote + 20% pré-lançamento até 31/03/2026)"}</div>
               <ul className="inclusions">
@@ -1863,12 +1974,12 @@ const Index = () => {
             </ul>
             <p>
               <strong>Valor Original Total:</strong>{" "}
-              <span style={{ color: "#FF304C", fontWeight: 700 }}>{language === "pt-BR" ? "4.180R$" : "662€"}</span>
+              <span style={{ color: "#FF304C", fontWeight: 700 }}>{language === "pt-BR" ? "R$ 3.751" : "614€"}</span>
             </p>
             <div className="investment-highlight">
               {language === "pt-BR" ? "O seu investimento hoje:" : "O teu investimento hoje:"} Apenas{" "}
               <span style={{ color: "#1B1B1B", textShadow: "2px 2px 0px #FCCA29" }}>
-                {language === "pt-BR" ? "R$ 1.200" : "184€"}
+                {language === "pt-BR" ? "R$ 1.196" : "184€"}
               </span>
             </div>
           </div>
@@ -2057,27 +2168,13 @@ const Index = () => {
               <label htmlFor="phone" style={{ fontWeight: 600, display: "block", marginBottom: "0.5rem" }}>
                 Telefone
               </label>
-              <div style={{ position: "relative" }}>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="Telefone"
-                  placeholder="912 345 678"
-                  required
-                  style={{ width: "100%", paddingRight: isPhoneValid ? "2.5rem" : undefined }}
-                  value={formPhone}
-                  onChange={(e) => setFormPhone(e.target.value)}
-                  onBlur={() => handleFieldBlur("phone")}
-                  className={touchedFields.phone && !isPhoneValid ? "field-error" : ""}
-                />
-                {isPhoneValid && (
-                  <CheckCircle 
-                    size={20} 
-                    color="#67BBC0" 
-                    style={{ position: "absolute", right: "0.75rem", top: "50%", transform: "translateY(-50%)" }} 
-                  />
-                )}
-              </div>
+              <PhoneInput
+                value={formPhone}
+                onChange={setFormPhone}
+                onBlur={() => handleFieldBlur("phone")}
+                isValid={isPhoneValid}
+                hasError={touchedFields.phone && !isPhoneValid}
+              />
               {getFieldError("phone") && <p className="field-error-message">{getFieldError("phone")}</p>}
             </div>
 
