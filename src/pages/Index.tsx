@@ -2060,10 +2060,11 @@ const Index = () => {
                   button.style.backgroundColor = "#67BBC0";
 
                   // Determina URL do Stripe baseado na quantidade de mentorias e país
-                  const countryCode = telefone.match(/^\+(\d+)/)?.[1] || "";
-                  const isBrazil = countryCode === "55";
+                  // O telefone vem formatado como +{código}{número}, ex: +55999999999
+                  // Precisamos verificar se começa com +55 para Brasil
+                  const isBrazil = telefone.startsWith("+55");
                   const targetUrl = getStripeUrl(mentorias.length, isBrazil);
-                  console.log("Redirecting to:", targetUrl);
+                  console.log("Phone:", telefone, "isBrazil:", isBrazil, "Redirecting to:", targetUrl);
 
                   toast.success("Dados salvos com sucesso! Redirecionando para pagamento...");
 
