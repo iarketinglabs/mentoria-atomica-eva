@@ -47,16 +47,23 @@ const Index = () => {
   };
 
   // Get Stripe URL based on number of selected mentorias
-  const getStripeUrl = (count: number): string => {
-  switch (count) {
-      case 1:
-        return "https://buy.stripe.com/test_00w00jfnkfiSaYa2PU8Zq01";
-      case 2:
-        return "https://buy.stripe.com/test_28E4gz6QOc6G6HU4Y28Zq02";
-      case 3:
-        return "https://buy.stripe.com/test_8x26oHfnkeeOaYa8ae8Zq03";
-      default:
-        return "https://buy.stripe.com/test_00w00jfnkfiSaYa2PU8Zq01";
+  const getStripeUrl = (count: number, isBrazil: boolean): string => {
+    if (isBrazil) {
+      // URLs para Brasil (+55) - preços em R$
+      switch (count) {
+        case 1: return "https://buy.stripe.com/9B6bJ16PW7uL3MadqP4Rq0h";
+        case 2: return "https://buy.stripe.com/7sY5kD4HO5mDdmKbiH4Rq0i";
+        case 3: return "https://buy.stripe.com/00w4gz7U002jciG2Mb4Rq0j";
+        default: return "https://buy.stripe.com/9B6bJ16PW7uL3MadqP4Rq0h";
+      }
+    } else {
+      // URLs para Internacional - preços em €
+      switch (count) {
+        case 1: return "https://buy.stripe.com/3cI9AT8Y4dT9gyW9az4Rq0c";
+        case 2: return "https://buy.stripe.com/6oU4gz8Y46qHdmK9az4Rq0d";
+        case 3: return "https://buy.stripe.com/cNi00jdek2ar96u5Yn4Rq0g";
+        default: return "https://buy.stripe.com/3cI9AT8Y4dT9gyW9az4Rq0c";
+      }
     }
   };
 
@@ -2052,8 +2059,10 @@ const Index = () => {
                   button.textContent = "Sucesso! Redirecionando...";
                   button.style.backgroundColor = "#67BBC0";
 
-                  // Determina URL do Stripe baseado na quantidade de mentorias
-                  const targetUrl = getStripeUrl(mentorias.length);
+                  // Determina URL do Stripe baseado na quantidade de mentorias e país
+                  const countryCode = telefone.match(/^\+(\d+)/)?.[1] || "";
+                  const isBrazil = countryCode === "55";
+                  const targetUrl = getStripeUrl(mentorias.length, isBrazil);
                   console.log("Redirecting to:", targetUrl);
 
                   toast.success("Dados salvos com sucesso! Redirecionando para pagamento...");
