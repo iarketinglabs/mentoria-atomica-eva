@@ -872,8 +872,8 @@ const Index = () => {
             </h3>
             <p className="text-lg text-[#3D3D3D]">
               {language === "pt-BR"
-                ? "Condensei quase 2 anos de experiência diária e mais de uma década em marketing neste plano de voo intensivo. Filtrei o ruído por si. Em apenas 30 dias, irá dominar fluxos práticos e frameworks prontos para implementar IA real no seu marketing."
-                : "Condensei quase 2 anos de experiência diária e mais de uma década em marketing neste plano de voo intensivo. Filtrei o ruído por ti. Em apenas 30 dias, irás dominar fluxos práticos e frameworks prontos para implementar IA real no teu marketing."}
+                ? "Passei 2 anos testando IA no marketing pra separar o que é fundamento (vale hoje e amanhã). Somei isso a 10+ anos de marketing e montei fluxos práticos com as IAs de ponta — sem ruído — pra te dar uma vantagem competitiva quase injusta."
+                : "Passei 2 anos a testar IA no marketing para separar o que é fundamento (vale hoje e amanhã). Juntei isso a 10+ anos de marketing e montei fluxos práticos com IAs no estado da arte — sem ruído — para te dar uma vantagem competitiva quase injusta."}
             </p>
           </div>
           <div className="bab-step">
