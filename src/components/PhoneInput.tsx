@@ -101,13 +101,26 @@ const PhoneInput: React.FC<PhoneInputProps> = ({
     const digits = phone.replace(/\D/g, "");
 
     if (code === "55") {
-      // Brazil: 99999 9999 (mobile) or 9999 9999 (landline)
-      if (digits.length <= 5) {
-        return digits;
-      } else if (digits.length <= 9) {
-        return `${digits.slice(0, 5)} ${digits.slice(5)}`;
+      // Brazil: (99) 99999 9999 - DDD + 9 digits mobile
+      // digits = DDD (2) + number (8-9)
+      if (digits.length <= 2) {
+        // Just DDD
+        return digits.length > 0 ? `(${digits}` : "";
+      } else if (digits.length <= 7) {
+        // DDD + partial number
+        return `(${digits.slice(0, 2)}) ${digits.slice(2)}`;
+      } else if (digits.length <= 11) {
+        // DDD + full number (mobile with 9 digits or landline with 8)
+        const ddd = digits.slice(0, 2);
+        const part1 = digits.slice(2, 7);
+        const part2 = digits.slice(7);
+        return `(${ddd}) ${part1} ${part2}`;
       } else {
-        return `${digits.slice(0, 5)} ${digits.slice(5, 9)}`;
+        // Limit to 11 digits
+        const ddd = digits.slice(0, 2);
+        const part1 = digits.slice(2, 7);
+        const part2 = digits.slice(7, 11);
+        return `(${ddd}) ${part1} ${part2}`;
       }
     } else if (code === "351") {
       // Portugal: 999 999 999
@@ -177,7 +190,7 @@ const PhoneInput: React.FC<PhoneInputProps> = ({
           type="tel"
           id="phone"
           name="Telefone"
-          placeholder={countryCode === "55" ? "99999 9999" : countryCode === "351" ? "999 999 999" : "Número de telefone"}
+          placeholder={countryCode === "55" ? "(99) 99999 9999" : countryCode === "351" ? "999 999 999" : "Número de telefone"}
           required
           value={formatPhoneDisplay(phoneNumber, countryCode)}
           onChange={handlePhoneChange}
