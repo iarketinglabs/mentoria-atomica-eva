@@ -1192,9 +1192,9 @@ const Index = () => {
                   <a href="#pillar-cards" style={{ fontSize: "1rem", lineHeight: 1.8, marginBottom: "0.5rem", color: "#008C94", fontWeight: 600, display: "block", textDecoration: "none", cursor: "pointer" }}>
                     ➙ IA para Estratégia e Criação de Conteúdo (20h)
                   </a>
-                  <p style={{ fontSize: "1rem", lineHeight: 1.8, marginBottom: "0.5rem", color: "#008C94", fontWeight: 600 }}>
+                  <a href="#pillar-card-design" style={{ fontSize: "1rem", lineHeight: 1.8, marginBottom: "0.5rem", color: "#008C94", fontWeight: 600, display: "block", textDecoration: "none", cursor: "pointer" }}>
                     ➙ IA para Design e Audiovisual (20h)
-                  </p>
+                  </a>
                   <p style={{ fontSize: "1rem", lineHeight: 1.8, marginBottom: "0", color: "#008C94", fontWeight: 600 }}>
                     ➙ IA para Vibe Coding e Automação Agêntica (20h)
                   </p>
@@ -1343,7 +1343,7 @@ const Index = () => {
                 </li>
               </ul>
             </div>
-            <div className="card card-raised" style={{ padding: "2rem", flex: "1", maxWidth: "400px" }}>
+            <div id="pillar-card-design" className="card card-raised" style={{ padding: "2rem", flex: "1", maxWidth: "400px" }}>
               <img src="/lovable-uploads/9b8b72a4-73dd-4d92-b2a8-e18d84e26be1.png" alt="Audiovisual IA" loading="lazy" width="240" height="240" />
               <h3>{language === "pt-BR" ? "IA para Design e Audiovisual" : "IA para Design e Audiovisual"}</h3>
               <div
