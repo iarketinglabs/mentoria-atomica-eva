@@ -514,8 +514,8 @@ const Index = () => {
             style={{ fontFamily: "'Oswald', sans-serif" }}
           >
             {language === "pt-BR"
-              ? "Em 2026 use IA para entregar em 5 dias o que hoje leva 30"
-              : "Em 2026 usa a IA para conquistares em 5 dias o que hoje farias em 30"}
+              ? "EM 2026 DOMINE OS 6 PILARES DO VIBE MARKETING E APRENDA A ORQUESTRAR UMA EQUIPE DE IA"
+              : "EM 2026 DOMINA OS 6 PILARES DO VIBE MARKETING E APRENDE A ORQUESTRAR UMA EQUIPA DE IA"}
           </h2>
 
           {/* Imagem de Apresentação */}
