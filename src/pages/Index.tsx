@@ -1530,7 +1530,7 @@ const Index = () => {
               <img src="/lovable-uploads/7dd9bd91-9bcd-4fd6-80b4-8c8dc8ee647e.png" alt="Comunidade Discord" />
               <div className="bonus-item-content" style={{ textAlign: "left" }}>
                 <h3 style={{ textAlign: "center" }}>{language === "pt-BR" ? "Comunidade Visionários do Marketing" : "Comunidade Visionários do Marketing"}</h3>
-                <div className="value-tag">
+                <div className="value-tag" style={{ textAlign: "center" }}>
                   <s>Valor: {language === "pt-BR" ? "R$ 564 /ano" : "96€ /ano"}</s>
                 </div>
                 <span className="tag-included">{language === "pt-BR" ? "incluído acesso vitalício" : "incluído acesso vitalício"}</span>
