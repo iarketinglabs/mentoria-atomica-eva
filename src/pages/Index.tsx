@@ -561,7 +561,7 @@ const Index = () => {
           <div className="max-w-3xl mx-auto my-8">
             <div className="rounded-xl border-4 border-[#1B1B1B] shadow-[8px_8px_0px_#FCCA29] overflow-hidden">
               <img
-                src="/assets/hero-presentation.png"
+                src="https://lh3.googleusercontent.com/pw/AP1GczNlCjKWz1u9AQg0AQ_YRrc_Jn4CWwhJietm7OjUnQh2nT3s1mPXAFoRHcxR1dHc7llt1UNsCcvHtlN7Gqn9aQSwicgrH-dzCizRWK0Kczx_4CKa5q69wFqyDcN7A9P16U7EspjokSdm0OzQgFvK0v3-=w1312-h736-s-no-gm?authuser=0"
                 alt="Apresentação da Mentoria"
                 className="w-full h-auto object-cover"
               />
