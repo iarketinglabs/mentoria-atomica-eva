@@ -1453,8 +1453,8 @@ const Index = () => {
             <div className="bonus-item card-raised bonus-guides">
               <img src="/lovable-uploads/36c32b95-f826-4be1-a77a-6d166afa9ec9.png" alt="Guias Vivos" />
               <div className="bonus-item-content" style={{ textAlign: "left" }}>
-                <h3 style={{ textAlign: "center" }}>{language === "pt-BR" ? "Guias Vivos" : "Guias Vivos"}</h3>
-                <div className="value-tag" style={{ textAlign: "center" }}>
+                <h3 className="text-center md:text-left">{language === "pt-BR" ? "Guias Vivos" : "Guias Vivos"}</h3>
+                <div className="value-tag text-center md:text-left">
                   <s>Valor: {language === "pt-BR" ? "R$ 1.692 /ano" : "288 € /ano"}</s>
                 </div>
                 <span className="tag-included">{language === "pt-BR" ? "incluído 1 ano de acesso" : "incluído 1 ano de acesso"}</span>
@@ -1483,8 +1483,8 @@ const Index = () => {
             <div className="bonus-item card-raised bonus-community">
               <img src="/lovable-uploads/7dd9bd91-9bcd-4fd6-80b4-8c8dc8ee647e.png" alt="Comunidade Discord" />
               <div className="bonus-item-content" style={{ textAlign: "left" }}>
-                <h3 style={{ textAlign: "center" }}>{language === "pt-BR" ? "Comunidade Visionários do Marketing" : "Comunidade Visionários do Marketing"}</h3>
-                <div className="value-tag" style={{ textAlign: "center" }}>
+                <h3 className="text-center md:text-left">{language === "pt-BR" ? "Comunidade Visionários do Marketing" : "Comunidade Visionários do Marketing"}</h3>
+                <div className="value-tag text-center md:text-left">
                   <s>Valor: {language === "pt-BR" ? "R$ 564 /ano" : "96€ /ano"}</s>
                 </div>
                 <span className="tag-included">{language === "pt-BR" ? "incluído acesso vitalício" : "incluído acesso vitalício"}</span>
