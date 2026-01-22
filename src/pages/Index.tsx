@@ -2314,7 +2314,7 @@ const Index = () => {
       >
         <div style={{ maxWidth: "800px", margin: "0 auto", textAlign: "center" }}>
           <p style={{ margin: "0.25rem 0", color: "#1B1B1B", fontWeight: 600 }}>
-            Atomica Unipessoal Lda. | NIF: 510000000 | Sede: Lisboa, Portugal
+            Atomica | NIF: 305735365 | Sede: Lisboa, Portugal
           </p>
           <div style={{ margin: "0.5rem 0", display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "1rem" }}>
             <Link to="/politica-cookies" style={{ color: "#1B1B1B", textDecoration: "none" }}>
