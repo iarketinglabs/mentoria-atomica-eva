@@ -1313,8 +1313,8 @@ const Index = () => {
                 <li style={{ marginBottom: "0.5rem", color: "#3D3D3D", lineHeight: "1.4" }}>
                   ✱{" "}
                   {language === "pt-BR"
-                    ? "Aprenda a planear, criar e otimizar conteúdo de alta performance que converte e encanta, aplicando hiper personalização em escala e com uma velocidade que antes parecia impossível."
-                    : "Aprende a planear, criar e otimizar conteúdo de alta performance que converte e encanta, aplicando hiper personalização em escala e com uma velocidade que antes parecia impossível."}
+                    ? "Aprenda a planejar, criar e otimizar conteúdo de alta performance, aplicando hiper personalização em escala e com uma velocidade que antes parecia impossível."
+                    : "Aprende a planear, criar e otimizar conteúdo de alta performance, aplicando hiper personalização em escala e com uma velocidade que antes parecia impossível."}
                 </li>
                 <li style={{ marginBottom: "0.5rem", color: "#3D3D3D", lineHeight: "1.4" }}>
                   ✱{" "}
