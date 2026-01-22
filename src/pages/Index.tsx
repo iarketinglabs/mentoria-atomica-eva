@@ -790,7 +790,7 @@ const Index = () => {
               </h4>
               <p className="text-lg text-[#3D3D3D] leading-relaxed">
                 {language === "pt-BR"
-                  ? 'Percebe que os orçamentos para produções tradicionais estão a diminuir, enquanto a procura por volume e velocidade explode. Combine a sua visão única com o poder de um estúdio de Hollywood no seu computador, execute ideias antes impossíveis e torne-se um "time de uma pessoa só".'
+                  ? 'Percebe que os orçamentos para produções tradicionais estão diminuindo, enquanto a procura por volume e velocidade explode. Combine a sua visão única com o poder de um estúdio de Hollywood no seu computador, execute ideias antes impossíveis e torne-se um "time de uma pessoa só".'
                   : 'Percebes que os orçamentos para produções tradicionais estão a diminuir, enquanto a procura por volume e velocidade explode. Combina a tua visão única com o poder de um estúdio de Hollywood no teu computador. Executa ideias que antes eram impossíveis e torna-te uma pessoa "dos sete ofícios".'}
               </p>
             </div>
