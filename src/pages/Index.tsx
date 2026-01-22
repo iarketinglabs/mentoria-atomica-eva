@@ -1533,7 +1533,7 @@ const Index = () => {
                 <div className="value-tag" style={{ textAlign: "center" }}>
                   <s>Valor: {language === "pt-BR" ? "R$ 564 /ano" : "96€ /ano"}</s>
                 </div>
-                <span className="tag-included">{language === "pt-BR" ? "incluído acesso vitalício" : "incluído acesso vitalício"}</span>
+                <span className="tag-included" style={{ display: "block", textAlign: "center" }}>{language === "pt-BR" ? "incluído acesso vitalício" : "incluído acesso vitalício"}</span>
                 <p>
                   {language === "pt-BR"
                     ? "O ecossistema da Atomica pra você se manter atualizado, fazer networking e continuar evoluindo — sem se afogar em ruído."
