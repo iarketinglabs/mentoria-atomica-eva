@@ -643,7 +643,7 @@ const Index = () => {
             style={{ fontFamily: "'Oswald', sans-serif" }}
           >
             {language === "pt-BR"
-              ? "Está no comando ou a ficando para trás?"
+              ? "Está no comando ou ficando para trás?"
               : "Sentes-te no comando ou a ficar para trás?"}
           </h3>
           <p className="text-lg md:text-xl text-[#3D3D3D] mb-12 max-w-3xl mx-auto">
