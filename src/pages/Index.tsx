@@ -1408,8 +1408,8 @@ const Index = () => {
               </div>
               <p>
                 {language === "pt-BR"
-                  ? "Aprenda a habilidade mais importante do futuro e ganhe uma vantagem quase desleal sobre a concorrência. Domine automação, mesmo sem qualquer experiência técnica, elevando a sua produtividade a outro patamar."
-                  : "Aprende a habilidade mais importante do futuro e ganha uma vantagem quase desleal sobre a tua concorrência. Domina a automação, mesmo sem qualquer experiência técnica, elevando a tua produtividade a um novo patamar."}
+                  ? "Aprenda a habilidade mais importante de 2026: crie sistemas, mesmo sem qualquer experiência técnica, elevando a sua produtividade a outro patamar."
+                  : "Aprende a habilidade mais importante de 2026: cria sistemas, mesmo sem qualquer experiência técnica, elevando a tua produtividade a outro patamar."}
               </p>
               <ul style={{ marginTop: "1rem", marginBottom: "1rem", paddingLeft: "0", listStyle: "none" }}>
                 <li style={{ marginBottom: "0.5rem", color: "#3D3D3D", lineHeight: "1.4" }}>
