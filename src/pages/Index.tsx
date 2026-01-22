@@ -225,6 +225,13 @@ const Index = () => {
             /* Bonus included text reduced line-height for mobile */
             .bonus-included-text {
                 line-height: 1.1 !important;
+                display: block;
+                margin-top: 0.25rem;
+            }
+            
+            /* Hide br before bonus-included-text on mobile */
+            .bonus-header h2 br {
+                display: none;
             }
             
             /* Bonus items centered layout for mobile */
