@@ -1498,7 +1498,7 @@ const Index = () => {
           <div className="bonus-list">
             <div className="bonus-item card-raised bonus-guides">
               <img src="/lovable-uploads/36c32b95-f826-4be1-a77a-6d166afa9ec9.png" alt="Guias Vivos" />
-              <div className="bonus-item-content">
+              <div className="bonus-item-content" style={{ textAlign: "left" }}>
                 <h3>{language === "pt-BR" ? "Guias Vivos" : "Guias Vivos"}</h3>
                 <div className="value-tag">
                   <s>Valor: {language === "pt-BR" ? "R$ 1.692 /ano" : "288 € /ano"}</s>
