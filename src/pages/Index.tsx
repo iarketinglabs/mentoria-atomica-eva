@@ -1183,7 +1183,7 @@ const Index = () => {
                   border: "1px solid #A8DEE0"
                 }}>
                   <p style={{ fontSize: "1rem", lineHeight: 1.8, marginBottom: "0.5rem", color: "#008C94", fontWeight: 600 }}>
-                    ➙ IA para Estratégia e Criação de Conteúdo
+                    ➙ IA para Estratégia e Criação de Conteúdo (20h)
                   </p>
                   <p style={{ fontSize: "1rem", lineHeight: 1.8, marginBottom: "0.5rem", color: "#008C94", fontWeight: 600 }}>
                     ➙ IA para Design e Audiovisual
