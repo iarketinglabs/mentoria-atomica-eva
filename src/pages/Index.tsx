@@ -439,110 +439,72 @@ const Index = () => {
 
       {/* Language Switcher */}
       <div style={{ position: "fixed", top: "20px", right: "20px", zIndex: 1000 }}>
-        <div style={{ position: "relative" }}>
+        <div 
+          style={{ 
+            display: "flex", 
+            alignItems: "center",
+            background: "#FCF9F2",
+            border: "2px solid #1B1B1B",
+            borderRadius: "6px",
+            overflow: "hidden",
+            boxShadow: "3px 3px 0px #67BBC0",
+          }}
+        >
           <button
-            onClick={() => setShowLanguageMenu(!showLanguageMenu)}
+            onClick={() => setLanguage("pt-PT")}
             style={{
               display: "flex",
               alignItems: "center",
-              gap: "0.5rem",
-              padding: "0.5rem 1rem",
-              background: "#FCF9F2",
-              border: "2px solid #1B1B1B",
-              borderRadius: "8px",
+              gap: "0.25rem",
+              padding: "0.35rem 0.5rem",
+              background: language === "pt-PT" ? "#E5DBC7" : "transparent",
+              border: "none",
+              borderRight: "1px solid #1B1B1B",
               cursor: "pointer",
               fontFamily: "'Jost', sans-serif",
-              fontSize: "0.875rem",
-              fontWeight: 600,
+              fontSize: "0.75rem",
+              fontWeight: language === "pt-PT" ? 700 : 500,
               color: "#1B1B1B",
-              boxShadow: "4px 4px 0px #67BBC0",
               transition: "all 0.2s ease",
+              opacity: language === "pt-PT" ? 1 : 0.7,
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "translate(-2px, -2px)";
-              e.currentTarget.style.boxShadow = "6px 6px 0px #67BBC0";
+              if (language !== "pt-PT") e.currentTarget.style.background = "#F5F5F0";
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "translate(0, 0)";
-              e.currentTarget.style.boxShadow = "4px 4px 0px #67BBC0";
+              if (language !== "pt-PT") e.currentTarget.style.background = "transparent";
             }}
           >
-            <Globe size={18} />
-            <span>{language === "pt-BR" ? "PT-BR" : "PT-PT"}</span>
+            <span style={{ fontSize: "1rem" }}>🇵🇹</span>
+            <span>PT</span>
           </button>
-
-          {showLanguageMenu && (
-            <div
-              style={{
-                position: "absolute",
-                top: "calc(100% + 8px)",
-                right: 0,
-                background: "#FCF9F2",
-                border: "2px solid #1B1B1B",
-                borderRadius: "8px",
-                boxShadow: "4px 4px 0px #67BBC0",
-                minWidth: "200px",
-                overflow: "hidden",
-                zIndex: 1001,
-              }}
-            >
-              <button
-                onClick={() => {
-                  setLanguage("pt-PT");
-                  setShowLanguageMenu(false);
-                }}
-                style={{
-                  width: "100%",
-                  padding: "0.75rem 1rem",
-                  background: language === "pt-PT" ? "#E5DBC7" : "transparent",
-                  border: "none",
-                  borderBottom: "1px solid #E5DBC7",
-                  cursor: "pointer",
-                  fontFamily: "'Jost', sans-serif",
-                  fontSize: "0.875rem",
-                  fontWeight: language === "pt-PT" ? 700 : 400,
-                  color: "#1B1B1B",
-                  textAlign: "left",
-                  transition: "background 0.2s ease",
-                }}
-                onMouseEnter={(e) => {
-                  if (language !== "pt-PT") e.currentTarget.style.background = "#F5F5F0";
-                }}
-                onMouseLeave={(e) => {
-                  if (language !== "pt-PT") e.currentTarget.style.background = "transparent";
-                }}
-              >
-                Português de Portugal
-              </button>
-              <button
-                onClick={() => {
-                  setLanguage("pt-BR");
-                  setShowLanguageMenu(false);
-                }}
-                style={{
-                  width: "100%",
-                  padding: "0.75rem 1rem",
-                  background: language === "pt-BR" ? "#E5DBC7" : "transparent",
-                  border: "none",
-                  cursor: "pointer",
-                  fontFamily: "'Jost', sans-serif",
-                  fontSize: "0.875rem",
-                  fontWeight: language === "pt-BR" ? 700 : 400,
-                  color: "#1B1B1B",
-                  textAlign: "left",
-                  transition: "background 0.2s ease",
-                }}
-                onMouseEnter={(e) => {
-                  if (language !== "pt-BR") e.currentTarget.style.background = "#F5F5F0";
-                }}
-                onMouseLeave={(e) => {
-                  if (language !== "pt-BR") e.currentTarget.style.background = "transparent";
-                }}
-              >
-                Português do Brasil
-              </button>
-            </div>
-          )}
+          <button
+            onClick={() => setLanguage("pt-BR")}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "0.25rem",
+              padding: "0.35rem 0.5rem",
+              background: language === "pt-BR" ? "#E5DBC7" : "transparent",
+              border: "none",
+              cursor: "pointer",
+              fontFamily: "'Jost', sans-serif",
+              fontSize: "0.75rem",
+              fontWeight: language === "pt-BR" ? 700 : 500,
+              color: "#1B1B1B",
+              transition: "all 0.2s ease",
+              opacity: language === "pt-BR" ? 1 : 0.7,
+            }}
+            onMouseEnter={(e) => {
+              if (language !== "pt-BR") e.currentTarget.style.background = "#F5F5F0";
+            }}
+            onMouseLeave={(e) => {
+              if (language !== "pt-BR") e.currentTarget.style.background = "transparent";
+            }}
+          >
+            <span style={{ fontSize: "1rem" }}>🇧🇷</span>
+            <span>BR</span>
+          </button>
         </div>
       </div>
 
