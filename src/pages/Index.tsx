@@ -2333,7 +2333,7 @@ const Index = () => {
               pedroarmbrust@atomica.group
             </a>
           </p>
-          <p style={{ margin: "0.25rem 0", color: "#555555" }}>© 2025 Atomica | Todos os direitos reservados.</p>
+          <p style={{ margin: "0.25rem 0", color: "#555555" }}>© 2026 Atomica | Todos os direitos reservados.</p>
           <p
             style={{ maxWidth: "800px", margin: "1rem auto 0", color: "#555555", lineHeight: 1.4, textAlign: "center" }}
           >
