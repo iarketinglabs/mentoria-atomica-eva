@@ -1325,8 +1325,8 @@ const Index = () => {
                 <li style={{ marginBottom: "0.5rem", color: "#3D3D3D", lineHeight: "1.4" }}>
                   ✱{" "}
                   {language === "pt-BR"
-                    ? 'Treinar a LLM para internalizar e replicar o tom de voz autêntico da sua marca em todo o ciclo de conteúdo, garantindo originalidade para se destacar do "AI Slop" genérico.'
-                    : 'Treina a LLM para internalizar e replicar o tom de voz autêntico da tua marca em todo o ciclo de conteúdo, garantindo originalidade para te destacares do "AI Slop" genérico.'}
+                    ? 'Treinar a LLM para internalizar e replicar o tom de voz autêntico da sua marca em todo o ciclo de conteúdo, garantindo personalidade para se destacar do "AI Slop" genérico.'
+                    : 'Treina a LLM para internalizar e replicar o tom de voz autêntico da tua marca em todo o ciclo de conteúdo, garantindo personalidade para te destacares do "AI Slop" genérico.'}
                 </li>
                 <li style={{ marginBottom: "0.5rem", color: "#3D3D3D", lineHeight: "1.4" }}>
                   ✱{" "}
