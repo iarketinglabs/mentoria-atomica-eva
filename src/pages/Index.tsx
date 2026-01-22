@@ -1500,7 +1500,7 @@ const Index = () => {
               <img src="/lovable-uploads/36c32b95-f826-4be1-a77a-6d166afa9ec9.png" alt="Guias Vivos" />
               <div className="bonus-item-content" style={{ textAlign: "left" }}>
                 <h3 style={{ textAlign: "center" }}>{language === "pt-BR" ? "Guias Vivos" : "Guias Vivos"}</h3>
-                <div className="value-tag">
+                <div className="value-tag" style={{ textAlign: "center" }}>
                   <s>Valor: {language === "pt-BR" ? "R$ 1.692 /ano" : "288 € /ano"}</s>
                 </div>
                 <span className="tag-included">{language === "pt-BR" ? "incluído 1 ano de acesso" : "incluído 1 ano de acesso"}</span>
