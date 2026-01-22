@@ -1511,8 +1511,8 @@ const Index = () => {
                 </p>
                 <p style={{ marginTop: "0.75rem" }}>
                   {language === "pt-BR"
-                    ? "Pense neles como enciclopédias digitais sempre 100% atualizadas com o estado da arte de IA aplicada ao Marketing."
-                    : "Pensa neles como enciclopédias digitais sempre 100% actualizadas com o estado da arte de IA aplicada ao Marketing."}
+                    ? <>Pense neles como <strong>enciclopédias digitais sempre 100% atualizadas</strong> com o estado da arte de IA aplicada ao Marketing.</>
+                    : <>Pensa neles como <strong>enciclopédias digitais sempre 100% actualizadas</strong> com o estado da arte de IA aplicada ao Marketing.</>}
                 </p>
                 <p style={{ marginTop: "0.75rem" }}>
                   {language === "pt-BR" ? "Em cada guia, você encontra:" : "Em cada guia, encontras:"}
