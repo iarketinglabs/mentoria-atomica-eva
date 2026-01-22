@@ -837,7 +837,7 @@ const Index = () => {
         </div>
       </section>
       {/* Promise Section - Before After Bridge */}
-      <section className="py-16 px-4 text-center">
+      <section className="pt-8 pb-16 px-4 text-center">
         <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 items-start">
           <div className="bab-step">
             <img
