@@ -514,8 +514,8 @@ const Index = () => {
             style={{ fontFamily: "'Oswald', sans-serif" }}
           >
             {language === "pt-BR"
-              ? "EM 2026 DOMINE OS 6 PILARES DO VIBE MARKETING E APRENDA A ORQUESTRAR UMA EQUIPE DE IA"
-              : "EM 2026 DOMINA OS 6 PILARES DO VIBE MARKETING E APRENDE A ORQUESTRAR UMA EQUIPA DE IA"}
+              ? "EM 2026 DOMINE OS 6 PILARES DO VIBE MARKETING PARA ORQUESTRAR UMA EQUIPE DE IA"
+              : "EM 2026 DOMINA OS 6 PILARES DO VIBE MARKETING PARA ORQUESTRAR UMA EQUIPA DE IA"}
           </h2>
 
           {/* Imagem de Apresentação */}
