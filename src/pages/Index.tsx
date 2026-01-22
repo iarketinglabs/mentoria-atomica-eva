@@ -1522,7 +1522,7 @@ const Index = () => {
                   <li style={{ marginBottom: "0.35rem" }}>➙ <strong>Técnicas e frameworks</strong> {language === "pt-BR" ? "pra executar" : "para executares"} com mais clareza</li>
                   <li style={{ marginBottom: "0.35rem" }}>➙ <strong>Ferramentas</strong> e funcionalidades (o que usar e como usar)</li>
                   <li style={{ marginBottom: "0.35rem" }}>➙ <strong>Casos de uso</strong> reais do dia a dia de marketing</li>
-                  <li style={{ marginBottom: "0" }}>➙ Exercícios práticos {language === "pt-BR" ? "pra continuar evoluindo e aplicando IA, mesmo depois que a mentoria acabar" : "para continuares a evoluir e aplicar IA, mesmo depois de a mentoria terminar"}</li>
+                  <li style={{ marginBottom: "0" }}>➙ <strong>Exercícios práticos</strong> {language === "pt-BR" ? "pra continuar evoluindo e aplicando IA, mesmo depois que a mentoria acabar" : "para continuares a evoluir e aplicar IA, mesmo depois de a mentoria terminar"}</li>
                 </ul>
               </div>
             </div>
