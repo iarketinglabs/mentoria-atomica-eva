@@ -1518,7 +1518,7 @@ const Index = () => {
                   {language === "pt-BR" ? "Em cada guia, você encontra:" : "Em cada guia, encontras:"}
                 </p>
                 <ul style={{ marginTop: "0.5rem", paddingLeft: "0", listStyle: "none", color: "#3D3D3D" }}>
-                  <li style={{ marginBottom: "0.35rem" }}>➙ Fundamentos que não envelhecem a cada novo lançamento</li>
+                  <li style={{ marginBottom: "0.35rem" }}>➙ <strong>Fundamentos</strong> que não envelhecem a cada novo lançamento</li>
                   <li style={{ marginBottom: "0.35rem" }}>➙ Técnicas e frameworks {language === "pt-BR" ? "pra executar" : "para executares"} com mais clareza</li>
                   <li style={{ marginBottom: "0.35rem" }}>➙ Ferramentas e funcionalidades (o que usar e como usar)</li>
                   <li style={{ marginBottom: "0.35rem" }}>➙ Casos de uso reais do dia a dia de marketing</li>
