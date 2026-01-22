@@ -1195,9 +1195,9 @@ const Index = () => {
                   <a href="#pillar-card-design" style={{ fontSize: "1rem", lineHeight: 1.8, marginBottom: "0.5rem", color: "#008C94", fontWeight: 600, display: "block", textDecoration: "none", cursor: "pointer" }}>
                     ➙ IA para Design e Audiovisual (20h)
                   </a>
-                  <p style={{ fontSize: "1rem", lineHeight: 1.8, marginBottom: "0", color: "#008C94", fontWeight: 600 }}>
+                  <a href="#pillar-card-vibe" style={{ fontSize: "1rem", lineHeight: 1.8, marginBottom: "0", color: "#008C94", fontWeight: 600, display: "block", textDecoration: "none", cursor: "pointer" }}>
                     ➙ IA para Vibe Coding e Automação Agêntica (20h)
-                  </p>
+                  </a>
                 </div>
               </div>
 
@@ -1394,7 +1394,7 @@ const Index = () => {
                 </li>
               </ul>
             </div>
-            <div className="card card-raised" style={{ padding: "2rem", flex: "1", maxWidth: "400px" }}>
+            <div id="pillar-card-vibe" className="card card-raised" style={{ padding: "2rem", flex: "1", maxWidth: "400px" }}>
               <img src="/lovable-uploads/fb394bd6-e0d1-46de-88d5-5d621c8514b9.png" alt="Automação IA" loading="lazy" width="240" height="240" />
               <h3>{language === "pt-BR" ? "IA para Vibe Coding e Automação Agêntica" : "IA para Vibe Coding e Automação Agêntica"}</h3>
               <div
