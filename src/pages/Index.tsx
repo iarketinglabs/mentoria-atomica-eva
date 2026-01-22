@@ -6,7 +6,7 @@ import StickyBar from "@/components/StickyBar";
 import PhoneInput from "@/components/PhoneInput";
 
 const Index = () => {
-  const [language, setLanguage] = useState<"pt-PT" | "pt-BR">("pt-PT");
+  const [language, setLanguage] = useState<"pt-PT" | "pt-BR">("pt-BR");
   const [showLanguageMenu, setShowLanguageMenu] = useState(false);
   const [selectedMission, setSelectedMission] = useState<string>("");
 
@@ -453,20 +453,17 @@ const Index = () => {
           <button
             onClick={() => setLanguage("pt-PT")}
             style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "0.25rem",
-              padding: "0.35rem 0.5rem",
+              padding: "0.35rem 0.6rem",
               background: language === "pt-PT" ? "#E5DBC7" : "transparent",
               border: "none",
               borderRight: "1px solid #1B1B1B",
               cursor: "pointer",
               fontFamily: "'Jost', sans-serif",
-              fontSize: "0.75rem",
+              fontSize: "0.7rem",
               fontWeight: language === "pt-PT" ? 700 : 500,
               color: "#1B1B1B",
               transition: "all 0.2s ease",
-              opacity: language === "pt-PT" ? 1 : 0.7,
+              opacity: language === "pt-PT" ? 1 : 0.6,
             }}
             onMouseEnter={(e) => {
               if (language !== "pt-PT") e.currentTarget.style.background = "#F5F5F0";
@@ -475,25 +472,21 @@ const Index = () => {
               if (language !== "pt-PT") e.currentTarget.style.background = "transparent";
             }}
           >
-            <span style={{ fontSize: "1rem" }}>🇵🇹</span>
-            <span>PT</span>
+            PT-PT
           </button>
           <button
             onClick={() => setLanguage("pt-BR")}
             style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "0.25rem",
-              padding: "0.35rem 0.5rem",
+              padding: "0.35rem 0.6rem",
               background: language === "pt-BR" ? "#E5DBC7" : "transparent",
               border: "none",
               cursor: "pointer",
               fontFamily: "'Jost', sans-serif",
-              fontSize: "0.75rem",
+              fontSize: "0.7rem",
               fontWeight: language === "pt-BR" ? 700 : 500,
               color: "#1B1B1B",
               transition: "all 0.2s ease",
-              opacity: language === "pt-BR" ? 1 : 0.7,
+              opacity: language === "pt-BR" ? 1 : 0.6,
             }}
             onMouseEnter={(e) => {
               if (language !== "pt-BR") e.currentTarget.style.background = "#F5F5F0";
@@ -502,8 +495,7 @@ const Index = () => {
               if (language !== "pt-BR") e.currentTarget.style.background = "transparent";
             }}
           >
-            <span style={{ fontSize: "1rem" }}>🇧🇷</span>
-            <span>BR</span>
+            PT-BR
           </button>
         </div>
       </div>
