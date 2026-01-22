@@ -66,7 +66,7 @@ const PhoneInput: React.FC<PhoneInputProps> = ({
   isValid,
   hasError,
 }) => {
-  const [countryCode, setCountryCode] = useState("351"); // Default to Portugal
+  const [countryCode, setCountryCode] = useState("55"); // Default to Brazil
   const [phoneNumber, setPhoneNumber] = useState("");
 
   // Parse existing value on mount
