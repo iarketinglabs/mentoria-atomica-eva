@@ -545,7 +545,7 @@ const Index = () => {
               ? "Apenas 12 vagas por turma • Reembolso em caso de insatisfação"
               : "Apenas 12 vagas por turma • Reembolso em caso de insatisfação"}
           </p>
-          <p className="text-xs text-[#67BBC0] font-semibold max-w-lg mx-auto mt-2">
+          <p className="text-xs text-[#FF304C] font-semibold max-w-lg mx-auto mt-2">
             {language === "pt-BR"
               ? "Desconto de pré-lançamento (20%) válido até 31/03/2026."
               : "Desconto de pré-lançamento (20%) válido até 31/03/2026."}
