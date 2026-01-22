@@ -534,8 +534,8 @@ const Index = () => {
             style={{ fontFamily: "'Oswald', sans-serif" }}
           >
             {language === "pt-BR"
-              ? "Enquanto os seus concorrentes apenas arranham a superfície do ChatGPT, este é o seu plano de voo para dominar a IA a sério e garantir a sua vantagem competitiva."
-              : "Enquanto a tua concorrência apenas arranha a superfície do ChatGPT, este é o teu plano de voo para dominar a IA a sério e garantir uma vantagem competitiva."}
+              ? "Enquanto a sua concorrência apenas arranha a superfície do ChatGPT, a Mentoria Atomica te ensina a produzir mais, melhor e em menos tempo para garantir uma vantagem quase injusta."
+              : "Enquanto a tua concorrência apenas arranha a superfície do ChatGPT, a Mentoria Atomica ensina-te a produzir mais, melhor e em menos tempo para garantir uma vantagem quase injusta."}
           </h3>
           <a href="#how-it-works" className="cta-primary mb-4 depth-layer">
             {language === "pt-BR" ? "Escolher a minha turma" : "Escolher a minha turma"}
