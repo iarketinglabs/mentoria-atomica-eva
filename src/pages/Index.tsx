@@ -850,7 +850,7 @@ const Index = () => {
             </h3>
             <p className="text-lg text-[#3D3D3D]">
               {language === "pt-BR"
-                ? "Passa mais tempo a testar ferramentas do que a criar resultados. Sente que os concorrentes estão a decolar enquanto você continua na pista, com medo de se tornar obsoleto."
+                ? "Passa mais tempo testando ferramentas do que criando resultados. Sente que os concorrentes estão decolando enquanto você continua na pista, com medo de se tornar obsoleto."
                 : "Passas mais tempo a testar ferramentas do que a criar resultados. Sentes que a concorrência está a levantar voo enquanto tu continuas na pista, com medo de te tornares obsoleto. Dá medo, né?"}
             </p>
           </div>
