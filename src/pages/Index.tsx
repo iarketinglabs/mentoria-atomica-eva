@@ -1189,7 +1189,7 @@ const Index = () => {
                     ➙ IA para Design e Audiovisual (20h)
                   </p>
                   <p style={{ fontSize: "1rem", lineHeight: 1.8, marginBottom: "0", color: "#008C94", fontWeight: 600 }}>
-                    ➙ IA para Vibe Coding e Automação Agêntica
+                    ➙ IA para Vibe Coding e Automação Agêntica (20h)
                   </p>
                 </div>
               </div>
