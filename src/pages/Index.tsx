@@ -924,11 +924,13 @@ const Index = () => {
                   <span className="text-[#67BBC0] font-bold text-2xl mr-4 mt-1">✓</span>
                   <span>
                     <strong>
-                      Uma equipa de marketing completa à {language === "pt-BR" ? "sua" : "tua"} disposição:
+                      {language === "pt-BR"
+                        ? "Uma equipe de agentes de marketing completa à disposição:"
+                        : "Uma equipa completa de agentes de marketing ao seu serviço:"}
                     </strong>{" "}
                     {language === "pt-BR"
-                      ? "Tenha um copywriter, um estratega, um designer e um analista de dados a trabalhar para si 24/7, libertando o seu tempo para o que realmente importa."
-                      : "Terás um copywriter, um estratega, um designer e um analista de dados a trabalhar para ti 24/7, libertando o teu tempo para o que realmente importa."}
+                      ? "Construa um copywriter, um estrategista, um designer e um analista de dados que trabalham pra você 24/7, libertando o seu tempo para o que realmente importa."
+                      : "Crie um copywriter, um estratega, um designer e um analista de dados a trabalhar por si 24/7, libertando o seu tempo para o que realmente importa."}
                   </span>
                 </li>
                 <li className="flex items-start">
