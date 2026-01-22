@@ -1252,10 +1252,15 @@ const Index = () => {
                     Grupo pequeno: até 12 mentorados
                   </span>
                 </div>
+                <p style={{ fontSize: "1rem", lineHeight: 1.7, marginBottom: "1rem", color: "#3D3D3D" }}>
+                  {language === "pt-BR"
+                    ? "O objetivo dessas 3 Mentorias é fazer com que você domine os 6 pilares da IA (LLMs, Imagem, Vídeo, Áudio, Automação Agêntica e Vibe Coding)."
+                    : "O objetivo destas 3 Mentorias é fazer com que domines os 6 pilares da IA (LLMs, Imagem, Vídeo, Áudio, Automação Agêntica e Vibe Coding)."}
+                </p>
                 <p style={{ fontSize: "1rem", lineHeight: 1.7, marginBottom: "1.25rem", color: "#3D3D3D" }}>
                   {language === "pt-BR"
-                    ? "O objetivo dessas 3 Mentorias é fazer com que você domine os 6 pilares da IA (LLMs, Imagem, Vídeo, Áudio, Automação Agêntica e Vibe Coding) para se tornar um Maestro que, através do Vibe Marketing, orquestra a IA e sai da ideia para resultados com o mínimo de barreiras técnicas."
-                    : "O objetivo destas 3 Mentorias é fazer com que domines os 6 pilares da IA (LLMs, Imagem, Vídeo, Áudio, Automação Agêntica e Vibe Coding) para te tornares um Maestro que, através do Vibe Marketing, orquestra a IA para sair da ideia para resultados com o mínimo de barreiras técnicas."}
+                    ? "Torne-se um Maestro que, através do Vibe Marketing, orquestra a IA para sair da ideia para resultados com o mínimo de barreiras técnicas."
+                    : "Torna-te um Maestro que, através do Vibe Marketing, orquestra a IA para sair da ideia para resultados com o mínimo de barreiras técnicas."}
                 </p>
                 <div style={{ 
                   background: "#FCF9F2", 
