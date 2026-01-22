@@ -713,7 +713,7 @@ const Index = () => {
             className="font-caprasimo text-4xl md:text-6xl font-bold leading-tight mb-12"
             style={{ textShadow: "3px 3px 0px #FF8C9B", fontFamily: "'Caprasimo', serif" }}
           >
-            {language === "pt-BR" ? "Esta missão é para si?" : "Esta missão é para ti?"}
+            {language === "pt-BR" ? "Esta missão é para você?" : "Esta missão é para ti?"}
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
             {/* Card Marketer */}
