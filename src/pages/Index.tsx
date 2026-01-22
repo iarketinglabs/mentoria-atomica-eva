@@ -714,7 +714,7 @@ const Index = () => {
       </section>
 
       {/* Para Quem É Section */}
-      <section className="bg-grain-pulp relative py-16 px-4 overflow-hidden">
+      <section className="bg-grain-pulp relative pt-16 pb-8 px-4 overflow-hidden">
         <div className="max-w-6xl mx-auto text-center relative z-10">
           <h2
             className="font-caprasimo text-4xl md:text-6xl font-bold leading-tight mb-12"
