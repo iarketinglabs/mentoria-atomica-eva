@@ -1189,9 +1189,9 @@ const Index = () => {
                   borderRadius: "6px",
                   border: "1px solid #A8DEE0"
                 }}>
-                  <p style={{ fontSize: "1rem", lineHeight: 1.8, marginBottom: "0.5rem", color: "#008C94", fontWeight: 600 }}>
+                  <a href="#pillar-cards" style={{ fontSize: "1rem", lineHeight: 1.8, marginBottom: "0.5rem", color: "#008C94", fontWeight: 600, display: "block", textDecoration: "none", cursor: "pointer" }}>
                     ➙ IA para Estratégia e Criação de Conteúdo (20h)
-                  </p>
+                  </a>
                   <p style={{ fontSize: "1rem", lineHeight: 1.8, marginBottom: "0.5rem", color: "#008C94", fontWeight: 600 }}>
                     ➙ IA para Design e Audiovisual (20h)
                   </p>
@@ -1291,7 +1291,7 @@ const Index = () => {
               }
             }
           `}</style>
-          <div className="cards-container pillar-cards" style={{ gap: "0.5rem" }}>
+          <div id="pillar-cards" className="cards-container pillar-cards" style={{ gap: "0.5rem" }}>
             <div className="card card-raised" style={{ padding: "2rem", flex: "1", maxWidth: "400px" }}>
               <img src="/lovable-uploads/3a5df82f-f4cb-44ab-bbf5-61e9e715c22f.png" alt="Conteúdo IA" loading="lazy" width="240" height="240" />
               <h3>{language === "pt-BR" ? "IA para Estratégia e Criação de Conteúdo" : "IA para Estratégia e Criação de Conteúdo"}</h3>
