@@ -507,7 +507,7 @@ const Index = () => {
             className="text-balance font-swanky text-5xl md:text-7xl font-normal leading-tight text-[#67BBC0]"
             style={{ textShadow: "3px 3px 0px #1B1B1B", fontFamily: "'Fontdiner Swanky', cursive" }}
           >
-            {language === "pt-BR" ? "Torne-se um Maestro do AI Marketing" : "Torna-te um Maestro do AI Marketing"}
+            {language === "pt-BR" ? "Torne-se Maestro do AI Marketing" : "Torna-te Maestro do AI Marketing"}
           </h1>
           <h2
             className="text-balance font-oswald text-3xl md:text-5xl font-medium leading-snug my-6 max-w-4xl mx-auto uppercase"
