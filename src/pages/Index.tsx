@@ -1189,13 +1189,31 @@ const Index = () => {
                   borderRadius: "6px",
                   border: "1px solid #A8DEE0"
                 }}>
-                  <a href="#pillar-cards" style={{ fontSize: "1rem", lineHeight: 1.8, marginBottom: "0.5rem", color: "#008C94", fontWeight: 600, display: "block", textDecoration: "none", cursor: "pointer" }}>
+                  <a 
+                    href="#pillar-cards" 
+                    className="mentorship-link"
+                    style={{ fontSize: "1rem", lineHeight: 1.8, marginBottom: "0.5rem", color: "#008C94", fontWeight: 600, display: "block", textDecoration: "underline", textUnderlineOffset: "3px", cursor: "pointer", transition: "all 0.2s ease" }}
+                    onMouseEnter={(e) => { e.currentTarget.style.color = "#006B70"; e.currentTarget.style.transform = "translateX(5px)"; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.color = "#008C94"; e.currentTarget.style.transform = "translateX(0)"; }}
+                  >
                     ➙ IA para Estratégia e Criação de Conteúdo (20h)
                   </a>
-                  <a href="#pillar-card-design" style={{ fontSize: "1rem", lineHeight: 1.8, marginBottom: "0.5rem", color: "#008C94", fontWeight: 600, display: "block", textDecoration: "none", cursor: "pointer" }}>
+                  <a 
+                    href="#pillar-card-design" 
+                    className="mentorship-link"
+                    style={{ fontSize: "1rem", lineHeight: 1.8, marginBottom: "0.5rem", color: "#008C94", fontWeight: 600, display: "block", textDecoration: "underline", textUnderlineOffset: "3px", cursor: "pointer", transition: "all 0.2s ease" }}
+                    onMouseEnter={(e) => { e.currentTarget.style.color = "#006B70"; e.currentTarget.style.transform = "translateX(5px)"; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.color = "#008C94"; e.currentTarget.style.transform = "translateX(0)"; }}
+                  >
                     ➙ IA para Design e Audiovisual (20h)
                   </a>
-                  <a href="#pillar-card-vibe" style={{ fontSize: "1rem", lineHeight: 1.8, marginBottom: "0", color: "#008C94", fontWeight: 600, display: "block", textDecoration: "none", cursor: "pointer" }}>
+                  <a 
+                    href="#pillar-card-vibe" 
+                    className="mentorship-link"
+                    style={{ fontSize: "1rem", lineHeight: 1.8, marginBottom: "0", color: "#008C94", fontWeight: 600, display: "block", textDecoration: "underline", textUnderlineOffset: "3px", cursor: "pointer", transition: "all 0.2s ease" }}
+                    onMouseEnter={(e) => { e.currentTarget.style.color = "#006B70"; e.currentTarget.style.transform = "translateX(5px)"; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.color = "#008C94"; e.currentTarget.style.transform = "translateX(0)"; }}
+                  >
                     ➙ IA para Vibe Coding e Automação Agêntica (20h)
                   </a>
                 </div>
