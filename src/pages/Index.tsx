@@ -1741,79 +1741,19 @@ const Index = () => {
         >
           <div className="faq" style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
             <details>
-              <summary>{language === "pt-BR" ? "Preciso de tempo extra para acompanhar as aulas?" : "Preciso de tempo extra para acompanhar as aulas?"}</summary>
+              <summary>Quais são os pré-requisitos para participar?</summary>
               <div>
                 {language === "pt-BR"
-                  ? "Sabemos que a sua agenda está sempre ao rubro. Por isso, cada sessão de 2h30m é gravada em alta qualidade e disponibilizada nos Guias Vivos, permitindo rever as lições a qualquer momento. Em vez de roubar o seu tempo, esta mentoria é desenhada para devolvê‑lhe tempo livre: aprenda a otimizar fluxos com IA e ganhe horas semanais para o que realmente importa."
-                  : "Sabemos que a tua agenda está sempre ao rubro. Por isso, cada sessão de 2h30m é gravada em alta qualidade e disponibilizada nos Guias Vivos, permitindo rever as lições a qualquer momento. Em vez de roubar o teu tempo, esta mentoria é desenhada para te devolver tempo livre: aprende a otimizar fluxos com IA e ganha horas semanais para o que realmente importa."}
+                  ? "Pré-requisitos: Conta Google, computador compatível com ferramentas web, e disponibilidade para criar contas gratuitas nas ferramentas usadas. Para concluir o projeto, recomendamos pelo menos 8 horas de prática fora das aulas (pode variar conforme experiência e nível de perfeccionismo)."
+                  : "Pré-requisitos: Conta Google, computador compatível com ferramentas web, e disponibilidade para criar contas gratuitas nas ferramentas usadas. Para concluir o projeto, recomendamos pelo menos 8 horas de prática fora das aulas (pode variar conforme experiência e nível de perfeccionismo)."}
               </div>
             </details>
             <details>
-              <summary>{language === "pt-BR" ? "Não estou seguro do meu nível de domínio de IA." : "Não estou seguro do meu nível de domínio de IA."}</summary>
-              <div>
-                {language === "pt-BR"
-                  ? 'Esta mentoria foi concebida exatamente para si, independentemente do seu ponto de partida. Começamos com o essencial — conhecer o "Olá, Mundo!" da IA — e evoluímos progressivamente para casos avançados. Além das aulas, poderá trocar ideias com a comunidade Visionários do Marketing, garantindo suporte contínuo. Ao final das 20h, terá confiança para criar, automatizar e liderar projetos com IA.'
-                  : 'Esta mentoria foi concebida exatamente para ti, independentemente do teu ponto de partida. Começamos com o essencial — conhecer o "Olá, Mundo!" da IA — e evoluímos progressivamente para casos avançados. Além das aulas, poderás trocar ideias com a comunidade Visionários do Marketing, garantindo suporte contínuo. Ao final das 20h, terás a confiança para criar, automatizar e liderar projetos com IA.'}
-              </div>
-            </details>
-            <details>
-              <summary>{language === "pt-BR" ? "Qual será o retorno sobre o investimento?" : "Qual será o retorno sobre o investimento?"}</summary>
-              <div>
-                {language === "pt-BR" ? "O ROI traduz-se em três níveis:" : "O ROI traduz-se em três níveis:"}
-                <ol style={{ margin: "0.5rem 0 0", paddingLeft: "1.5rem" }}>
-                  <li>
-                    <strong>Eficiência</strong>:{" "}
-                    {language === "pt-BR"
-                      ? "Automatize até 50% dos seus fluxos de marketing e recupere dezenas de horas por mês."
-                      : "Automatiza até 50% dos teus fluxos de marketing e recupera dezenas de horas por mês."}
-                  </li>
-                  <li>
-                    <strong>Performance</strong>:{" "}
-                    {language === "pt-BR"
-                      ? "Crie conteúdos e anúncios que convertem melhor, aumentando leads e engagement."
-                      : "Cria conteúdos e anúncios que convertem melhor, aumentando leads e engagement."}
-                  </li>
-                  <li>
-                    <strong>Carreira</strong>:{" "}
-                    {language === "pt-BR"
-                      ? "Posicione-se como especialista em IA, atraindo melhores oportunidades e salários."
-                      : "Posiciona-te como especialista em IA, atraindo melhores oportunidades e salários."}{" "}
-                    Muitos dos nossos alunos confirmam que o tempo poupado e os ganhos em performance superam facilmente
-                    o investimento inicial.
-                  </li>
-                </ol>
-              </div>
-            </details>
-            <details>
-              <summary>A que terei acesso exatamente após a inscrição?</summary>
-              <div>
-                {language === "pt-BR"
-                  ? "Imediatamente após a confirmação do pagamento, receberá um e-mail de boas-vindas com o seu acesso à nossa comunidade exclusiva no Discord e aos Guias Vivos. Os detalhes e o calendário para as sessões ao vivo da sua turma serão enviados na semana anterior ao início da mentoria."
-                  : "Imediatamente após a confirmação do pagamento, receberás um e-mail de boas-vindas com o seu acesso à nossa comunidade exclusiva no Discord e aos Guias Vivos. Os detalhes e o calendário para as sessões ao vivo da tua turma serão enviados na semana anterior ao início da mentoria."}
-              </div>
-            </details>
-            <details>
-              <summary>E se eu faltar a uma aula ao vivo?</summary>
-              <div>
-                {language === "pt-BR"
-                  ? "Não há problema. Todas as sessões são gravadas e disponibilizadas na nossa plataforma em até 24 horas. Poderá assistir quando quiser e quantas vezes precisar. Além disso, pode sempre colocar as suas dúvidas sobre a aula na comunidade do Discord."
-                  : "Não há problema. Todas as sessões são gravadas e disponibilizadas na nossa plataforma até 24 horas. Poderás assistir quando quiseres e quantas vezes precisares. Além disso, podes sempre colocar as tuas dúvidas sobre a aula na comunidade do Discord."}
-              </div>
-            </details>
-            <details>
-              <summary>As ferramentas de IA que vamos usar são pagas? Terei custos extra?</summary>
+              <summary>{language === "pt-BR" ? "Terei acesso a ferramentas de IA pagas?" : "Terei acesso a ferramentas de IA pagas?"}</summary>
               <div>
                 {language === "pt-BR"
                   ? "A grande maioria das mais de 30 ferramentas que exploramos possui versões gratuitas robustas, que são suficientes para realizar todos os exercícios da mentoria. Para algumas ferramentas mais avançadas, mostraremos como aproveitar os períodos de teste gratuito (free trials) para que não tenha qualquer custo adicional durante o curso."
                   : "A grande maioria das mais de 30 ferramentas que exploramos possui versões gratuitas robustas, que são suficientes para realizar todos os exercícios da mentoria. Para algumas ferramentas mais avançadas, mostraremos como aproveitar os períodos de teste gratuito (free trials) para que não tenhas qualquer custo adicional durante o curso."}
-              </div>
-            </details>
-            <details>
-              <summary>Esta mentoria é só teórica ou vamos mesmo "pôr a mão na massa"?</summary>
-              <div>
-                {language === "pt-BR"
-                  ? "A nossa filosofia é 'aprender fazendo'. Cada sessão tem uma componente teórica curta e direta, seguida de exercícios práticos onde você irá aplicar imediatamente o que aprendeu. O objetivo é que termine cada aula com algo novo que pode usar no seu trabalho no dia seguinte."
-                  : "A nossa filosofia é 'aprender fazendo'. Cada sessão tem uma componente teórica curta e direta, seguida de exercícios práticos onde vais aplicar imediatamente o que aprendeste. O objetivo é que termines cada aula com algo novo que podes usar no teu trabalho no dia seguinte."}
               </div>
             </details>
             <details>
@@ -1825,46 +1765,11 @@ const Index = () => {
               </div>
             </details>
             <details>
-              <summary>O acesso à comunidade e aos guias é vitalício?</summary>
+              <summary>{language === "pt-BR" ? "O que acontece após eu finalizar a compra?" : "O que acontece após eu finalizar a compra?"}</summary>
               <div>
                 {language === "pt-BR"
-                  ? "O seu acesso à comunidade 'Visionários do Marketing' no Discord é vitalício. O acesso aos 'Guias Vivos' está incluído por um período de 12 meses após a sua inscrição, garantindo que se mantém atualizado durante um ano inteiro."
-                  : "O teu acesso à comunidade 'Visionários do Marketing' no Discord é vitalício. O acesso aos 'Guias Vivos' está incluído por um período de 12 meses após a tua inscrição, garantindo que te manténs atualizado durante um ano inteiro."}
-              </div>
-            </details>
-            <details>
-              <summary>Qual é a diferença entre esta mentoria e um curso online sobre IA?</summary>
-              <div>
-                {language === "pt-BR"
-                  ? "Cursos ensinam ferramentas. A mentoria Atomica leva-o a outro nível: ensina-o a pensar e agir estrategicamente com IA, com acompanhamento direto, frameworks comprovadas e resultados imediatos. Enquanto os cursos convencionais ficam desatualizados rapidamente, a Atómica está sempre na linha da frente dos últimos lançamentos de IA — para que aplique hoje o que o mercado só vai descobrir amanhã."
-                  : "Cursos ensinam ferramentas. A mentoria Atomica leva-te a outro nível: ensina-te a pensar e agir estrategicamente com IA, com acompanhamento direto, frameworks comprovadas e resultados imediatos."}
-              </div>
-            </details>
-            <details>
-              <summary>Quanto tempo preciso dedicar por semana?</summary>
-              <div>
-                {language === "pt-BR"
-                  ? "Cada sessão tem em média 2h30 e todas ficam gravadas para que você possa rever quando quiser. Além disso, propomos desafios práticos rápidos (30 a 60 minutos) para aplicar o que aprendeu no seu próprio contexto.\nAo todo, o curso conta com 20 horas de formação, e 2 a 3 horas por semana são suficientes para aproveitar ao máximo a mentoria."
-                  : "Cada sessão tem em média 2h30 e todas ficam gravadas para que possas rever quando quiseres. Além disso, propomos desafios práticos rápidos (30–60 minutos) para aplicares o que aprendeste no teu próprio contexto.\nNo total, o curso inclui 20 horas de formação, e bastam 2 a 3 horas por semana para tirares o máximo proveito da mentoria."}
-              </div>
-            </details>
-            <details>
-              <summary>As turmas têm vagas limitadas?</summary>
-              <div>
-                {language === "pt-BR"
-                  ? "Sim! Cada turma é formada por, no máximo, 12 participantes, para que você tenha atenção individual, tempo para praticar e ainda troque experiências com outros profissionais, ampliando seu networking de forma estratégica."
-                  : "Sim! Cada turma é formada por, no máximo, 12 participantes, para que tenhas a atenção individual necessária, tempo para praticar e ainda troques experiências com outros profissionais, ampliando teu networking de forma estratégica."}{" "}
-                {language === "pt-BR"
-                  ? "As turmas fecham quando atingem 100% das vagas. Ao lotar, a inscrição é bloqueada e entra em modo de Lista de Espera, para casos de desistência."
-                  : "As turmas fecham quando atingem 100% das vagas. Ao lotar, a inscrição é bloqueada e entra em modo de Lista de Espera, para casos de desistência."}
-              </div>
-            </details>
-            <details>
-              <summary>Posso abrir vagas extra após a turma lotar?</summary>
-              <div>
-                {language === "pt-BR"
-                  ? "Poderemos abrir até +2 vagas extras em casos específicos (capacidade de suporte e confirmação do professor). Não é garantido. A chamada da lista de espera respeita a ordem de entrada. Contatamos um a um e seguimos para o próximo caso não haja interesse."
-                  : "Poderemos abrir até +2 vagas extra em casos específicos (capacidade de suporte e confirmação do professor). Não é garantido. A chamada da lista de espera respeita a ordem de entrada. Contactamos um a um e seguimos para o próximo caso não haja interesse."}
+                  ? "Imediatamente após a confirmação do pagamento, receberá um e-mail de boas-vindas com o seu acesso à nossa comunidade exclusiva no Discord e aos Guias Vivos. Os detalhes e o calendário para as sessões ao vivo da sua turma serão enviados na semana anterior ao início da mentoria."
+                  : "Imediatamente após a confirmação do pagamento, receberás um e-mail de boas-vindas com o seu acesso à nossa comunidade exclusiva no Discord e aos Guias Vivos. Os detalhes e o calendário para as sessões ao vivo da tua turma serão enviados na semana anterior ao início da mentoria."}
               </div>
             </details>
             <details>
@@ -1875,86 +1780,13 @@ const Index = () => {
                   : "Reembolso total após a 1ª aula completa, solicitado em até 30 dias após essa 1ª aula. Sem necessidade de justificativa (feedback é opcional). A participação na 1ª aula é verificada via relatório do Google Meet. Em caso de reembolso, o aluno perde o direito ao acesso vitalício à comunidade e o acesso aos guias vivos (mesmo dentro da promoção)."}
               </div>
             </details>
-            <details>
-              <summary>Há taxas de processamento no checkout?</summary>
-              <div>
-                {language === "pt-BR"
-                  ? "No checkout poderá ser acrescida uma taxa de processamento do Stripe: 1,5% + €0,25 (cartões padrão do Espaço Econômico Europeu) ou 1,19% (PIX — Brasil). Em caso de reembolso, essas taxas não são devolvidas (serão abatidas do valor reembolsado). O valor final exibido no checkout é o que prevalece."
-                  : "No checkout poderá ser acrescida uma taxa de processamento do Stripe: 1,5% + €0,25 (cartões padrão do Espaço Económico Europeu) ou 1,19% (PIX — Brasil). Em caso de reembolso, estas taxas não são devolvidas (serão abatidas do valor reembolsado). O valor final exibido no checkout é o que prevalece."}
-              </div>
-            </details>
-            <details>
-              <summary>Como funciona o acesso às gravações?</summary>
-              <div>
-                {language === "pt-BR"
-                  ? "As gravações das aulas ficam disponíveis por 30 dias na comunidade. O aluno pode fazer download nesse período e guardar localmente. O material não pode ser divulgado sem consentimento da Atomica e o uso para fins comerciais é proibido. Após o download, a responsabilidade de armazenamento e acesso passa a ser do aluno."
-                  : "As gravações das aulas ficam disponíveis por 30 dias na comunidade. O aluno pode fazer download nesse período e guardar localmente. O material não pode ser divulgado sem consentimento da Atomica e o uso para fins comerciais é proibido. Após o download, a responsabilidade de armazenamento e acesso passa a ser do aluno."}
-              </div>
-            </details>
-            <details>
-              <summary>Datas e horários podem mudar?</summary>
-              <div>
-                {language === "pt-BR"
-                  ? "Datas, horários e/ou professor(a) podem sofrer ajustes por razões operacionais. Se acontecer, avisamos pelos canais oficiais (e-mail e comunidade). A turma acontece, em regra, dentro de uma janela de ~30 dias. O calendário completo (datas e horários dos 8 encontros) fica claro para o aluno desde o início e é confirmado por e-mail após a compra."
-                  : "Datas, horários e/ou professor(a) podem sofrer ajustes por razões operacionais. Se acontecer, avisamos pelos canais oficiais (email e comunidade). A turma decorre, em regra, dentro de uma janela de ~30 dias. O calendário completo (datas e horários dos 8 encontros) fica claro para o aluno desde o início e é confirmado por email após a compra."}
-              </div>
-            </details>
-            <details>
-              <summary>O que acontece se uma aula precisar de ser realocada?</summary>
-              <div>
-                {language === "pt-BR"
-                  ? "Se precisarmos realocar uma aula, avisamos com mínimo de 1 semana de antecedência pelos canais oficiais (e-mail + comunidade). Exceção: cenários extremos de limitação operacional por parte da Atomica (ex.: indisponibilidade inevitável do professor). Nesses casos, avisamos assim que possível e oferecemos o melhor rearranjo viável."
-                  : "Se precisarmos realocar uma aula, avisamos com mínimo de 1 semana de antecedência pelos canais oficiais (email + comunidade). Exceção: cenários extremos de limitação operacional por parte da Atomica (ex.: indisponibilidade inevitável do professor). Nesses casos, avisamos assim que possível e oferecemos o melhor rearranjo viável."}
-              </div>
-            </details>
-            <details>
-              <summary>Como funciona o suporte e onde tiro dúvidas?</summary>
-              <div>
-                {language === "pt-BR"
-                  ? "Dúvidas devem ser enviadas pela comunidade. Tentamos responder em até 72h (compromisso de esforço, não garantia). Existem office hours mensais na comunidade para dúvidas e orientação geral. A Mentoria e a comunidade não oferecem suporte 1:1 sob demanda, nem execução 'done-for-you'."
-                  : "Dúvidas devem ser enviadas pela comunidade. Tentamos responder em até 72h (compromisso de esforço, não garantia). Existem office hours mensais na comunidade para dúvidas e orientação geral. A Mentoria e a comunidade não oferecem suporte 1:1 sob demanda, nem execução 'done-for-you'."}
-              </div>
-            </details>
-            <details>
-              <summary>Quais são os pré-requisitos para participar?</summary>
-              <div>
-                {language === "pt-BR"
-                  ? "Pré-requisitos: Conta Google, computador compatível com ferramentas web, e disponibilidade para criar contas gratuitas nas ferramentas usadas. Para concluir o projeto, recomendamos pelo menos 8 horas de prática fora das aulas (pode variar conforme experiência e nível de perfeccionismo)."
-                  : "Pré-requisitos: Conta Google, computador compatível com ferramentas web, e disponibilidade para criar contas gratuitas nas ferramentas usadas. Para concluir o projeto, recomendamos pelo menos 8 horas de prática fora das aulas (pode variar conforme experiência e nível de perfeccionismo)."}
-              </div>
-            </details>
-            <details>
-              <summary>As ferramentas de terceiros podem mudar?</summary>
-              <div>
-                {language === "pt-BR"
-                  ? "Ferramentas de terceiros podem mudar preços, planos, funcionalidades ou disponibilidade. Ensinamos conceitos e alternativas sempre que possível."
-                  : "Ferramentas de terceiros podem mudar preços, planos, funcionalidades ou disponibilidade. Ensinamos conceitos e alternativas sempre que possível."}
-              </div>
-            </details>
-            <details>
-              <summary>Posso fazer troca de turma ou substituir participante?</summary>
-              <div>
-                {language === "pt-BR"
-                  ? "Para troca de turma, substituição de participante e questões operacionais (pagamento/acesso), contatar: suporte@atomica.group."
-                  : "Para troca de turma, substituição de participante e questões operacionais (pagamento/acesso), contactar: suporte@atomica.group."}
-              </div>
-            </details>
-            <details>
-              <summary>Posso usar os materiais para fins comerciais?</summary>
-              <div>
-                {language === "pt-BR"
-                  ? "Os materiais (slides, gravações e templates) são para uso pessoal do aluno. Não é permitido redistribuir, revender ou publicar."
-                  : "Os materiais (slides, gravações e templates) são para uso pessoal do aluno. Não é permitido redistribuir, revender ou publicar."}
-              </div>
-            </details>
-            <details>
-              <summary>Como funciona o Pacote de 3 turmas?</summary>
-              <div>
-                {language === "pt-BR"
-                  ? "O Pacote de 3 turmas deve ser usado em até 6 meses a partir da data da compra. Inclui 60h de mentoria e todos os bónus. É possível se inscrever em 2 turmas separadamente. Nesse caso não há desconto: o valor é o dobro (uma inscrição por turma)."
-                  : "O Pacote de 3 turmas deve ser utilizado em até 6 meses a partir da data da compra. Inclui 60h de mentoria e todos os bónus. É possível inscrever-se em 2 turmas separadamente. Neste caso não há desconto: o valor é o dobro (uma inscrição por turma)."}
-              </div>
-            </details>
+            <p style={{ textAlign: "center", marginTop: "1rem", fontSize: "1rem", color: "#1B1B1B" }}>
+              {language === "pt-BR" ? "Para mais perguntas frequentes " : "Para mais perguntas frequentes "}
+              <a href="#mais-faq" style={{ color: "#67BBC0", fontWeight: 600, textDecoration: "underline" }}>
+                Clique Aqui
+              </a>
+              .
+            </p>
           </div>
           <div className="value-stack card-raised">
             <p>
@@ -2259,6 +2091,201 @@ const Index = () => {
                 : "Junta-te aos profissionais de marketing de vanguarda. Risco Zero com a nossa Garantia Incondicional."}
             </p>
           </form>
+        </div>
+      </section>
+
+      {/* Mais Perguntas Frequentes */}
+      <section id="mais-faq" className="faq-extended" style={{ backgroundColor: "#FCF9F2", padding: "4rem 1rem" }}>
+        <div className="container max-w-6xl mx-auto">
+          <h2
+            style={{
+              fontFamily: "'Caprasimo',serif",
+              fontSize: "2rem",
+              color: "#1B1B1B",
+              textAlign: "center",
+              marginBottom: "2rem",
+              textShadow: "2px 2px 0px #A8DEE0",
+            }}
+          >
+            {language === "pt-BR" ? "Mais Perguntas Frequentes" : "Mais Perguntas Frequentes"}
+          </h2>
+          <div className="faq" style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+            <details>
+              <summary>{language === "pt-BR" ? "Preciso de tempo extra para acompanhar as aulas?" : "Preciso de tempo extra para acompanhar as aulas?"}</summary>
+              <div>
+                {language === "pt-BR"
+                  ? "Sabemos que a sua agenda está sempre ao rubro. Por isso, cada sessão de 2h30m é gravada em alta qualidade e disponibilizada nos Guias Vivos, permitindo rever as lições a qualquer momento. Em vez de roubar o seu tempo, esta mentoria é desenhada para devolvê‑lhe tempo livre: aprenda a otimizar fluxos com IA e ganhe horas semanais para o que realmente importa."
+                  : "Sabemos que a tua agenda está sempre ao rubro. Por isso, cada sessão de 2h30m é gravada em alta qualidade e disponibilizada nos Guias Vivos, permitindo rever as lições a qualquer momento. Em vez de roubar o teu tempo, esta mentoria é desenhada para te devolver tempo livre: aprende a otimizar fluxos com IA e ganha horas semanais para o que realmente importa."}
+              </div>
+            </details>
+            <details>
+              <summary>{language === "pt-BR" ? "Não estou seguro do meu nível de domínio de IA." : "Não estou seguro do meu nível de domínio de IA."}</summary>
+              <div>
+                {language === "pt-BR"
+                  ? 'Esta mentoria foi concebida exatamente para si, independentemente do seu ponto de partida. Começamos com o essencial — conhecer o "Olá, Mundo!" da IA — e evoluímos progressivamente para casos avançados. Além das aulas, poderá trocar ideias com a comunidade Visionários do Marketing, garantindo suporte contínuo. Ao final das 20h, terá confiança para criar, automatizar e liderar projetos com IA.'
+                  : 'Esta mentoria foi concebida exatamente para ti, independentemente do teu ponto de partida. Começamos com o essencial — conhecer o "Olá, Mundo!" da IA — e evoluímos progressivamente para casos avançados. Além das aulas, poderás trocar ideias com a comunidade Visionários do Marketing, garantindo suporte contínuo. Ao final das 20h, terás a confiança para criar, automatizar e liderar projetos com IA.'}
+              </div>
+            </details>
+            <details>
+              <summary>{language === "pt-BR" ? "Qual será o retorno sobre o investimento?" : "Qual será o retorno sobre o investimento?"}</summary>
+              <div>
+                {language === "pt-BR" ? "O ROI traduz-se em três níveis:" : "O ROI traduz-se em três níveis:"}
+                <ol style={{ margin: "0.5rem 0 0", paddingLeft: "1.5rem" }}>
+                  <li>
+                    <strong>Eficiência</strong>:{" "}
+                    {language === "pt-BR"
+                      ? "Automatize até 50% dos seus fluxos de marketing e recupere dezenas de horas por mês."
+                      : "Automatiza até 50% dos teus fluxos de marketing e recupera dezenas de horas por mês."}
+                  </li>
+                  <li>
+                    <strong>Performance</strong>:{" "}
+                    {language === "pt-BR"
+                      ? "Crie conteúdos e anúncios que convertem melhor, aumentando leads e engagement."
+                      : "Cria conteúdos e anúncios que convertem melhor, aumentando leads e engagement."}
+                  </li>
+                  <li>
+                    <strong>Carreira</strong>:{" "}
+                    {language === "pt-BR"
+                      ? "Posicione-se como especialista em IA, atraindo melhores oportunidades e salários."
+                      : "Posiciona-te como especialista em IA, atraindo melhores oportunidades e salários."}{" "}
+                    Muitos dos nossos alunos confirmam que o tempo poupado e os ganhos em performance superam facilmente
+                    o investimento inicial.
+                  </li>
+                </ol>
+              </div>
+            </details>
+            <details>
+              <summary>E se eu faltar a uma aula ao vivo?</summary>
+              <div>
+                {language === "pt-BR"
+                  ? "Não há problema. Todas as sessões são gravadas e disponibilizadas na nossa plataforma em até 24 horas. Poderá assistir quando quiser e quantas vezes precisar. Além disso, pode sempre colocar as suas dúvidas sobre a aula na comunidade do Discord."
+                  : "Não há problema. Todas as sessões são gravadas e disponibilizadas na nossa plataforma até 24 horas. Poderás assistir quando quiseres e quantas vezes precisares. Além disso, podes sempre colocar as tuas dúvidas sobre a aula na comunidade do Discord."}
+              </div>
+            </details>
+            <details>
+              <summary>Esta mentoria é só teórica ou vamos mesmo "pôr a mão na massa"?</summary>
+              <div>
+                {language === "pt-BR"
+                  ? "A nossa filosofia é 'aprender fazendo'. Cada sessão tem uma componente teórica curta e direta, seguida de exercícios práticos onde você irá aplicar imediatamente o que aprendeu. O objetivo é que termine cada aula com algo novo que pode usar no seu trabalho no dia seguinte."
+                  : "A nossa filosofia é 'aprender fazendo'. Cada sessão tem uma componente teórica curta e direta, seguida de exercícios práticos onde vais aplicar imediatamente o que aprendeste. O objetivo é que termines cada aula com algo novo que podes usar no teu trabalho no dia seguinte."}
+              </div>
+            </details>
+            <details>
+              <summary>O acesso à comunidade e aos guias é vitalício?</summary>
+              <div>
+                {language === "pt-BR"
+                  ? "O seu acesso à comunidade 'Visionários do Marketing' no Discord é vitalício. O acesso aos 'Guias Vivos' está incluído por um período de 12 meses após a sua inscrição, garantindo que se mantém atualizado durante um ano inteiro."
+                  : "O teu acesso à comunidade 'Visionários do Marketing' no Discord é vitalício. O acesso aos 'Guias Vivos' está incluído por um período de 12 meses após a tua inscrição, garantindo que te manténs atualizado durante um ano inteiro."}
+              </div>
+            </details>
+            <details>
+              <summary>Qual é a diferença entre esta mentoria e um curso online sobre IA?</summary>
+              <div>
+                {language === "pt-BR"
+                  ? "Cursos ensinam ferramentas. A mentoria Atomica leva-o a outro nível: ensina-o a pensar e agir estrategicamente com IA, com acompanhamento direto, frameworks comprovadas e resultados imediatos. Enquanto os cursos convencionais ficam desatualizados rapidamente, a Atómica está sempre na linha da frente dos últimos lançamentos de IA — para que aplique hoje o que o mercado só vai descobrir amanhã."
+                  : "Cursos ensinam ferramentas. A mentoria Atomica leva-te a outro nível: ensina-te a pensar e agir estrategicamente com IA, com acompanhamento direto, frameworks comprovadas e resultados imediatos."}
+              </div>
+            </details>
+            <details>
+              <summary>Quanto tempo preciso dedicar por semana?</summary>
+              <div>
+                {language === "pt-BR"
+                  ? "Cada sessão tem em média 2h30 e todas ficam gravadas para que você possa rever quando quiser. Além disso, propomos desafios práticos rápidos (30 a 60 minutos) para aplicar o que aprendeu no seu próprio contexto.\nAo todo, o curso conta com 20 horas de formação, e 2 a 3 horas por semana são suficientes para aproveitar ao máximo a mentoria."
+                  : "Cada sessão tem em média 2h30 e todas ficam gravadas para que possas rever quando quiseres. Além disso, propomos desafios práticos rápidos (30–60 minutos) para aplicares o que aprendeste no teu próprio contexto.\nNo total, o curso inclui 20 horas de formação, e bastam 2 a 3 horas por semana para tirares o máximo proveito da mentoria."}
+              </div>
+            </details>
+            <details>
+              <summary>As turmas têm vagas limitadas?</summary>
+              <div>
+                {language === "pt-BR"
+                  ? "Sim! Cada turma é formada por, no máximo, 12 participantes, para que você tenha atenção individual, tempo para praticar e ainda troque experiências com outros profissionais, ampliando seu networking de forma estratégica."
+                  : "Sim! Cada turma é formada por, no máximo, 12 participantes, para que tenhas a atenção individual necessária, tempo para praticar e ainda troques experiências com outros profissionais, ampliando teu networking de forma estratégica."}{" "}
+                {language === "pt-BR"
+                  ? "As turmas fecham quando atingem 100% das vagas. Ao lotar, a inscrição é bloqueada e entra em modo de Lista de Espera, para casos de desistência."
+                  : "As turmas fecham quando atingem 100% das vagas. Ao lotar, a inscrição é bloqueada e entra em modo de Lista de Espera, para casos de desistência."}
+              </div>
+            </details>
+            <details>
+              <summary>Posso abrir vagas extra após a turma lotar?</summary>
+              <div>
+                {language === "pt-BR"
+                  ? "Poderemos abrir até +2 vagas extras em casos específicos (capacidade de suporte e confirmação do professor). Não é garantido. A chamada da lista de espera respeita a ordem de entrada. Contatamos um a um e seguimos para o próximo caso não haja interesse."
+                  : "Poderemos abrir até +2 vagas extra em casos específicos (capacidade de suporte e confirmação do professor). Não é garantido. A chamada da lista de espera respeita a ordem de entrada. Contactamos um a um e seguimos para o próximo caso não haja interesse."}
+              </div>
+            </details>
+            <details>
+              <summary>Há taxas de processamento no checkout?</summary>
+              <div>
+                {language === "pt-BR"
+                  ? "No checkout poderá ser acrescida uma taxa de processamento do Stripe: 1,5% + €0,25 (cartões padrão do Espaço Econômico Europeu) ou 1,19% (PIX — Brasil). Em caso de reembolso, essas taxas não são devolvidas (serão abatidas do valor reembolsado). O valor final exibido no checkout é o que prevalece."
+                  : "No checkout poderá ser acrescida uma taxa de processamento do Stripe: 1,5% + €0,25 (cartões padrão do Espaço Económico Europeu) ou 1,19% (PIX — Brasil). Em caso de reembolso, estas taxas não são devolvidas (serão abatidas do valor reembolsado). O valor final exibido no checkout é o que prevalece."}
+              </div>
+            </details>
+            <details>
+              <summary>Como funciona o acesso às gravações?</summary>
+              <div>
+                {language === "pt-BR"
+                  ? "As gravações das aulas ficam disponíveis por 30 dias na comunidade. O aluno pode fazer download nesse período e guardar localmente. O material não pode ser divulgado sem consentimento da Atomica e o uso para fins comerciais é proibido. Após o download, a responsabilidade de armazenamento e acesso passa a ser do aluno."
+                  : "As gravações das aulas ficam disponíveis por 30 dias na comunidade. O aluno pode fazer download nesse período e guardar localmente. O material não pode ser divulgado sem consentimento da Atomica e o uso para fins comerciais é proibido. Após o download, a responsabilidade de armazenamento e acesso passa a ser do aluno."}
+              </div>
+            </details>
+            <details>
+              <summary>Datas e horários podem mudar?</summary>
+              <div>
+                {language === "pt-BR"
+                  ? "Datas, horários e/ou professor(a) podem sofrer ajustes por razões operacionais. Se acontecer, avisamos pelos canais oficiais (e-mail e comunidade). A turma acontece, em regra, dentro de uma janela de ~30 dias. O calendário completo (datas e horários dos 8 encontros) fica claro para o aluno desde o início e é confirmado por e-mail após a compra."
+                  : "Datas, horários e/ou professor(a) podem sofrer ajustes por razões operacionais. Se acontecer, avisamos pelos canais oficiais (email e comunidade). A turma decorre, em regra, dentro de uma janela de ~30 dias. O calendário completo (datas e horários dos 8 encontros) fica claro para o aluno desde o início e é confirmado por email após a compra."}
+              </div>
+            </details>
+            <details>
+              <summary>O que acontece se uma aula precisar de ser realocada?</summary>
+              <div>
+                {language === "pt-BR"
+                  ? "Se precisarmos realocar uma aula, avisamos com mínimo de 1 semana de antecedência pelos canais oficiais (e-mail + comunidade). Exceção: cenários extremos de limitação operacional por parte da Atomica (ex.: indisponibilidade inevitável do professor). Nesses casos, avisamos assim que possível e oferecemos o melhor rearranjo viável."
+                  : "Se precisarmos realocar uma aula, avisamos com mínimo de 1 semana de antecedência pelos canais oficiais (email + comunidade). Exceção: cenários extremos de limitação operacional por parte da Atomica (ex.: indisponibilidade inevitável do professor). Nesses casos, avisamos assim que possível e oferecemos o melhor rearranjo viável."}
+              </div>
+            </details>
+            <details>
+              <summary>Como funciona o suporte e onde tiro dúvidas?</summary>
+              <div>
+                {language === "pt-BR"
+                  ? "Dúvidas devem ser enviadas pela comunidade. Tentamos responder em até 72h (compromisso de esforço, não garantia). Existem office hours mensais na comunidade para dúvidas e orientação geral. A Mentoria e a comunidade não oferecem suporte 1:1 sob demanda, nem execução 'done-for-you'."
+                  : "Dúvidas devem ser enviadas pela comunidade. Tentamos responder em até 72h (compromisso de esforço, não garantia). Existem office hours mensais na comunidade para dúvidas e orientação geral. A Mentoria e a comunidade não oferecem suporte 1:1 sob demanda, nem execução 'done-for-you'."}
+              </div>
+            </details>
+            <details>
+              <summary>As ferramentas de terceiros podem mudar?</summary>
+              <div>
+                {language === "pt-BR"
+                  ? "Ferramentas de terceiros podem mudar preços, planos, funcionalidades ou disponibilidade. Ensinamos conceitos e alternativas sempre que possível."
+                  : "Ferramentas de terceiros podem mudar preços, planos, funcionalidades ou disponibilidade. Ensinamos conceitos e alternativas sempre que possível."}
+              </div>
+            </details>
+            <details>
+              <summary>Posso fazer troca de turma ou substituir participante?</summary>
+              <div>
+                {language === "pt-BR"
+                  ? "Para troca de turma, substituição de participante e questões operacionais (pagamento/acesso), contatar: suporte@atomica.group."
+                  : "Para troca de turma, substituição de participante e questões operacionais (pagamento/acesso), contactar: suporte@atomica.group."}
+              </div>
+            </details>
+            <details>
+              <summary>Posso usar os materiais para fins comerciais?</summary>
+              <div>
+                {language === "pt-BR"
+                  ? "Os materiais (slides, gravações e templates) são para uso pessoal do aluno. Não é permitido redistribuir, revender ou publicar."
+                  : "Os materiais (slides, gravações e templates) são para uso pessoal do aluno. Não é permitido redistribuir, revender ou publicar."}
+              </div>
+            </details>
+            <details>
+              <summary>Como funciona o Pacote de 3 turmas?</summary>
+              <div>
+                {language === "pt-BR"
+                  ? "O Pacote de 3 turmas deve ser usado em até 6 meses a partir da data da compra. Inclui 60h de mentoria e todos os bónus. É possível se inscrever em 2 turmas separadamente. Nesse caso não há desconto: o valor é o dobro (uma inscrição por turma)."
+                  : "O Pacote de 3 turmas deve ser utilizado em até 6 meses a partir da data da compra. Inclui 60h de mentoria e todos os bónus. É possível inscrever-se em 2 turmas separadamente. Neste caso não há desconto: o valor é o dobro (uma inscrição por turma)."}
+              </div>
+            </details>
+          </div>
         </div>
       </section>
 
