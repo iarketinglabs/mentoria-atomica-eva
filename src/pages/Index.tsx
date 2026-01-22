@@ -2329,8 +2329,8 @@ const Index = () => {
           </div>
           <p style={{ margin: "0.25rem 0", color: "#1B1B1B" }}>
             Contato:{" "}
-            <a href="mailto:pedroarmbrust@atomica.group" style={{ color: "#1B1B1B", textDecoration: "none" }}>
-              pedroarmbrust@atomica.group
+            <a href="mailto:contato@atomica.group" style={{ color: "#1B1B1B", textDecoration: "none" }}>
+              contato@atomica.group
             </a>
           </p>
           <p style={{ margin: "0.25rem 0", color: "#555555" }}>© 2026 Atomica | Todos os direitos reservados.</p>
