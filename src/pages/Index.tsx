@@ -1164,7 +1164,7 @@ const Index = () => {
                     : "Aqui não é um \"curso de ferramentas\". É um método que combina:"}
                 </p>
                 <p style={{ fontSize: "1rem", lineHeight: 1.7, marginBottom: "1.25rem", color: "#1B1B1B" }}>
-                  <strong style={{ color: "#008C94" }}>Fundamentos que resistem a novos lançamentos</strong> + {language === "pt-BR" ? "projetos práticos com casos de uso reais de IA no Marketing." : "projectos práticos com casos de uso reais de IA no Marketing."}
+                  <span style={{ color: "#008C94" }}>Fundamentos que resistem a novos lançamentos</span> + {language === "pt-BR" ? "projetos práticos com casos de uso reais de IA no Marketing." : "projectos práticos com casos de uso reais de IA no Marketing."}
                 </p>
                 <p style={{ fontSize: "1rem", lineHeight: 1.7, marginBottom: "1.25rem", color: "#3D3D3D" }}>
                   {language === "pt-BR"
