@@ -222,9 +222,9 @@ const Index = () => {
             }
             
             /* Bonus header title keeps desktop line-height */
-            /* Bonus included text line-height 15px max */
+            /* Bonus included text reduced line-height for mobile */
             .bonus-included-text {
-                line-height: 15px !important;
+                line-height: 1.1 !important;
             }
             
             /* Bonus items centered layout for mobile */
