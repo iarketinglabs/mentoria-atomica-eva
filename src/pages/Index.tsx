@@ -504,13 +504,13 @@ const Index = () => {
       <section className="bg-grain-pulp relative py-16 px-4 text-center overflow-hidden">
         <div className="relative z-10">
           <h1
-            className="text-balance font-swanky text-3xl md:text-7xl font-normal leading-tight text-[#67BBC0]"
+            className="text-balance font-swanky text-[1.6rem] sm:text-4xl md:text-7xl font-normal leading-tight text-[#67BBC0]"
             style={{ textShadow: "3px 3px 0px #1B1B1B", fontFamily: "'Fontdiner Swanky', cursive" }}
           >
             {language === "pt-BR" ? "Torne-se Maestro do AI Marketing" : "Torna-te Maestro do AI Marketing"}
           </h1>
           <h2
-            className="text-balance font-oswald text-[0.95rem] sm:text-xl md:text-4xl font-medium leading-snug my-6 max-w-4xl mx-auto uppercase"
+            className="text-balance font-oswald text-[0.85rem] sm:text-xl md:text-4xl font-medium leading-snug my-6 max-w-4xl mx-auto uppercase"
             style={{ fontFamily: "'Oswald', sans-serif" }}
           >
             {language === "pt-BR"
@@ -530,7 +530,7 @@ const Index = () => {
           </div>
 
           <h3
-            className="text-balance font-oswald text-xl md:text-2xl font-medium leading-normal text-[#3D3D3D] max-w-4xl mx-auto mb-8"
+            className="text-balance font-oswald text-[0.95rem] sm:text-lg md:text-2xl font-medium leading-normal text-[#3D3D3D] max-w-4xl mx-auto mb-8"
             style={{ fontFamily: "'Oswald', sans-serif" }}
           >
             {language === "pt-BR"
