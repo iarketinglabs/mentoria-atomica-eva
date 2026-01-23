@@ -504,7 +504,7 @@ const Index = () => {
       <section className="bg-grain-pulp relative py-16 px-4 text-center overflow-hidden">
         <div className="relative z-10">
           <h1
-            className="text-balance font-swanky text-5xl md:text-7xl font-normal leading-tight text-[#67BBC0]"
+            className="text-balance font-swanky text-3xl md:text-7xl font-normal leading-tight text-[#67BBC0]"
             style={{ textShadow: "3px 3px 0px #1B1B1B", fontFamily: "'Fontdiner Swanky', cursive" }}
           >
             {language === "pt-BR" ? "Torne-se Maestro do AI Marketing" : "Torna-te Maestro do AI Marketing"}
