@@ -179,8 +179,8 @@ const Index = () => {
             h3 { font-size: 1.75rem !important; }
 
             /* Hero: override global heading sizes on mobile */
-            .hero-section h1 { font-size: 1.6rem !important; line-height: 1.15 !important; }
-            .hero-section h2 { font-size: 0.85rem !important; line-height: 1.25 !important; }
+            .hero-section h1 { font-size: 1.85rem !important; line-height: 1.15 !important; }
+            .hero-section h2 { font-size: 0.95rem !important; line-height: 1.25 !important; }
             .hero-section h3 { font-size: 0.95rem !important; line-height: 1.35 !important; }
             
             /* Company logos grid 2x2 - remove all margins */
