@@ -191,13 +191,18 @@ const Index = () => {
               margin-right: auto;
             }
             .hero-section h2 {
-              font-size: 1.05rem !important;
+              /* Occupy more width per line (closer to full measure) while still wrapping to 3 lines */
+              font-size: 1.12rem !important;
               line-height: 1.25 !important;
-              max-width: 40ch;
+              letter-spacing: 0.02em;
+              max-width: 92vw;
               margin-left: auto;
               margin-right: auto;
             }
             .hero-section h3 { font-size: 0.95rem !important; line-height: 1.35 !important; }
+
+            /* Slightly reduce the H1 shadow offset ONLY on mobile */
+            .hero-section { --hero-h1-shadow: 2px 2px 0px #1B1B1B; }
             
             /* Company logos grid 2x2 - remove all margins */
             .company-logos-grid {
@@ -526,7 +531,7 @@ const Index = () => {
         <div className="relative z-10">
           <h1
             className="text-balance font-swanky text-[1.6rem] sm:text-4xl md:text-7xl font-normal leading-tight text-[#67BBC0]"
-            style={{ textShadow: "3px 3px 0px #1B1B1B", fontFamily: "'Fontdiner Swanky', cursive" }}
+            style={{ textShadow: "var(--hero-h1-shadow, 3px 3px 0px #1B1B1B)", fontFamily: "'Fontdiner Swanky', cursive" }}
           >
             {language === "pt-BR" ? "Torne-se Maestro do AI Marketing" : "Torna-te Maestro do AI Marketing"}
           </h1>
@@ -541,7 +546,7 @@ const Index = () => {
 
           {/* Imagem de Apresentação */}
           <div className="max-w-3xl mx-auto my-8">
-            <div className="rounded-xl border-4 border-[#1B1B1B] shadow-[8px_8px_0px_#FCCA29] overflow-hidden">
+            <div className="rounded-xl border-2 border-[#1B1B1B] shadow-[8px_8px_0px_#FCCA29] overflow-hidden">
               <img
                 src="https://lh3.googleusercontent.com/pw/AP1GczNlCjKWz1u9AQg0AQ_YRrc_Jn4CWwhJietm7OjUnQh2nT3s1mPXAFoRHcxR1dHc7llt1UNsCcvHtlN7Gqn9aQSwicgrH-dzCizRWK0Kczx_4CKa5q69wFqyDcN7A9P16U7EspjokSdm0OzQgFvK0v3-=w1312-h736-s-no-gm?authuser=0"
                 alt="Apresentação da Mentoria"
