@@ -177,6 +177,11 @@ const Index = () => {
             h1 { font-size: 3rem !important; }
             h2, .bab-title { font-size: 2.25rem !important; }
             h3 { font-size: 1.75rem !important; }
+
+            /* Hero: override global heading sizes on mobile */
+            .hero-section h1 { font-size: 1.6rem !important; line-height: 1.15 !important; }
+            .hero-section h2 { font-size: 0.85rem !important; line-height: 1.25 !important; }
+            .hero-section h3 { font-size: 0.95rem !important; line-height: 1.35 !important; }
             
             /* Company logos grid 2x2 - remove all margins */
             .company-logos-grid {
@@ -501,7 +506,7 @@ const Index = () => {
       </div>
 
       {/* Hero Section */}
-      <section className="bg-grain-pulp relative py-16 px-4 text-center overflow-hidden">
+      <section className="hero-section bg-grain-pulp relative py-16 px-4 text-center overflow-hidden">
         <div className="relative z-10">
           <h1
             className="text-balance font-swanky text-[1.6rem] sm:text-4xl md:text-7xl font-normal leading-tight text-[#67BBC0]"
