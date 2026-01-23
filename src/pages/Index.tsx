@@ -510,7 +510,7 @@ const Index = () => {
             {language === "pt-BR" ? "Torne-se Maestro do AI Marketing" : "Torna-te Maestro do AI Marketing"}
           </h1>
           <h2
-            className="text-balance font-oswald text-lg md:text-4xl font-medium leading-snug my-6 max-w-4xl mx-auto uppercase"
+            className="text-balance font-oswald text-[0.95rem] sm:text-xl md:text-4xl font-medium leading-snug my-6 max-w-4xl mx-auto uppercase"
             style={{ fontFamily: "'Oswald', sans-serif" }}
           >
             {language === "pt-BR"
