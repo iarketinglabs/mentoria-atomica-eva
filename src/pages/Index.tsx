@@ -1677,7 +1677,21 @@ const Index = () => {
                 </div>
               )}
 
-              <a href="#formulario" className="cta-card">
+              <a 
+                href="#formulario" 
+                className="cta-card"
+                onClick={() => {
+                  // Map selectedMission value to the corresponding mentoria label
+                  const missionToMentoria: Record<string, string> = {
+                    "conteudo": "IA para Estratégia e Criação de Conteúdo",
+                    "audiovisual": "IA para Design e Audiovisual",
+                    "automacao": "IA para Vibe Coding e Automação Agêntica"
+                  };
+                  if (selectedMission && missionToMentoria[selectedMission]) {
+                    setFormMentorias([missionToMentoria[selectedMission]]);
+                  }
+                }}
+              >
                 {language === "pt-BR" ? "Reservar Mentoria Avulsa" : "Reservar Mentoria Avulsa"}
               </a>
               <p style={{ fontSize: "0.75rem", color: "#3D3D3D", marginTop: "0.75rem", textAlign: "center" }}>
