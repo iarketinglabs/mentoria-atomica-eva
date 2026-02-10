@@ -1694,7 +1694,12 @@ const Index = () => {
               >
                 {language === "pt-BR" ? "Reservar Mentoria Avulsa" : "Reservar Mentoria Avulsa"}
               </a>
-              <p style={{ fontSize: "0.75rem", color: "#3D3D3D", marginTop: "0.75rem", textAlign: "center" }}>
+              <p style={{ fontSize: "0.8rem", color: "#1B1B1B", marginTop: "0.75rem", textAlign: "center", fontWeight: 600 }}>
+                {language === "pt-BR"
+                  ? "Reserve já com apenas R$ 300 por mentoria. O restante só após o início das aulas."
+                  : "Reserva já com apenas 50€ por mentoria. O restante só após o início das aulas."}
+              </p>
+              <p style={{ fontSize: "0.75rem", color: "#3D3D3D", marginTop: "0.5rem", textAlign: "center" }}>
                 {language === "pt-BR" ? "É possível se inscrever em 2 turmas." : "É possível se inscrever em 2 turmas."}
               </p>
             </div>
@@ -1739,6 +1744,11 @@ const Index = () => {
               >
                 {language === "pt-BR" ? "Reservar Pacote Completo" : "Reservar Pacote Completo"}
               </a>
+              <p style={{ fontSize: "0.8rem", color: "#1B1B1B", marginTop: "0.75rem", textAlign: "center", fontWeight: 600 }}>
+                {language === "pt-BR"
+                  ? "Reserve já com apenas R$ 900 (3x R$ 300). O restante só após o início das aulas."
+                  : "Reserva já com apenas 150€ (3x 50€). O restante só após o início das aulas."}
+              </p>
             </div>
           </div>
           <div
@@ -1847,6 +1857,11 @@ const Index = () => {
                 {language === "pt-BR" ? "R$ 1.196" : "184€"}
               </span>
             </div>
+            <p style={{ textAlign: "center", fontSize: "0.95rem", color: "#1B1B1B", marginTop: "0.75rem", fontWeight: 600 }}>
+              {language === "pt-BR"
+                ? "💡 Pague apenas R$ 300 por mentoria para reservar a sua vaga. O restante só após o início das aulas."
+                : "💡 Paga apenas 50€ por mentoria para reservar a tua vaga. O restante só após o início das aulas."}
+            </p>
           </div>
           <div className="cta-final" style={{ textAlign: "center" }}>
             <h2
@@ -2125,6 +2140,11 @@ const Index = () => {
               </button>
             </div>
 
+            <p style={{ fontSize: "0.9rem", color: "#1B1B1B", textAlign: "center", marginTop: "0.5rem", fontWeight: 600 }}>
+              {language === "pt-BR"
+                ? "💡 Pague apenas R$ 300 por mentoria para garantir a sua vaga. O restante só após o início."
+                : "💡 Paga apenas 50€ por mentoria para garantir a tua vaga. O restante só após o início."}
+            </p>
             <p style={{ fontSize: "0.875rem", color: "#555555", textAlign: "center", marginTop: "0.5rem" }}>
               {language === "pt-BR"
                 ? "Junte-se aos profissionais de marketing de vanguarda. Risco Zero com a nossa Garantia Incondicional."
