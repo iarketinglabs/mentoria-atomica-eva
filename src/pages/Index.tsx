@@ -1818,8 +1818,8 @@ const Index = () => {
               <summary>{language === "pt-BR" ? "O que acontece após eu finalizar a compra?" : "O que acontece após eu finalizar a compra?"}</summary>
               <div>
                 {language === "pt-BR"
-                  ? "Imediatamente após a confirmação do pagamento, receberá um e-mail de boas-vindas com o seu acesso à nossa comunidade exclusiva no Discord e aos Guias Vivos. Os detalhes e o calendário para as sessões ao vivo da sua turma serão enviados na semana anterior ao início da mentoria."
-                  : "Imediatamente após a confirmação do pagamento, receberás um e-mail de boas-vindas com o seu acesso à nossa comunidade exclusiva no Discord e aos Guias Vivos. Os detalhes e o calendário para as sessões ao vivo da tua turma serão enviados na semana anterior ao início da mentoria."}
+                  ? "Ao reservar a sua vaga, você paga apenas o adiantamento de R$ 300 por mentoria — o restante só após o início das aulas. Imediatamente após a confirmação do pagamento, receberá um e-mail de boas-vindas com o seu acesso à nossa comunidade exclusiva no Discord e aos Guias Vivos. Os detalhes e o calendário para as sessões ao vivo da sua turma serão enviados na semana anterior ao início da mentoria."
+                  : "Ao reservares a tua vaga, pagas apenas o adiantamento de 50€ por mentoria — o restante só após o início das aulas. Imediatamente após a confirmação do pagamento, receberás um e-mail de boas-vindas com o teu acesso à nossa comunidade exclusiva no Discord e aos Guias Vivos. Os detalhes e o calendário para as sessões ao vivo da tua turma serão enviados na semana anterior ao início da mentoria."}
               </div>
             </details>
             <details>
