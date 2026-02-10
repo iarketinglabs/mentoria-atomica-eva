@@ -2142,8 +2142,8 @@ const Index = () => {
 
             <p style={{ fontSize: "0.9rem", color: "#1B1B1B", textAlign: "center", marginTop: "0.5rem", fontWeight: 600 }}>
               {language === "pt-BR"
-                ? "💡 Pague apenas R$ 300 por mentoria para garantir a sua vaga. O restante só após o início."
-                : "💡 Paga apenas 50€ por mentoria para garantir a tua vaga. O restante só após o início."}
+                ? `💡 Pague apenas R$ ${formMentorias.length <= 1 ? "300" : formMentorias.length * 300} ${formMentorias.length <= 1 ? "pela mentoria" : "pelas mentorias"} para garantir a sua vaga. O restante só após o início.`
+                : `💡 Paga apenas ${formMentorias.length <= 1 ? "50€" : `${formMentorias.length * 50}€`} ${formMentorias.length <= 1 ? "pela mentoria" : "pelas mentorias"} para garantir a tua vaga. O restante só após o início.`}
             </p>
             <p style={{ fontSize: "0.875rem", color: "#555555", textAlign: "center", marginTop: "0.5rem" }}>
               {language === "pt-BR"
