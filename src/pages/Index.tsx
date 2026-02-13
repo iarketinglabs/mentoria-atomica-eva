@@ -1243,7 +1243,7 @@ const Index = () => {
                     color: "#1B1B1B",
                     border: "1px solid #1B1B1B"
                   }}>
-                    10 encontros ao vivo de 2h
+                    10 encontros ao vivo e remotos de 2h
                   </span>
                   <span style={{ 
                     background: "#FCCA29", 
@@ -2253,8 +2253,8 @@ const Index = () => {
               <summary>Quanto tempo preciso dedicar por semana?</summary>
               <div>
                 {language === "pt-BR"
-                  ? "Cada sessão tem 2h e todas ficam gravadas para que você possa rever quando quiser. São 10 encontros ao longo de 1 mês, totalizando 20 horas de formação. Além disso, propomos desafios práticos rápidos (30 a 60 minutos) para aplicar o que aprendeu no seu próprio contexto. 2 a 3 horas por semana são suficientes para aproveitar ao máximo a mentoria."
-                  : "Cada sessão tem 2h e todas ficam gravadas para que possas rever quando quiseres. São 10 encontros ao longo de 1 mês, totalizando 20 horas de formação. Além disso, propomos desafios práticos rápidos (30–60 minutos) para aplicares o que aprendeste no teu próprio contexto. Bastam 2 a 3 horas por semana para tirares o máximo proveito da mentoria."}
+                   ? "Cada sessão tem 2h e todas ficam gravadas para que você possa rever quando quiser. São 10 encontros ao vivo e remotos ao longo de 1 mês, totalizando 20 horas de formação. Além disso, propomos desafios práticos rápidos (30 a 60 minutos) para aplicar o que aprendeu no seu próprio contexto. 2 a 3 horas por semana são suficientes para aproveitar ao máximo a mentoria."
+                   : "Cada sessão tem 2h e todas ficam gravadas para que possas rever quando quiseres. São 10 encontros ao vivo e remotos ao longo de 1 mês, totalizando 20 horas de formação. Além disso, propomos desafios práticos rápidos (30–60 minutos) para aplicares o que aprendeste no teu próprio contexto. Bastam 2 a 3 horas por semana para tirares o máximo proveito da mentoria."}
               </div>
             </details>
             <details>
