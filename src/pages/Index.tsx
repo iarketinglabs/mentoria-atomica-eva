@@ -1243,7 +1243,7 @@ const Index = () => {
                     color: "#1B1B1B",
                     border: "1px solid #1B1B1B"
                   }}>
-                    8 encontros ao vivo de 2h30
+                    10 encontros ao vivo de 2h
                   </span>
                   <span style={{ 
                     background: "#FCCA29", 
@@ -1274,9 +1274,9 @@ const Index = () => {
                   border: "1px solid #A8DEE0"
                 }}>
                   <p style={{ fontSize: "0.95rem", lineHeight: 1.6, color: "#1B1B1B", fontWeight: 500, marginBottom: "0" }}>
-                    🕐 {language === "pt-BR"
-                      ? "Os horários padrão (Brasil - horário de Brasília) são: 2ª e 4ª 17:30–20:00, 3ª e 5ª 17:30–20:00"
-                      : "Os horários padrão (Portugal) são: 2ª e 4ª 20:30–23:00, 3ª e 5ª 20:30–23:00"}
+                    {language === "pt-BR"
+                      ? "🕐 Os horários padrão (Brasil - horário de Brasília) dos encontros são de 17h às 19h."
+                      : (<>🕐 Os horários padrão (Portugal) dos encontros são de:<br />✱ De 26/10 a 29/03: 20h às 22h<br />✱ De 30/03 a 25/10: 21h às 23h</>)}
                   </p>
                 </div>
               </div>
@@ -2177,8 +2177,8 @@ const Index = () => {
               <summary>{language === "pt-BR" ? "Preciso de tempo extra para acompanhar as aulas?" : "Preciso de tempo extra para acompanhar as aulas?"}</summary>
               <div>
                 {language === "pt-BR"
-                  ? "Sabemos que a sua agenda está sempre ao rubro. Por isso, cada sessão de 2h30m é gravada em alta qualidade e disponibilizada nos Guias Vivos, permitindo rever as lições a qualquer momento. Em vez de roubar o seu tempo, esta mentoria é desenhada para devolvê‑lhe tempo livre: aprenda a otimizar fluxos com IA e ganhe horas semanais para o que realmente importa."
-                  : "Sabemos que a tua agenda está sempre ao rubro. Por isso, cada sessão de 2h30m é gravada em alta qualidade e disponibilizada nos Guias Vivos, permitindo rever as lições a qualquer momento. Em vez de roubar o teu tempo, esta mentoria é desenhada para te devolver tempo livre: aprende a otimizar fluxos com IA e ganha horas semanais para o que realmente importa."}
+                  ? "Sabemos que a sua agenda está sempre ao rubro. Por isso, cada sessão de 2h é gravada em alta qualidade e disponibilizada nos Guias Vivos, permitindo rever as lições a qualquer momento. Em vez de roubar o seu tempo, esta mentoria é desenhada para devolvê‑lhe tempo livre: aprenda a otimizar fluxos com IA e ganhe horas semanais para o que realmente importa."
+                  : "Sabemos que a tua agenda está sempre ao rubro. Por isso, cada sessão de 2h é gravada em alta qualidade e disponibilizada nos Guias Vivos, permitindo rever as lições a qualquer momento. Em vez de roubar o teu tempo, esta mentoria é desenhada para te devolver tempo livre: aprende a otimizar fluxos com IA e ganha horas semanais para o que realmente importa."}
               </div>
             </details>
             <details>
@@ -2253,8 +2253,8 @@ const Index = () => {
               <summary>Quanto tempo preciso dedicar por semana?</summary>
               <div>
                 {language === "pt-BR"
-                  ? "Cada sessão tem em média 2h30 e todas ficam gravadas para que você possa rever quando quiser. Além disso, propomos desafios práticos rápidos (30 a 60 minutos) para aplicar o que aprendeu no seu próprio contexto.\nAo todo, o curso conta com 20 horas de formação, e 2 a 3 horas por semana são suficientes para aproveitar ao máximo a mentoria."
-                  : "Cada sessão tem em média 2h30 e todas ficam gravadas para que possas rever quando quiseres. Além disso, propomos desafios práticos rápidos (30–60 minutos) para aplicares o que aprendeste no teu próprio contexto.\nNo total, o curso inclui 20 horas de formação, e bastam 2 a 3 horas por semana para tirares o máximo proveito da mentoria."}
+                  ? "Cada sessão tem 2h e todas ficam gravadas para que você possa rever quando quiser. São 10 encontros ao longo de 1 mês, totalizando 20 horas de formação. Além disso, propomos desafios práticos rápidos (30 a 60 minutos) para aplicar o que aprendeu no seu próprio contexto. 2 a 3 horas por semana são suficientes para aproveitar ao máximo a mentoria."
+                  : "Cada sessão tem 2h e todas ficam gravadas para que possas rever quando quiseres. São 10 encontros ao longo de 1 mês, totalizando 20 horas de formação. Além disso, propomos desafios práticos rápidos (30–60 minutos) para aplicares o que aprendeste no teu próprio contexto. Bastam 2 a 3 horas por semana para tirares o máximo proveito da mentoria."}
               </div>
             </details>
             <details>
@@ -2296,8 +2296,8 @@ const Index = () => {
               <summary>Datas e horários podem mudar?</summary>
               <div>
                 {language === "pt-BR"
-                  ? "Datas, horários e/ou professor(a) podem sofrer ajustes por razões operacionais. Se acontecer, avisamos pelos canais oficiais (e-mail e comunidade). A turma acontece, em regra, dentro de uma janela de ~30 dias. O calendário completo (datas e horários dos 8 encontros) fica claro para o aluno desde o início e é confirmado por e-mail após a compra."
-                  : "Datas, horários e/ou professor(a) podem sofrer ajustes por razões operacionais. Se acontecer, avisamos pelos canais oficiais (email e comunidade). A turma decorre, em regra, dentro de uma janela de ~30 dias. O calendário completo (datas e horários dos 8 encontros) fica claro para o aluno desde o início e é confirmado por email após a compra."}
+                  ? "Datas, horários e/ou professor(a) podem sofrer ajustes por razões operacionais. Se acontecer, avisamos pelos canais oficiais (e-mail e comunidade). A turma acontece, em regra, dentro de uma janela de ~30 dias. O calendário completo (datas e horários dos 10 encontros) fica claro para o aluno desde o início e é confirmado por e-mail após a compra."
+                  : "Datas, horários e/ou professor(a) podem sofrer ajustes por razões operacionais. Se acontecer, avisamos pelos canais oficiais (email e comunidade). A turma decorre, em regra, dentro de uma janela de ~30 dias. O calendário completo (datas e horários dos 10 encontros) fica claro para o aluno desde o início e é confirmado por email após a compra."}
               </div>
             </details>
             <details>
