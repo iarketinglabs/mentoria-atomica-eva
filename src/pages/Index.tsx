@@ -1670,9 +1670,12 @@ const Index = () => {
                       fontFamily: "'Oswald', sans-serif",
                     }}
                   >
-                    {selectedMission === "conteudo" && "Inicia em 23/02 • 2ª e 4ª f • 20h30-23h (Total: 20 horas)"}
-                    {selectedMission === "audiovisual" && "Inicia em 24/02 • 3ª e 5ª f • 20h30-23h (Total: 20 horas)"}
-                    {selectedMission === "automacao" && "Inicia em 30/03 • 2ª e 4ª f • 18h-20h30 (Total: 20 horas)"}
+                    {selectedMission === "conteudo" && language === "pt-BR" && "De 16/03 à 14/04 • 2ª e 3ª f • 17h-19h (Total: 20 horas)"}
+                    {selectedMission === "conteudo" && language === "pt-PT" && "De 16/03 à 14/04 • 2ª e 3ª f • 20h-22h / 21h-23h (Total: 20 horas)"}
+                    {selectedMission === "audiovisual" && language === "pt-BR" && "De 27/04 à 26/05 • 2ª e 3ª f • 17h-19h (Total: 20 horas)"}
+                    {selectedMission === "audiovisual" && language === "pt-PT" && "De 27/04 à 26/05 • 2ª e 3ª f • 21h-23h (Total: 20 horas)"}
+                    {selectedMission === "automacao" && language === "pt-BR" && "De 08/04 à 30/04 • 4ª, 5ª e 6ª f • 17h-19h (Total: 20 horas)"}
+                    {selectedMission === "automacao" && language === "pt-PT" && "De 08/04 à 30/04 • 4ª, 5ª e 6ª f • 21h-23h (Total: 20 horas)"}
                   </div>
                 </div>
               )}
@@ -2079,7 +2082,7 @@ const Index = () => {
                     {language === "pt-BR" ? "IA para Estratégia e Criação de Conteúdo" : "IA para Estratégia e Criação de Conteúdo"}
                   </label>
                   <p style={{ fontSize: "0.75rem", color: "#67BBC0", marginLeft: "1.75rem", marginTop: "0.25rem" }}>
-                    {language === "pt-BR" ? "Inicia em 23/02 • 2ª e 4ª f • 17h30–20h" : "Inicia em 23/02 • 2ª e 4ª f • 20h30-23h"}
+                    {language === "pt-BR" ? "De 16/03 à 14/04 • 2ª e 3ª f • 17h-19h" : "De 16/03 à 14/04 • 2ª e 3ª f • 20h-22h / 21h-23h"}
                   </p>
                 </div>
                 <div>
@@ -2094,7 +2097,7 @@ const Index = () => {
                     {language === "pt-BR" ? "IA para Design e Audiovisual" : "IA para Design e Audiovisual"}
                   </label>
                   <p style={{ fontSize: "0.75rem", color: "#67BBC0", marginLeft: "1.75rem", marginTop: "0.25rem" }}>
-                    {language === "pt-BR" ? "Inicia em 24/02 • 3ª e 5ª f • 17h30–20h" : "Inicia em 24/02 • 3ª e 5ª f • 20h30-23h"}
+                    {language === "pt-BR" ? "De 27/04 à 26/05 • 2ª e 3ª f • 17h-19h" : "De 27/04 à 26/05 • 2ª e 3ª f • 21h-23h"}
                   </p>
                 </div>
                 <div>
@@ -2109,7 +2112,7 @@ const Index = () => {
                     {language === "pt-BR" ? "IA para Vibe Coding e Automação Agêntica" : "IA para Vibe Coding e Automação Agêntica"}
                   </label>
                   <p style={{ fontSize: "0.75rem", color: "#67BBC0", marginLeft: "1.75rem", marginTop: "0.25rem" }}>
-                    {language === "pt-BR" ? "Inicia em 30/03 • 2ª e 4ª f • 17h–19h30" : "Inicia em 30/03 • 2ª e 4ª f • 18h-20h30"}
+                    {language === "pt-BR" ? "De 08/04 à 30/04 • 4ª, 5ª e 6ª f • 17h-19h" : "De 08/04 à 30/04 • 4ª, 5ª e 6ª f • 21h-23h"}
                   </p>
                 </div>
               </div>
