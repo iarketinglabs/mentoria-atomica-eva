@@ -1825,14 +1825,14 @@ const Index = () => {
                   : "Ao reservares a tua vaga, pagas apenas o adiantamento de 50€ por mentoria — o restante só após o início das aulas. Imediatamente após a confirmação do pagamento, receberás um e-mail de boas-vindas com o teu acesso à nossa comunidade exclusiva no Discord e aos Guias Vivos. Os detalhes e o calendário para as sessões ao vivo da tua turma serão enviados na semana anterior ao início da mentoria."}
               </div>
             </details>
-            <details>
-              <summary>Como funciona a garantia de reembolso?</summary>
-              <div>
-                {language === "pt-BR"
-                  ? "Reembolso total após a 1ª aula completa, solicitado em até 30 dias após essa 1ª aula. Sem necessidade de justificativa (feedback é opcional). A participação na 1ª aula é verificada via relatório do Google Meet. Em caso de reembolso, o aluno perde o direito ao acesso vitalício à comunidade e o acesso aos guias vivos (mesmo dentro da promoção)."
-                  : "Reembolso total após a 1ª aula completa, solicitado em até 30 dias após essa 1ª aula. Sem necessidade de justificativa (feedback é opcional). A participação na 1ª aula é verificada via relatório do Google Meet. Em caso de reembolso, o aluno perde o direito ao acesso vitalício à comunidade e o acesso aos guias vivos (mesmo dentro da promoção)."}
-              </div>
-            </details>
+             <details>
+               <summary>Como funciona a garantia de reembolso?</summary>
+               <div>
+                 {language === "pt-BR"
+                   ? "Reembolso total após a 1ª aula completa, sendo necessário solicitá-lo antes da ocorrência da 2ª aula. O valor será devolvido em até 30 dias corridos após solicitação. Sem necessidade de justificativa (feedback é opcional). A participação na 1ª aula é verificada via relatório do Google Meet. Em caso de reembolso, o aluno perde o direito ao acesso vitalício à comunidade e o acesso aos guias vivos (mesmo dentro da promoção)."
+                   : "Reembolso total após a 1ª aula completa, sendo necessário solicitá-lo antes da ocorrência da 2ª aula. O valor será devolvido em até 30 dias corridos após solicitação. Sem necessidade de justificativa (feedback é opcional). A participação na 1ª aula é verificada via relatório do Google Meet. Em caso de reembolso, o aluno perde o direito ao acesso vitalício à comunidade e o acesso aos guias vivos (mesmo dentro da promoção)."}
+               </div>
+             </details>
             <p style={{ textAlign: "center", marginTop: "1rem", fontSize: "1rem", color: "#1B1B1B" }}>
               {language === "pt-BR" ? "Para mais perguntas frequentes " : "Para mais perguntas frequentes "}
               <a href="#mais-faq" style={{ color: "#67BBC0", fontWeight: 600, textDecoration: "underline" }}>
